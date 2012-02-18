@@ -19,3 +19,16 @@ div#header h2 {
     word-spacing: 8px;
 }
 
+/* Listes */
+body div#footer ul {
+    display: block;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+}
+body div#footer ul li {
+    display: inline;
+    padding-right: 2px;
+    padding-left: 2px;
+}

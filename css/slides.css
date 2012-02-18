@@ -7,12 +7,21 @@ div#page div.slide {
     float: left;
     height: 100%;
 }
-div#page div.slide#s1 {
+div#page div.slide#slide1 {
     background-color:green;
 }
-div#page div.slide#s2 {
+div#page div.slide#slide2 {
     background-color:yellow;
 }
-div#page div.slide#s3 {
+div#page div.slide#slide3 {
+    background-color:red;
+}
+div#page div.slide#slide4 {
+    background-color:green;
+}
+div#page div.slide#slide5 {
+    background-color:yellow;
+}
+div#page div.slide#slide6 {
     background-color:red;
 }

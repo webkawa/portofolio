@@ -21,22 +21,9 @@ body div#page {
 }
 body div#footer {
     background-color: white;
-    height: 20px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    font-size: 20px;
-    overflow: hidden;
+    height: 16px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-size: 16px;
     text-align: center;
-}
-body div#footer ul {
-    display: block;
-    width: 100%;
-    padding: 0px;
-    margin: 0px;
-    list-style-type: none;
-}
-body div#footer ul li {
-    display: inline;
-    padding-right: 2px;
-    padding-left: 2px;
 }

@@ -39,7 +39,7 @@ function displayHeader() {
 /* COEUR DE PAGE
  * ------------- */
 /* Largeur des slides fermés (gauche et droite) */
-var SLIDE_WIDTH_LEFT = 20;
+var SLIDE_WIDTH_LEFT = 10;
 var SLIDE_WIDTH_RIGHT = 40;
     
 /* Affichage inial des composants */
