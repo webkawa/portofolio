@@ -21,5 +21,22 @@ body div#page {
 }
 body div#footer {
     background-color: white;
-    height: 40px;
+    height: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 20px;
+    overflow: hidden;
+    text-align: center;
+}
+body div#footer ul {
+    display: block;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+}
+body div#footer ul li {
+    display: inline;
+    padding-right: 2px;
+    padding-left: 2px;
 }

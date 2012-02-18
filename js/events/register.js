@@ -17,3 +17,12 @@ $(window).resize(
         displayPage();
     }
 );
+    
+/* Actions à la sélection d'un slide */
+$("div#page > div.slide").click(
+    function() {
+        $("div#page > div.slide.selected").toggleClass("selected");
+        $(this).toggleClass("selected");
+        displaySlides();
+    }
+);
