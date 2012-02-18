@@ -2,7 +2,17 @@
  * ----------
  * Mise en forme des slides. */
 
-root { 
+div#page div.slide {
     display: block;
+    float: left;
+    height: 100%;
 }
-
+div#page div.slide#s1 {
+    background-color:green;
+}
+div#page div.slide#s2 {
+    background-color:yellow;
+}
+div#page div.slide#s3 {
+    background-color:red;
+}

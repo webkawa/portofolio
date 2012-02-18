@@ -4,11 +4,14 @@
 
 /* HEADER
  * ------ */
+/* Indice d'occupation du titre */
+var H1_HEIGHT = 1.5;
+
 /* Affichage du titre */
 function displayH1() {
     var i = 1;
     if ($("div#header > h2").size() > 0) {
-        i = 1.5;
+        i = H1_HEIGHT;
     }
     
     var x = $("div#header").height() / i;
@@ -35,15 +38,38 @@ function displayHeader() {
 
 /* COEUR DE PAGE
  * ------------- */
-
+/* Largeur des slides fermés (gauche et droite) */
+var SLIDE_WIDTH_LEFT = 20;
+var SLIDE_WIDTH_RIGHT = 40;
+    
 /* Affichage inial des composants */
 function displaySlides() {
-    var s = $("div#page > div.slide").size();
-    alert(s);
+    var x, y;
+    x = false;
+    y = $("div#page > div.slide").size();
+    
+    $("div#page > div.slide").each(
+        function(i) {
+            if($(this).hasClass("selected")) {
+                var z = $("div#page").innerWidth() - (i * SLIDE_WIDTH_LEFT) - ((y - (i + 1)) * SLIDE_WIDTH_RIGHT);
+                $(this).css("width", z);
+                x = true;
+            } else {
+                if (x) {
+                    $(this).css("width", SLIDE_WIDTH_RIGHT + "px");
+                } else {
+                    $(this).css("width", SLIDE_WIDTH_LEFT + "px");
+                }
+            }
+            $(this).css("width", x + "px");
+        }
+    );
 }
 
 /* Affichage du coeur de page */
 function displayPage() {
     var x = $(window).height() - ($("#header").outerHeight() + $("#footer").outerHeight());
     $("div#page").height(x);
+    
+    displaySlides();
 }
