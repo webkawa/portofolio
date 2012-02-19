@@ -5,8 +5,31 @@
 
 /* Affiche le titre suivant */
 function switchTitle(slide) {
-    /* Repérage des éléments */
-    var hl = $("page#header > h1");
+    /* Variables utiles */
+    var p = centralSlideProperties(slide);
+    
+    /* Sélection des anciens titres et sous-titres */
+    var h1leaving = $("div#header > h1");
+    var h2leaving = $("div#header > h2");
+    
+    /* Taggage */
+    $(h1leaving).addClass("leaving");
+    $(h2leaving).addClass("leaving");
+    
+    /* Création des nouveux titres et sous-titres */
+    $('<h1 class="incoming">XXX</h1>').insertAfter(h1leaving);
+    var h1incoming = $("div#header > h1.incoming");
+    if (true) {
+        var insert = $('<h2 class="incoming">YYY</h2>')
+        if ($(h2leaving).size() > 0) {
+            $(insert).insertAfter(h2leaving);
+        } else {
+            $(insert).insertAfter(h1incoming)
+        }
+    }
+    var h2incoming = $("div#header > h2.incoming");
+    
+    
 }
 
 /* Affiche le slide suivant */

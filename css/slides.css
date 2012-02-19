@@ -5,7 +5,6 @@
 div#page div.slide {
     display: inline;
     position: absolute;
-    text-align: right;
 }
 div#page div.slide.selected {
     

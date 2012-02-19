@@ -2,6 +2,16 @@
  *  --------
  *  Utilitaires utilisés pour simplifier l'affichage. */
 
+/* Calcul de la taille de police pour un conteneur */
+function getFontSizeFor(text, height) {
+    var x = 0;
+    while($(text).outerHeight(true) < height) {
+        x = parseInt($(text).css("font-size")) + 1;
+        $(text).css("font-size", x + "px");
+    }
+    $(text).css("font-size", (x-1) + "px");
+}
+
 /* Calcul des variables de position pour un slide centré */
 function centralSlideProperties(slide) {
     /* Variables générales */

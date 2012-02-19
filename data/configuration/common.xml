@@ -1,11 +1,6 @@
 
 <config>
     <display>
-        <header>
-            <h1>
-                <occupation>1.5</occupation>
-            </h1>
-        </header>
         <slides>
             <width>
                 <left>10</left>

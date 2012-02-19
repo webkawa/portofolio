@@ -3,20 +3,24 @@
  * Mise en page des contenus. */
 
 /* Contenu textuels */
-div#header h1 {
+div#header div {
+    overflow: hidden;
+}
+div#header div h1 {
     margin: 0px;
     padding-top: 0px;
     padding-left: 0px;
-    padding-bottom: 5px;
+    padding-bottom: 0px;
     padding-left: 0px;
     font-weight: bolder;
 }
-div#header h2 {
-    margin: 0px !important;
-    padding: 0px !important;
+div#header div h2 {
+    margin: 0px;
+    padding: 0px;
     text-transform: uppercase;
     letter-spacing: 2px;
     word-spacing: 8px;
+    font-size: 30px;
 }
 
 /* Listes */

@@ -7,21 +7,21 @@
 
 /* Affichage du titre */
 function displayH1() {
-    var i = 1;
-    if ($("div#header > h2").size() > 0) {
-        i = $(co).find("header > h1 > occupation").text();
+    /* Taille à appliquer */
+    var x;
+    var y = $("div#header").height();
+    if($("div#header > div > h2").size() == 0) {
+        x = getFontSizeFor($("div#header > div > h1"), y);
+    } else {
+        x = getFontSizeFor($("div#header > div > h1"), y - $("div#header > div > h2").outerHeight());
     }
     
-    var x = $("div#header").height() / i;
-    $("div#header > h1").css("height", Math.round(x) + "px");
-    $("div#header > h1").css("font-size", Math.round(x) + "px");
+    /* Application */
+    $("div#header > div > h1").css("font-size", x + "px");
 }
 
 /* Affichage du sous-titre */
 function displayH2() {
-    var x = $("div#header").height() - ($("div#header > h1").outerHeight(true));
-    $("div#header > h2").css("height", Math.round(x) + "px");
-    $("div#header > h2").css("font-size", Math.round(x) + "px");
 }
 
 /* Affichage de l'en-tête */
