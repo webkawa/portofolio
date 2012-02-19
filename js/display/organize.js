@@ -4,14 +4,12 @@
 
 /* HEADER
  * ------ */
-/* Indice d'occupation du titre */
-var H1_HEIGHT = 1.5;
 
 /* Affichage du titre */
 function displayH1() {
     var i = 1;
     if ($("div#header > h2").size() > 0) {
-        i = H1_HEIGHT;
+        i = $(co).find("header > h1 > occupation").text();
     }
     
     var x = $("div#header").height() / i;
@@ -38,30 +36,35 @@ function displayHeader() {
 
 /* COEUR DE PAGE
  * ------------- */
-/* Largeur des slides fermés (gauche et droite) */
-var SLIDE_WIDTH_LEFT = 10;
-var SLIDE_WIDTH_RIGHT = 40;
     
-/* Affichage inial des composants */
+/* Affichage inial des composants */ 
 function displaySlides() {
-    var x, y;
-    x = false;
-    y = $("div#page > div.slide").size();
-    
+    var x = false;
+    var y = $("div#page > div.slide").size();
+    var z = 0;
     $("div#page > div.slide").each(
         function(i) {
             if($(this).hasClass("selected")) {
-                var z = $("div#page").innerWidth() - (i * SLIDE_WIDTH_LEFT) - ((y - (i + 1)) * SLIDE_WIDTH_RIGHT);
-                $(this).css("width", z);
+                z = i * $(co).find("slides > width > left").text();
+                $(this).css("opacity", "0");
+                $(this).css("width", $(co).find("slides > width > left").text() + "px");
+                $(this).css("left", z + "px");
+                $(this).css("height", $("div#page").innerHeight() + "px");
                 x = true;
             } else {
                 if (x) {
-                    $(this).css("width", SLIDE_WIDTH_RIGHT + "px");
+                    z = $("div#page").innerWidth() - (y - i) * $(co).find("slides > width > right").text();
+                    $(this).css("width", $(co).find("slides > width > right").text() + "px");
+                    $(this).css("left", z + "px");
+                    $(this).css("height", $("div#page").innerHeight() + "px");
+                    
                 } else {
-                    $(this).css("width", SLIDE_WIDTH_LEFT + "px");
+                    z = i * $(co).find("slides > width > left").text();
+                    $(this).css("width", $(co).find("slides > width > left").text() + "px");
+                    $(this).css("left", z);
+                    $(this).css("height", $("div#page").innerHeight() + "px");
                 }
             }
-            $(this).css("width", x + "px");
         }
     );
 }

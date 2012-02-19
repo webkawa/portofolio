@@ -3,10 +3,13 @@
  * Mise en forme des slides. */
 
 div#page div.slide {
-    display: block;
+    display: inline;
+    position: absolute;
     float: left;
-    height: 100%;
 }
+div#page div.slide.selected {
+}
+
 div#page div.slide#slide1 {
     background-color:green;
 }
@@ -24,4 +27,5 @@ div#page div.slide#slide5 {
 }
 div#page div.slide#slide6 {
     background-color:red;
+    
 }

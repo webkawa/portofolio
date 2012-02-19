@@ -17,6 +17,7 @@ body div#header {
     padding-bottom: 10px;
 }
 body div#page {
+    width: 100%;
     background-color: blue;
 }
 body div#footer {
