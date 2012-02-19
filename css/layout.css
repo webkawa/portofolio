@@ -10,18 +10,18 @@ body div {
     
 }
 body div#header {
-    width: 100%;
     background-color: white;
     padding-top: 10px;
     padding-bottom: 10px;
     overflow: hidden;
 }
-body div#header div {
+body div#header div.title {
     float: left;
     white-space: nowrap;
-    overflow: hidden;
+    display: block;
+    clear: left;
 }
-body div#header div.incoming {
+body div#header div.title.incoming {
     width: 0px;
 }
 body div#page {
