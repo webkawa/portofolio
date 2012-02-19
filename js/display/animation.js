@@ -17,9 +17,9 @@ function switchTitle(slide) {
     $("div#header > div").addClass("leaving");
     
     /* Création du titre remplaçant */
-    $('<div class="incoming"><h1>Foo !</h1></div>').insertAfter("div#header > div");
+    $('<div class="incoming"><h1>Lorem ipsum dolor sit amet</h1></div>').insertAfter("div#header > div");
     if (true) {
-        $("<h2>Foofoo !</h2>").insertAfter("div#header > div.incoming > h1");
+        $("<h2>Nulla cursus, dui ac congue </h2>").insertAfter("div#header > div.incoming > h1");
     }
     
     /* Calcul de la taille occupée par le titre */
@@ -30,22 +30,31 @@ function switchTitle(slide) {
         z = getFontSizeFor($("div#header > div.incoming > h1"), y - $("div#header > div.incoming > h2").outerHeight());
     }
     $("div#header > div.incoming > h1").css("font-size", z + "px");
+    $("div#header > div.incoming").css("width", p.width);
     
-    /* Animation */
+    /* Animations */
+    
     $("div#header > div.leaving").animate({
-            "opacity"   : "0",
-            "width"     : "0px"
-        },{
-            "duration"  : parseInt(s),
-            "easing"    : e,
-            "step"      : function(now) {
-                $("div#header > div.incoming").css("width", ($("div#header").width() - now) + "px");
-            },
-            "complete"  : function() {
-                $("div#header > div.leaving").remove();
-                $("div#header > div.incoming").toggleClass("incoming");
-            }
-        });
+        "opacity"   : "0",
+        "width"     : "0px"
+    },{
+        "duration"  : parseInt(s),
+        "easing"    : e,
+        "step"      : function(now) {
+            $("div#header > div.incoming").css("width", p.width - now)
+        }
+    });
+    $("div#header ").animate({
+        "margin-left"   : p.left,
+        "margin-right"  : p.right
+    },{
+        "duration"  : parseInt(s),
+        "easing"    : e,
+        "complete"  : function() {
+            $("div#header > div.leaving").remove();
+            $("div#header > div.incoming").toggleClass("incoming");
+        }
+    });
 }
 
 /* Affiche le slide suivant */
@@ -114,6 +123,7 @@ function switchSlidePrev(slide, prev) {
     $(slide).toggleClass("selected");
     
     /* Animation du slide précédent */
+    console.log("--------");
     $(slide).animate({
         "width"     : r + "px"
     },{

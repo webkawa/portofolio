@@ -18,7 +18,7 @@ function centralSlideProperties(slide) {
     var x = false;
     
     /* Variables de résultat */
-    var w   = $("div#page").innerWidth();
+    var w   = $("div#page").width();
     var wl  = 0;
     var wr  = 0;
     
@@ -40,6 +40,7 @@ function centralSlideProperties(slide) {
             }
         }
     });
+    console.log(w + " " + wl + " " + wr);
     
     /* Retour */
     return {

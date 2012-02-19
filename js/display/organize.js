@@ -28,8 +28,8 @@ function displayHeader() {
     var x = Math.max($(window).height() / 10, 120);
     $("div#header").height(Math.round(x) + "px");
     $("div#header").css({
-        "padding-left"  : p.left + "px",
-        "padding-right" : p.right + "px"
+        "margin-left"  : p.left + "px",
+        "margin-right" : p.right + "px"
     });
     
     displayH1();
