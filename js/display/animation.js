@@ -13,11 +13,15 @@ function switchTitle(slide) {
     var s = $(co).find("slides > transition > speed").text();
     var e = $(co).find("slides > transition > ease").text();
     
+    /* Variables générales */
+    var b1 = 0;
+    var b2 = 0;
+    
     /* Création du titre quittant */
     $("div#header > div").addClass("leaving");
     
     /* Création du titre remplaçant */
-    $('<div class="incoming"><h1>Lorem ipsum dolor sit amet</h1></div>').insertAfter("div#header > div");
+    $('<div class="title incoming"><h1>Lorem ipsum dolor sit amet</h1></div>').insertAfter("div#header > div");
     if (true) {
         $("<h2>Nulla cursus, dui ac congue </h2>").insertAfter("div#header > div.incoming > h1");
     }
@@ -40,8 +44,8 @@ function switchTitle(slide) {
     },{
         "duration"  : parseInt(s),
         "easing"    : e,
-        "step"      : function(now) {
-            $("div#header > div.incoming").css("width", p.width - now)
+        "step"      : function(now, fx) {
+            /* ICIIII : donner la bonne taille au incoming */
         }
     });
     $("div#header ").animate({
@@ -50,10 +54,15 @@ function switchTitle(slide) {
     },{
         "duration"  : parseInt(s),
         "easing"    : e,
+        "step"      : function() {
+            b1 = parseFloat($("div#header").css("margin-left"));
+            b2 = parseFloat($("div#header").css("margin-right"));
+            $("div#header").css("width", ($(window).width() - (b1 + b2)) + "px");
+        },
         "complete"  : function() {
             $("div#header > div.leaving").remove();
             $("div#header > div.incoming").toggleClass("incoming");
-        }
+        } 
     });
 }
 
@@ -123,7 +132,6 @@ function switchSlidePrev(slide, prev) {
     $(slide).toggleClass("selected");
     
     /* Animation du slide précédent */
-    console.log("--------");
     $(slide).animate({
         "width"     : r + "px"
     },{

@@ -12,7 +12,7 @@ function getFontSizeFor(text, height) {
     $(text).css("font-size", (x-1) + "px");
 }
 
-/* Calcul des variables de position pour un slide centré */
+/* Calcul des variables de position pour un slide centré */ 
 function centralSlideProperties(slide) {
     /* Variables générales */
     var x = false;
@@ -40,7 +40,6 @@ function centralSlideProperties(slide) {
             }
         }
     });
-    console.log(w + " " + wl + " " + wr);
     
     /* Retour */
     return {

@@ -18,6 +18,7 @@ function displayH1() {
     
     /* Application */
     $("div#header > div > h1").css("font-size", x + "px");
+    addRightFade($("div#header > div"));
 }
 /* Affichage de l'en-tête */
 function displayHeader() {
