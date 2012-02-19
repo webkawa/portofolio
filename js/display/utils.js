@@ -1,0 +1,40 @@
+/*  utils.js
+ *  --------
+ *  Utilitaires utilisés pour simplifier l'affichage. */
+
+/* Calcul des variables de position pour un slide centré */
+function centralSlideProperties(slide) {
+    /* Variables générales */
+    var x = false;
+    
+    /* Variables de résultat */
+    var w   = $("div#page").innerWidth();
+    var wl  = 0;
+    var wr  = 0;
+    
+    /* Variables de configuration */
+    var l = parseInt($(co).find("slides > width > left").text());
+    var r = parseInt($(co).find("slides > width > right").text());
+    
+    /* Calcul */
+    $("div#page > div.slide").each(function() {
+        if ($(this).is(slide)) {
+            x = true;
+        } else {
+            if (x) {
+                w  -= r;
+                wr += r;
+            } else {
+                w  -= l;
+                wl += l;
+            }
+        }
+    });
+    
+    /* Retour */
+    return {
+        "width" : w,
+        "left"  : wl,
+        "right" : wr
+    };
+}

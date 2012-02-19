@@ -36,37 +36,46 @@ function displayHeader() {
 
 /* COEUR DE PAGE
  * ------------- */
-    
 /* Affichage inial des composants */ 
 function displaySlides() {
+    /* Variables globales */
     var x = false;
-    var y = $("div#page > div.slide").size();
-    var z = 0;
-    $("div#page > div.slide").each(
-        function(i) {
-            if($(this).hasClass("selected")) {
-                z = i * $(co).find("slides > width > left").text();
-                $(this).css("opacity", "0");
-                $(this).css("width", $(co).find("slides > width > left").text() + "px");
-                $(this).css("left", z + "px");
-                $(this).css("height", $("div#page").innerHeight() + "px");
-                x = true;
+    var y = $("div#page div.slide").size();
+    var z = $("div#page").innerHeight();
+    
+    /* Variables de configuration */
+    var l = $(co).find("slides > width > left").text();
+    var r = $(co).find("slides > width > right").text();
+    
+    /* Parcours des éléments */
+    $("div#page div.slide").each(function(index) {
+        $(this).css("height", z);
+        if ($(this).hasClass("selected")) {
+            /* Propriétés de l'élément central */
+            var p = centralSlideProperties($(this));
+            $(this).css({
+               "left"   : p.left + "px",
+               "width"  : p.width + "px"
+            });
+            
+            /* Variable de repérage */
+            x = true;
+        } else {
+            if (x) {
+                /* Propriétés de l'élément à droite */
+                $(this).css({
+                    "right" : ((y - (index + 1)) * r) + "px",
+                    "width" : r + "px"
+                })
             } else {
-                if (x) {
-                    z = $("div#page").innerWidth() - (y - i) * $(co).find("slides > width > right").text();
-                    $(this).css("width", $(co).find("slides > width > right").text() + "px");
-                    $(this).css("left", z + "px");
-                    $(this).css("height", $("div#page").innerHeight() + "px");
-                    
-                } else {
-                    z = i * $(co).find("slides > width > left").text();
-                    $(this).css("width", $(co).find("slides > width > left").text() + "px");
-                    $(this).css("left", z);
-                    $(this).css("height", $("div#page").innerHeight() + "px");
-                }
+                /* Propriétés de l'élément à gauche */
+                $(this).css({
+                    "left"  : (l * index) + "px",
+                    "width" : l + "px"
+                });
             }
         }
-    );
+    });
 }
 
 /* Affichage du coeur de page */
