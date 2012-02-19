@@ -11,10 +11,18 @@ body div {
 }
 body div#header {
     background-color: white;
-    padding-left: 40px;
     padding-top: 10px;
-    padding-right: 200px;
     padding-bottom: 10px;
+    overflow: hidden;
+}
+body div#header div {
+    float: left;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+}
+body div#header div.incoming {
+    width: 0px;
 }
 body div#page {
     width: 100%;

@@ -8,28 +8,44 @@ function switchTitle(slide) {
     /* Variables utiles */
     var p = centralSlideProperties(slide);
     
-    /* Sélection des anciens titres et sous-titres */
-    var h1leaving = $("div#header > h1");
-    var h2leaving = $("div#header > h2");
+    /* Variables de configuration */
+    var l = $(co).find("slides > width > left").text();
+    var s = $(co).find("slides > transition > speed").text();
+    var e = $(co).find("slides > transition > ease").text();
     
-    /* Taggage */
-    $(h1leaving).addClass("leaving");
-    $(h2leaving).addClass("leaving");
+    /* Création du titre quittant */
+    $("div#header > div").addClass("leaving");
     
-    /* Création des nouveux titres et sous-titres */
-    $('<h1 class="incoming">XXX</h1>').insertAfter(h1leaving);
-    var h1incoming = $("div#header > h1.incoming");
+    /* Création du titre remplaçant */
+    $('<div class="incoming"><h1>Foo !</h1></div>').insertAfter("div#header > div");
     if (true) {
-        var insert = $('<h2 class="incoming">YYY</h2>')
-        if ($(h2leaving).size() > 0) {
-            $(insert).insertAfter(h2leaving);
-        } else {
-            $(insert).insertAfter(h1incoming)
-        }
+        $("<h2>Foofoo !</h2>").insertAfter("div#header > div.incoming > h1");
     }
-    var h2incoming = $("div#header > h2.incoming");
     
+    /* Calcul de la taille occupée par le titre */
+    var y = $("div#header").height();
+    if($("div#header > div.incoming > h2").size() == 0) {
+        z = getFontSizeFor($("div#header > div.incoming > h1"), y);
+    } else {
+        z = getFontSizeFor($("div#header > div.incoming > h1"), y - $("div#header > div.incoming > h2").outerHeight());
+    }
+    $("div#header > div.incoming > h1").css("font-size", z + "px");
     
+    /* Animation */
+    $("div#header > div.leaving").animate({
+            "opacity"   : "0",
+            "width"     : "0px"
+        },{
+            "duration"  : parseInt(s),
+            "easing"    : e,
+            "step"      : function(now) {
+                $("div#header > div.incoming").css("width", ($("div#header").width() - now) + "px");
+            },
+            "complete"  : function() {
+                $("div#header > div.leaving").remove();
+                $("div#header > div.incoming").toggleClass("incoming");
+            }
+        });
 }
 
 /* Affiche le slide suivant */
@@ -99,21 +115,21 @@ function switchSlidePrev(slide, prev) {
     
     /* Animation du slide précédent */
     $(slide).animate({
-            "width"     : r + "px"
-        },{
-            "duration"  : parseInt(s),
-            "easing"    : e,
-            "step"      : function(now) {
-                x = pp.width - (now - parseInt(r));
-                $(prev).css("width", Math.ceil(x) + "px");
-            },
-            "complete"  : function() {
-                /* Mise à jour du slide précédent */
-                $(prev).css("width", pp.width + "px");
+        "width"     : r + "px"
+    },{
+        "duration"  : parseInt(s),
+        "easing"    : e,
+        "step"      : function(now) {
+            x = pp.width - (now - parseInt(r));
+            $(prev).css("width", Math.ceil(x) + "px");
+        },
+        "complete"  : function() {
+            /* Mise à jour du slide précédent */
+            $(prev).css("width", pp.width + "px");
                 
-                /* Changement de classe */
-                $(prev).addClass("selected");
-            }
+            /* Changement de classe */
+            $(prev).addClass("selected");
+        }
     });
 }
 

@@ -3,9 +3,6 @@
  * Mise en page des contenus. */
 
 /* Contenu textuels */
-div#header div {
-    overflow: hidden;
-}
 div#header div h1 {
     margin: 0px;
     padding-top: 0px;

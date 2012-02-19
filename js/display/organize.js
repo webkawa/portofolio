@@ -19,19 +19,20 @@ function displayH1() {
     /* Application */
     $("div#header > div > h1").css("font-size", x + "px");
 }
-
-/* Affichage du sous-titre */
-function displayH2() {
-}
-
 /* Affichage de l'en-tête */
 function displayHeader() {
+    /* Propriétés du slide en cours */
+    var p = centralSlideProperties($("div#page > div.slide.selected"));
+    
     /* Calcul de base */
     var x = Math.max($(window).height() / 10, 120);
     $("div#header").height(Math.round(x) + "px");
+    $("div#header").css({
+        "padding-left"  : p.left + "px",
+        "padding-right" : p.right + "px"
+    });
     
     displayH1();
-    displayH2();
 }
 
 /* COEUR DE PAGE
