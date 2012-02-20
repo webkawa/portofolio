@@ -18,11 +18,14 @@ body div#header {
 body div#header div.title {
     float: left;
     white-space: nowrap;
-    display: block;
-    clear: left;
+    padding: 0px !important;
+    margin-top: 0px !important;
+    margin-right: 0px !important;
+    margin-bottom: 0px !important;
 }
 body div#header div.title.incoming {
     width: 0px;
+    background-color: blue;
 }
 body div#page {
     width: 100%;
