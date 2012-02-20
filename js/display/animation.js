@@ -3,10 +3,52 @@
  *  Liste des fonctions graphiques liées à l'animation.
  *  A charger après l'initialisation de la page et des variables avenantes. */
 
+/* Calcule la taille du titre entrant */
+function switchTitleIncoming() {
+    
+    /* Variables utiles */
+    var container = $("div#header").width();
+    var leaving = $("div#header > div.leaving").outerWidth(true);
+    var wincoming = $("div#header > div.incoming").width();
+    var incoming = $("div#header > div.incoming").outerWidth(true);
+    var mincoming = incoming - wincoming;
+    var add = container - (leaving + incoming);
+    
+    /* Résultat */
+    var x;
+    
+    /* Affectation */
+    if(wincoming == 0) {
+        /* Si largeur encore nulle */
+        if(add > mincoming) {
+            /* Si dépassement */
+            x = {
+                "width"         : "+=" + (add - mincoming) + "px",
+                "margin-left"   : "0px"
+            }
+            console.log(x);
+        } else {
+            /* Si non-dépassement */
+            x = {
+                "width"         : "+=" + add + "px",
+                "margin-left"   : "-=" + add + "px"
+            }
+            console.log(x);
+        }
+    } else {
+        /* Si largeur entamée */
+        x = {
+            "width"             : "+=" + add + "px"
+        }
+        console.log(x);
+    }
+    $("div#header > div.incoming").css(x);
+}
 /* Affiche le titre suivant */
 function switchTitle(slide) {
     /* Variables utiles */
     var p = centralSlideProperties(slide);
+    var pl = centralSlideProperties("div#header > div.title");
     
     /* Variables de configuration */
     var l = $(co).find("slides > width > left").text();
@@ -34,7 +76,7 @@ function switchTitle(slide) {
         z = getFontSizeFor($("div#header > div.incoming > h1"), y - $("div#header > div.incoming > h2").outerHeight());
     }
     $("div#header > div.incoming > h1").css("font-size", z + "px");
-    $("div#header > div.incoming").css("width", p.width);
+    $("div#header > div.incoming").css("margin-left", $("div#header").width() - ($("div#header > div.leaving").width()) + "px");
     
     /* Animations */
     
@@ -44,8 +86,8 @@ function switchTitle(slide) {
     },{
         "duration"  : parseInt(s),
         "easing"    : e,
-        "step"      : function(now, fx) {
-            /* ICIIII : donner la bonne taille au incoming */
+        "step"      : function() {
+            switchTitleIncoming();
         }
     });
     $("div#header ").animate({
@@ -58,10 +100,12 @@ function switchTitle(slide) {
             b1 = parseFloat($("div#header").css("margin-left"));
             b2 = parseFloat($("div#header").css("margin-right"));
             $("div#header").css("width", ($(window).width() - (b1 + b2)) + "px");
+            switchTitleIncoming();
         },
         "complete"  : function() {
             $("div#header > div.leaving").remove();
             $("div#header > div.incoming").toggleClass("incoming");
+            $("div#header > div").css("width", p.width + "px");
         } 
     });
 }

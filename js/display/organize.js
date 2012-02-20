@@ -33,6 +33,7 @@ function displayHeader() {
         "margin-right" : p.right + "px"
     });
     
+    /* Calcul du titre */
     displayH1();
 }
 
