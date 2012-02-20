@@ -5,44 +5,12 @@
 
 /* Calcule la taille du titre entrant */
 function switchTitleIncoming() {
-    
     /* Variables utiles */
-    var container = $("div#header").width();
-    var leaving = $("div#header > div.leaving").outerWidth(true);
-    var wincoming = $("div#header > div.incoming").width();
-    var incoming = $("div#header > div.incoming").outerWidth(true);
-    var mincoming = incoming - wincoming;
-    var add = container - (leaving + incoming);
-    
-    /* Résultat */
-    var x;
+    var x = $("div#page").width();
+    var y = $("div#page > div.leaving").outerWidth(true) - x;
     
     /* Affectation */
-    if(wincoming == 0) {
-        /* Si largeur encore nulle */
-        if(add > mincoming) {
-            /* Si dépassement */
-            x = {
-                "width"         : "+=" + (add - mincoming) + "px",
-                "margin-left"   : "0px"
-            }
-            console.log(x);
-        } else {
-            /* Si non-dépassement */
-            x = {
-                "width"         : "+=" + add + "px",
-                "margin-left"   : "-=" + add + "px"
-            }
-            console.log(x);
-        }
-    } else {
-        /* Si largeur entamée */
-        x = {
-            "width"             : "+=" + add + "px"
-        }
-        console.log(x);
-    }
-    $("div#header > div.incoming").css(x);
+    $("div#page > div.incoming").css("min-width", y + "px");
 }
 /* Affiche le titre suivant */
 function switchTitle(slide) {
@@ -60,10 +28,10 @@ function switchTitle(slide) {
     var b2 = 0;
     
     /* Création du titre quittant */
-    $("div#header > div").addClass("leaving");
+    $("div#header > div.title").addClass("leaving");
     
     /* Création du titre remplaçant */
-    $('<div class="title incoming"><h1>Lorem ipsum dolor sit amet</h1></div>').insertAfter("div#header > div");
+    $('<div class="title incoming"><h1>Lorem ipsum dolor sit amet</h1></div>').insertAfter("div#header > div.title");
     if (true) {
         $("<h2>Nulla cursus, dui ac congue </h2>").insertAfter("div#header > div.incoming > h1");
     }
@@ -76,12 +44,11 @@ function switchTitle(slide) {
         z = getFontSizeFor($("div#header > div.incoming > h1"), y - $("div#header > div.incoming > h2").outerHeight());
     }
     $("div#header > div.incoming > h1").css("font-size", z + "px");
-    $("div#header > div.incoming").css("margin-left", $("div#header").width() - ($("div#header > div.leaving").width()) + "px");
     
     /* Animations */
-    
     $("div#header > div.leaving").animate({
         "opacity"   : "0",
+        "min-width" : "0px",
         "width"     : "0px"
     },{
         "duration"  : parseInt(s),
@@ -91,8 +58,7 @@ function switchTitle(slide) {
         }
     });
     $("div#header ").animate({
-        "margin-left"   : p.left,
-        "margin-right"  : p.right
+        "margin-left"   : p.left
     },{
         "duration"  : parseInt(s),
         "easing"    : e,
@@ -105,7 +71,7 @@ function switchTitle(slide) {
         "complete"  : function() {
             $("div#header > div.leaving").remove();
             $("div#header > div.incoming").toggleClass("incoming");
-            $("div#header > div").css("width", p.width + "px");
+            $("div#header > div.title").css("width", p.width + "px");
         } 
     });
 }

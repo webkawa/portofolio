@@ -14,14 +14,11 @@ body div#header {
     padding-top: 10px;
     padding-bottom: 10px;
     overflow: hidden;
+    margin-right: 1px !important;
 }
 body div#header div.title {
     float: left;
     white-space: nowrap;
-    padding: 0px !important;
-    margin-top: 0px !important;
-    margin-right: 0px !important;
-    margin-bottom: 0px !important;
 }
 body div#header div.title.incoming {
     width: 0px;

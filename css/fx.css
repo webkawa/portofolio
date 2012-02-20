@@ -2,15 +2,3 @@
  *  ------
  *  Fichier CSS des effets visuels. */
 
-div.leftFade {
-    position: absolute;
-    left: 0px;
-    width: 40px;
-    background-image: url("img/left_fade.png");
-}
-div.rightFade {
-    position: absolute;
-    right: 0px;
-    width: 40px;
-    background-image: url("img/right_fade.png");
-} 

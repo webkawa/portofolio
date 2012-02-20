@@ -3,21 +3,22 @@
  * Mise en page des contenus. */
 
 /* Contenu textuels */
-div#header div h1 {
+div#header div.title h1 {
     margin: 0px;
     padding-top: 0px;
-    padding-left: 0px;
+    padding-left: 20px;
     padding-bottom: 0px;
-    padding-left: 0px;
+    padding-right: 0px;
     font-weight: bolder;
 }
-div#header div h2 {
+div#header div.title h2 {
     margin: 0px;
     padding: 0px;
     text-transform: uppercase;
     letter-spacing: 2px;
     word-spacing: 8px;
     font-size: 30px;
+    padding-left: 20px;
 }
 
 /* Listes */

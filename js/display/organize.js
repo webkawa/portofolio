@@ -18,7 +18,6 @@ function displayH1() {
     
     /* Application */
     $("div#header > div > h1").css("font-size", x + "px");
-    addRightFade($("div#header > div"));
 }
 /* Affichage de l'en-tête */
 function displayHeader() {
@@ -29,9 +28,9 @@ function displayHeader() {
     var x = Math.max($(window).height() / 10, 120);
     $("div#header").height(Math.round(x) + "px");
     $("div#header").css({
-        "margin-left"  : p.left + "px",
-        "margin-right" : p.right + "px"
+        "margin-left"  : p.left + "px"
     });
+    $("div#header > div.title").css("min-width", p.width);
     
     /* Calcul du titre */
     displayH1();
