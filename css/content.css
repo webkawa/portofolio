@@ -6,22 +6,30 @@
 div#header div.title h1 {
     margin: 0px;
     padding-top: 0px;
-    padding-left: 20px;
+    padding-left: 30px;
     padding-bottom: 0px;
     padding-right: 0px;
     font-weight: bolder;
 }
-div#header div.title h2 {
+div#header div.title p.subtitle {
     margin: 0px;
     padding: 0px;
     text-transform: uppercase;
     letter-spacing: 2px;
     word-spacing: 8px;
     font-size: 30px;
-    padding-left: 20px;
+    padding-left: 30px;
 }
 
-/* Listes */
+/* Coeur de page */
+div#core p {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+/* Pied de page*/
 body div#footer ul {
     display: block;
     width: 100%;

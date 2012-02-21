@@ -33,15 +33,15 @@ function switchTitle(slide) {
     /* Création du titre remplaçant */
     $('<div class="title incoming"><h1>Lorem ipsum dolor sit amet</h1></div>').insertAfter("div#header > div.title");
     if (true) {
-        $("<h2>Nulla cursus, dui ac congue </h2>").insertAfter("div#header > div.incoming > h1");
+        $('<p class="subtitle">Nulla cursus, dui ac congue </p>').insertAfter("div#header > div.incoming > h1");
     }
     
     /* Calcul de la taille occupée par le titre */
     var y = $("div#header").height();
-    if($("div#header > div.incoming > h2").size() == 0) {
+    if($("div#header > div.incoming > p.subtitle").size() == 0) {
         z = getFontSizeFor($("div#header > div.incoming > h1"), y);
     } else {
-        z = getFontSizeFor($("div#header > div.incoming > h1"), y - $("div#header > div.incoming > h2").outerHeight());
+        z = getFontSizeFor($("div#header > div.incoming > h1"), y - $("div#header > div.incoming > p.subtitle").outerHeight());
     }
     $("div#header > div.incoming > h1").css("font-size", z + "px");
     
@@ -99,8 +99,14 @@ function switchSlideNext(slide, next) {
         "duration"  : parseInt(s),
         "easing"    : e,
         "step"      : function(now) {
+            /* Taille du contenu sortant */
             x = parseInt(l) + (p.width - now);
             $(slide).css("width", Math.ceil(x) + "px");
+            
+            /* Suppression du contenu
+            if ($("page#core").width() < 1) {
+                $(slide).remove("div#core");
+            } */
         },
         "complete"  : function() {
             /* Mise à jour du style suivant */

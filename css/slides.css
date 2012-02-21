@@ -5,11 +5,19 @@
 div#page div.slide {
     display: inline;
     position: absolute;
+    overflow: hidden;
 }
-div#page div.slide.selected {
-    
+div#page div.slide div#core {
+    position: absolute;
+    width: 600px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    margin-left: 20px;
+    background: white;
+    overflow: hidden;
 }
 
+/* Temporaire */
 div#page div.slide#slide1 {
     background-color:green;
 }

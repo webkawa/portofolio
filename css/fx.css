@@ -2,3 +2,51 @@
  *  ------
  *  Fichier CSS des effets visuels. */
 
+/* Angles arrondis */
+div.round {
+    position: absolute;
+}
+div.round.tl {
+    top: 0px;
+    left: 0px;
+}
+div.round.tr {
+    top: 0px;
+    right: 0px;
+}
+div.round.br {
+    bottom: 0px;
+    right: 0px;
+}
+div.round.bl {
+    bottom: 0px;
+    left: 0px;
+}
+div.round.s25 {
+    width: 25px;
+    height: 25px;
+}
+div.round.s25.tl {
+    background: url("img/round_tl_25.png");
+}
+div.round.s25.tl.inv {
+    background: url("img/round_tl_25_inv.png");
+}
+div.round.s25.tr {
+    background: url("img/round_tr_25.png");
+}
+div.round.s25.tr.inv {
+    background: url("img/round_tr_25_inv.png");
+}
+div.round.s25.br {
+    background: url("img/round_br_25.png");
+}
+div.round.s25.br.inv {
+    background: url("img/round_br_25_inv.png");
+}
+div.round.s25.bl {
+    background: url("img/round_bl_25.png");
+}
+div.round.s25.bl.inv {
+    background: url("img/round_bl_25_inv.png");
+}

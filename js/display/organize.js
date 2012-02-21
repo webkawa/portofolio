@@ -10,10 +10,10 @@ function displayH1() {
     /* Taille à appliquer */
     var x;
     var y = $("div#header").height();
-    if($("div#header > div > h2").size() == 0) {
+    if($("div#header > div > p.subtitle").size() == 0) {
         x = getFontSizeFor($("div#header > div > h1"), y);
     } else {
-        x = getFontSizeFor($("div#header > div > h1"), y - $("div#header > div > h2").outerHeight());
+        x = getFontSizeFor($("div#header > div > h1"), y - $("div#header > div > p.subtitle").outerHeight());
     }
     
     /* Application */
@@ -38,6 +38,14 @@ function displayHeader() {
 
 /* COEUR DE PAGE
  * ------------- */
+/* Affichage du contenu */
+function displayContent() {
+    /* Variables utiles */
+    var x = $("div#core").outerHeight(true) - $("div#core").height();
+    
+    /* Coeur de page */
+    $("div#core").css("height", ($("div#page").height() - x) + "px");
+}
 /* Affichage inial des composants */ 
 function displaySlides() {
     /* Variables globales */
@@ -78,6 +86,9 @@ function displaySlides() {
             }
         }
     });
+    
+    /* Affichage du contenu */
+    displayContent();
 }
 
 /* Affichage du coeur de page */

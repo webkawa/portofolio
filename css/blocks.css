@@ -1,0 +1,9 @@
+/*  block.css
+ *  ---------
+ *  Blocs éditoriaux. */
+
+div#core div.scroller {
+    position: absolute;
+    margin: 10px;
+}
+

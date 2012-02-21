@@ -6,9 +6,8 @@ body {
     margin: 0px;
     font-family: Arial;
 }
-body div {
-    
-}
+
+/* En-tête */
 body div#header {
     background-color: white;
     padding-top: 10px;
@@ -22,12 +21,14 @@ body div#header div.title {
 }
 body div#header div.title.incoming {
     width: 0px;
-    background-color: blue;
 }
+
+/* Coeur de page */
 body div#page {
     width: 100%;
-    background-color: blue;
 }
+
+/* Pied de page */
 body div#footer {
     background-color: white;
     height: 16px;
