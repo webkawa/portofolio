@@ -6,7 +6,7 @@
 div#header div.title h1 {
     margin: 0px;
     padding-top: 0px;
-    padding-left: 30px;
+    padding-left: 40px;
     padding-bottom: 0px;
     padding-right: 0px;
     font-weight: bolder;
@@ -18,7 +18,7 @@ div#header div.title p.subtitle {
     letter-spacing: 2px;
     word-spacing: 8px;
     font-size: 30px;
-    padding-left: 30px;
+    padding-left: 40px;
 }
 
 /* Coeur de page */
