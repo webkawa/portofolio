@@ -20,14 +20,14 @@ div#page div.slide div#core {
 
 /* Univers */
 div#page div.slide#slide1 {
-    background-color: #999;
+    background-color: #bbb;
 }
 div#page div.slide#slide2 {
-    background-color: #777;
+    background-color: #999;
 }
 div#page div.slide#slide3 {
-    background-color: #555;
+    background-color: #777;
 }
 div#page div.slide#slide4 {
-    background-color: #333;
+    background-color: #555;
 }
