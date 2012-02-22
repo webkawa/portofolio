@@ -2,6 +2,7 @@
  * ----------
  * Mise en forme des slides. */
 
+/* Base */
 div#page div.slide {
     display: inline;
     position: absolute;
@@ -9,7 +10,7 @@ div#page div.slide {
 }
 div#page div.slide div#core {
     position: absolute;
-    width: 600px;
+    width: 800px;
     margin-top: 5px;
     margin-bottom: 5px;
     margin-left: 20px;
@@ -17,23 +18,16 @@ div#page div.slide div#core {
     overflow: hidden;
 }
 
-/* Temporaire */
+/* Univers */
 div#page div.slide#slide1 {
-    background-color:green;
+    background-color: #999;
 }
 div#page div.slide#slide2 {
-    background-color:yellow;
+    background-color: #777;
 }
 div#page div.slide#slide3 {
-    background-color:red;
+    background-color: #555;
 }
 div#page div.slide#slide4 {
-    background-color:green;
-}
-div#page div.slide#slide5 {
-    background-color:yellow;
-}
-div#page div.slide#slide6 {
-    background-color:red;
-    
+    background-color: #333;
 }

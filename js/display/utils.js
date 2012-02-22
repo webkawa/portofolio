@@ -41,8 +41,6 @@ function centralSlideProperties(slide) {
         }
     });
     
-    console.log(w + " " + wr + " " + wl);
-    
     /* Retour */
     return {
         "width" : w,
