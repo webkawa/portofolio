@@ -64,19 +64,20 @@ function switchTitle(slide) {
     });
 }
 
-/* Actualise la taille et l'opacité du contenu d'un slide en fonction de sa taille maximale */
-function refreshSlideCore(slide, size) {
+/* Actualise le contenu d'un slide en train de disparaître */
+function refreshSlideLeaving(slide, opacity_start, opacity_end) {
     /* Variables utiles */
-    var x = $(slide).children("div.core");
+    var core = $(slide).children("div.core");
     
     /* Traitement */
-    if($(x).outerWidth(true) > $(slide).width()) {
+    if($(core).outerWidth(true) > $(slide).width()) {
         /* Variables spécifiques */
-        var y = $(slide).width() - ($(x).outerWidth(true) - $(x).width());
-        var z = $(x).width() / size;
+        var y = $(slide).width() - ($(core).outerWidth(true) - $(core).width());
+        console.log("lol " + (($(slide).width() - opacity_end) / opacity_start));
+        var z = Math.min((($(slide).width() - opacity_end) / opacity_start), 1);
         
         /* Application */
-        $(x).css({
+        $(core).css({
             "width"     : y + "px",
             "opacity"   : z
         });
@@ -91,7 +92,8 @@ function switchSlideNext(slide, next) {
     var l = $(co).find("slides > width > left").text();
     var s = $(co).find("slides > transition > speed").text();
     var e = $(co).find("slides > transition > ease").text();
-    var w = parseInt($(co).find("core > width").text());
+    var os = $(co).find("page > transition > core > fade > start").text();
+    var oe = $(co).find("page > transition > core > fade > end").text();
     
     /* Variables standard */
     var x = 0;
@@ -113,8 +115,9 @@ function switchSlideNext(slide, next) {
             x = parseInt(l) + (p.width - now);
             $(slide).css("width", Math.ceil(x) + "px");
             
-            /* Animation du contenu sortant */
-            refreshSlideCore($(slide), w);
+            /* Animation des contenus entrants et sortants */
+            refreshSlideLeaving($(slide), parseInt(os), parseInt(oe));
+            //refreshSlideCore($(next), w);
         },
         "complete"  : function() {
             /* Mise à jour du slide suivant */
@@ -145,7 +148,8 @@ function switchSlidePrev(slide, prev) {
     var l = $(co).find("slides > width > left").text();
     var s = $(co).find("slides > transition > speed").text();
     var e = $(co).find("slides > transition > ease").text();
-    var w = parseInt($(co).find("core > width").text());
+    var os = $(co).find("page > transition > core > fade > start").text();
+    var oe = $(co).find("page > transition > core > fade > end").text();
     
     /* Variables standard */
     var x = 0;
@@ -170,6 +174,10 @@ function switchSlidePrev(slide, prev) {
             /* Mise à jour du slide ouvert */
             x = pp.width - (now - parseInt(r));
             $(prev).css("width", Math.ceil(x) + "px");
+            
+            /* Animation des contenus entrants et sortants */
+            refreshSlideLeaving($(slide), parseInt(os), parseInt(oe));
+            //refreshSlideCore($(prev), w);
         },
         "complete"  : function() {
             /* Mise à jour du slide précédent */
@@ -183,8 +191,6 @@ function switchSlidePrev(slide, prev) {
         }
     });
 }
-
-/* Injecte le contenu dans un slide à ouvrir */
 
 /* Change le slide en cours */
 function switchSlide(slide, direction) {

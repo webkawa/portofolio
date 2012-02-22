@@ -45,8 +45,7 @@ function displayContent() {
     
     /* Coeur de page */
     $("div#page > div.slide > div.core").css({
-        "height"    : ($("div#page").height() - x) + "px",
-        "width"     : ($(co).find("core > width").text() + "px")
+        "height"    : ($("div#page").height() - x) + "px"
     });
 }
 /* Affichage inial des composants */ 

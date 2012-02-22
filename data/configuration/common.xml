@@ -11,8 +11,15 @@
                 <ease>easeOutExpo</ease>
             </transition>
         </slides>
-        <core>
-            <width>800</width>
-        </core>
+        <page>
+            <transition>
+                <core>
+                    <fade>
+                        <start>400</start>
+                        <end>100</end>
+                    </fade>
+                </core>
+            </transition>
+        </page>
     </display>
 </config>
