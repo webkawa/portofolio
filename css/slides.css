@@ -29,13 +29,17 @@ div#page div.slide div.core div.scroller {
 /* Univers */
 div#page div.slide#slide1 {
     background-color: #bbb;
+    border-left: 1px solid #bbb;
 }
 div#page div.slide#slide2 {
     background-color: #999;
+    border-left: 1px solid #999;
 }
 div#page div.slide#slide3 {
     background-color: #777;
+    border-left: 1px solid #777;
 }
 div#page div.slide#slide4 {
     background-color: #555;
+    border-left: 1px solid #555;
 }

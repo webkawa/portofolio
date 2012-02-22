@@ -63,44 +63,8 @@ function switchTitle(slide) {
 }
 
 /* Actualise le contenu d'un slide en train de disparaître */
-function refreshSlideLeaving(slide, now, coremargin, direction, opacity_start, opacity_stop) {
-    /* Variables utiles */
-    var core = $(slide).children("div.core");
+function refreshSlideLeaving() {
     
-    /* Variables spécifiques */
-    var x, y;
-    
-    if(direction) {
-        /* Vers la gauche */
-        if($(core).outerWidth(true) > $(slide).width()) {
-            /* Variables spécifiques */
-            x = $(slide).width() - (coremargin);
-            y = Math.min((($(slide).width() - opacity_stop) / opacity_start), 1);
-        
-            /* Application */
-            $(core).css({
-                "width"     : x + "px",
-                "opacity"   : y
-            });
-        }
-    } else {
-        /* Vers la droite */
-        if($(slide).width() > coremargin) {
-            /* Variables spécifiques */
-            x = $(slide).width() - coremargin;
-            y = Math.max(y / (opacity_stop - opacity_start), 1);
-            
-            console.log(x);
-            
-            /* Application */
-            $(core).css({
-                "width"     : x + "px",
-                "opacity"   : y
-            });
-            
-            console.log($(core));
-        }
-    }
 }
 /* Actualise le contenu d'un slide en train d'apparaitre */
 function refreshSlideIncoming(slide, opacity_start, opacity_end) {
@@ -156,7 +120,7 @@ function switchSlideNext(slide, next) {
             $(slide).css("width", Math.ceil(x) + "px");
             
             /* Animation des contenus entrants et sortants */
-            refreshSlideLeaving($(slide), now, y, true, parseInt(fos), parseInt(foe));
+            //refreshSlideLeaving($(slide), now, y, true, parseInt(fos), parseInt(foe));
         //refreshSlideCore($(next), w);
         },
         "complete"  : function() {
@@ -226,8 +190,8 @@ function switchSlidePrev(slide, prev) {
             console.log($(slide).width() + " " + $(slide).children("div.core").width() + "----");
             
             /* Animation des contenus entrants et sortants */
-            refreshSlideLeaving($(slide), now, y, false, parseInt(os), parseInt(oe));
-        //refreshSlideCore($(prev), w);
+            //refreshSlideLeaving($(slide), now, y, false, parseInt(os), parseInt(oe));
+            //refreshSlideCore($(prev), w);
         },
         "complete"      : function() {
             /* Mise à jour du slide précédent */
