@@ -18,12 +18,12 @@
             <core>
                 <transition>
                     <fadein>
-                        <start>100</start>
-                        <stop>400</stop>
+                        <left>100</left>
+                        <right>400</right>
                     </fadein>
                     <fadeout>
-                        <start>400</start>
-                        <stop>100</stop>
+                        <left>100</left>
+                        <right>600</right>
                     </fadeout>
                 </transition> 
             </core>

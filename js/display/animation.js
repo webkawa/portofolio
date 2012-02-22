@@ -62,28 +62,6 @@ function switchTitle(slide) {
     });
 }
 
-/* Actualise le contenu d'un slide en train de disparaître */
-function refreshSlideLeaving() {
-    
-}
-/* Actualise le contenu d'un slide en train d'apparaitre */
-function refreshSlideIncoming(slide, opacity_start, opacity_end) {
-    /* Variables utiles */
-    var core = $(slide).children("div.core");
-    
-    /* Traitement */
-    if($(core).outerWidth(true) > $(slide).width()) {
-        /* Variables spécifiques */
-        var y = $(slide).width() - ($(core).outerWidth(true) - $(core).width());
-        var z = opa($(slide).width() - opacity_start)
-        
-        /* Application */
-        $(core).css({
-            "width"     : y + "px",
-            "opacity"   : z
-        });
-    }
-}
 /* Affiche le slide suivant */
 function switchSlideNext(slide, next) {
     /* Positionnement du slide suivant */
@@ -93,14 +71,16 @@ function switchSlideNext(slide, next) {
     var l = $(co).find("slides > width > left").text();
     var s = $(co).find("slides > transition > speed").text();
     var e = $(co).find("slides > transition > ease > next").text();
-    var fis = $(co).find("page > core > transition > fadein > start").text();
-    var fie = $(co).find("page > core > transition > fadein > stop").text();
-    var fos = $(co).find("page > core > transition > fadeout > start").text();
-    var foe = $(co).find("page > core > transition > fadeout > stop").text();
+    var fistart = $(co).find("page > core > transition > fadein > right").text();
+    var fistop = $(co).find("page > core > transition > fadein > left").text();
+    var fostart = $(co).find("page > core > transition > fadeout > right").text();
+    var fostop = $(co).find("page > core > transition > fadeout > left").text();
     
     /* Variables standard */
+    var lcore = $(slide).children("div.core");
     var x = 0;
-    var y = $(slide).children("div.core").outerWidth(true) - $(slide).children("div.core").width();
+    var y;
+    var z = $(lcore).outerWidth(true) - $(lcore).width();
     
     /* Injection du contenu */
     injectCore(next);
@@ -116,11 +96,16 @@ function switchSlideNext(slide, next) {
         "easing"    : e,
         "step"      : function(now) {
             /* Taille du contenu sortant */
-            x = parseInt(l) + (p.width - now);
-            $(slide).css("width", Math.ceil(x) + "px");
+            x = p.width - now;
+            y = parseInt(l) + x;
+            $(slide).css("width", Math.ceil(y) + "px");
             
-            /* Animation des contenus entrants et sortants */
-            //refreshSlideLeaving($(slide), now, y, true, parseInt(fos), parseInt(foe));
+            /* Animation du contenu sortant */
+            $(slide).children("div.core").css({
+                "max-width" : (p.width - z - now) + "px",
+                "opacity"   : Math.min((x - fostop) / fostart, 1)
+            });
+            
         //refreshSlideCore($(next), w);
         },
         "complete"  : function() {
@@ -152,11 +137,13 @@ function switchSlidePrev(slide, prev) {
     var l = $(co).find("slides > width > left").text();
     var s = $(co).find("slides > transition > speed").text();
     var e = $(co).find("slides > transition > ease > prev").text();
-    var os = $(co).find("page > core > transition > fadeout > start").text();
-    var oe = $(co).find("page > core > transition > fadeout > stop").text();
+    var fostart = $(co).find("page > core > transition > fadeout > left").text();
+    var fostop = $(co).find("page > core > transition > fadeout > right").text();
     
     /* Variables standard */
+    var lcore = $(slide).children("div.core");
     var x = 0;
+    var y;
     
     /* Injection du contenu */
     injectCore(prev);
@@ -174,7 +161,7 @@ function switchSlidePrev(slide, prev) {
         "right"         :  "0px",
         "margin-right"  : $(slide).width() - $(slide).children("div.core").outerWidth(true) + "px"
     });
-    var y = $(slide).children("div.core").outerWidth(true) - $(slide).children("div.core").width();
+    var z = $(lcore).outerWidth(true) - $(lcore).width();
     
     /* Animation du slide précédent */
     $(slide).animate({
@@ -184,14 +171,15 @@ function switchSlidePrev(slide, prev) {
         "easing"        : e,
         "step"          : function(now) {
             /* Mise à jour du slide ouvert */
-            x = pp.width - (now - parseInt(r));
-            $(prev).css("width", Math.ceil(x) + "px");
+            x = now - parseInt(r);
+            y = pp.width - x;
+            $(prev).css("width", Math.ceil(y) + "px");
             
-            console.log($(slide).width() + " " + $(slide).children("div.core").width() + "----");
-            
-            /* Animation des contenus entrants et sortants */
-            //refreshSlideLeaving($(slide), now, y, false, parseInt(os), parseInt(oe));
-            //refreshSlideCore($(prev), w);
+            /* Animation du contenu sortant */
+            $(lcore).css({
+                "width"     : (now - z) + "px",
+                "opacity"   : 1 - Math.max((y - fostart) / fostop, 0)
+            });
         },
         "complete"      : function() {
             /* Mise à jour du slide précédent */
