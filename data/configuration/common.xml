@@ -11,5 +11,8 @@
                 <ease>easeOutExpo</ease>
             </transition>
         </slides>
+        <core>
+            <width>800</width>
+        </core>
     </display>
 </config>

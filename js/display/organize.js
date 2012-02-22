@@ -41,10 +41,13 @@ function displayHeader() {
 /* Affichage du contenu */
 function displayContent() {
     /* Variables utiles */
-    var x = $("div#core").outerHeight(true) - $("div#core").height();
+    var x = $("div#page > div.slide > div.core").outerHeight(true) - $("div#page > div.slide > div.core").height();
     
     /* Coeur de page */
-    $("div#core").css("height", ($("div#page").height() - x) + "px");
+    $("div#page > div.slide > div.core").css({
+        "height"    : ($("div#page").height() - x) + "px",
+        "width"     : ($(co).find("core > width").text() + "px")
+    });
 }
 /* Affichage inial des composants */ 
 function displaySlides() {

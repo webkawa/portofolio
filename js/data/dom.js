@@ -3,8 +3,8 @@
  *  Fonctions utilitaires liées au DOM. */
 
 /* Ajout de coins */
-function addRoundedCorner(container, bg, pos, size, inv) {
-    var x = "round " + pos + " s" + size;
+function addRoundedCorner(container, bg, type, size, inv) {
+    var x = "round " + type + " s" + size;
     if(inv) {
         x += " inv";
     }
@@ -14,8 +14,8 @@ function addRoundedCorner(container, bg, pos, size, inv) {
 }
 
 /* Enrichissement initial */
-var core = $("div#core");
-var corebg = $("div.slide.selected").css("background-color");
+var core = $("div#page > div.selected > div.core");
+var corebg = $("div#page > div.slide.selected").css("background-color");
 addRoundedCorner(core, corebg, "tr", 25, false);
 addRoundedCorner(core, corebg, "tl", 25, false);
 addRoundedCorner(core, corebg, "bl", 25, false);

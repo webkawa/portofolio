@@ -8,16 +8,23 @@ div#page div.slide {
     position: absolute;
     overflow: hidden;
 }
-div#page div.slide div#core {
+div#page div.slide div.core {
     position: absolute;
-    width: 800px;
     margin-top: 5px;
     margin-bottom: 5px;
     margin-left: 20px;
+    margin-right: 20px;
     background: white;
     overflow: hidden;
 }
-
+div#page div.slide div.core div.scroller {
+    position: absolute;
+    width: 750px;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 /* Univers */
 div#page div.slide#slide1 {
     background-color: #bbb;

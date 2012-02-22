@@ -3,8 +3,8 @@
  *  Liste des fonctions graphiques liées à l'animation.
  *  A charger après l'initialisation de la page et des variables avenantes. */
 
-/* Calcule la taille du titre entrant */
-function switchTitleIncoming() {
+/* Actualise la taille du titre entrant */
+function refreshTitleIncoming() {
     /* Variables utiles */
     var x = $("div#page").width();
     var y = $("div#page > div.leaving").outerWidth(true) - x;
@@ -31,19 +31,7 @@ function switchTitle(slide) {
     $("div#header > div.title").addClass("leaving");
     
     /* Création du titre remplaçant */
-    $('<div class="title incoming"><h1>Lorem ipsum dolor sit amet</h1></div>').insertAfter("div#header > div.title");
-    if (true) {
-        $('<p class="subtitle">Nulla cursus, dui ac congue </p>').insertAfter("div#header > div.incoming > h1");
-    }
-    
-    /* Calcul de la taille occupée par le titre */
-    var y = $("div#header").height();
-    if($("div#header > div.incoming > p.subtitle").size() == 0) {
-        z = getFontSizeFor($("div#header > div.incoming > h1"), y);
-    } else {
-        z = getFontSizeFor($("div#header > div.incoming > h1"), y - $("div#header > div.incoming > p.subtitle").outerHeight());
-    }
-    $("div#header > div.incoming > h1").css("font-size", z + "px");
+    injectTitle("div#header > div.title");
     
     /* Animations */
     $("div#header > div.leaving").animate({
@@ -54,7 +42,7 @@ function switchTitle(slide) {
         "duration"  : parseInt(s),
         "easing"    : e,
         "step"      : function() {
-            switchTitleIncoming();
+            refreshTitleIncoming();
         }
     });
     $("div#header ").animate({
@@ -66,7 +54,7 @@ function switchTitle(slide) {
             b1 = parseFloat($("div#header").css("margin-left"));
             b2 = parseFloat($("div#header").css("margin-right"));
             $("div#header").css("width", ($(window).width() - (b1 + b2)) + "px");
-            switchTitleIncoming();
+            refreshTitleIncoming();
         },
         "complete"  : function() {
             $("div#header > div.leaving").remove();
@@ -76,6 +64,24 @@ function switchTitle(slide) {
     });
 }
 
+/* Actualise la taille et l'opacité du contenu d'un slide en fonction de sa taille maximale */
+function refreshSlideCore(slide, size) {
+    /* Variables utiles */
+    var x = $(slide).children("div.core");
+    
+    /* Traitement */
+    if($(x).outerWidth(true) > $(slide).width()) {
+        /* Variables spécifiques */
+        var y = $(slide).width() - ($(x).outerWidth(true) - $(x).width());
+        var z = $(x).width() / size;
+        
+        /* Application */
+        $(x).css({
+            "width"     : y + "px",
+            "opacity"   : z
+        });
+    }
+}
 /* Affiche le slide suivant */
 function switchSlideNext(slide, next) {
     /* Positionnement du slide suivant */
@@ -85,9 +91,13 @@ function switchSlideNext(slide, next) {
     var l = $(co).find("slides > width > left").text();
     var s = $(co).find("slides > transition > speed").text();
     var e = $(co).find("slides > transition > ease").text();
+    var w = parseInt($(co).find("core > width").text());
     
     /* Variables standard */
     var x = 0;
+    
+    /* Injection du contenu */
+    injectCore(next);
     
     /* Mise à jour du slide en cours */
     $(slide).toggleClass("selected");
@@ -103,22 +113,21 @@ function switchSlideNext(slide, next) {
             x = parseInt(l) + (p.width - now);
             $(slide).css("width", Math.ceil(x) + "px");
             
-            /* Suppression du contenu
-            if ($("page#core").width() < 1) {
-                $(slide).remove("div#core");
-            } */
+            /* Animation du contenu sortant */
+            refreshSlideCore($(slide), w);
         },
         "complete"  : function() {
-            /* Mise à jour du style suivant */
+            /* Mise à jour du slide suivant */
             $(next).css({
                 "left"  : p.left + "px",
                 "right" : "auto"
             });
             
-            /* Mise à jour du style en cours */
+            /* Mise à jour du slide en cours */
             $(slide).css({
                 "width" : l + "px"
             });
+            $(slide).children("div.core").remove();
                 
             /* Changement de classe */
             $(next).addClass("selected");
@@ -136,9 +145,13 @@ function switchSlidePrev(slide, prev) {
     var l = $(co).find("slides > width > left").text();
     var s = $(co).find("slides > transition > speed").text();
     var e = $(co).find("slides > transition > ease").text();
+    var w = parseInt($(co).find("core > width").text());
     
     /* Variables standard */
     var x = 0;
+    
+    /* Injection du contenu */
+    injectCore(prev);
     
     /* Modification du slide en cours */
     $(slide).css({
@@ -154,6 +167,7 @@ function switchSlidePrev(slide, prev) {
         "duration"  : parseInt(s),
         "easing"    : e,
         "step"      : function(now) {
+            /* Mise à jour du slide ouvert */
             x = pp.width - (now - parseInt(r));
             $(prev).css("width", Math.ceil(x) + "px");
         },
@@ -161,16 +175,24 @@ function switchSlidePrev(slide, prev) {
             /* Mise à jour du slide précédent */
             $(prev).css("width", pp.width + "px");
                 
+            /* Suppression du coeur en trop */
+            $(slide).children("div.core").remove();
+                
             /* Changement de classe */
             $(prev).addClass("selected");
         }
     });
 }
 
+/* Injecte le contenu dans un slide à ouvrir */
+
 /* Change le slide en cours */
 function switchSlide(slide, direction) {
+    /* Animation du titre */
     switchTitle(slide);
-    if (direction) {
+    
+    /* Animation du slide */
+    if(direction) {
         switchSlideNext($(slide).prev(), slide);
     } else {
         switchSlidePrev($(slide).next(), slide);
