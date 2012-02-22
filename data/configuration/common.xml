@@ -7,19 +7,26 @@
                 <right>20</right>
             </width>
             <transition>
-                <speed>1000</speed>
-                <ease>easeOutExpo</ease>
+                <speed>1000</speed> 
+                <ease>
+                    <next>easeOutExpo</next>
+                    <prev>easeInOutSine</prev>
+                </ease>
             </transition>
         </slides>
         <page>
-            <transition>
-                <core>
-                    <fade>
+            <core>
+                <transition>
+                    <fadein>
+                        <start>100</start>
+                        <stop>400</stop>
+                    </fadein>
+                    <fadeout>
                         <start>400</start>
-                        <end>100</end>
-                    </fade>
-                </core>
-            </transition>
+                        <stop>100</stop>
+                    </fadeout>
+                </transition> 
+            </core>
         </page>
     </display>
 </config>
