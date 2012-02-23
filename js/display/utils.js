@@ -33,7 +33,7 @@ function centralSlideProperties(slide) {
         } else {
             if (x) {
                 w  -= r;
-                wr += r;
+                wr += r; 
             } else {
                 w  -= l;
                 wl += l;

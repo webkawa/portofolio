@@ -1,6 +1,6 @@
-/*  animation.js
+/*  slides.js
  *  ------------
- *  Liste des fonctions graphiques liées à l'animation.
+ *  Liste des fonctions graphiques liées à l'animation des slides.
  *  A charger après l'initialisation de la page et des variables avenantes. */
 
 /* Actualise la taille du titre entrant */
@@ -89,7 +89,7 @@ function switchSlideNext(slide, next) {
     
     /* Animation du slide suivant */
     $(next).animate({
-        "width"     : p.width
+        "width"     : p.width - 1
     }, {
         "duration"  : parseInt(s),
         "easing"    : e,
@@ -124,6 +124,9 @@ function switchSlideNext(slide, next) {
                 "width" : l + "px"
             });
             $(slide).children("div.core").remove();
+                
+                
+            console.log(p);
                 
             /* Changement de classe */
             $(next).addClass("selected");
@@ -164,6 +167,7 @@ function switchSlidePrev(slide, prev) {
         "margin-right"  : $(slide).width() - $(slide).children("div.core").outerWidth(true) + "px"
     });
     var mcore = $(lcore).outerWidth(true) - $(lcore).width();
+    var lmcore = parseInt($(lcore).css("margin-left"));
     var fostop = mcore;
     
     /* Animation du slide précédent */
@@ -180,7 +184,7 @@ function switchSlidePrev(slide, prev) {
             
             /* Animation du contenu sortant */
             if(z != 0) {
-                z = (x - fostop) / fostop;
+                z = (x + lmcore - fostop) / (pc.width - fostop);
                 if(z < 0) {
                     z = 0;
                 }
@@ -193,7 +197,7 @@ function switchSlidePrev(slide, prev) {
         "complete"      : function() {
             /* Mise à jour du slide précédent */
             $(prev).css("width", pp.width + "px");
-                
+            
             /* Suppression du coeur en trop */
             $(slide).children("div.core").remove();
                 
