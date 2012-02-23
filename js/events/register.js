@@ -25,3 +25,12 @@ $("div#page div.slide").mouseover(function() {
         switchSlide($(this), true);
     }
 });
+
+/* Action au scroll dans le contenu */
+$("div#page div.slide.selected div.core").mousewheel(function(event, delta) {
+    if(delta > 0) {
+        
+    } else {
+        
+    }
+});
