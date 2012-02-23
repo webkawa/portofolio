@@ -71,16 +71,15 @@ function switchSlideNext(slide, next) {
     var l = $(co).find("slides > width > left").text();
     var s = $(co).find("slides > transition > speed").text();
     var e = $(co).find("slides > transition > ease > next").text();
-    var fistart = $(co).find("page > core > transition > fadein > right").text();
-    var fistop = $(co).find("page > core > transition > fadein > left").text();
-    var fostart = $(co).find("page > core > transition > fadeout > right").text();
-    var fostop = $(co).find("page > core > transition > fadeout > left").text();
+    
+    /* Variables utiles */
+    var lcore = $(slide).children("div.core");
+    var mcore = $(lcore).outerWidth(true) - $(lcore).width();
+    var fostart = parseInt($(lcore).css("margin-left")) + $(lcore).outerWidth(false);
+    var fostop = parseInt(l) + mcore;
     
     /* Variables standard */
-    var lcore = $(slide).children("div.core");
-    var x = 0;
-    var y;
-    var z = $(lcore).outerWidth(true) - $(lcore).width();
+    var x = 0, y, z = 1;
     
     /* Injection du contenu */
     injectCore(next);
@@ -101,12 +100,17 @@ function switchSlideNext(slide, next) {
             $(slide).css("width", Math.ceil(y) + "px");
             
             /* Animation du contenu sortant */
+            if(x < fostart && z != 0) {
+                z = (x - fostop) / fostart; 
+                if (z < 0) {
+                    z = 0;
+                }
+            }
             $(slide).children("div.core").css({
-                "max-width" : (p.width - z - now) + "px",
-                "opacity"   : Math.min((x - fostop) / fostart, 1)
+                "max-width" : (p.width - mcore - now) + "px",
+                "opacity"   : z
             });
             
-        //refreshSlideCore($(next), w);
         },
         "complete"  : function() {
             /* Mise à jour du slide suivant */
@@ -134,16 +138,14 @@ function switchSlidePrev(slide, prev) {
     
     /* Variables de configuration */
     var r = $(co).find("slides > width > right").text();
-    var l = $(co).find("slides > width > left").text();
     var s = $(co).find("slides > transition > speed").text();
     var e = $(co).find("slides > transition > ease > prev").text();
-    var fostart = $(co).find("page > core > transition > fadeout > left").text();
-    var fostop = $(co).find("page > core > transition > fadeout > right").text();
+    
+    /* Variables utiles */
+    var lcore = $(slide).children("div.core");
     
     /* Variables standard */
-    var lcore = $(slide).children("div.core");
-    var x = 0;
-    var y;
+    var x = 0, y, z = 1;
     
     /* Injection du contenu */
     injectCore(prev);
@@ -161,7 +163,8 @@ function switchSlidePrev(slide, prev) {
         "right"         :  "0px",
         "margin-right"  : $(slide).width() - $(slide).children("div.core").outerWidth(true) + "px"
     });
-    var z = $(lcore).outerWidth(true) - $(lcore).width();
+    var mcore = $(lcore).outerWidth(true) - $(lcore).width();
+    var fostop = mcore;
     
     /* Animation du slide précédent */
     $(slide).animate({
@@ -176,9 +179,15 @@ function switchSlidePrev(slide, prev) {
             $(prev).css("width", Math.ceil(y) + "px");
             
             /* Animation du contenu sortant */
+            if(z != 0) {
+                z = (x - fostop) / fostop;
+                if(z < 0) {
+                    z = 0;
+                }
+            }
             $(lcore).css({
-                "width"     : (now - z) + "px",
-                "opacity"   : 1 - Math.max((y - fostart) / fostop, 0)
+                "width"     : (now - mcore) + "px",
+                "opacity"   : z
             });
         },
         "complete"      : function() {

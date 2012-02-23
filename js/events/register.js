@@ -10,6 +10,7 @@ $(document).ready(function() {
 
 /* Actions au redimensionnement de la fenêtre */
 $(window).resize(function() {
+    $("*").stop(true, true);
     displayHeader();
     displayPage();
 });
