@@ -26,10 +26,7 @@ function switchTitle(slide) {
     var b2 = 0;
     
     /* Création du titre quittant */
-    $("div#header > div.title").addClass("leaving");
-    
-    /* Création du titre remplaçant */
-    injectTitle("div#header > div.title");
+    $("div#header > div.title:not(div.incoming)").addClass("leaving");
     
     /* Animations */
     $("div#header > div.leaving").animate({
@@ -74,18 +71,21 @@ function switchSlideNext(slide, next) {
     
     /* Variables utiles */
     var lcore = $(slide).children("div.core");
-    var mcore = $(lcore).outerWidth(true) - $(lcore).width();
+    var icore = $(next).children("div.core");
+    var mlcore = $(lcore).outerWidth(true) - $(lcore).width();
     var fostart = parseInt($(lcore).css("margin-left")) + $(lcore).outerWidth(false);
-    var fostop = parseInt(l) + mcore;
+    var fostop = parseInt(l) + mlcore;
     
     /* Variables standard */
     var x = 0, y, z = 1;
     
-    /* Injection du contenu */
-    injectCore(next);
-    
     /* Mise à jour du slide en cours */
     $(slide).toggleClass("selected");
+    
+    /* Modification du contenu pour apparition */
+    $(icore).css({
+        
+    });
     
     /* Animation du slide suivant */
     $(next).animate({
@@ -106,11 +106,15 @@ function switchSlideNext(slide, next) {
                     z = 0;
                 }
             }
-            $(slide).children("div.core").css({
-                "max-width" : (p.width - mcore - now) + "px",
+            $(lcore).css({
+                "max-width" : (p.width - mlcore - now) + "px",
                 "opacity"   : z
             });
             
+            /* Animation du contenu entrant */
+            $(icore).css({
+                "opacity"   : 1 - z
+            });
         },
         "complete"  : function() {
             /* Mise à jour du slide suivant */
@@ -125,9 +129,6 @@ function switchSlideNext(slide, next) {
             });
             $(slide).children("div.core").remove();
                 
-                
-            console.log(p);
-                
             /* Changement de classe */
             $(next).addClass("selected");
         }
@@ -141,17 +142,17 @@ function switchSlidePrev(slide, prev) {
     
     /* Variables de configuration */
     var r = $(co).find("slides > width > right").text();
+    var l = $(co).find("slides > width > left").text();
     var s = $(co).find("slides > transition > speed").text();
     var e = $(co).find("slides > transition > ease > prev").text();
     
     /* Variables utiles */
     var lcore = $(slide).children("div.core");
+    var icore = $(prev).children("div.core");
+    var micore = $(icore).outerWidth(true) - $(icore).width();
     
     /* Variables standard */
     var x = 0, y, z = 1;
-    
-    /* Injection du contenu */
-    injectCore(prev);
     
     /* Modification du slide en cours */
     $(slide).css({
@@ -167,7 +168,7 @@ function switchSlidePrev(slide, prev) {
         "margin-right"  : $(slide).width() - $(slide).children("div.core").outerWidth(true) + "px"
     });
     var mcore = $(lcore).outerWidth(true) - $(lcore).width();
-    var lmcore = parseInt($(lcore).css("margin-left"));
+    var mllcore = parseInt($(lcore).css("margin-left"));
     var fostop = mcore;
     
     /* Animation du slide précédent */
@@ -184,7 +185,7 @@ function switchSlidePrev(slide, prev) {
             
             /* Animation du contenu sortant */
             if(z != 0) {
-                z = (x + lmcore - fostop) / (pc.width - fostop);
+                z = (x + mllcore - fostop) / (pc.width - fostop);
                 if(z < 0) {
                     z = 0;
                 }
@@ -193,6 +194,16 @@ function switchSlidePrev(slide, prev) {
                 "width"     : (now - mcore) + "px",
                 "opacity"   : z
             });
+            
+            /* Animation du contenu entrant */
+            $(icore).css({
+                "max-width" : Math.max((pp.width - micore - x), 0) + "px",
+                "opacity"   : 1 - z
+            });
+            /*console.log(pp.width + " " + micore + " " + now + " " + r);
+            if (pp.width - micore - now > 0) {
+                console.log("plop : " + pp.width + " " + micore + " " + now);
+            }*/
         },
         "complete"      : function() {
             /* Mise à jour du slide précédent */
@@ -210,9 +221,11 @@ function switchSlidePrev(slide, prev) {
 /* Change le slide en cours */
 function switchSlide(slide, direction) {
     /* Animation du titre */
+    injectTitle("div#header > div.title");
     switchTitle(slide);
     
     /* Animation du slide */
+    injectCore(slide);
     if(direction) {
         switchSlideNext($(slide).prev(), slide);
     } else {

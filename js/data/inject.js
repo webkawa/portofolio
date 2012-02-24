@@ -31,8 +31,7 @@ function injectCore(target) {
     /* Calcul de la hauteur */
     var x = $(core).outerHeight(true) - $(core).height();
     $(core).css({
-        "height"    : ($("div#page").height() - x) + "px",
-        "width"     : ($(co).find("core > width").text() + "px")
+        "height"    : ($("div#page").height() - x) + "px"
     });
     
     /* Création des coins */
