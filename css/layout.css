@@ -1,0 +1,26 @@
+/* 
+    layout.css
+    ----------
+    Organisation des principaux éléments de la page.
+*/
+
+/* En-tête */
+div#header {
+    height: 120px;
+    padding: 10px;
+    overflow: hidden;
+    background: blue;
+}
+
+/* Coeur de page */
+div#page {
+    height: auto;                       /* Hauteur redéfinie */
+    background: green;
+}
+
+/* Pied de page */
+div#footer {
+    height: 40px;
+    background: pink;
+}
+

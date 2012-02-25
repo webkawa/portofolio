@@ -1,0 +1,35 @@
+/* 
+    header.css
+    ----------
+    Styles associés à l'en-tête de la fenêtre.
+*/
+
+/* Titre */
+div#header div.title {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 0px !important;            /* Doit être nul pour animation */
+    margin: 0px !important;             /* Doit être nul pour animation */
+}
+
+/* Titre entrant */
+div#header div.title.incoming {
+    float: right;
+    max-width: 0px;                     /* Largeur maximum redéfinie */
+}
+
+/* Titre sortant */
+div#header div.title.leaving {
+    float: left;
+    max-width: 100%;                    /* Largeur maximum redéfinie */
+}
+
+/* Titre principal */
+div#header div.title h1 {
+    font-size: 0px;                     /* Hauteur de police redéfinie */
+}
+/* Sous-titre */
+div#header div.title p {
+    font-size: 50px;
+}

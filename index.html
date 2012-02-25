@@ -3,30 +3,42 @@
     <head>
         <title>Portofolio</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+        <link type="text/css" rel="stylesheet" href="css/common.css" />
         <link type="text/css" rel="stylesheet" href="css/layout.css" />
-        <link type="text/css" rel="stylesheet" href="css/content.css" />
-        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js" />
+        <link type="text/css" rel="stylesheet" href="css/header.css" />
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+        <script type="text/javascript" src="js/tools/shortcuts.js"></script>
+        <script type="text/javascript" src="js/tools/toolkit.js"></script>
+        <script type="text/javascript" src="js/display/refresh.js"></script>
+        <script type="text/javascript" src="js/animation/header.js"></script>
+        <script type="text/javascript" src="js/dom/inject.js"></script>
+        <script type="text/javascript" src="js/dom/cleanup.js"></script>
+        <script type="text/javascript" src="js/ajax/configuration.js"></script>
+        <script type="text/javascript" src="js/events/global.js"></script>
     </head>
     <body>
         <div id="header">
-            <h1>Hello world !</h1>
-            <h2>A simple portofolio</h2>
-        </div>
+            <div class="title">
+                <h1>Hello world !</h1>
+                <p>A simple portofolio</p>
+            </div>
+        </div> 
         <div id="page">
-            <div id="s1" class="slide">
-                
-            </div>
-            <div id="s2" class="slide">
-                
-            </div>
-            <div id="s3" class="slide">
-                
-            </div>
+            test
         </div>
         <div id="footer">Footer</div>
-
-        <!-- Post DOM loading scripts -->
-        <script type="text/javascript" src="js/display/organize.js"></script>
-        <script type="text/javascript" src="js/events/register.js"></script>
+        <script type="text/javascript">
+            /* Chargement de la configuration */
+            co = loadConfiguration();
+            
+            /* Initialisation des raccourcis */
+            doShortcuts();
+            
+            /* Création des évènements */
+            doGlobalEvents();
+            
+            /* Rafraichissement de la page */
+            refresh();
+        </script>
     </body>
 </html>
