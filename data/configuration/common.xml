@@ -2,17 +2,17 @@
 <root>
     <transitions>
         <title>
-            <speed>1000</speed>
-            <duration>easeOutExpo</duration>
+            <duration>1000</duration>
+            <easing>easeOutExpo</easing>
         </title>
         <slides>
             <next>
-                <speed>1000</speed>
-                <duration>easeOutExpo</duration>
+                <duration>10000</duration>
+                <easing>easeOutExpo</easing>
             </next>
             <prev>
-                <speed>1000</speed>
-                <duration>easeInExpo</duration>
+                <duration>10000</duration>
+                <easing>easeInExpo</easing>
             </prev>
         </slides>
     </transitions>

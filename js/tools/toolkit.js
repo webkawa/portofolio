@@ -17,6 +17,10 @@ function heightAdd(target) {
 function realWidth(target, width) {
     $(target).width(width - widthAdd(target));
 }
+/* Attribue une largeur maximale réelle à un objet */
+function realMaxWidth(target, width) {
+    $(target).css("max-width", (width - widthAdd(target)) + "px");
+}
 /* Attribue une hauteur réelle à un objet */
 function realHeight(target, height) {
     $(target).height(height - heightAdd(target));

@@ -1,0 +1,52 @@
+/* 
+    slides.css
+    ----------
+    Styles liés aux slides et à leurs descendants immédiats.
+*/
+
+/* Propriétés communes */
+div#page div.slide {
+    height: 0%;                             /* Destiné à ré-écriture */
+    min-width: 0px;
+    overflow: hidden;
+}
+
+/* En partie gauche */
+div#page div.slide.left {
+    float: left;
+    padding-right: 0px !important;
+    padding-left: 10px;                     /* Décide de la taille des slides fermés à gauche */
+}
+
+/* En partie droite */
+div#page div.slide.right {
+    float: right;
+    padding-left: 10px;                      /* Doit être identique qu'à gauche */
+    padding-right: 10px;                     /* Décide de la taille des slides fermés à droite */
+}
+
+/* Ouverts */
+div#page div.slide.open {
+    width: 100%;
+    max-width: 0%;                           /* Destiné à ré-écriture */
+}
+
+/* Fermés */
+div#page div.slide.close {
+    width: 0px;
+    max-width: 0% !important;                /* Ne doit pas être ré-écrit */
+}
+
+/* Temporaire */
+div#page div.slide#s1 {
+    background-color: #aaa;
+}
+div#page div.slide#s2 {
+    background-color: #999;
+}
+div#page div.slide#s3 {
+    background-color: #777;
+}
+div#page div.slide#s4 {
+    background-color: #555;
+}
