@@ -15,3 +15,8 @@ function cleanupTitle() {
     /* Mise à jour du titre entrant */
     $(ititle).toggleClass("incoming");
 }
+
+function cleanupPage() {
+    /* Nettoyage */
+    $("div#page div.slide.close div.spacer").remove();
+}

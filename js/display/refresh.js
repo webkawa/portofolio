@@ -36,7 +36,7 @@ function refreshPage() {
     var pwidth = $("div#page").width();                             /* Largeur de la page */
     var csprop = slideProperties($("div#page div.slide.open"));     /* Propriétés du slide ouvert */
     
-    /* Hauteur du coeur de page */
+    /* Hauteur de la page */
     realHeight("div#page", wheight - hheight - fheight);
     
     /* Hauteur des slides */
@@ -44,6 +44,9 @@ function refreshPage() {
     
     /* Largeur du slide ouvert */
     realMaxWidth("div#page div.slide.open", pwidth - csprop.lmargin - csprop.rmargin)
+    
+    /* Hauteur du coeur de page */
+    realHeight("div#page div.slide div.spacer", $("div#page").height());
 }
 
 /* Rafraichissement général */

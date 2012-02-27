@@ -24,3 +24,17 @@ function injectTitle(title, subtitle) {
     /* Rafraichissement du titre entrant */
     refreshTitleSize($("div#header div.title.incoming"));
 }
+
+/* Création d'une page */
+function injectPage(target, dom) {
+    /* Création du contenu entrant */
+    var data = 
+        '<div class="spacer">' +
+            '<div class="core">' +
+                '<div class="scroller">' +
+                    dom +
+                '</div>' +
+            '</div>' +
+        '</div>';
+    $(target).append($(data));
+}

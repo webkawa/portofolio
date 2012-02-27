@@ -9,20 +9,20 @@ div#page div.slide {
     height: 0%;                             /* Destiné à ré-écriture */
     min-width: 0px;
     overflow: hidden;
+    padding: 0px !important;                /* Important pour l'animation */
+    margin: 0px !important;                 /* Idem */
 }
 
 /* En partie gauche */
 div#page div.slide.left {
     float: left;
-    padding-right: 0px !important;
-    padding-left: 10px;                     /* Décide de la taille des slides fermés à gauche */
+    min-width: 10px;                        /* Décide de la taille des slides fermés */
 }
 
 /* En partie droite */
 div#page div.slide.right {
     float: right;
-    padding-left: 10px;                      /* Doit être identique qu'à gauche */
-    padding-right: 10px;                     /* Décide de la taille des slides fermés à droite */
+    min-width: 20px;                        /* Décide de la taille des slides fermés */
 }
 
 /* Ouverts */
@@ -35,6 +35,31 @@ div#page div.slide.open {
 div#page div.slide.close {
     width: 0px;
     max-width: 0% !important;                /* Ne doit pas être ré-écrit */
+}
+
+/* Gestionnaire d'espacement */
+div#page div.slide div.spacer {
+    padding: 10px;
+    overflow-x: hidden;
+}
+
+/* Coeur de page */
+div#page div.slide div.spacer div.core {
+    min-width: 0px;
+    width: 100%;
+    max-width: 800px;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    background-color: white;
+}
+
+/* Scroller */
+div#page div.slide div.spacer div.core div.scroller {
+    float:left;
+    width: 750px;
+    padding: 25px;
 }
 
 /* Temporaire */

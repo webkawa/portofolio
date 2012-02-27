@@ -7,11 +7,11 @@
         </title>
         <slides>
             <next>
-                <duration>10000</duration>
+                <duration>1000</duration>
                 <easing>easeOutExpo</easing>
             </next>
             <prev>
-                <duration>10000</duration>
+                <duration>1000</duration>
                 <easing>easeInExpo</easing>
             </prev>
         </slides>
