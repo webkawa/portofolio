@@ -47,7 +47,7 @@ div#page div.slide div.spacer {
 div#page div.slide div.spacer div.core {
     min-width: 0px;
     width: 100%;
-    max-width: 800px;
+    max-width: 960px;
     height: 100%;
     margin: 0px;
     padding: 0px;
@@ -58,8 +58,8 @@ div#page div.slide div.spacer div.core {
 /* Scroller */
 div#page div.slide div.spacer div.core div.scroller {
     float:left;
-    width: 750px;
-    padding: 25px;
+    width: 920px;
+    padding: 20px;
 }
 
 /* Temporaire */
@@ -74,4 +74,7 @@ div#page div.slide#s3 {
 }
 div#page div.slide#s4 {
     background-color: #555;
+}
+div#page div.slide#s5 {
+    background-color: #333;
 }

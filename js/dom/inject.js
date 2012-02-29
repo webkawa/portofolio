@@ -29,12 +29,19 @@ function injectTitle(title, subtitle) {
 function injectPage(target, dom) {
     /* Création du contenu entrant */
     var data = 
-        '<div class="spacer">' +
-            '<div class="core">' +
+        $('<div class="spacer">' +
+            '<div class="core" style="opacity: 0;">' +
                 '<div class="scroller">' +
                     dom +
                 '</div>' +
             '</div>' +
-        '</div>';
+        '</div>');
+    
+    
+    /* Ajout au conteneur */
     $(target).append($(data));
+    
+    /* Affectation de la taille */
+    realHeight($(data), $("div#page").height());
+    
 }

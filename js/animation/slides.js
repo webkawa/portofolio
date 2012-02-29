@@ -16,14 +16,14 @@ function switchSlide(origin, destination) {
     var direction = $(slides).index(destination) > $(slides).index(origin);     /* Sens de navigation : true pour droite, false pour gauche */
     var space = $(origin).outerWidth(true) + $(destination).outerWidth(true);   /* Espace total occupé */
     var duration, easing;                                                       /* Informations sur le mouvement */
+    var lspacer = $(origin).children("div.spacer");                              /* Espacement du contenu fermant */
     var lcore = $(origin).find("div.spacer div.core");                          /* Coeur fermant */
     var lcoreminw = parseInt($(lcore).css("min-width"));                        /* Largeur minimale du coeur fermant */
     var lcoremaxw = parseInt($(lcore).css("max-width"));                        /* Largeur maximale du coeur fermant */
     var icore = $(destination).find("div.spacer div.core");                     /* Coeur ouvrant */
     var icoreminw = parseInt($(icore).css("min-width"));                        /* Largeur minimale du coeur ouvrant */
     var icoremaxw = parseInt($(icore).css("max-width"));                        /* Largeur maximale du coeur ouvrant */
-    var spacer = $(origin).children("div.spacer");                              /* Espacement du contenu fermant */
-    var core = $(spacer).children("div.core");                                  /* Coeur du contenu fermant */
+    var margin;                                                                 /* Marge ajoutée pour la transition */
 
     /* Taggage du slide entrant */
     $(destination).toggleClass("close");
@@ -35,7 +35,8 @@ function switchSlide(origin, destination) {
     /* Actions spécifiques à chaque sens */
     if (direction) {
         /* Création de la marge */
-        $(destination).children("div.spacer").css("margin-right", (dprop.width - $(core).outerWidth(true)) + "px");
+        margin = dprop.width - $(lcore).outerWidth(true) - parseInt($(destination).css("min-width"));
+        $(destination).children("div.spacer").css("margin-right", margin + "px");
         
         /* Informations sur le mouvement */
         duration = $(co).find("transitions slides next duration").text();
@@ -53,15 +54,16 @@ function switchSlide(origin, destination) {
         realMaxWidth($(origin), $("div#page").width() - oprop.lmargin - oprop.rmargin);
         
         /* Création de la marge */
-        $(origin).children("div.spacer").css("margin-right", ($(spacer).width() - $(core).outerWidth(true)) + "px");
+        margin = $(lspacer).width() - $(lcore).outerWidth(true);
+        $(origin).children("div.spacer").css("margin-right", margin + "px");
         
         /* Informations sur le mouvement */
         duration = $(co).find("transitions slides prev duration").text();
         easing = $(co).find("transitions slides prev easing").text();
     }
-    console.log("----");
+    
     /* Mouvement */
-    var lbuff, ibuff;
+    var lbuff, ibuff, tbuff = $(icore).width();
     $(origin).animate({
         "max-width" : $(origin).css("min-width")
     },{
@@ -69,11 +71,13 @@ function switchSlide(origin, destination) {
         "easing" : easing,
         "step" : function(now) {
             /* Apparition et disparition des contenus */
-            lbuff = $(lcore).width();
             ibuff = $(icore).width();
-            $(icore).css("opacity", ibuff / (icoremaxw - icoreminw));
-            $(lcore).css("opacity", lbuff / (lcoremaxw - lcoreminw));
-            console.log(ibuff / (icoremaxw - icoreminw));
+            if(ibuff != tbuff) {
+                lbuff = $(lcore).width();
+                $(icore).css("opacity", ibuff / (icoremaxw - icoreminw));
+                $(lcore).css("opacity", lbuff / (lcoremaxw - lcoreminw));
+            }
+            
             /* Taille du slide ouvrant */
             realMaxWidth($(destination), space - now - widthAdd(origin));
         },
@@ -81,6 +85,9 @@ function switchSlide(origin, destination) {
             /* Taggage du slide sortant */
             $(origin).toggleClass("open");
             $(origin).addClass("close");
+            
+            /* Gestion de l'opacité du contenu entrant */
+            $(icore).css("opacity", "1");
             
             /* Actions spécifiques au déplacement droit */
             if(direction) {
@@ -94,6 +101,9 @@ function switchSlide(origin, destination) {
         
                 /* Calcul de la taille */
                 realMaxWidth($(destination), $("div#page").width() - dprop.lmargin - dprop.rmargin);
+                
+                /* Suppression de la marge */
+                $(destination).children("div.spacer").css("margin-right", "auto");
             }
             
             /* Nettoyage */
@@ -103,4 +113,4 @@ function switchSlide(origin, destination) {
             doNavigationEvents();
         }
     });
-} 
+}
