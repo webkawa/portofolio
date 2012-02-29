@@ -11,6 +11,10 @@ div#page div.slide {
     overflow: hidden;
     padding: 0px !important;                /* Important pour l'animation */
     margin: 0px !important;                 /* Idem */
+    background-image: url('img/yoda.png');
+    background-position-x: right;
+    background-position-y: bottom;
+    background-repeat: none;
 }
 
 /* En partie gauche */

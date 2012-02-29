@@ -62,3 +62,39 @@ function slideProperties(target) {
         "width" : $("div#page").width() - lmargin - rmargin
     }
 }
+
+/* Permet l'ajout d'un coin à un bloc 
+ * NON FONCTIONNEL A DATE !                     */
+function addCorner(target, position, size, inv) {
+    /* Dégradé inversé */
+    var opt = "";
+    if(inv) {
+        opt = "inv";
+    }
+    
+    /* Création du contenu */
+    var data = $('<div class="corner ' + position + ' ' + size + ' ' + opt + '"></div>');
+    
+    /* Mise en place de l'arrière-plan */
+    if(inv) {
+        $(data).css("background-color", $(target).css("background-color"));
+    }
+    
+    /* Mémorisation du parent et suppression de la cible du DOM */
+    var parent = $(target).parent();
+    $(target).remove();
+    
+    /* Injection de la cible dans le cadre englobant */
+    $(data).append($(target));
+    
+    /* Ajout de la cible englobée au DOM */
+    $(parent).append($(data));
+}
+
+/* Permet l'ajout de quatre coins à un bloc */
+function addCorners(target, size, inv) {
+    addCorner(target, "tl", size, inv);
+    addCorner(target, "tr", size, inv);
+    addCorner(target, "br", size, inv);
+    addCorner(target, "bl", size, inv);
+}
