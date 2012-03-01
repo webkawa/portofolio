@@ -10,6 +10,7 @@ div.corner {
     height: 100%;
     margin: 0px;
     padding: 0px;
+    background-image: url('img/blank.png');
     background-repeat: no-repeat;
 }
 div.corner.tl {
@@ -27,4 +28,11 @@ div.corner.br {
 div.corner.bl {
     background-position-x: left;
     background-position-y: bottom;
+}
+
+/* Scroller */
+div.scroller {
+    width: 100%;
+    background: #aaa; 
+    float: left;
 }

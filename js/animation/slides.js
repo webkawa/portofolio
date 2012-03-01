@@ -7,7 +7,7 @@
 /* Effectue une transition de slide */
 function switchSlide(origin, destination) {
     /* Injection */
-    injectPage(destination, "Lorem");
+    injectPage(destination);
     
     /* Variables utiles */
     var oprop = slideProperties(origin);                                        /* Propriétés du slide ouvert */
@@ -62,6 +62,9 @@ function switchSlide(origin, destination) {
         easing = $(co).find("transitions slides prev easing").text();
     }
     
+    /* Dissimulation du coeur sortant */
+    hideCore();
+    
     /* Mouvement */
     var lbuff, ibuff, tbuff = $(icore).width();
     $(origin).animate({
@@ -111,6 +114,9 @@ function switchSlide(origin, destination) {
             
             /* Ré-inscription des évènements */
             doNavigationEvents();
+            
+            /* Affichage du contenu */
+            showCore($(icore));
         }
     });
 }

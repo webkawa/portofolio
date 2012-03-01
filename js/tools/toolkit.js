@@ -38,3 +38,12 @@ function fontHeight(target, height) {
         x++;
     }
 }
+
+/* Retourne le descendant le plus lointain des premiers enfants */
+function lastChild(target) {
+    var buff = target;
+    while($(buff).children().size() > 0) {
+        buff = $(buff).children(":first");
+    }
+    return buff;
+}

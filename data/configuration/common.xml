@@ -15,5 +15,19 @@
                 <easing>easeInExpo</easing>
             </prev>
         </slides>
+        <core>
+            <duration>300</duration>
+            <easing>easeOutExpo</easing>
+        </core>
     </transitions>
+    <navigation>
+        <content>
+            <scroll>
+                <sensibility>80</sensibility>
+                <tolerance>20</tolerance>
+                <duration>100</duration>
+                <easing>easeInOutQuad</easing>
+            </scroll>
+        </content>
+    </navigation>
 </root>

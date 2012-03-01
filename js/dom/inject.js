@@ -26,22 +26,35 @@ function injectTitle(title, subtitle) {
 }
 
 /* Création d'une page */
-function injectPage(target, dom) {
+function injectPage(target) {
     /* Création du contenu entrant */
     var data = 
         $('<div class="spacer">' +
-            '<div class="core" style="opacity: 0;">' +
-                '<div class="scroller">' +
-                    dom +
-                '</div>' +
-            '</div>' +
+            '<div class="core" style="opacity: 0;"></div>' +
         '</div>');
     
+    /* Création des coins */
+    addCorners($(data).children("div.core"), "medium");
     
     /* Ajout au conteneur */
     $(target).append($(data));
     
     /* Affectation de la taille */
     realHeight($(data), $("div#page").height());
+}
+
+/* Création d'un coeur de page */
+function injectCore(target, dom) {
+    /* Création du contenu */
+    var data =
+        $('<div id="content" style="opacity: 0">' +
+            '<div class="scroller">' +
+                dom +
+            '</div>' +
+        '</div>' +
+        '<div id="media" style="opacity: 0">' +
+        '</div>');
     
+    /* Ajout du contenu */
+    $(target).append($(data));
 }

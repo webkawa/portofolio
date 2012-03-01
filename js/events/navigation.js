@@ -6,6 +6,7 @@
 
 /* Inscription des évènements de navigation */
 function doNavigationEvents() {
+    /* Gestion de la navigation entre les slides */
     $("div#page div.slide.close").mouseover(function() {
         /* Variables utiles */
         var open = $("div#page div.slide.open");
@@ -21,6 +22,33 @@ function doNavigationEvents() {
             }, $(this));
             
             switchSlide(open, $(this));
+        }
+    });
+    /* Gestion du scrolling dans le coeur de page */
+    var start, level;
+    $("div#content div.scroller").mousewheel(function(event, delta) {
+        /* Variables utiles */
+        var sensibility = parseInt($(co).find("navigation scroll sensibility").text());
+        
+        /* Prise en compte du sens */
+        if(delta < 1) {
+            sensibility = -(sensibility);
+        }
+        
+        /* Animation */
+        var destination = 0;
+        if($(this).is(":animated")) {
+            /* Contenu en cours de mouvement */
+            level++;
+            destination = start + (level * sensibility);
+            $(this).stop();
+            scrollContent(destination);
+        } else {
+            /* Contenu à l'arrêt */
+            level = 1;
+            start = parseInt($(this).css("margin-top"));
+            destination = start + sensibility;
+            scrollContent(destination);
         }
     });
 }
