@@ -63,38 +63,26 @@ function slideProperties(target) {
     }
 }
 
-/* Permet l'ajout d'un coin à un bloc 
- * NON FONCTIONNEL A DATE !                     */
-function addCorner(target, position, size, inv) {
-    /* Dégradé inversé */
-    var opt = "";
-    if(inv) {
-        opt = "inv";
-    }
+/* Permet l'ajout d'un coin à un bloc */
+function addCorner(target, position, theme) {
+    /* Création de l'élément */
+    var data = $('<div class="corner ' + position + ' ' + theme + '"></div>');
     
-    /* Création du contenu */
-    var data = $('<div class="corner ' + position + ' ' + size + ' ' + opt + '"></div>');
+    /* Sauvegarde du contenu */
+    var childs = $(target).children();
     
-    /* Mise en place de l'arrière-plan */
-    if(inv) {
-        $(data).css("background-color", $(target).css("background-color"));
-    }
+    /* Nettoyage */
+    $(childs).remove();
     
-    /* Mémorisation du parent et suppression de la cible du DOM */
-    var parent = $(target).parent();
-    $(target).remove();
-    
-    /* Injection de la cible dans le cadre englobant */
-    $(data).append($(target));
-    
-    /* Ajout de la cible englobée au DOM */
-    $(parent).append($(data));
+    /* Ré-insertion */
+    $(data).append($(childs));
+    $(target).append($(data));
 }
 
 /* Permet l'ajout de quatre coins à un bloc */
-function addCorners(target, size, inv) {
-    addCorner(target, "tl", size, inv);
-    addCorner(target, "tr", size, inv);
-    addCorner(target, "br", size, inv);
-    addCorner(target, "bl", size, inv);
+function addCorners(target, theme) {
+    addCorner(target, "tl", theme);
+    addCorner(target, "tr", theme);
+    addCorner(target, "br", theme);
+    addCorner(target, "bl", theme);
 }

@@ -3,3 +3,28 @@
     ------
     Styles des effets graphiques (dégradés, coins, etc.).
 */
+
+/* Gestion des coins */
+div.corner {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    background-repeat: no-repeat;
+}
+div.corner.tl {
+    background-position-x: left;
+    background-position-y: top;
+}
+div.corner.tr {
+    background-position-x: right;
+    background-position-y: top;
+}
+div.corner.br {
+    background-position-x: right;
+    background-position-y: bottom;
+}
+div.corner.bl {
+    background-position-x: left;
+    background-position-y: bottom;
+}
