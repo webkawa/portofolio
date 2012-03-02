@@ -7,8 +7,8 @@
 /* Taille de la police du titre */
 function refreshTitleSize(target) {
     /* Variables utiles */
-    ih1 = $(target).children("h1");                     /* Titre */
-    ip = $(target).children("p");                       /* Sous-titre */
+    var ih1 = $(target).children("h1");                     /* Titre */
+    var ip = $(target).children("p");                       /* Sous-titre */
     
     /* Dimensionnement de la police */
     if($(ip).size() != 0) {
@@ -27,7 +27,7 @@ function refreshTitle(target) {
     refreshTitleSize(target);
 }
 
-/* Rafraichissement du coeur de page */
+/* Rafraichissement de la page */
 function refreshPage() {
     /* Variables utiles */
     var wheight = $(window).height();                               /* Hauteur de la fenêtre */
@@ -45,12 +45,26 @@ function refreshPage() {
     /* Largeur du slide ouvert */
     realMaxWidth("div#page div.slide.open", pwidth - csprop.lmargin - csprop.rmargin)
     
-    /* Hauteur du coeur de page */
+    /* Hauteur du gestionnaire d'espacement */
     realHeight("div#page div.slide div.spacer", $("div#page").height());
+}
+
+/* Rafraichissement du cœur de page */
+function refreshCore() {
+    /* Variables utiles */
+    var sheight = $("div#page div.spacer div.core").height();
+    var cheight = $("div#content").height();
+    
+    /* Hauteur des fenêtres de contenu et médias */
+    realHeight("div#content, div#media", sheight);
+    
+    /* Hauteur de la scrollbar */
+    realHeight("div#content div.scrollbar", cheight);
 }
 
 /* Rafraichissement général */
 function refresh() {
     refreshTitle($("div#header div.title"));
     refreshPage();
+    refreshCore();
 }

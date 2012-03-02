@@ -29,8 +29,8 @@
     <body>
         <div id="header"> 
             <div class="title">
-                <h1>Hello world !</h1>
-                <p>A simple portofolio</p>
+                <h1>Lorem ipsum</h1>
+                <p>Dolor sit amet</p>
             </div>
         </div> 
         <div id="page">
@@ -55,7 +55,7 @@
 
                                 <h1>Uuummmm, this is a tasty burger!</h1>
                                 <p>Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? Do you see a little Asian child with a blank expression on his face sitting outside on a mechanical helicopter that shakes when you put quarters in it? No? Well, that's what you see at a toy store. And you must think you're in a toy store, because you're here shopping for an infant named Jeb.</p>
-                                
+
                                 <h1>Uuummmm, this is a tasty burger!</h1>
                                 <p>Look, just because I don't be givin' no man a foot massage don't make it right for Marsellus to throw Antwone into a glass motherfuckin' house, fuckin' up the way the nigger talks. Motherfucker do that shit to me, he better paralyze my ass, 'cause I'll kill the motherfucker, know what I'm sayin'?</p>
 
@@ -71,6 +71,9 @@
                                 <h1>Uuummmm, this is a tasty burger!</h1>
                                 <p>Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? Do you see a little Asian child with a blank expression on his face sitting outside on a mechanical helicopter that shakes when you put quarters in it? No? Well, that's what you see at a toy store. And you must think you're in a toy store, because you're here shopping for an infant named Jeb.</p>
                             </div>
+                            <div class="scrollbar">
+                                <div class="marker"></div>
+                            </div>
                         </div>
                         <div id="media">
                             aha
@@ -85,18 +88,22 @@
         </div>
         <div id="footer">Footer</div>
         <script type="text/javascript">
-            /* Chargement de la configuration */
-            co = loadConfiguration();
+            $("body").ready(function() {
+                /* Chargement de la configuration */
+                co = loadConfiguration();
             
-            /* Actions post-chargement du DOM */
-            addCorners($("div#page div.slide.open div.spacer div.core"), "medium");
+                /* Actions post-chargement du DOM */
+                addCorners($("div#page div.slide.open div.spacer div.core"), "medium");
+                addCorner($("div#content div.scrollbar"), "tc", "small");
+                addCorner($("div#content div.scrollbar"), "bc", "small");
             
-            /* Création des évènements */
-            doGlobalEvents();
-            doNavigationEvents();
+                /* Création des évènements */
+                doGlobalEvents();
+                doNavigationEvents();
             
-            /* Rafraichissement de la page */
-            refresh();
+                /* Rafraichissement de la page */
+                refresh();
+            });
         </script>
     </body>
 </html>

@@ -29,6 +29,7 @@ function doNavigationEvents() {
     $("div#content div.scroller").mousewheel(function(event, delta) {
         /* Variables utiles */
         var sensibility = parseInt($(co).find("navigation scroll sensibility").text());
+        var factor = parseFloat($(co).find("navigation scroll factor").text());
         
         /* Prise en compte du sens */
         if(delta < 1) {
@@ -40,7 +41,7 @@ function doNavigationEvents() {
         if($(this).is(":animated")) {
             /* Contenu en cours de mouvement */
             level++;
-            destination = start + (level * sensibility);
+            destination = start + (level * factor * sensibility);
             $(this).stop();
             scrollContent(destination);
         } else {

@@ -10,11 +10,15 @@ div.corner {
     height: 100%;
     margin: 0px;
     padding: 0px;
-    background-image: url('img/blank.png');
+    background-image: url('img/blank.png');                 /* Image par défaut */
     background-repeat: no-repeat;
 }
 div.corner.tl {
     background-position-x: left;
+    background-position-y: top;
+}
+div.corner.tc {
+    background-position-x: center;
     background-position-y: top;
 }
 div.corner.tr {
@@ -25,14 +29,12 @@ div.corner.br {
     background-position-x: right;
     background-position-y: bottom;
 }
+div.corner.bc {
+    background-position-x: center;
+    background-position-y: bottom;
+}
 div.corner.bl {
     background-position-x: left;
     background-position-y: bottom;
 }
 
-/* Scroller */
-div.scroller {
-    width: 100%;
-    background: #aaa; 
-    float: left;
-}

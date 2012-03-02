@@ -51,10 +51,21 @@ function injectCore(target, dom) {
             '<div class="scroller">' +
                 dom +
             '</div>' +
+            '<div class="scrollbar">' +
+                '<div class="marker"></div>' +
+            '</div>' +
         '</div>' +
         '<div id="media" style="opacity: 0">' +
         '</div>');
     
     /* Ajout du contenu */
     $(target).append($(data));
+    
+    /* Décoration de la scrollbar */
+    addCorner($("div#content div.scrollbar"), "tc", "small");
+    addCorner($("div#content div.scrollbar"), "bc", "small");
+    
+    /* Affectation des tailles */
+    realHeight($("div#content"), $("div#page div.spacer div.core").height());
+    realHeight($("div#content div.scrollbar"), $("div#content").height());
 }

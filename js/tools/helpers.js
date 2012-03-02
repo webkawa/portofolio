@@ -86,3 +86,8 @@ function addCorners(target, theme) {
     addCorner(target, "br", theme);
     addCorner(target, "bl", theme);
 }
+
+/* Donne les informations sur une barre de scroll */
+function scrollProperties(scroller, scrollbar, margins) {
+    
+}

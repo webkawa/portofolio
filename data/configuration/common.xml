@@ -24,9 +24,16 @@
         <content>
             <scroll>
                 <sensibility>80</sensibility>
-                <tolerance>20</tolerance>
-                <duration>100</duration>
-                <easing>easeInOutQuad</easing>
+                <tolerance>25</tolerance>
+                <factor>1.2</factor>
+                <move>
+                    <duration>120</duration>
+                    <easing>swing</easing>
+                </move>
+                <callback>
+                    <duration>50</duration>
+                    <easing>easeInOutQuad</easing>
+                </callback>
             </scroll>
         </content>
     </navigation>

@@ -4,3 +4,23 @@
     Style des contenus édioriaux.
 */
 
+/* Mécanisme de scrolling */
+div#content div.scroller {
+    width: 558px;
+    float: left;
+}
+div#content div.scrollbar {
+    min-height: 40px;
+    width: 20px;
+    float: left;
+    margin: 0px 0px 0px 30px;
+    padding: 0px;
+    background:#eee;
+}
+div#content div.scrollbar div.marker {
+    width: 10px;
+    height: 10px;
+    float: left;
+    margin-left: 5px;
+    background-color: red;
+}

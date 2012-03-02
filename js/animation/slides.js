@@ -22,7 +22,7 @@ function switchSlide(origin, destination) {
     var lcoremaxw = parseInt($(lcore).css("max-width"));                        /* Largeur maximale du coeur fermant */
     var icore = $(destination).find("div.spacer div.core");                     /* Coeur ouvrant */
     var icoreminw = parseInt($(icore).css("min-width"));                        /* Largeur minimale du coeur ouvrant */
-    var icoremaxw = parseInt($(icore).css("max-width"));                        /* Largeur maximale du coeur ouvrant */
+    var icoremaxw = Math.min(parseInt($(icore).css("max-width")), dprop.width); /* Largeur maximale du coeur ouvrant */
     var margin;                                                                 /* Marge ajoutée pour la transition */
 
     /* Taggage du slide entrant */
@@ -112,11 +112,11 @@ function switchSlide(origin, destination) {
             /* Nettoyage */
             cleanupPage();
             
-            /* Ré-inscription des évènements */
-            doNavigationEvents();
-            
             /* Affichage du contenu */
             showCore($(icore));
+            
+            /* Ré-inscription des évènements */
+            doNavigationEvents();
         }
     });
 }
