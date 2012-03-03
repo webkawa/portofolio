@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root>
+    <quality>
+        <high>
+            <interval>15</interval>
+        </high>
+    </quality>
     <transitions>
         <title>
             <duration>1000</duration>

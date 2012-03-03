@@ -8,19 +8,24 @@
 div#content div.scroller {
     width: 558px;
     float: left;
+    padding: 0px !important;                            /* Doit rester nul */
 }
 div#content div.scrollbar {
     min-height: 40px;
     width: 20px;
+    height: 100%;
     float: left;
     margin: 0px 0px 0px 30px;
     padding: 0px;
-    background:#eee;
 }
-div#content div.scrollbar div.marker {
-    width: 10px;
-    height: 10px;
+div#content div.scrollbar div.scrollzone {
+    margin: 35px 5px 35px 5px;
     float: left;
-    margin-left: 5px;
-    background-color: red;
+    background-color: #ddd;
+}
+div#content div.scrollbar div.scrollzone div.marker {
+    width: 10px;
+    float: left;
+    padding: 0px !important;                            /* Doit rester nul */
+    background-color: #aaa;
 }

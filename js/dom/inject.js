@@ -52,7 +52,9 @@ function injectCore(target, dom) {
                 dom +
             '</div>' +
             '<div class="scrollbar">' +
-                '<div class="marker"></div>' +
+                '<div class="scrollzone">' +
+                    '<div class="marker"></div>' +
+                '</div>' +
             '</div>' +
         '</div>' +
         '<div id="media" style="opacity: 0">' +
@@ -65,7 +67,16 @@ function injectCore(target, dom) {
     addCorner($("div#content div.scrollbar"), "tc", "small");
     addCorner($("div#content div.scrollbar"), "bc", "small");
     
+    /* Variables utiles */
+    var content = $("div#content");
+    var core = $("div#page div.spacer div.core");
+    var scroller = $("div#content div.scroller");
+    var scrollbar = $("div#content div.scrollbar");
+    var scrollzone = $("div#content div.scrollbar div.scrollzone");
+    var marker = $("div#content div.scrollbar div.scrollzone div.marker");
+    
     /* Affectation des tailles */
-    realHeight($("div#content"), $("div#page div.spacer div.core").height());
-    realHeight($("div#content div.scrollbar"), $("div#content").height());
+    realHeight(content, $(core).height());
+    realHeight(scrollzone, $(scrollbar).height());
+    realHeight(marker, markerSize(content, scroller, scrollzone));
 }

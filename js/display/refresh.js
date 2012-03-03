@@ -53,13 +53,24 @@ function refreshPage() {
 function refreshCore() {
     /* Variables utiles */
     var sheight = $("div#page div.spacer div.core").height();
-    var cheight = $("div#content").height();
+    var content = $("div#content");
+    var scroller = $("div#content div.scroller");
+    var scrollbar = $("div#content div.scrollbar");
+    var scrollzone = $("div#content div.scrollbar div.scrollzone");
+    var marker = $("div#content div.scrollbar div.scrollzone div.marker");
     
     /* Hauteur des fenêtres de contenu et médias */
     realHeight("div#content, div#media", sheight);
     
-    /* Hauteur de la scrollbar */
-    realHeight("div#content div.scrollbar", cheight);
+    /* Hauteur de la zone de scroll */
+    var sbheight = $(scrollbar).height();
+    var diffscroll = Math.max($(scroller).height() - $(content).height(), 0);
+    var diffmarker = $(scrollzone).height() - $(marker).height();
+    realHeight(scrollzone, sbheight);
+    $(marker).css({
+        "height" : (markerSize($("div#content"), scroller, scrollzone)) + "px",
+        "margin-top" : markerMargin(parseInt($(scroller).css("margin-top")), diffscroll, diffmarker)
+    });
 }
 
 /* Rafraichissement général */

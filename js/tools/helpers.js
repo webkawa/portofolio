@@ -87,7 +87,20 @@ function addCorners(target, theme) {
     addCorner(target, "bl", theme);
 }
 
-/* Donne les informations sur une barre de scroll */
-function scrollProperties(scroller, scrollbar, margins) {
-    
+/* Donne la hauteur à attribuer à une barre de scroll */
+function markerSize(container, scroller, scrollzone) {
+    return Math.min($(container).height() / $(scroller).height(), 1) * $(scrollzone).height();
+}
+
+/* Donne la marge haute à attribuer à une barre de scroll */
+function markerMargin(margin, diffscroll, diffmarker) {
+    var buff = (margin / diffscroll) * diffmarker;
+    if(margin > 0) {
+        buff = 0;
+    } else if(margin < -(diffscroll)) {
+        buff = diffmarker;
+    } else {
+        buff = -(buff);
+    }
+    return buff;
 }
