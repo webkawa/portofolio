@@ -44,7 +44,7 @@ function injectPage(target) {
 }
 
 /* Création d'un coeur de page */
-function injectCore(target, dom) {
+function injectContent(target, dom) {
     /* Création du contenu */
     var data =
         $('<div id="content" style="opacity: 0">' +
@@ -56,16 +56,14 @@ function injectCore(target, dom) {
                     '<div class="marker"></div>' +
                 '</div>' +
             '</div>' +
-        '</div>' +
-        '<div id="media" style="opacity: 0">' +
         '</div>');
     
     /* Ajout du contenu */
     $(target).append($(data));
     
     /* Décoration de la scrollbar */
-    addCorner($("div#content div.scrollbar"), "tc", "small");
-    addCorner($("div#content div.scrollbar"), "bc", "small");
+    addDecoration($("div#content div.scrollbar"), "corner", "tc", "small");
+    addDecoration($("div#content div.scrollbar"), "corner", "bc", "small");
     
     /* Variables utiles */
     var content = $("div#content");
@@ -79,4 +77,50 @@ function injectCore(target, dom) {
     realHeight(content, $(core).height());
     realHeight(scrollzone, $(scrollbar).height());
     realHeight(marker, markerSize(content, scroller, scrollzone));
+}
+
+/* Création du contenu */
+function injectMedia(target, dom) {
+    /* Création du contenu */
+    var data =
+        $('<div class="loader"></div>' +
+        '<div id="media" style="opacity: 0">' +
+            '<div class="title"></div>' +
+            '<div class="data">' +
+                '<div class="cage">' +
+                    '<div class="links">' +
+                        '<ul>' +
+                            '<li>a</li>' +
+                            '<li>b</li>' +
+                        '</ul>' +
+                    '</div>' +
+                    '<div class="view">' +
+                        ' aa' +
+                    '</div>' +
+                '</div>' +
+            '</div>' +
+            '<div class="notes">' +
+                '<div class="spacer">' +
+                    '<p>Pas de m&eacute;dia affich&eacute;</p>' +
+                '</div>' +
+            '</div>' +
+        '</div>');
+    
+    /* Ajout du contenu */
+    $(target).append($(data));
+    
+    /* Variables utiles */
+    var media = $("div#media");
+    var mediatitle = $("div#media div.title");
+    var mediadata = $("div#media div.data");
+    var mediacage = $("div#media div.data div.cage");
+    var medianotes = $("div#media div.notes");
+    
+    /* Ajout des décorations */
+    addDecoration($(mediatitle), "border", "bc", "small");
+    addDecoration($(medianotes), "border", "tc", "small");
+    
+    /* Hauteur de la zone média */
+    realHeight(mediadata, $(media).height() - $(mediatitle).outerHeight(true) - $(medianotes).outerHeight(true));
+    realHeight(mediacage, $(mediadata).height());
 }

@@ -41,5 +41,17 @@
                 </callback>
             </scroll>
         </content>
+        <media>
+            <switch>
+                <in>
+                    <duration>500</duration>
+                    <easing>easeInQuart</easing>
+                </in>
+                <out>
+                    <duration>500</duration>
+                    <easing>easeOutQuart</easing>
+                </out>
+            </switch>
+        </media>
     </navigation>
 </root>

@@ -58,7 +58,9 @@ function doNavigationEvents() {
     $("div#content div.scrollbar div.scrollzone div.marker").draggable({
         axis : "y",
         containment : "div#content div.scrollbar div.scrollzone",
-        drag : function() {
+        start : function() {
+            $(this).addClass("used");
+        }, drag : function() {
             /* Variables utiles */
             var scrollzone = $("div#content div.scrollbar div.scrollzone");
             var diffmarker = $(scrollzone).height() - $(this).height();
@@ -68,6 +70,12 @@ function doNavigationEvents() {
             
             /* Attribution */
             $(scroller).css("margin-top", margin + "px");
+        }, stop : function() {
+            $(this).toggleClass("used");
         }
+    });
+    /* Affichage des médias */
+    $("div#content div.scroller a").click(function() {
+       switchMedia($(this).attr("href"));
     });
 }

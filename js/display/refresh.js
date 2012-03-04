@@ -46,23 +46,29 @@ function refreshPage() {
     realMaxWidth("div#page div.slide.open", pwidth - csprop.lmargin - csprop.rmargin)
     
     /* Hauteur du gestionnaire d'espacement */
-    realHeight("div#page div.slide div.spacer", $("div#page").height());
+    realHeight("div#page > div.slide > div.spacer", $("div#page").height());
 }
 
 /* Rafraichissement du cœur de page */
 function refreshCore() {
     /* Variables utiles */
     var sheight = $("div#page div.spacer div.core").height();
+    
+    /* Hauteur des fenêtres de contenu et médias */
+    realHeight("div#content", sheight);
+    realHeight("div#media", sheight);
+}
+
+/* Rafraichissement du contenu */
+function refreshContent() {
+    /* Variables utiles */
     var content = $("div#content");
     var scroller = $("div#content div.scroller");
     var scrollbar = $("div#content div.scrollbar");
     var scrollzone = $("div#content div.scrollbar div.scrollzone");
     var marker = $("div#content div.scrollbar div.scrollzone div.marker");
     
-    /* Hauteur des fenêtres de contenu et médias */
-    realHeight("div#content, div#media", sheight);
-    
-    /* Hauteur de la zone de scroll */
+    /* Hauteur de la zone contenu */
     var sbheight = $(scrollbar).height();
     var diffscroll = Math.max($(scroller).height() - $(content).height(), 0);
     var diffmarker = $(scrollzone).height() - $(marker).height();
@@ -73,9 +79,32 @@ function refreshCore() {
     });
 }
 
+function refreshMedia() {
+    /* Variables utiles */
+    var media = $("div#media");
+    var mediatitle = $("div#media div.title");
+    var mediah3 = $("div#media div.title h3");
+    var mediadata = $("div#media div.data");
+    var mediacage = $("div#media div.data div.cage");
+    var mediaview = $("div#media div.data div.cage div.view");
+    var medianotes = $("div#media div.notes");
+    
+    /* Hauteurs de la zone média */
+    realHeight(mediadata, $(media).height() - $(mediatitle).outerHeight(true) - $(medianotes).outerHeight(true));
+    realHeight(mediacage, $(mediadata).height());
+    realHeight(mediaview, $(mediadata).height());
+    
+    /* Taille du titre */ 
+    if($(mediah3).size() > 0) {
+        fontHeight($(mediatitle).find("h3"), $(mediatitle).height() - $(mediatitle).find("p").outerHeight(true)); 
+    }
+}
+
 /* Rafraichissement général */
 function refresh() {
     refreshTitle($("div#header div.title"));
     refreshPage();
     refreshCore();
+    refreshContent();
+    refreshMedia();
 }

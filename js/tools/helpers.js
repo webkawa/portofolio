@@ -63,10 +63,10 @@ function slideProperties(target) {
     }
 }
 
-/* Permet l'ajout d'un coin à un bloc */
-function addCorner(target, position, theme) {
+/* Permet l'ajout d'une décoration (bordure ou coin) à un bloc */
+function addDecoration(target, type, position, theme) {
     /* Création de l'élément */
-    var data = $('<div class="corner ' + position + ' ' + theme + '"></div>');
+    var data = $('<div class="' + type + ' ' + position + ' ' + theme + '"></div>');
     
     /* Sauvegarde du contenu */
     var childs = $(target).children();
@@ -81,10 +81,10 @@ function addCorner(target, position, theme) {
 
 /* Permet l'ajout de quatre coins à un bloc */
 function addCorners(target, theme) {
-    addCorner(target, "tl", theme);
-    addCorner(target, "tr", theme);
-    addCorner(target, "br", theme);
-    addCorner(target, "bl", theme);
+    addDecoration(target, "corner", "tl", theme);
+    addDecoration(target, "corner", "tr", theme);
+    addDecoration(target, "corner", "br", theme);
+    addDecoration(target, "corner", "bl", theme);
 }
 
 /* Donne la hauteur à attribuer à une barre de scroll */

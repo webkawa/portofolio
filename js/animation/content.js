@@ -27,7 +27,6 @@ function scrollContent(destination) {
     var margin = Math.max(Math.min(destination, max), min);
     
     /* Animation */
-    var buff;
     $(scroller).animate({
         "margin-top" : margin + "px"
     },{

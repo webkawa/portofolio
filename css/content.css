@@ -1,10 +1,18 @@
 /* 
     content.css
     -----------
-    Style des contenus édioriaux.
+    Styles liés à la zone contenu.
 */
 
-/* Mécanisme de scrolling */
+/* Contenu */
+div#content {
+    width: 610px;
+    float: left;
+    padding-left: 40px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
 div#content div.scroller {
     width: 558px;
     float: left;
@@ -28,4 +36,10 @@ div#content div.scrollbar div.scrollzone div.marker {
     float: left;
     padding: 0px !important;                            /* Doit rester nul sur la hauteur */
     background-color: #aaa;
+}
+div#content div.scrollbar div.scrollzone div.marker:hover {
+    background-color: #777;
+}
+div#content div.scrollbar div.scrollzone div.marker.used {
+    background-color: #777;
 }

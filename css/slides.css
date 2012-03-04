@@ -42,6 +42,13 @@ div#page div.slide div.spacer {
     padding: 10px;
     overflow-x: hidden;
 }
+/* Loader des médias */
+div#page div.slide div.spacer div.loader {
+    min-width: 0px;
+    width: 5px;
+    height: 100%;
+    float: left;
+}
 
 /* Coeur de page */
 div#page div.slide div.spacer div.core {
@@ -54,50 +61,35 @@ div#page div.slide div.spacer div.core {
     overflow: hidden;
     background-color: white;
 }
-/* Zone de contenu */
-div#content {
-    width: 610px;
-    float: left;
-    padding-left: 40px;
-    padding-right: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-/* Zone de média */
-div#media {
-    width: 360px;
-    height: 100%;
-    float: left;
-}
 
 /* Temporaire */
 div#page div.slide#s1 {
     background-color: #aaa;
 }
-div#page div.slide#s1 div#content {
-    border-right: 2px solid #aaa;
+div#page div.slide#s1 div.spacer div.loader {
+    background-color: #aaa;
 }
-div#page div.slide#s2 {
+div#page div.slide#s2  {
     background-color: #999;
 }
-div#page div.slide#s2 div#content {
-    border-right: 2px solid #999;
+div#page div.slide#s2 div.spacer div.loader {
+    background-color: #999;
 }
 div#page div.slide#s3 {
     background-color: #777;
 }
-div#page div.slide#s3 div#content {
-    border-right: 2px solid #777;
+div#page div.slide#s3 div.spacer div.loader {
+    background-color: #777;
 }
 div#page div.slide#s4 {
     background-color: #555;
 }
-div#page div.slide#s4 div#content {
-    border-right: 2px solid #555;
+div#page div.slide#s4 div.spacer div.loader {
+    background-color: #555;
 }
 div#page div.slide#s5 {
     background-color: #333;
 }
-div#page div.slide#s5 div#content {
-    border-right: 2px solid #333;
+div#page div.slide#s5 div.spacer div.loader {
+    background-color: #333;
 }

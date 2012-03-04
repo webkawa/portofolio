@@ -1,0 +1,82 @@
+/* 
+    media.css
+    ---------
+    Styles liés à la zone média.
+*/
+
+/* Zone média */
+div#media {
+    min-width: 20px;
+    width: 100%;
+    max-width: 355px;
+    height: 100%;
+    float: right;
+}
+
+/* Titre */
+div#media div.title {
+    height: 80px;
+    padding: 0px !important;                            /* Doit rester nul */
+    white-space: nowrap;
+    overflow: hidden;
+}
+div#media div.title p {
+    padding: 15px 5px 0px 20px;
+    margin: 0px;
+    font-style: italic;
+    font-size: 12px;
+}
+div#media div.title h3 {
+    padding: 0px 5px 10px 20px;
+    margin: 0px;
+    font-size: 0px;                                     /* Largeur de police redéfinie */
+}
+
+/* Coeur */
+div#media div.data {
+    min-height: 80px;
+    height: auto;                                       /* Hauteur redéfinie */
+    border-bottom: 2px solid #aaa;
+    border-top: 2px solid #aaa;
+    overflow: hidden;
+    background-position: right center;
+    background-repeat: repeat;
+    background-image: url('img/blank.png');
+}
+div#media div.data div.cage {
+    width: 355px;
+    float: left;
+}
+div#media div.data div.cage div.links {
+    width: 45px;
+    float: left;
+    background-color:green;
+}
+div#media div.data div.cage div.links ul {
+    padding: 0px;
+    margin: 0px;
+    background-color: red;
+}
+div#media div.data div.cage div.links ul li {
+    height: 40px;
+    margin: 5px 0px 5px 5px;
+    list-style-type: none;
+    background-color: yellow;
+}
+div#media div.data div.cage div.view {
+    width: 300px;
+    float: left;
+    margin: 5px;
+    background-color: blue;
+}
+
+/* Pied */
+div#media div.notes {
+    padding: 0px !important;                            /* Padding haut doit rester nul */
+    white-space: nowrap;
+    overflow: hidden;
+}
+div#media div.notes div.spacer {
+    padding: 5px 5px 20px 20px;
+    text-align: right;
+}

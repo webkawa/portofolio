@@ -7,14 +7,16 @@
 /* Affiche un coeur de page */
 function showCore(target) {
     /* Injection du contenu */
-    injectCore(lastChild(target), "Lorem");
+    var lastchild = lastChild(target);
+    injectContent(lastchild, "Lorem");
+    injectMedia(lastchild, "Ipsum");
     
     /* Variables utiles */
     var duration = $(co).find("transitions core duration").text();
     var easing = $(co).find ("transition core easing").text();
     
     /* Apparition du contenu */
-    $("div#content, div#media").animate({
+    $("div#content, div#media, div#page div.slide div.spacer div.loader").animate({
         "opacity" : "1"
     },{
         "duration" : parseInt(duration),
@@ -29,7 +31,7 @@ function hideCore() {
     var easing = $(co).find ("transition core easing").text();
     
     /* Apparition du contenu */
-    $("div#content, div#media").animate({
+    $("div#content, div#media, div#page div.slide div.spacer div.loader").animate({
         "opacity" : "0"
     },{
         "duration" : parseInt(duration),

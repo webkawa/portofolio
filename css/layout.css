@@ -14,7 +14,7 @@ div#header {
 /* Coeur de page */
 div#page {
     height: auto;                       /* Hauteur redéfinie */
-    background: green;
+    max-height: 580px;
 }
 
 /* Pied de page */
