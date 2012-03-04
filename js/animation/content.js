@@ -34,7 +34,7 @@ function scrollContent(destination) {
         "duration" : mduration,
         "easing" : measing,
         "step" : function(now) {
-            $(marker).css("margin-top", markerMargin(now, diffscroll, diffmarker) + "px");
+            $(marker).css("top", markerMargin(now, diffscroll, diffmarker) + "px");
         }, "complete" : function() {
             if(margin < min + tolerance) {
                 $(scroller).animate({

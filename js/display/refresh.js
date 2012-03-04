@@ -69,7 +69,7 @@ function refreshCore() {
     realHeight(scrollzone, sbheight);
     $(marker).css({
         "height" : (markerSize($("div#content"), scroller, scrollzone)) + "px",
-        "margin-top" : markerMargin(parseInt($(scroller).css("margin-top")), diffscroll, diffmarker)
+        "top" : markerMargin(parseInt($(scroller).css("margin-top")), diffscroll, diffmarker)
     });
 }
 
