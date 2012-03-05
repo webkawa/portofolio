@@ -79,7 +79,7 @@ function injectContent(target, dom) {
     realHeight(marker, markerSize(content, scroller, scrollzone));
 }
 
-/* Création du contenu */
+/* Création de la zone média */
 function injectMedia(target, dom) {
     /* Création du contenu */
     var data =
@@ -125,4 +125,21 @@ function injectMedia(target, dom) {
     realHeight(mediadata, $(media).height() - $(mediatitle).outerHeight(true) - $(medianotes).outerHeight(true));
     realHeight(mediacage, $(mediadata).height());
     realHeight(mediaview, $(mediacage).height());
+}
+
+/* Création d'une carte */
+function injectMap(dom) {
+    /* Variables utiles */
+    var target = $("div#media div.data div.cage div.view");
+    
+    /* Injection */
+    $(target).append('<div id="map"></div>');
+    
+    /* Chargement de la carte */
+    var options = {
+          center: new google.maps.LatLng(-34.397, 150.644),
+          zoom: 8,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    new google.maps.Map(document.getElementById("map"), options)
 }

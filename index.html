@@ -3,6 +3,7 @@
     <head>
         <title>Lorem ipsum</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
         <link type="text/css" rel="stylesheet" href="css/common.css" />
         <link type="text/css" rel="stylesheet" href="css/fx.css" />
         <link type="text/css" rel="stylesheet" href="css/layout.css" />
@@ -11,6 +12,7 @@
         <link type="text/css" rel="stylesheet" href="css/content.css" />
         <link type="text/css" rel="stylesheet" href="css/media.css" />
         <link type="text/css" rel="stylesheet" href="css/footer.css" />
+        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false&key=AIzaSyDQXuNKj2764F3EEMcNEaWGj5ZylAu6464"></script>
         <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
         <script type="text/javascript" src="js/libs/jquery-ui-1.8.17.custom.min.js"></script>
         <script type="text/javascript" src="js/libs/jquery.mousewheel.min.js"></script>
@@ -98,7 +100,9 @@
                                         </ul>
                                     </div>
                                     <div class="view">
-                                        aa
+                                        <!-- Map -->
+                                        <!-- <div id="map"></div>
+                                        <!--     -->
                                     </div>
                                 </div>
                             </div>
@@ -138,6 +142,8 @@
             
                 /* Rafraichissement de la page */
                 refresh();
+                
+                injectMap(true);
             });
         </script>
     </body>

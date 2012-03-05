@@ -6,7 +6,7 @@
 
 /* Contenu */
 div#content {
-    width: 610px;
+    width: auto;
     float: left;
     padding-left: 40px;
     padding-right: 10px;
@@ -14,7 +14,7 @@ div#content {
     padding-bottom: 10px;
 }
 div#content div.scroller {
-    width: 558px;
+    width: 530px;
     float: left;
     padding: 0px 30px 0px 0px !important;               /* Doit rester nul sur la hauteur */
 }
