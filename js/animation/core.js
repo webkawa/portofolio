@@ -16,7 +16,7 @@ function showCore(target) {
     var easing = $(co).find ("transition core easing").text();
     
     /* Apparition du contenu */
-    $("div#content, div#media, div#page div.slide div.spacer div.loader").animate({
+    $("div#content, div#media").animate({
         "opacity" : "1"
     },{
         "duration" : parseInt(duration),
@@ -31,7 +31,7 @@ function hideCore() {
     var easing = $(co).find ("transition core easing").text();
     
     /* Apparition du contenu */
-    $("div#content, div#media, div#page div.slide div.spacer div.loader").animate({
+    $("div#content, div#media").animate({
         "opacity" : "0"
     },{
         "duration" : parseInt(duration),

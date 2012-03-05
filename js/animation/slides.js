@@ -24,6 +24,7 @@ function switchSlide(origin, destination) {
     var icoreminw = parseInt($(icore).css("min-width"));                        /* Largeur minimale du coeur ouvrant */
     var icoremaxw = Math.min(parseInt($(icore).css("max-width")), dprop.width); /* Largeur maximale du coeur ouvrant */
     var margin;                                                                 /* Marge ajoutée pour la transition */
+    var waiter = $(co).find("transitions core duration").text();                /* Temps de transition du cœur */
 
     /* Taggage du slide entrant */
     $(destination).toggleClass("close");
@@ -67,7 +68,7 @@ function switchSlide(origin, destination) {
     
     /* Mouvement */
     var lbuff, ibuff, tbuff = $(icore).width();
-    $(origin).animate({
+    $(origin).delay(parseInt(waiter)).animate({
         "max-width" : $(origin).css("min-width")
     },{
         "duration" : parseInt(duration),

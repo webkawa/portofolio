@@ -83,8 +83,8 @@ function injectContent(target, dom) {
 function injectMedia(target, dom) {
     /* Création du contenu */
     var data =
-        $('<div class="loader"></div>' +
-        '<div id="media" style="opacity: 0">' +
+        $('<div id="media" style="opacity: 0">' +
+            '<div class="loader"></div>' +
             '<div class="title"></div>' +
             '<div class="data">' +
                 '<div class="cage">' +
@@ -114,6 +114,7 @@ function injectMedia(target, dom) {
     var mediatitle = $("div#media div.title");
     var mediadata = $("div#media div.data");
     var mediacage = $("div#media div.data div.cage");
+    var mediaview = $("div#media div.data div.cage div.view");
     var medianotes = $("div#media div.notes");
     
     /* Ajout des décorations */
@@ -123,4 +124,5 @@ function injectMedia(target, dom) {
     /* Hauteur de la zone média */
     realHeight(mediadata, $(media).height() - $(mediatitle).outerHeight(true) - $(medianotes).outerHeight(true));
     realHeight(mediacage, $(mediadata).height());
+    realHeight(mediaview, $(mediacage).height());
 }

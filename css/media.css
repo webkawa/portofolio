@@ -8,9 +8,17 @@
 div#media {
     min-width: 20px;
     width: 100%;
-    max-width: 355px;
+    max-width: 360px;
     height: 100%;
     float: right;
+}
+
+/* Gestionnaire de chargement */
+div#media div.loader {
+    height: 100%;
+    width: 5px;
+    float: left;
+    background-color: pink;
 }
 
 /* Titre */

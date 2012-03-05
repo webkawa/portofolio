@@ -8,7 +8,7 @@
 function switchMedia(id) {
     /* Variables utiles */
     var media = $("div#media");
-    var loader = $("div#page div.slide div.spacer div.loader");
+    var loader = $("div#media div.loader");
     var durationin = $(co).find("navigation media switch in duration").text();
     var easingin = $(co).find("navigation media switch in easing").text();
     var durationout = $(co).find("navigation media switch out duration").text();
@@ -18,23 +18,18 @@ function switchMedia(id) {
     var sumwidth = bwidth + iwidth;
     
     /* Animation */
-    $(media).animate({
-        "width" : $(media).css("min-width")
+    $(loader).animate({
+        "width" : (sumwidth - parseInt($(media).css("min-width"))) + "px"
     },{
         "duration" : parseInt(durationin),
         "easing" : easingin,
-        "step" : function(now) {
-            realWidth(loader, sumwidth - now);
-        }, "complete" : function() {
+        "complete" : function() {
             // Clean/inject content there
         }
     }).animate({
-        "width" : $(media).css("max-width")
+        "width" : (sumwidth - parseInt($(media).css("max-width"))) + "px"
     },{
         "duration" : parseInt(durationout),
-        "easing" : easingout,
-        "step" : function(now) {
-            realWidth(loader, sumwidth - now);
-        }
+        "easing" : easingout
     });
 }
