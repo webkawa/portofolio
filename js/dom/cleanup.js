@@ -20,7 +20,7 @@ function cleanupTitle() {
 /* Nettoyage de la page */
 function cleanupPage() {
     /* Nettoyage */
-    $("div#page div.slide.close div.spacer").remove();
+    $("div#page div.slide.close > div.spacer").remove();
 }
 
 /* Nettoyage du contenu */

@@ -8,17 +8,22 @@
 div#content {
     width: auto;
     float: left;
+    overflow: hidden;
+}
+div#content div.cage {
+    width: 580px;
     padding-left: 40px;
     padding-right: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
 }
-div#content div.scroller {
+div#content div.cage div.scroller {
     width: 530px;
     float: left;
+    overflow: hidden;
     padding: 0px 30px 0px 0px !important;               /* Doit rester nul sur la hauteur */
 }
-div#content div.scrollbar {
+div#content div.cage div.scrollbar {
     min-height: 40px;
     width: 20px;
     height: 100%;
@@ -26,20 +31,20 @@ div#content div.scrollbar {
     margin: 0px;
     padding: 0px;
 }
-div#content div.scrollbar div.scrollzone {
+div#content div.cage div.scrollbar div.scrollzone {
     margin: 25px 5px 25px 5px;
     float: left;
     background-color: #ddd;
 }
-div#content div.scrollbar div.scrollzone div.marker {
+div#content div.cage div.scrollbar div.scrollzone div.marker {
     width: 10px;
     float: left;
     padding: 0px !important;                            /* Doit rester nul sur la hauteur */
     background-color: #aaa;
 }
-div#content div.scrollbar div.scrollzone div.marker:hover {
+div#content div.cage div.scrollbar div.scrollzone div.marker:hover {
     background-color: #777;
 }
-div#content div.scrollbar div.scrollzone div.marker.used {
+div#content div.cage div.scrollbar div.scrollzone div.marker.used {
     background-color: #777;
 }

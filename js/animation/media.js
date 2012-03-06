@@ -8,7 +8,7 @@
 function switchMedia(id) {
     /* Variables utiles */
     var media = $("div#media");
-    var mediacomponents = $("div#media div.data div.cage, div#media div.title h3, div#media div.title p, div#media div.notes div.spacer");
+    var mediacomponents = $("div#media div.data > div.cage, div#media div.title h3, div#media div.title p, div#media div.notes > div.spacer");
     var loader = $("div#media div.loader");
     var durationin = $(co).find("navigation media switch in duration").text();
     var easingin = $(co).find("navigation media switch in easing").text();
@@ -40,3 +40,5 @@ function switchMedia(id) {
         }
     });
 }
+
+/* Zoome sur le média en cours */

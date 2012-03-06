@@ -48,12 +48,14 @@ function injectContent(target, dom) {
     /* Création du contenu */
     var data =
         $('<div id="content" style="opacity: 0">' +
-            '<div class="scroller">' +
-                dom +
-            '</div>' +
-            '<div class="scrollbar">' +
-                '<div class="scrollzone">' +
-                    '<div class="marker"></div>' +
+            '<div class="cage">' +
+                '<div class="scroller">' +
+                    dom +
+                '</div>' +
+                '<div class="scrollbar">' +
+                    '<div class="scrollzone">' +
+                        '<div class="marker"></div>' +
+                    '</div>' +
                 '</div>' +
             '</div>' +
         '</div>');
@@ -66,17 +68,19 @@ function injectContent(target, dom) {
     addDecoration($("div#content div.scrollbar"), "corner", "bc", "small");
     
     /* Variables utiles */
+    var core = $("div#page div.slide > div.spacer div.core");
     var content = $("div#content");
-    var core = $("div#page div.spacer div.core");
-    var scroller = $("div#content div.scroller");
-    var scrollbar = $("div#content div.scrollbar");
-    var scrollzone = $("div#content div.scrollbar div.scrollzone");
-    var marker = $("div#content div.scrollbar div.scrollzone div.marker");
+    var cage = $("div#content > div.cage");
+    var scroller = $("div#content > div.cage div.scroller");
+    var scrollbar = $("div#content > div.cage div.scrollbar");
+    var scrollzone = $("div#content > div.cage div.scrollbar div.scrollzone");
+    var marker = $("div#content > div.cage div.scrollbar div.scrollzone div.marker");
     
     /* Affectation des tailles */
     realHeight(content, $(core).height());
+    realHeight(cage, $(content).height());
     realHeight(scrollzone, $(scrollbar).height());
-    realHeight(marker, markerSize(content, scroller, scrollzone));
+    realHeight(marker, markerSize(cage, scroller, scrollzone));
 }
 
 /* Création de la zone média */
@@ -113,8 +117,8 @@ function injectMedia(target, dom) {
     var media = $("div#media");
     var mediatitle = $("div#media div.title");
     var mediadata = $("div#media div.data");
-    var mediacage = $("div#media div.data div.cage");
-    var mediaview = $("div#media div.data div.cage div.view");
+    var mediacage = $("div#media div.data > div.cage");
+    var mediaview = $("div#media div.data > div.cage div.view");
     var medianotes = $("div#media div.notes");
     
     /* Ajout des décorations */
@@ -130,7 +134,7 @@ function injectMedia(target, dom) {
 /* Création d'une carte */
 function injectMap(dom) {
     /* Variables utiles */
-    var target = $("div#media div.data div.cage div.view");
+    var target = $("div#media div.data > div.cage div.view");
     
     /* Injection */
     $(target).append('<div id="map"></div>');

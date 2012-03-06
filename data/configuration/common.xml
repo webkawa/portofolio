@@ -52,6 +52,16 @@
                     <easing>easeOutQuart</easing>
                 </out>
             </switch>
+            <zoom>
+                <in>
+                    <duration>1000</duration>
+                    <easing>easeInExpo</easing>
+                </in>
+                <out>
+                    <duration>1000</duration>
+                    <easing>easeInExpo</easing>
+                </out>
+            </zoom>
         </media>
     </navigation>
 </root>

@@ -10,7 +10,7 @@ div#media {
     width: 100%;
     max-width: 390px;
     height: 100%;
-    float: right;
+    float: left;
 }
 
 /* Gestionnaire de chargement */
@@ -18,6 +18,12 @@ div#media div.loader {
     width: 30px;
     height: 100%;
     float: left;
+    background-image: url('img/blank.png');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+div#media div.loader:hover {
+    background-image: none;
 }
 
 /* Titre */

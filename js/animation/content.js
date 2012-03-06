@@ -8,13 +8,14 @@
 function scrollContent(destination) {
     /* Variables utiles */
     var content = $("div#content");
-    var hcontent = $(content).height();
-    var scroller = $("div#content div.scroller");
+    var cage = $("div#content > div.cage");
+    var hcage = $(cage).height();
+    var scroller = $("div#content > div.cage div.scroller");
     var hscroller = $(scroller).height();
-    var diffscroll = Math.max(hscroller - hcontent, 0);
-    var scrollzone = $("div#content div.scrollbar div.scrollzone");
+    var diffscroll = Math.max(hscroller - hcage, 0);
+    var scrollzone = $("div#content > div.cage div.scrollbar div.scrollzone");
     var hscrollzone = $(scrollzone).height();
-    var marker = $("div#content div.scrollbar div.scrollzone div.marker");
+    var marker = $("div#content > div.cage div.scrollbar div.scrollzone div.marker");
     var hmarker = $(marker).height();
     var diffmarker = hscrollzone - hmarker;
     var tolerance = parseInt($(co).find("navigation scroll tolerance").text());
@@ -22,7 +23,7 @@ function scrollContent(destination) {
     var measing = $(co).find("navigation scroll move easing").text();
     var bduration = parseInt($(co).find("navigation scroll callback duration").text());
     var beasing = $(co).find("navigation scroll callback easing").text();
-    var min = hcontent - hscroller - tolerance;
+    var min = hcage - hscroller - tolerance;
     var max = tolerance;
     var margin = Math.max(Math.min(destination, max), min);
     

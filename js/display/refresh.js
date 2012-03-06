@@ -46,7 +46,7 @@ function refreshPage() {
     realMaxWidth("div#page div.slide.open", pwidth - csprop.lmargin - csprop.rmargin)
     
     /* Hauteur du gestionnaire d'espacement */
-    realHeight("div#page > div.slide > div.spacer", $("div#page").height());
+    realHeight("div#page div.slide > div.spacer", $("div#page").height());
 }
 
 /* Rafraichissement du cœur de page */
@@ -63,18 +63,21 @@ function refreshCore() {
 function refreshContent() {
     /* Variables utiles */
     var content = $("div#content");
-    var scroller = $("div#content div.scroller");
-    var scrollbar = $("div#content div.scrollbar");
-    var scrollzone = $("div#content div.scrollbar div.scrollzone");
-    var marker = $("div#content div.scrollbar div.scrollzone div.marker");
+    var cage = $("div#content > div.cage");
+    var scroller = $("div#content > div.cage div.scroller");
+    var scrollbar = $("div#content > div.cage div.scrollbar");
+    var scrollzone = $("div#content > div.cage div.scrollbar div.scrollzone");
+    var marker = $("div#content > div.cage div.scrollbar div.scrollzone div.marker");
     
     /* Hauteur de la zone contenu */
+    var cheight = $(content).height();
+    realHeight(cage, cheight);
     var sbheight = $(scrollbar).height();
     var diffscroll = Math.max($(scroller).height() - $(content).height(), 0);
     var diffmarker = $(scrollzone).height() - $(marker).height();
     realHeight(scrollzone, sbheight);
     $(marker).css({
-        "height" : (markerSize($("div#content"), scroller, scrollzone)) + "px",
+        "height" : (markerSize(cage, scroller, scrollzone)) + "px",
         "top" : markerMargin(parseInt($(scroller).css("margin-top")), diffscroll, diffmarker)
     });
 }
