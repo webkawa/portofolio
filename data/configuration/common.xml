@@ -54,12 +54,12 @@
             </switch>
             <zoom>
                 <in>
-                    <duration>1000</duration>
-                    <easing>easeInExpo</easing>
+                    <duration>800</duration>
+                    <easing>easeOutExpo</easing>
                 </in>
                 <out>
-                    <duration>1000</duration>
-                    <easing>easeInExpo</easing>
+                    <duration>800</duration>
+                    <easing>easeOutExpo</easing>
                 </out>
             </zoom>
         </media>

@@ -27,4 +27,5 @@ function cleanupPage() {
 function cleanupCore() {
     /* Nettoyage */
     $("div#content, div#media").remove();
+    global_map = null;
 }

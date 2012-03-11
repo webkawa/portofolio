@@ -25,6 +25,10 @@ function realMaxWidth(target, width) {
 function realHeight(target, height) {
     $(target).height(height - heightAdd(target));
 }
+/* Attribue une hauteur maximale réelle à un objet */
+function realMaxHeight(target, height) {
+    $(target).css("max-height", (height - heightAdd(target)) + "px");
+}
 
 /* Adapte la taille d'une police pour une hauteur donnée */
 function fontHeight(target, height) {

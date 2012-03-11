@@ -4,6 +4,20 @@
     Evènements liés à la navigation.
  */
 
+/* Inscription des évènements de zoom */
+function doZoomingEvents() {
+    /* Effacement des fonctions précédentes */
+    $("div#media div.loader").off();
+    
+    /* Zoom sur un média */
+    $("div#media.small div.loader").click(function() {
+        switchZoom(true);
+    });
+    /* Dézoomage d'un média */
+    $("div#media.large div.loader").click(function() {
+        switchZoom(false);
+    });
+}
 /* Inscription des évènements de navigation */
 function doNavigationEvents() {
     /* Gestion de la navigation entre les slides */
@@ -80,4 +94,6 @@ function doNavigationEvents() {
             switchMedia($(this).attr("href"));
         }
     });
+    /* Gestion du zoom */
+    doZoomingEvents();
 }

@@ -6,16 +6,16 @@
 
 /* Zone média */
 div#media {
-    min-width: 200px;                                   /* Joue sur la taille du mouvement au chargement des médias */
-    width: 100%;
-    max-width: 390px;
+    width: 390px;                                       /* Destiné à ré-écriture */
     height: 100%;
     float: left;
 }
 
 /* Gestionnaire de chargement */
 div#media div.loader {
-    width: 30px;
+    min-width: 30px;
+    width: 30px;                                        /* Destiné à ré-écriture */
+    max-width: 300px;
     height: 100%;
     float: left;
     background-image: url('img/blank.png');
@@ -88,6 +88,57 @@ div#media div.data div.cage div.view {
 div#map {
     width: 100%;
     height: 100%;
+}
+
+/* Gallerie */
+div#gallery {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    overflow: hidden;
+}
+div#gallery div.picture {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+div#gallery div.picture img {
+    border: 1px solid white;
+    width: auto;
+    height: auto;
+    margin: 10px;
+    vertical-align: middle;
+}
+div#gallery div.infos {
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    background-image: url('img/blank.png');
+    color: white;
+}
+div#gallery div.infos h4 {
+    margin: 0px;
+    padding: 5px 10px 0px 10px;
+}
+div#gallery div.infos p {
+    margin: 0px;
+    padding: 0px 10px 0px 10px;
+}
+div#gallery div.infos ul {
+    padding: 5px 0px 0px 0px;
+    margin: 0px;
+    list-style-type: none;
+    text-align: center;
+}
+div#gallery div.infos ul li {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin-right: 2px;
+    margin-left: 2px;
+    border: 1px solid grey;
+    opacity: 1;
 }
 
 /* Pied */

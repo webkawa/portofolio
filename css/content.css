@@ -6,7 +6,9 @@
 
 /* Contenu */
 div#content {
-    width: auto;
+    min-width: 30px;                                    
+    width: 630px;                                       /* Destiné à ré-écriture */
+    max-width: 630px;                                   
     float: left;
     overflow: hidden;
 }

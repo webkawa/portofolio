@@ -82,6 +82,22 @@ function refreshContent() {
     });
 }
 
+/* Rafraichissement de la carte */
+function refreshMap() {
+    if(global_map != null) {
+        google.maps.event.trigger(global_map, 'resize');
+    }
+}
+/* Rafraichissement de la gallerie */
+function refreshGallery() {
+    if($("div#gallery").size() > 0) {
+        realHeight($("div#gallery div.picture"), $("div#gallery").height());
+        realMaxHeight($("div#gallery div.picture img"), $("div#gallery div.picture").height());
+        realMaxWidth($("div#gallery div.picture img"), $("div#gallery div.picture").width());
+        $("div#gallery div.picture").css("line-height", $("div#gallery div.picture").height() + "px");
+    }
+}
+/* Rafraichissement des médias */
 function refreshMedia() {
     /* Variables utiles */
     var media = $("div#media");
@@ -101,6 +117,10 @@ function refreshMedia() {
     if($(mediah3).size() > 0) {
         fontHeight($(mediatitle).find("h3"), $(mediatitle).height() - $(mediatitle).find("p").outerHeight(true)); 
     }
+    
+    /* Dépendances */
+    refreshMap();
+    refreshGallery();
 }
 
 /* Rafraichissement général */
@@ -110,4 +130,5 @@ function refresh() {
     refreshCore();
     refreshContent();
     refreshMedia();
+    refreshMap();
 }

@@ -29,6 +29,7 @@
         <script type="text/javascript" src="js/ajax/configuration.js"></script>
         <script type="text/javascript" src="js/events/global.js"></script>
         <script type="text/javascript" src="js/events/navigation.js"></script>
+        <script type="text/javascript" src="js/events/media.js"></script>
     </head>
     <body>
         <div id="header"> 
@@ -85,7 +86,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="media">
+                        <div id="media" class="small">
                             <div class="loader"></div>
                             <div class="title">
                                 <p>Dolor sit amet</p>
@@ -107,6 +108,23 @@
                                         <!-- Map -->
                                         <!-- <div id="map"></div>
                                         <!--     -->
+
+                                        <!-- Galerie -->
+                                        <!-- <div id="galery">
+                                            <div class="picture">
+                                                <img />
+                                            </div>
+                                            <div class="menu">
+                                                <h4>My legend</h4>
+                                                <p>My text</p>
+                                                <ul>
+                                                    <li id="med01" class="selected"></li>
+                                                    <li id="med02"></li>
+                                                    <li id="med03"></li>
+                                                </ul>
+                                            </div>
+                                        </div> -->
+                                        <!--         -->
                                     </div>
                                 </div>
                             </div>
@@ -143,11 +161,12 @@
                 /* Création des évènements */
                 doGlobalEvents();
                 doNavigationEvents();
+                doMediaEvents();
             
                 /* Rafraichissement de la page */
                 refresh();
                 
-                injectMap(true);
+                injectGallery();
             });
         </script>
     </body>

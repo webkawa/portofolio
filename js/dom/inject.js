@@ -87,7 +87,7 @@ function injectContent(target, dom) {
 function injectMedia(target, dom) {
     /* Création du contenu */
     var data =
-        $('<div id="media" style="opacity: 0">' +
+        $('<div id="media" class="small" style="opacity: 0">' +
             '<div class="loader"></div>' +
             '<div class="title"></div>' +
             '<div class="data">' +
@@ -132,6 +132,7 @@ function injectMedia(target, dom) {
 }
 
 /* Création d'une carte */
+var global_map;
 function injectMap(dom) {
     /* Variables utiles */
     var target = $("div#media div.data > div.cage div.view");
@@ -145,5 +146,47 @@ function injectMap(dom) {
           zoom: 8,
           mapTypeId: google.maps.MapTypeId.ROADMAP
     };
-    new google.maps.Map(document.getElementById("map"), options)
+    global_map = new google.maps.Map(document.getElementById("map"), options)
+}
+
+/* Création d'une galerie */
+function injectGallery(dom) {
+    /* Variables utiles */
+    var target = $("div#media div.data > div.cage div.view");
+    
+    /* Création de la galerie */
+    var data =
+        $('<div id="gallery">' +
+            '<div class="picture">' +
+                '<img />' +
+            '</div>' +
+            '<div class="infos">' +
+                '<h4>Lorem ipsum</h4>' +
+                '<p>Dolor sit amet</p>' +
+                '<ul>' +
+                    '<li id="fry" />' +
+                    '<li id="zoidberg" class="selected" />' +
+                    '<li id="bender" />' +
+                '</ul>' +
+            '</div>' +
+        '</div>');
+    
+    /* Injection */
+    $(target).append(data);
+    
+    /* Taille de la ligne */
+    realHeight($("div#gallery div.picture"), $("div#gallery").height());
+    realMaxHeight($("div#gallery div.picture img"), $("div#gallery div.picture").height());
+    realMaxWidth($("div#gallery div.picture img"), $("div#gallery div.picture").width());
+    $("div#gallery div.picture").css("line-height", $("div#gallery div.picture").height() + "px");
+    
+    /* Post-traitement (temporaire) */
+    var img = $("div#gallery div.picture img");
+    var selection = $("div#gallery div.infos ul li.selected");
+    var icons = $("div#gallery div.infos ul li");
+    
+    $(icons).each(function() {
+        $(this).css("background-image", "url('data/site/img/" + $(this).attr("id") +"_small.png')");
+    });
+    $(img).attr("src", "data/site/img/" + $(selection).attr("id") +".png");
 }
