@@ -130,5 +130,4 @@ function refresh() {
     refreshCore();
     refreshContent();
     refreshMedia();
-    refreshMap();
 }

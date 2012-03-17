@@ -98,3 +98,82 @@ function switchZoom(direction) {
         }
     });
 }
+
+/* Modifie le type de média affiché */
+function switchView(dom) {
+    /* Variables utiles */
+    var view = $("div#media div.data div.cage div.view");
+    var min = $(view).css("min-height");
+    var max = $(view).height();
+    var induration = parseInt($(co).find("media view in duration").text());
+    var ineasing = $(co).find("media view in easing").text();
+    var outduration = parseInt($(co).find("media view out duration").text());
+    var outeasing = $(co).find("media view out easing").text();
+    
+    /* Tweak pour le problème de largeur */
+    $(view).css("width", $(view).width());
+    
+    /* Animation */
+    $(view).animate({
+        "height" : min
+    },{
+        "duration" : induration,
+        "easing" : ineasing,
+        "complete" : function() {
+            /* Insérer le DOM ici */
+        }
+    }).animate({
+        "height" : max + "px"
+    },{
+        "duration" : outduration,
+        "easing" : outeasing,
+        "complete" : function() {
+            /* Désactivation du tweak */
+            $(view).css("width", "auto");
+        }
+    });
+}
+
+/* Modifie l'image affichée dans la galerie */
+function switchPicture(target) {
+    /* Variables utiles */
+    var gallery = $("div#gallery");
+    var picture = $("div#gallery div.picture img");
+    var img = $("div#gallery div.picture img");
+    var induration = parseInt($(co).find("media gallery in duration").text());
+    var ineasing = $(co).find("media gallery in easing").text();
+    var outduration = parseInt($(co).find("media gallery out duration").text());
+    var outeasing = $(co).find("media gallery out easing").text();
+    
+    /* Mémorisation de la taille maximale à l'ouverture */
+    var initwidth = $(picture).css("max-width");
+    
+    /* Modification de l'image sélectionnée */
+    $("div#gallery div.infos ul li.selected").toggleClass("selected");
+    $(target).addClass("selected");
+    
+    /* Animation */
+    $(img).animate({
+        "max-width" : "0px",
+        "opacity" : "0"
+    },{
+        "duration" : induration,
+        "easing" : ineasing,
+        "complete" : function() {
+            /* Insérer le DOM ici */
+            
+            /* Modification de l'image */
+            $(img).attr("src", "data/site/img/" + $(target).attr("id") + ".png");
+        }
+    }).animate({
+        "max-width" : initwidth,
+        "opacity" : "1"
+    },{
+        "duration" : outduration,
+        "easing" : outeasing,
+        "complete" : function() {
+            /* Rétablissement de la largeur */
+            $(img).css("width", "auto");
+        }
+    });
+}

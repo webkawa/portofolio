@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- common.xml                      -->
+<!-- Fichier de configuration commun -->
 <root>
     <quality>
         <high>
@@ -62,6 +64,26 @@
                     <easing>easeOutExpo</easing>
                 </out>
             </zoom>
+            <view>
+                <in>
+                    <duration>500</duration>
+                    <easing>easeOutExpo</easing>
+                </in>
+                <out>
+                    <duration>1000</duration>
+                    <easing>easeOutBounce</easing>
+                </out>
+            </view>
+            <gallery>
+                <in>
+                    <duration>800</duration>
+                    <easing>easeOutExpo</easing>
+                </in>
+                <out>
+                    <duration>800</duration>
+                    <easing>easeOutExpo</easing>
+                </out>
+            </gallery>
         </media>
     </navigation>
 </root>

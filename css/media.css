@@ -73,12 +73,13 @@ div#media div.data div.cage div.links ul li {
     margin: 5px 0px 5px 5px;
     list-style-type: none;
     border: 1px solid #aaa;
-    background-color: white;
+    background-color: #999;
 }
 div#media div.data div.cage div.links ul li:hover {
     background-color: #555;
 }
 div#media div.data div.cage div.view {
+    min-height: 2px;
     margin: 5px 5px 5px 50px;
     border: 1px solid #aaa;
     background-color: white;
@@ -106,6 +107,7 @@ div#gallery div.picture {
 div#gallery div.picture img {
     border: 1px solid white;
     width: auto;
+    max-width: 100%;                                        /* Destiné à ré-écriture */
     height: auto;
     margin: 10px;
     vertical-align: middle;

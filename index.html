@@ -45,7 +45,6 @@
                 <div class="spacer">
                     <div class="core">
                         <div id="content">
-
                             <div class="cage">
                                 <div class="scroller">
                                     <h2>Uuummmm, this is a tasty burger!</h2>
@@ -97,10 +96,10 @@
                                     <div class="links">
                                         <ul>
                                             <li>
-                                                a
+                                                
                                             </li>
                                             <li>
-                                                b
+                                                
                                             </li>
                                         </ul>
                                     </div>
@@ -158,6 +157,8 @@
                 addDecoration($("div#media div.title"), "border", "bc", "small");
                 addDecoration($("div#media div.notes"), "border", "tc", "small");
             
+                injectMap();
+            
                 /* Création des évènements */
                 doGlobalEvents();
                 doNavigationEvents();
@@ -165,8 +166,6 @@
             
                 /* Rafraichissement de la page */
                 refresh();
-                
-                injectGallery();
             });
         </script>
     </body>
