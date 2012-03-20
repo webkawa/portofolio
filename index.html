@@ -27,6 +27,7 @@
         <script type="text/javascript" src="js/dom/inject.js"></script>
         <script type="text/javascript" src="js/dom/cleanup.js"></script>
         <script type="text/javascript" src="js/ajax/configuration.js"></script>
+        <script type="text/javascript" src="js/ajax/data.js"></script>
         <script type="text/javascript" src="js/events/global.js"></script>
         <script type="text/javascript" src="js/events/navigation.js"></script>
         <script type="text/javascript" src="js/events/media.js"></script>
@@ -143,9 +144,19 @@
         </div>
         <div id="footer">Footer</div>
         <script type="text/javascript">
+            /* Configuration, index, page et média */
+            var co, idx, pge, med;
             $("body").ready(function() {
                 /* Chargement de la configuration */
                 co = loadConfiguration();
+                
+                /* Chargement du contenu */
+                idx = loadIndex();
+                pge = loadPage("home");
+                med = null;
+            
+                console.info(idx);
+                console.info(pge);
             
                 /* Application initiale */
                 jQuery.fx.interval = parseInt($(co).find("quality high interval").text());

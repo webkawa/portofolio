@@ -4,6 +4,11 @@
     Fonctions utiles à l'injection de code dans le DOM.
  */
 
+/* Initialise la page */
+function init() {
+    
+}
+
 /* Création d'un titre */
 function injectTitle(title, subtitle) {
     /* Mise à jour du contenu sortant */

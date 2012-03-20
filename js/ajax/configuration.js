@@ -4,6 +4,7 @@
     Fonctions liées au chargement de la configuration.
  */
 
+/* Charge la configuration */
 function loadConfiguration() {
     var request = jQuery.ajax({
         type: "GET",

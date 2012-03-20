@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- home/data.xml                -->
+<!-- Contenu de la page d'accueil -->
+<root>
+    <dom>
+        <h2>Lorem ipsum !</h2>
+        <p>Dolor sit amet</p>
+    </dom>
+</root>
