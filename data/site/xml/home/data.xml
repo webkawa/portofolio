@@ -2,8 +2,10 @@
 <!-- home/data.xml                -->
 <!-- Contenu de la page d'accueil -->
 <root>
-    <dom>
+    <title>Accueil</title>
+    <subtitle>Lorem ipsum dolor amet</subtitle>
+    <core>
         <h2>Lorem ipsum !</h2>
         <p>Dolor sit amet</p>
-    </dom>
+    </core>
 </root>

@@ -17,7 +17,7 @@ function loadIndex() {
 
 /* Charge une page */
 function loadPage(id) {
-    var root = $(idx).find("page#" + id + " repertory").text();
+    var root = $(idx).find("page#" + id).attr("repertory");
     console.log(root);
     var request = jQuery.ajax({
         type: "GET",

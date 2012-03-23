@@ -2,11 +2,16 @@
 <!-- index.xml          -->
 <!-- Index des contenus -->
 <root>
-    <page id="home">
-        <repertory>data/site/xml/home/</repertory>
+    <page id="home" repertory="data/site/xml/home/">
         <data>data.xml</data>
         <media id="m1">m1.xml</media>
         <media id="m2">m2.xml</media>
+    </page>
+    <page id="studies" repertory="data/site/xml/studies/">
+        <data>data.xml</data>
+    </page>
+    <page id="experience" repertory="data/site/xml/experience/">
+        <data>data.xml</data>
     </page>
 </root>
  

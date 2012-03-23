@@ -4,11 +4,6 @@
     Fonctions utiles à l'injection de code dans le DOM.
  */
 
-/* Initialise la page */
-function init() {
-    
-}
-
 /* Création d'un titre */
 function injectTitle(title, subtitle) {
     /* Mise à jour du contenu sortant */
@@ -28,24 +23,6 @@ function injectTitle(title, subtitle) {
     
     /* Rafraichissement du titre entrant */
     refreshTitleSize($("div#header div.title.incoming"));
-}
-
-/* Création d'une page */
-function injectPage(target) {
-    /* Création du contenu entrant */
-    var data = 
-        $('<div class="spacer">' +
-            '<div class="core" style="opacity: 0;"></div>' +
-        '</div>');
-    
-    /* Création des coins */
-    addCorners($(data).children("div.core"), "medium");
-    
-    /* Ajout au conteneur */
-    $(target).append($(data));
-    
-    /* Affectation de la taille */
-    realHeight($(data), $("div#page").height());
 }
 
 /* Création d'un coeur de page */
@@ -194,4 +171,30 @@ function injectGallery(dom) {
         $(this).css("background-image", "url('data/site/img/" + $(this).attr("id") +"_small.png')");
     });
     $(img).attr("src", "data/site/img/" + $(selection).attr("id") +".png");
+}
+
+/* Création d'une page */
+function injectPage(target) {
+    /* Création du contenu entrant */
+    var data = 
+        $('<div class="spacer">' +
+            '<div class="core" style="opacity: 0;"></div>' +
+        '</div>');
+    
+    /* Création des coins */
+    addCorners($(data).children("div.core"), "medium");
+    
+    /* Ajout au conteneur */
+    $(target).append($(data));
+    
+    /* Affectation de la taille */
+    realHeight($(data), $("div#page").height());
+}
+
+/* Initialise la page */
+function injectDom() {
+    /* Crée la liste des slides */
+    $(idx).find("page").each(function() {
+        
+    });
 }
