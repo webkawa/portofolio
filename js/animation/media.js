@@ -5,11 +5,11 @@
  */
 
 /* Modifie le média en cours */
-function switchMedia(id) {
+function switchMedia() {
     /* Variables utiles */
     var media = $("div#media");
-    var mediacomponents = $("div#media div.data > div.cage, div#media div.title h3, div#media div.title p, div#media div.notes > div.spacer");
     var loader = $("div#media div.loader");
+    var mediacomponents = $("div#media div.data > div.cage, div#media div.title h3, div#media div.title p, div#media div.notes div.spacer p");
     var durationin = $(co).find("navigation media switch in duration").text();
     var easingin = $(co).find("navigation media switch in easing").text();
     var durationout = $(co).find("navigation media switch out duration").text();
@@ -28,15 +28,36 @@ function switchMedia(id) {
             $(mediacomponents).css("margin-left", (multi * (now - iwidth)) + "px");
         }, 
         "complete" : function() {
-        // Clean/inject content there
-        }
-    }).animate({
-        "width" : $(loader).css("min-width")
-    },{
-        "duration" : parseInt(durationout),
-        "easing" : easingout,
-        "step" : function(now) {
-            $(mediacomponents).css("margin-left", (multi * (now - iwidth)) + "px");
+            /* Sélection des variables utiles */
+            var backwidth = $(loader).css("max-width");
+            var backmargin = $(mediacomponents).css("margin-left");
+            
+            /* Nettoyage et injection */
+            cleanupMedia();
+            injectMedia($("div#content").parent(), med);
+            
+            /* Rafraichissement des composants */
+            media = $("div#media");
+            loader = $("div#media div.loader");
+            mediacomponents = $("div#media div.data > div.cage, div#media div.title h3, div#media div.title p, div#media div.notes div.spacer p");
+            
+            /* Mise à jour des styles */
+            $(media).css("opacity", "inherit");
+            $(loader).css("width", backwidth);
+            $(mediacomponents).css("margin-left", backmargin);
+            
+            /* Animation de retour */
+            $(loader).animate({
+                "width" : $(loader).css("min-width")
+            },{
+                "duration" : parseInt(durationout),
+                "easing" : easingout,
+                "step" : function(now) {
+                    $(mediacomponents).css("margin-left", (multi * (now - iwidth)) + "px");
+                }, "complete" : function() {
+                    doMediaEvents();
+                }
+            });
         }
     });
 }
@@ -120,7 +141,7 @@ function switchView(dom) {
         "duration" : induration,
         "easing" : ineasing,
         "complete" : function() {
-            /* Insérer le DOM ici */
+        /* Insérer le DOM ici */
         }
     }).animate({
         "height" : max + "px"

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- home/about.xml   -->
+<!-- Média "à propos" -->
+<root>
+    <title>
+        <![CDATA[
+            <p>Accessibilité & Technique</p>
+            <h3>A propos</h3>
+        ]]>
+    </title>
+    <subtitles>Ce site en quelques mots</subtitles>
+    <notes>
+        <![CDATA[
+            <p>Voir aussi</p>
+        ]]>
+    </notes>
+    <view id="technology">
+        <type>text</type>
+        <core>
+            <![CDATA[
+                <h2>Lorem ipsum !</h2>
+                <p>Dolor sit amet</p>
+            ]]>
+        </core>
+    </view>
+    <view id="compatibility">
+        <type>text</type>
+        <core>
+            <![CDATA[
+                <h2>Lorem ipsum !</h2>
+            ]]>
+        </core>
+    </view>
+</root>

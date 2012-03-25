@@ -8,8 +8,8 @@
 function showCore(target) {
     /* Injection du contenu */
     var lastchild = lastChild(target);
-    injectContent(lastchild, "Lorem");
-    injectMedia(lastchild, "Ipsum");
+    injectContent(lastchild, $(pge).find("core").text());
+    injectMedia(lastchild);
     
     /* Variables utiles */
     var duration = $(co).find("transitions core duration").text();

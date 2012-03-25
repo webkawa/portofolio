@@ -19,7 +19,7 @@ function injectTitle(title, subtitle) {
             '<h1>' + title + '</h1>' +
             opt +
         '</div>';
-    $(data).insertAfter("div#header div.title.leaving");
+    $("div#header").append(data);
     
     /* Rafraichissement du titre entrant */
     refreshTitleSize($("div#header div.title.incoming"));
@@ -31,9 +31,7 @@ function injectContent(target, dom) {
     var data =
         $('<div id="content" style="opacity: 0">' +
             '<div class="cage">' +
-                '<div class="scroller">' +
-                    dom +
-                '</div>' +
+                '<div class="scroller"></div>' +
                 '<div class="scrollbar">' +
                     '<div class="scrollzone">' +
                         '<div class="marker"></div>' +
@@ -41,6 +39,9 @@ function injectContent(target, dom) {
                 '</div>' +
             '</div>' +
         '</div>');
+    
+    /* Ajout des informations chargées */
+    $(data).find("div.cage div.scroller").append(dom);
     
     /* Ajout du contenu */
     $(target).append($(data));
@@ -65,54 +66,6 @@ function injectContent(target, dom) {
     realHeight(marker, markerSize(cage, scroller, scrollzone));
 }
 
-/* Création de la zone média */
-function injectMedia(target, dom) {
-    /* Création du contenu */
-    var data =
-        $('<div id="media" class="small" style="opacity: 0">' +
-            '<div class="loader"></div>' +
-            '<div class="title"></div>' +
-            '<div class="data">' +
-                '<div class="cage">' +
-                    '<div class="links">' +
-                        '<ul>' +
-                            '<li>a</li>' +
-                            '<li>b</li>' +
-                        '</ul>' +
-                    '</div>' +
-                    '<div class="view">' +
-                        ' aa' +
-                    '</div>' +
-                '</div>' +
-            '</div>' +
-            '<div class="notes">' +
-                '<div class="spacer">' +
-                    '<p>Pas de m&eacute;dia affich&eacute;</p>' +
-                '</div>' +
-            '</div>' +
-        '</div>');
-    
-    /* Ajout du contenu */
-    $(target).append($(data));
-    
-    /* Variables utiles */
-    var media = $("div#media");
-    var mediatitle = $("div#media div.title");
-    var mediadata = $("div#media div.data");
-    var mediacage = $("div#media div.data > div.cage");
-    var mediaview = $("div#media div.data > div.cage div.view");
-    var medianotes = $("div#media div.notes");
-    
-    /* Ajout des décorations */
-    addDecoration($(mediatitle), "border", "bc", "small");
-    addDecoration($(medianotes), "border", "tc", "small");
-    
-    /* Hauteur de la zone média */
-    realHeight(mediadata, $(media).height() - $(mediatitle).outerHeight(true) - $(medianotes).outerHeight(true));
-    realHeight(mediacage, $(mediadata).height());
-    realHeight(mediaview, $(mediacage).height());
-}
-
 /* Création d'une carte */
 var global_map;
 function injectMap(dom) {
@@ -128,7 +81,7 @@ function injectMap(dom) {
           zoom: 8,
           mapTypeId: google.maps.MapTypeId.ROADMAP
     };
-    global_map = new google.maps.Map(document.getElementById("map"), options)
+    global_map = new google.maps.Map(document.getElementById("map"), options);
 }
 
 /* Création d'une galerie */
@@ -173,6 +126,104 @@ function injectGallery(dom) {
     $(img).attr("src", "data/site/img/" + $(selection).attr("id") +".png");
 }
 
+/* Création d'un texte */
+function injectText(view) {
+    /* Variables utiles */
+    var target = $("div#media div.data > div.cage div.view");
+    
+    /* Injection */
+    $(target).append($(view).find("core").text());
+}
+
+/* Injection d'une vue */
+function injectView(view) {
+    var type = $(view).find("type").text();
+    if(type === "map") {
+        injectMap(view);
+    } else if(type === "gallery") {
+        injectGallery(view);
+    } else if(type === "text") {
+        injectText(view);
+    }
+}
+
+/* Création de la zone média */
+function injectMedia(target, xml) {
+    /* Variables utiles */
+    var views = $(xml).find("view");
+    
+    /* Création des variables par défaut */
+    var list = '';
+    var title = '';
+    var view = '';
+    var notes = $(co).find("fields field#no-media").text();
+    if($(views).size() != 0) {
+        /* Titre */
+        title = $(xml).find("title").text();
+        
+        /* Liens */
+        list += '<div class="links"><ul>';
+        $(views).each(function() {
+            list += '<li id="' + $(this).attr("id") + '" class="' + $(this).find("type").text() + '"></li>';
+        });
+        list += '</ul></div>';
+        
+        /* Vue */
+        view = '<div class="view"></div>';
+        
+        /* Notes */
+        notes = $(xml).find("notes").text();
+    }
+    
+    /* Création du contenu */
+    var data =
+        $('<div id="media" class="small" style="opacity: 0">' +
+            '<div class="loader"></div>' +
+            '<div class="title">' +
+                title +
+            '</div>' +
+            '<div class="data">' +
+                '<div class="cage">' +
+                    list +
+                    view +
+                '</div>' +
+            '</div>' +
+            '<div class="notes">' +
+                '<div class="spacer">' +
+                    '<p>' +
+                        notes +
+                    '</p>' +
+                '</div>' +
+            '</div>' +
+        '</div>');
+    
+    /* Ajout du contenu */
+    $(target).append($(data));
+    
+    /* Injection de la vue */
+    if($(views).size() != 0) {
+        injectView($(views).get(0));
+        fontHeight($("div#media div.title h3"), $("div#media div.title").height() - $("div#media div.title p").outerHeight());
+    }
+    
+    /* Variables utiles */
+    var media = $("div#media");
+    var mediatitle = $("div#media div.title");
+    var mediadata = $("div#media div.data");
+    var mediacage = $("div#media div.data > div.cage");
+    var mediaview = $("div#media div.data > div.cage div.view");
+    var medianotes = $("div#media div.notes");
+    
+    /* Ajout des décorations */
+    addDecoration($(mediatitle), "border", "bc", "small");
+    addDecoration($(medianotes), "border", "tc", "small");
+    
+    /* Hauteur de la zone média */
+    realHeight(mediadata, $(media).height() - $(mediatitle).outerHeight(true) - $(medianotes).outerHeight(true));
+    realHeight(mediacage, $(mediadata).height());
+    realHeight(mediaview, $(mediacage).height());
+}
+
 /* Création d'une page */
 function injectPage(target) {
     /* Création du contenu entrant */
@@ -193,8 +244,40 @@ function injectPage(target) {
 
 /* Initialise la page */
 function injectDom() {
+    /* Sélection de l'identifiant */
+    var id = $(pge).find("id").text();
+    var left = true;
+    var page = $("div#page");
+    
     /* Crée la liste des slides */
     $(idx).find("page").each(function() {
-        
+        if($(this).attr("id") === id) {
+            /* Si identifiant atteint */
+            $(page).append('<div class="slide left open" id="' + $(this).attr("id") + '"></div>');
+            left = false;
+        } else {
+            if(left) {
+                /* Si à gauche */
+                $(page).append('<div class="slide left close" id="' + $(this).attr("id") + '"></div>');
+            } else {
+                /* Si à droite */
+                $("div#page div.slide.left.open").after('<div class="slide right close" id="' + $(this).attr("id") + '"></div>');
+            }
+        }
     });
+    
+    /* Injecte le titre */
+    injectTitle($(pge).find("title").text(), $(pge).find("subtitle").text());
+    
+    /* Injecte le coeur de page */
+    injectPage($("div#page div.slide.open"));
+    
+    /* Injecte les conteneurs */
+    var target = lastChild("div#page div.slide.open > div.spacer div.core");
+    injectContent(target, $(pge).find("core").text());
+    injectMedia(target, med);
+    
+    /* Mises à jours liées à la non-animation */
+    $("div#header div.title").toggleClass("incoming");
+    $("div#page div.slide.open > div.spacer div.core, div#content, div#media").css("opacity", "inherit");
 }

@@ -4,20 +4,6 @@
     Evènements liés à la navigation.
  */
 
-/* Inscription des évènements de zoom */
-function doZoomingEvents() {
-    /* Effacement des fonctions précédentes */
-    $("div#media div.loader").off();
-    
-    /* Zoom sur un média */
-    $("div#media.small div.loader").click(function() {
-        switchZoom(true);
-    });
-    /* Dézoomage d'un média */
-    $("div#media.large div.loader").click(function() {
-        switchZoom(false);
-    });
-}
 /* Inscription des évènements de navigation */
 function doNavigationEvents() {
     /* Gestion de la navigation entre les slides */
@@ -27,12 +13,16 @@ function doNavigationEvents() {
         var x1 = $("div#page div.slide:last").is($(this));
         var x2 = $(open).prev().is($(this));
         
+        /* Mise à jour des variables de navigation */
+        pge = loadPage($(this).attr("id"));
+        med = null;
+        
         /* Changement */
         if($(open).size() == 1 && (x1 || x2)) {
             /* Modification du titre */
             switchTitle({
-                "title" : "Lorem ipsum",
-                "subtitle" : "Dolor sit amet"
+                "title" : $(pge).find("title").text(),
+                "subtitle" : $(pge).find("subtitle").text()
             }, $(this));
             
             switchSlide(open, $(this));
@@ -91,9 +81,8 @@ function doNavigationEvents() {
     /* Affichage des médias */
     $("div#content div.scroller a").click(function() {
         if($("div#media div.loader:animated").size() == 0) {
+            med = loadMedia($(this).attr("href"));
             switchMedia($(this).attr("href"));
         }
     });
-    /* Gestion du zoom */
-    doZoomingEvents();
 }

@@ -57,22 +57,22 @@ div#page div.slide div.spacer div.core {
 }
 
 /* Temporaire */
-div#page div.slide#s1 {
+div#page div.slide#home {
     background-color: #aaa;
 }
-div#page div.slide#s1 div.spacer div.loader {
+div#page div.slide#home div.spacer div.loader {
     background-color: #aaa;
 }
-div#page div.slide#s2  {
+div#page div.slide#studies  {
     background-color: #999;
 }
-div#page div.slide#s2 div.spacer div.loader {
+div#page div.slide#studies div.spacer div.loader {
     background-color: #999;
 }
-div#page div.slide#s3 {
+div#page div.slide#experience {
     background-color: #777;
 }
-div#page div.slide#s3 div.spacer div.loader {
+div#page div.slide#experience div.spacer div.loader {
     background-color: #777;
 }
 div#page div.slide#s4 {

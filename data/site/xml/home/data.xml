@@ -2,10 +2,17 @@
 <!-- home/data.xml                -->
 <!-- Contenu de la page d'accueil -->
 <root>
+    <id>home</id>
     <title>Accueil</title>
     <subtitle>Lorem ipsum dolor amet</subtitle>
     <core>
-        <h2>Lorem ipsum !</h2>
-        <p>Dolor sit amet</p>
+        <![CDATA[
+            <h2>Lorem ipsum !</h2>
+            <p>Dolor sit amet</p>
+            <ul>
+                <li>Test <a href="#about">à propos</a></li>
+                <li>Test <a href="#help">aide à la navigation</a></li>
+            </ul>
+        ]]>
     </core>
 </root>

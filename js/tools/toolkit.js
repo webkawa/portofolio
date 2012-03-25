@@ -35,11 +35,14 @@ function fontHeight(target, height) {
     /* Mise à zéro */
     $(target).css("font-size", "0px");
     
-    /* Calcul */
-    var x = 0;
-    while($(target).outerHeight(true) < height) {
-        $(target).css("font-size", x + "px");
-        x++;
+    /* Tests de sécurité */
+    if($(target).size() == 1 && height > 0) {
+        /* Calcul */
+        var x = 0;
+        while($(target).outerHeight(true) < height) {
+            $(target).css("font-size", x + "px");
+            x++;
+        }
     }
 }
 

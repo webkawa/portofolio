@@ -17,10 +17,9 @@ function cleanupTitle() {
     $(ititle).toggleClass("incoming");
 }
 
-/* Nettoyage de la page */
-function cleanupPage() {
-    /* Nettoyage */
-    $("div#page div.slide.close > div.spacer").remove();
+/* Nettoyage du média */
+function cleanupMedia() {
+    $("div#media").remove();
 }
 
 /* Nettoyage du contenu */
@@ -28,4 +27,10 @@ function cleanupCore() {
     /* Nettoyage */
     $("div#content, div#media").remove();
     global_map = null;
+}
+
+/* Nettoyage de la page */
+function cleanupPage() {
+    /* Nettoyage */
+    $("div#page div.slide.close > div.spacer").remove();
 }

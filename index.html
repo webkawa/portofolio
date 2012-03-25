@@ -33,15 +33,10 @@
         <script type="text/javascript" src="js/events/media.js"></script>
     </head>
     <body>
-        <div id="header"> 
-            <div class="title">
-                <h1>Lorem ipsum</h1>
-                <p>Dolor sit amet</p>
-            </div>
-        </div> 
+        <div id="header"></div> 
         <div id="page">
             <!-- Gauche -->
-            <div class="slide left close" id="s1"></div>
+            <!-- <div class="slide left close" id="s1"></div>
             <div class="slide left open" id="s2">
                 <div class="spacer">
                     <div class="core">
@@ -104,7 +99,7 @@
                                             </li>
                                         </ul>
                                     </div>
-                                    <div class="view">
+                                    <div class="view"> -->
                                         <!-- Map -->
                                         <!-- <div id="map"></div>
                                         <!--     -->
@@ -125,7 +120,7 @@
                                             </div>
                                         </div> -->
                                         <!--         -->
-                                    </div>
+                                    <!--</div>
                                 </div>
                             </div>
                             <div class="notes">
@@ -136,11 +131,11 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <!-- Droite -->
-            <div class="slide right close" id="s5"></div>
+            <!-- <div class="slide right close" id="s5"></div>
             <div class="slide right close" id="s4"></div>
-            <div class="slide right close" id="s3"></div>
+            <div class="slide right close" id="s3"></div> -->
         </div>
         <div id="footer">Footer</div>
         <script type="text/javascript">
@@ -153,22 +148,20 @@
                 /* Chargement du contenu */
                 idx = loadIndex();
                 pge = loadPage("home");
-                med = null;
-            
-                console.info(idx);
-                console.info(pge);
+                med = $("");
             
                 /* Application initiale */
                 jQuery.fx.interval = parseInt($(co).find("quality high interval").text());
             
+                /* Injection du DOM */
+                injectDom();
+            
                 /* Actions post-chargement du DOM */
-                addCorners($("div#page div.slide.open div.spacer div.core"), "medium");
+                /*addCorners($("div#page div.slide.open div.spacer div.core"), "medium");
                 addDecoration($("div#content div.scrollbar"), "corner", "tc", "small");
                 addDecoration($("div#content div.scrollbar"), "corner", "bc", "small");
                 addDecoration($("div#media div.title"), "border", "bc", "small");
-                addDecoration($("div#media div.notes"), "border", "tc", "small");
-            
-                injectMap();
+                addDecoration($("div#media div.notes"), "border", "tc", "small");*/
             
                 /* Création des évènements */
                 doGlobalEvents();

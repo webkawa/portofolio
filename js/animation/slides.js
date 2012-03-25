@@ -118,6 +118,7 @@ function switchSlide(origin, destination) {
             
             /* Ré-inscription des évènements */
             doNavigationEvents();
+            doMediaEvents();
         }
     });
 }

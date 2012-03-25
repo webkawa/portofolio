@@ -86,4 +86,7 @@
             </gallery>
         </media>
     </navigation>
+    <fields>
+        <field id="no-media">Aucun média affiché</field>
+    </fields>
 </root>
