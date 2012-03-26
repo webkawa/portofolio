@@ -24,11 +24,9 @@
         </core>
     </view>
     <view id="compatibility">
-        <type>text</type>
-        <core>
-            <![CDATA[
-                <h2>Lorem ipsum !</h2>
-            ]]>
-        </core>
+        <type>map</type>
+        <latitude>47,900</latitude>
+        <longitude>1,902</longitude>
+        <zoom>8</zoom>
     </view>
 </root>

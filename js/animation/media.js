@@ -134,6 +134,8 @@ function switchView(xml) {
     /* Tweak pour le problème de largeur */
     $(view).css("width", $(view).width());
     
+    console.log(min);
+    
     /* Animation */
     $(view).animate({
         "height" : min
@@ -152,6 +154,9 @@ function switchView(xml) {
         "complete" : function() {
             /* Désactivation du tweak */
             $(view).css("width", "auto");
+            
+            /* Rafraichissement de la carte */
+            refreshMap();
         }
     });
 }
