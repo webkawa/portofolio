@@ -9,11 +9,6 @@
         ]]>
     </title>
     <subtitles>Ce site en quelques mots</subtitles>
-    <notes>
-        <![CDATA[
-            <p>Voir aussi</p>
-        ]]>
-    </notes>
     <view id="technology">
         <type>text</type>
         <core>
@@ -24,11 +19,14 @@
         </core>
     </view>
     <view id="compatibility">
-        <type>text</type>
-        <core>
-            <![CDATA[
-                <h2>Lorem ipsum !</h2>
-            ]]>
-        </core>
+        <type>map</type>
+        <latitude>48,52790</latitude>
+        <longitude>2,65549</longitude>
+        <zoom>12</zoom>
     </view>
+    <notes>
+        <![CDATA[
+            <p>Voir aussi</p>
+        ]]>
+    </notes>
 </root>

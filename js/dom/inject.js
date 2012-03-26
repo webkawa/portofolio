@@ -68,17 +68,20 @@ function injectContent(target, dom) {
 
 /* Création d'une carte */
 var global_map;
-function injectMap(dom) {
+function injectMap(xml) {
     /* Variables utiles */
     var target = $("div#media div.data > div.cage div.view");
+    var longitude = parseInt($(xml).find("longitude").text());
+    var latitude = parseInt($(xml).find("latitude").text());
+    var zoom = parseInt($(xml).find("zoom").text());
     
     /* Injection */
     $(target).append('<div id="map"></div>');
     
     /* Chargement de la carte */
     var options = {
-          center: new google.maps.LatLng(-34.397, 150.644),
-          zoom: 8,
+          center: new google.maps.LatLng(longitude, latitude),
+          zoom: zoom,
           mapTypeId: google.maps.MapTypeId.ROADMAP
     };
     global_map = new google.maps.Map(document.getElementById("map"), options);
