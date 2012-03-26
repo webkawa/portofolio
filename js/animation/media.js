@@ -121,7 +121,7 @@ function switchZoom(direction) {
 }
 
 /* Modifie le type de média affiché */
-function switchView(dom) {
+function switchView(xml) {
     /* Variables utiles */
     var view = $("div#media div.data div.cage div.view");
     var min = $(view).css("min-height");
@@ -141,7 +141,8 @@ function switchView(dom) {
         "duration" : induration,
         "easing" : ineasing,
         "complete" : function() {
-        /* Insérer le DOM ici */
+            cleanupView();
+            injectView(xml);
         }
     }).animate({
         "height" : max + "px"

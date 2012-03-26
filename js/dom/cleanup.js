@@ -17,6 +17,11 @@ function cleanupTitle() {
     $(ititle).toggleClass("incoming");
 }
 
+/* Nettoyage de la vue */
+function cleanupView() {
+    $("div#media div.data > div.cage div.view *").remove();
+}
+
 /* Nettoyage du média */
 function cleanupMedia() {
     $("div#media").remove();

@@ -22,7 +22,7 @@ function doZoomingEvents() {
 function doViewEvents() {
     /* Changement de média */
     $("div#media div.data div.cage div.links ul li").click(function() {
-        switchView();
+        switchView($(med).find("view#" + $(this).attr("id")));
     });
 }
 /* Evènements des galeries */
