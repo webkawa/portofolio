@@ -55,35 +55,3 @@ div#page div.slide div.spacer div.core {
     overflow: hidden;
     background-color: white;
 }
-
-/* Temporaire */
-div#page div.slide#home {
-    background-color: #aaa;
-}
-div#page div.slide#home div.spacer div.loader {
-    background-color: #aaa;
-}
-div#page div.slide#studies  {
-    background-color: #999;
-}
-div#page div.slide#studies div.spacer div.loader {
-    background-color: #999;
-}
-div#page div.slide#experience {
-    background-color: #777;
-}
-div#page div.slide#experience div.spacer div.loader {
-    background-color: #777;
-}
-div#page div.slide#s4 {
-    background-color: #555;
-}
-div#page div.slide#s4 div.spacer div.loader {
-    background-color: #555;
-}
-div#page div.slide#s5 {
-    background-color: #333;
-}
-div#page div.slide#s5 div.spacer div.loader {
-    background-color: #333;
-}

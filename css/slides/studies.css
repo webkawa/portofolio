@@ -1,0 +1,12 @@
+/* 
+    home.css
+    --------
+    Feuille de style de la page études.
+*/
+
+div.slide#studies {
+    background-color: #aaa;
+}
+div.slide#studies div.spacer div.loader {
+    background-color: #aaa;
+}

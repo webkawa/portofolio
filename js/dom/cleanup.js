@@ -20,6 +20,7 @@ function cleanupTitle() {
 /* Nettoyage de la vue */
 function cleanupView() {
     $("div#media div.data > div.cage div.view *").remove();
+    $("div#media div.data > div.cage div.links ul li.selected").toggleClass("selected");
 }
 
 /* Nettoyage du média */

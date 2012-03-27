@@ -8,7 +8,7 @@
 div#media {
     width: 390px;                                       /* Destiné à ré-écriture */
     height: 100%;
-    float: left;
+    float: right;
 }
 
 /* Gestionnaire de chargement */
@@ -78,11 +78,40 @@ div#media div.data div.cage div.links ul li {
 div#media div.data div.cage div.links ul li:hover {
     background-color: #555;
 }
+div#media div.data div.cage div.links ul li.selected {
+    border-color: red;
+}
 div#media div.data div.cage div.view {
     min-height: 2px;
     margin: 5px 5px 5px 50px;
     border: 1px solid #aaa;
     background-color: white;
+}
+
+/* Zone de texte */
+div#text {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0px;                                       /* Doit rester nul */
+    margin: 0px;                                        /* Doit rester nul */
+    overflow: hidden;
+}
+div#text div.fade {
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    bottom: 0px;
+    background-image: url('img/blank.png');
+}
+div#text h4 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 5px 5px 5px 5px;
+}
+div#text p {
+    font-size: 12px;
+    margin: 2px 5px 2px 5px;
 }
 
 /* Carte */

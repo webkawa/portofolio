@@ -1,0 +1,12 @@
+/* 
+    home.css
+    --------
+    Feuille de style de la page expérience.
+*/
+
+div.slide#experience {
+    background-color: #aaa;
+}
+div.slide#experience div.spacer div.loader {
+    background-color: #aaa;
+}

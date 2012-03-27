@@ -134,8 +134,6 @@ function switchView(xml) {
     /* Tweak pour le problème de largeur */
     $(view).css("width", $(view).width());
     
-    console.log(min);
-    
     /* Animation */
     $(view).animate({
         "height" : min
@@ -143,6 +141,7 @@ function switchView(xml) {
         "duration" : induration,
         "easing" : ineasing,
         "complete" : function() {
+            /* Modification du DOM */
             cleanupView();
             injectView(xml);
         }

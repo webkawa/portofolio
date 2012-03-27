@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- home/data.xml                -->
-<!-- Contenu de la page d'accueil -->
+<!-- experience/data.xml           -->
+<!-- Contenu de la page expérience -->
 <root>
     <id>experience</id>
     <title>Experience</title>

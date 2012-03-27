@@ -13,5 +13,11 @@
     <page id="experience" repertory="data/site/xml/experience/">
         <data>data.xml</data>
     </page>
+    <page id="services" repertory="data/site/xml/services/">
+        <data>data.xml</data>
+    </page>
+    <page id="infos" repertory="data/site/xml/infos/">
+        <data>data.xml</data>
+    </page>
 </root>
  

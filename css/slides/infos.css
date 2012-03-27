@@ -1,0 +1,12 @@
+/* 
+    home.css
+    --------
+    Feuille de style de la page d'information.
+*/
+
+div.slide#infos {
+    background-color: #aaa;
+}
+div.slide#infos div.spacer div.loader {
+    background-color: #aaa;
+}

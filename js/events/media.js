@@ -22,7 +22,11 @@ function doZoomingEvents() {
 function doViewEvents() {
     /* Changement de média */
     $("div#media div.data div.cage div.links ul li").click(function() {
-        switchView($(med).find("view#" + $(this).attr("id")));
+        var b1 = ($("div#media div.data div.cage div.view:animated").size() != 0);
+        var b2 = ($(this).attr("id") === $("div#media div.data div.cage div.links ul li.selected").attr("id"));
+        if(!b1 && !b2) {
+            switchView($(med).find("view#" + $(this).attr("id")));
+        }
     });
 }
 /* Evènements des galeries */

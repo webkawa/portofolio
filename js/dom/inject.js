@@ -134,8 +134,15 @@ function injectText(view) {
     /* Variables utiles */
     var target = $("div#media div.data > div.cage div.view");
     
+    /* Contenu */
+    var data =
+        '<div id="text">' +
+            $(view).find("core").text() +
+            '<div class="fade"></div>' +
+        '</div>';
+    
     /* Injection */
-    $(target).append($(view).find("core").text());
+    $(target).append(data);
 }
 
 /* Injection d'une vue */
@@ -148,6 +155,7 @@ function injectView(view) {
     } else if(type === "text") {
         injectText(view);
     }
+    $("div#media div.data > div.cage div.links ul li#" + $(view).attr("id")).addClass("selected");
 }
 
 /* Création de la zone média */

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- home/data.xml                -->
-<!-- Contenu de la page d'accueil -->
+<!-- studies/data.xml          -->
+<!-- Contenu de la page études -->
 <root>
     <id>studies</id>
     <title>Etudes</title>

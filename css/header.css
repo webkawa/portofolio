@@ -27,12 +27,14 @@ div#header div.title.leaving {
 
 /* Titre principal */
 div#header div.title h1 {
+    margin: 0px;
     padding: 0px;
     padding-left: 20px;
     font-size: 0px;                     /* Hauteur de police redéfinie */
 }
 /* Sous-titre */
 div#header div.title p {
+    margin: 0px;
     padding: 0px;
     padding-left: 20px;
     text-transform: uppercase;

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- home/data.xml                -->
-<!-- Contenu de la page d'accueil -->
+<!-- infos/data.xml                  -->
+<!-- Contenu de la page informations -->
 <root>
-    <id>studies</id>
-    <title>Etudes</title>
-    <subtitle>Parcours scolaire et universitaire</subtitle>
+    <id>infos</id>
+    <title>Contactons-nous</title>
+    <subtitle>Informations pratiques</subtitle>
     <core>
         <![CDATA[
-            Etudes
+            Informations pratiques
         ]]>
     </core>
 </root>

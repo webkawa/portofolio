@@ -1,0 +1,12 @@
+/* 
+    home.css
+    --------
+    Feuille de style de la page services.
+*/
+
+div.slide#services {
+    background-color: #aaa;
+}
+div.slide#services div.spacer div.loader {
+    background-color: #aaa;
+}

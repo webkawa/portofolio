@@ -1,0 +1,12 @@
+/* 
+    home.css
+    --------
+    Feuille de style de la page d'accueil.
+*/
+
+div.slide#home {
+    background-color: #aaa;
+}
+div.slide#home div.spacer div.loader {
+    background-color: #aaa;
+}
