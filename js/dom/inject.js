@@ -80,7 +80,7 @@ function injectMap(xml) {
     
     /* Chargement de la carte */
     var options = {
-          center: new google.maps.LatLng(longitude, latitude),
+          center: new google.maps.LatLng(latitude, longitude),
           zoom: zoom,
           mapTypeId: google.maps.MapTypeId.ROADMAP
     };
