@@ -53,6 +53,7 @@ function injectContent(target, dom) {
     /* Variables utiles */
     var core = $("div#page div.slide > div.spacer div.core");
     var content = $("div#content");
+    var media = $("div#media");
     var cage = $("div#content > div.cage");
     var scroller = $("div#content > div.cage div.scroller");
     var scrollbar = $("div#content > div.cage div.scrollbar");
@@ -61,8 +62,12 @@ function injectContent(target, dom) {
     
     /* Affectation des tailles */
     realHeight(content, $(core).height());
+    realMaxWidth(content, $(core).width() - $(media).outerWidth());
+    console.log($(core).width() + " " + $(media).outerWidth());
     realHeight(cage, $(content).height());
+    realWidth(cage, $(content).width());
     realHeight(scrollzone, $(scrollbar).height());
+    realWidth(scroller, $(cage).width() - $(scrollbar).outerWidth());
     realHeight(marker, markerSize(cage, scroller, scrollzone));
 }
 
@@ -218,6 +223,7 @@ function injectMedia(target, xml) {
     }
     
     /* Variables utiles */
+    var core = $("div#page div.slide > div.spacer div.core");
     var media = $("div#media");
     var mediatitle = $("div#media div.title");
     var mediadata = $("div#media div.data");
@@ -228,6 +234,10 @@ function injectMedia(target, xml) {
     /* Ajout des décorations */
     addDecoration($(mediatitle), "border", "bc", "small");
     addDecoration($(medianotes), "border", "tc", "small");
+    
+    /* Largeur de la zone média */
+    realWidth(media, $(core).height());
+    console.log($(core).height());
     
     /* Hauteur de la zone média */
     realHeight(mediadata, $(media).height() - $(mediatitle).outerHeight(true) - $(medianotes).outerHeight(true));
@@ -247,10 +257,13 @@ function injectPage(target) {
     addCorners($(data).children("div.core"), "medium");
     
     /* Ajout au conteneur */
-    $(target).append($(data));
+    $(target).append(data);
     
     /* Affectation de la taille */
-    realHeight($(data), $("div#page").height());
+    realHeight($("div#page div.slide.open > div.spacer"), $("div#page").height());
+    console.log($("div#page div.slide").height());
+    console.log("spacer" + $("div#page div.slide.open > div.spacer").height());
+    console.log("core" + $("div#page div.slide.open > div.spacer div.core").height());
 }
 
 /* Initialise la page */
@@ -280,13 +293,20 @@ function injectDom() {
     /* Injecte le titre */
     injectTitle($(pge).find("title").text(), $(pge).find("subtitle").text());
     
+    /* Hauteur de la page */
+    realHeight(page, $(window).height() - $("div#header").outerHeight() - $("div#footer").outerHeight());
+    realHeight($("div#page div.slide"), $(page).height());
+    
+    console.log("lol" + $(page).height());
+    
     /* Injecte le coeur de page */
     injectPage($("div#page div.slide.open"));
+    console.log("aaaaa" + $("div#page div.slide.open > div.spacer").height());
     
     /* Injecte les conteneurs */
     var target = lastChild("div#page div.slide.open > div.spacer div.core");
-    injectContent(target, $(pge).find("core").text());
     injectMedia(target, med);
+    injectContent(target, $(pge).find("core").text());
     
     /* Mises à jours liées à la non-animation */
     $("div#header div.title").toggleClass("incoming");

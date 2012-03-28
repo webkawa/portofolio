@@ -62,16 +62,25 @@ function refreshCore() {
 /* Rafraichissement du contenu */
 function refreshContent() {
     /* Variables utiles */
+    var core = $("div#page div.slide.open > div.spacer div.core");
     var content = $("div#content");
+    var media = $("div#media");
     var cage = $("div#content > div.cage");
     var scroller = $("div#content > div.cage div.scroller");
     var scrollbar = $("div#content > div.cage div.scrollbar");
     var scrollzone = $("div#content > div.cage div.scrollbar div.scrollzone");
     var marker = $("div#content > div.cage div.scrollbar div.scrollzone div.marker");
     
-    /* Hauteur de la zone contenu */
-    var cheight = $(content).height();
-    realHeight(cage, cheight);
+    /* Calcul de la largeur */
+    realMaxWidth(content, $(core).width() - $(media).outerWidth());
+    
+    /* Taille de la cage */
+    realHeight(cage, $(content).height());
+    realWidth(cage, $(content).width());
+    
+    /* Taille du scroller */
+    realWidth(scroller, $(cage).width() - $(scrollbar).outerWidth());
+    
     var sbheight = $(scrollbar).height();
     var diffscroll = Math.max($(scroller).height() - $(content).height(), 0);
     var diffmarker = $(scrollzone).height() - $(marker).height();
@@ -100,6 +109,7 @@ function refreshGallery() {
 /* Rafraichissement des médias */
 function refreshMedia() {
     /* Variables utiles */
+    var core = $("div#page div.slide.open > div.spacer div.core");
     var media = $("div#media");
     var mediatitle = $("div#media div.title");
     var mediah3 = $("div#media div.title h3");
@@ -109,6 +119,9 @@ function refreshMedia() {
     var medianotes = $("div#media div.notes");
     
     /* Hauteurs de la zone média */
+    if($(media).hasClass("small")) {
+        realWidth(media, $(core).height());
+    }
     realHeight(mediadata, $(media).height() - $(mediatitle).outerHeight(true) - $(medianotes).outerHeight(true));
     realHeight(mediacage, $(mediadata).height());
     realHeight(mediaview, $(mediadata).height());
@@ -125,9 +138,24 @@ function refreshMedia() {
 
 /* Rafraichissement général */
 function refresh() {
+    /* Dépendances */
     refreshTitle($("div#header div.title"));
     refreshPage();
     refreshCore();
     refreshContent();
     refreshMedia();
+    
+    /* Variables utiles */
+    var header = $("div#header");
+    var hheight = $(header).outerHeight(false);
+    var page = $("div#page");
+    var pheight = $(page).outerHeight();
+    var footer = $("div#footer");
+    var fheight = $(footer).outerHeight();
+    var wheight = $(window).height();
+    
+    /* Taille de l'en-tête */
+    if(wheight > hheight + pheight + fheight) {
+        $(header).css("margin-top", ((wheight - hheight - pheight - fheight) / 2) + "px");
+    }
 }

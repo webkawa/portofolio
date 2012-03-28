@@ -16,13 +16,11 @@ function switchSlide(origin, destination) {
     var direction = $(slides).index(destination) > $(slides).index(origin);     /* Sens de navigation : true pour droite, false pour gauche */
     var space = $(origin).outerWidth(true) + $(destination).outerWidth(true);   /* Espace total occupé */
     var duration, easing;                                                       /* Informations sur le mouvement */
-    var lspacer = $(origin).children("div.spacer");                              /* Espacement du contenu fermant */
+    var lspacer = $(origin).children("div.spacer");                             /* Espacement du contenu fermant */
     var lcore = $(origin).find("div.spacer div.core");                          /* Coeur fermant */
-    var lcoreminw = parseInt($(lcore).css("min-width"));                        /* Largeur minimale du coeur fermant */
-    var lcoremaxw = parseInt($(lcore).css("max-width"));                        /* Largeur maximale du coeur fermant */
+    var lcoremaxw = $(lcore).width();                                           /* Largeur maximale du coeur fermant */
     var icore = $(destination).find("div.spacer div.core");                     /* Coeur ouvrant */
-    var icoreminw = parseInt($(icore).css("min-width"));                        /* Largeur minimale du coeur ouvrant */
-    var icoremaxw = Math.min(parseInt($(icore).css("max-width")), dprop.width); /* Largeur maximale du coeur ouvrant */
+    var icoremaxw = dprop.width;                                                /* Largeur maximale du coeur ouvrant */
     var margin;                                                                 /* Marge ajoutée pour la transition */
     var waiter = $(co).find("transitions core duration").text();                /* Temps de transition du cœur */
 
@@ -35,10 +33,6 @@ function switchSlide(origin, destination) {
     
     /* Actions spécifiques à chaque sens */
     if (direction) {
-        /* Création de la marge */
-        margin = dprop.width - $(lcore).outerWidth(true) - parseInt($(destination).css("min-width"));
-        $(destination).children("div.spacer").css("margin-right", margin + "px");
-        
         /* Informations sur le mouvement */
         duration = $(co).find("transitions slides next duration").text();
         easing = $(co).find("transitions slides next easing").text();
@@ -53,10 +47,6 @@ function switchSlide(origin, destination) {
         
         /* Calcul de la taille */
         realMaxWidth($(origin), $("div#page").width() - oprop.lmargin - oprop.rmargin);
-        
-        /* Création de la marge */
-        margin = $(lspacer).width() - $(lcore).outerWidth(true);
-        $(origin).children("div.spacer").css("margin-right", margin + "px");
         
         /* Informations sur le mouvement */
         duration = $(co).find("transitions slides prev duration").text();
@@ -78,8 +68,8 @@ function switchSlide(origin, destination) {
             ibuff = $(icore).width();
             if(ibuff != tbuff) {
                 lbuff = $(lcore).width();
-                $(icore).css("opacity", ibuff / (icoremaxw - icoreminw));
-                $(lcore).css("opacity", lbuff / (lcoremaxw - lcoreminw));
+                $(icore).css("opacity", ibuff / icoremaxw);
+                $(lcore).css("opacity", lbuff / lcoremaxw);
             }
             
             /* Taille du slide ouvrant */

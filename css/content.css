@@ -7,20 +7,17 @@
 /* Contenu */
 div#content {
     min-width: 30px;                                    
-    width: 630px;                                       /* Destiné à ré-écriture */
-    max-width: 630px;                                   
+    width: 100%;                                      /* Destiné à ré-écriture */
     float: left;
     overflow: hidden;
 }
 div#content div.cage {
-    width: 580px;
     padding-left: 40px;
     padding-right: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
 }
 div#content div.cage div.scroller {
-    width: 530px;
     float: left;
     overflow: hidden;
     padding: 0px 30px 0px 0px !important;               /* Doit rester nul sur la hauteur */
