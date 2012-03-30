@@ -52,7 +52,7 @@ function refreshPage() {
 /* Rafraichissement du cœur de page */
 function refreshCore() {
     /* Variables utiles */
-    var sheight = $("div#page div.spacer div.core").height();
+    var sheight = $("div#page div.slide > div.spacer div.core").height();
     
     /* Hauteur des fenêtres de contenu et médias */
     realHeight("div#content", sheight);
@@ -142,8 +142,8 @@ function refresh() {
     refreshTitle($("div#header div.title"));
     refreshPage();
     refreshCore();
-    refreshContent();
     refreshMedia();
+    refreshContent();
     
     /* Variables utiles */
     var header = $("div#header");

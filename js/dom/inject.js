@@ -63,7 +63,6 @@ function injectContent(target, dom) {
     /* Affectation des tailles */
     realHeight(content, $(core).height());
     realMaxWidth(content, $(core).width() - $(media).outerWidth());
-    console.log($(core).width() + " " + $(media).outerWidth());
     realHeight(cage, $(content).height());
     realWidth(cage, $(content).width());
     realHeight(scrollzone, $(scrollbar).height());
@@ -132,6 +131,7 @@ function injectGallery(dom) {
         $(this).css("background-image", "url('data/site/img/" + $(this).attr("id") +"_small.png')");
     });
     $(img).attr("src", "data/site/img/" + $(selection).attr("id") +".png");
+    /* Fin du post-traitement */
 }
 
 /* Création d'un texte */
@@ -223,7 +223,8 @@ function injectMedia(target, xml) {
     }
     
     /* Variables utiles */
-    var core = $("div#page div.slide > div.spacer div.core");
+    var spacer = $("div#page div.slide.open > div.spacer");
+    var core = $("div#page div.slide.open > div.spacer div.core");
     var media = $("div#media");
     var mediatitle = $("div#media div.title");
     var mediadata = $("div#media div.data");
@@ -237,7 +238,6 @@ function injectMedia(target, xml) {
     
     /* Largeur de la zone média */
     realWidth(media, $(core).height());
-    console.log($(core).height());
     
     /* Hauteur de la zone média */
     realHeight(mediadata, $(media).height() - $(mediatitle).outerHeight(true) - $(medianotes).outerHeight(true));
@@ -260,10 +260,7 @@ function injectPage(target) {
     $(target).append(data);
     
     /* Affectation de la taille */
-    realHeight($("div#page div.slide.open > div.spacer"), $("div#page").height());
-    console.log($("div#page div.slide").height());
-    console.log("spacer" + $("div#page div.slide.open > div.spacer").height());
-    console.log("core" + $("div#page div.slide.open > div.spacer div.core").height());
+    realHeight($("div#page div.slide > div.spacer"), $("div#page").height());
 }
 
 /* Initialise la page */
@@ -297,11 +294,8 @@ function injectDom() {
     realHeight(page, $(window).height() - $("div#header").outerHeight() - $("div#footer").outerHeight());
     realHeight($("div#page div.slide"), $(page).height());
     
-    console.log("lol" + $(page).height());
-    
     /* Injecte le coeur de page */
     injectPage($("div#page div.slide.open"));
-    console.log("aaaaa" + $("div#page div.slide.open > div.spacer").height());
     
     /* Injecte les conteneurs */
     var target = lastChild("div#page div.slide.open > div.spacer div.core");

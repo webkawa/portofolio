@@ -2,21 +2,21 @@
 <!-- index.xml          -->
 <!-- Index des contenus -->
 <root>
-    <page id="home" repertory="data/site/xml/home/">
+    <page id="home" repertory="data/site/xml/a_home/">
         <data>data.xml</data>
         <media id="about">about.xml</media>
         <media id="help">help.xml</media>
     </page>
-    <page id="studies" repertory="data/site/xml/studies/">
+    <page id="studies" repertory="data/site/xml/b_studies/">
         <data>data.xml</data>
     </page>
-    <page id="experience" repertory="data/site/xml/experience/">
+    <page id="experience" repertory="data/site/xml/c_experience/">
         <data>data.xml</data>
     </page>
-    <page id="services" repertory="data/site/xml/services/">
+    <page id="services" repertory="data/site/xml/d_services/">
         <data>data.xml</data>
     </page>
-    <page id="infos" repertory="data/site/xml/infos/">
+    <page id="infos" repertory="data/site/xml/e_infos/">
         <data>data.xml</data>
     </page>
 </root>
