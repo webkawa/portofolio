@@ -68,6 +68,13 @@ function injectContent(target, dom) {
     realHeight(scrollzone, $(scrollbar).height());
     realWidth(scroller, $(cage).width() - $(scrollbar).outerWidth());
     realHeight(marker, markerSize(cage, scroller, scrollzone));
+    
+    /* Affichage du scroller */
+    if($(cage).height() / $(scroller).height() > 1) {
+        $(scrollbar).css("display", "none");
+    } else {
+        $(scrollbar).css("display", "block");
+    }
 }
 
 /* Création d'une carte */
@@ -223,9 +230,9 @@ function injectMedia(target, xml) {
     }
     
     /* Variables utiles */
-    var spacer = $("div#page div.slide.open > div.spacer");
     var core = $("div#page div.slide.open > div.spacer div.core");
     var media = $("div#media");
+    var loader = $("div#media div.loader");
     var mediatitle = $("div#media div.title");
     var mediadata = $("div#media div.data");
     var mediacage = $("div#media div.data > div.cage");
@@ -238,6 +245,9 @@ function injectMedia(target, xml) {
     
     /* Largeur de la zone média */
     realWidth(media, $(core).height());
+    
+    /* Largeur de la zone loader */
+    $(loader).css("width", $(loader).css("min-width"));
     
     /* Hauteur de la zone média */
     realHeight(mediadata, $(media).height() - $(mediatitle).outerHeight(true) - $(medianotes).outerHeight(true));

@@ -14,23 +14,25 @@ function switchMedia() {
     var easingin = $(co).find("navigation media switch in easing").text();
     var durationout = $(co).find("navigation media switch out duration").text();
     var easingout = $(co).find("navigation media switch out easing").text();
-    var bwidth = $(media).outerWidth(true);
-    var iwidth = $(loader).outerWidth(true);
-    var multi = bwidth / parseInt($(loader).css("max-width"));
+    var multi = parseInt($(co).find("navigation media switch multi").text());
+    var medwidth = $(media).width();
+    var pxwidth = parseInt($(loader).css("min-width"));
+    var minwidth = (pxwidth / medwidth) * 100;
+    var maxwidth = parseInt($(loader).css("max-width"));
+    var backmargin = parseInt($(mediacomponents).css("margin-left"));
     
     /* Animation */
     $(loader).animate({
-        "width" : $(loader).css("max-width")
+        "width" : maxwidth + "%"
     },{
         "duration" : parseInt(durationin),
         "easing" : easingin,
         "step" : function(now) {
-            $(mediacomponents).css("margin-left", (multi * (now - iwidth)) + "px");
+            $(mediacomponents).css("margin-left", ((multi * (now - minwidth)) + backmargin) + "%");
         }, 
         "complete" : function() {
             /* Sélection des variables utiles */
             var backwidth = $(loader).css("max-width");
-            var backmargin = $(mediacomponents).css("margin-left");
             
             /* Nettoyage et injection */
             cleanupMedia();
@@ -44,17 +46,20 @@ function switchMedia() {
             /* Mise à jour des styles */
             $(media).css("opacity", "inherit");
             $(loader).css("width", backwidth);
-            $(mediacomponents).css("margin-left", backmargin);
             
             /* Animation de retour */
             $(loader).animate({
-                "width" : $(loader).css("min-width")
+                "width" : minwidth + "%"
             },{
                 "duration" : parseInt(durationout),
                 "easing" : easingout,
                 "step" : function(now) {
-                    $(mediacomponents).css("margin-left", (multi * (now - iwidth)) + "px");
+                    $(mediacomponents).css("margin-left", ((multi * (now - minwidth)) + backmargin) + "%");
                 }, "complete" : function() {
+                    /* Rétablissement de la taille en pixels */
+                    $(loader).css("width", pxwidth + "px");
+                    
+                    /* Réinscription des évènements */
                     doMediaEvents();
                 }
             });
@@ -73,6 +78,7 @@ function switchZoom(direction) {
     var duration = $(co).find("media zoom in duration").text();
     var easing = $(co).find("media zoom in easing").text();
     var corewidth = $(core).width();
+    var coreheight = $(core).height();
     var objective;
     var isgal = false;
     
@@ -85,12 +91,12 @@ function switchZoom(direction) {
     if(direction) {
         objective = $(content).css("min-width");
     } else {
-        objective = $(content).css("max-width");
+        objective = Math.max(parseInt($(media).css("min-width")), corewidth - coreheight);
     }
     
     /* Animation */
     $(content).animate({
-        "width" : objective
+        "max-width" : objective
     },{
         "duration" : parseInt(duration),
         "easing" : easing,

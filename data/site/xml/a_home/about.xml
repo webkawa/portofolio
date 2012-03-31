@@ -9,7 +9,6 @@
             <h3>A propos</h3>
         ]]>
     </title>
-    <subtitles>Ce site en quelques mots</subtitles>
     <view id="technology">
         <type>text</type>
         <core>

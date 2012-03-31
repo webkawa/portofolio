@@ -6,19 +6,18 @@
 
 /* Inscription des évènements de navigation */
 function doNavigationEvents() {
-    /* Gestion de la navigation entre les slides */
     $("div#page div.slide.close").mouseover(function() {
         /* Variables utiles */
         var open = $("div#page div.slide.open");
         var x1 = $("div#page div.slide:last").is($(this));
         var x2 = $(open).prev().is($(this));
-        
-        /* Mise à jour des variables de navigation */
-        pge = loadPage($(this).attr("id"));
-        med = null;
-        
+        var x3 = $(this).is(":not(:animated)");
         /* Changement */
-        if($(open).size() == 1 && (x1 || x2)) {
+        if($(open).size() == 1 && (x1 || x2) && x3) {
+            /* Mise à jour des variables de navigation */
+            pge = loadPage($(this).attr("id"));
+            med = $("head");
+            
             /* Modification du titre */
             switchTitle({
                 "title" : $(pge).find("title").text(),
@@ -64,7 +63,8 @@ function doNavigationEvents() {
         containment : "div#content > div.cage div.scrollbar div.scrollzone",
         start : function() {
             $(this).addClass("used");
-        }, drag : function() {
+        }, 
+        drag : function() {
             /* Variables utiles */
             var scrollzone = $("div#content > div.cage div.scrollbar div.scrollzone");
             var diffmarker = $(scrollzone).height() - $(this).height();
@@ -74,7 +74,8 @@ function doNavigationEvents() {
             
             /* Attribution */
             $(scroller).css("margin-top", margin + "px");
-        }, stop : function() {
+        }, 
+        stop : function() {
             $(this).toggleClass("used");
         }
     });

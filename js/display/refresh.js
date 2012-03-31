@@ -89,12 +89,23 @@ function refreshContent() {
         "height" : (markerSize(cage, scroller, scrollzone)) + "px",
         "top" : markerMargin(parseInt($(scroller).css("margin-top")), diffscroll, diffmarker)
     });
+    
+    /* Affichage du scroller */
+    if($(cage).height() / $(scroller).height() > 1) {
+        $(scrollbar).css("display", "none");
+    } else {
+        $(scrollbar).css("display", "block");
+    }
 }
 
 /* Rafraichissement de la carte */
 function refreshMap() {
     if(global_map != null) {
-        google.maps.event.trigger(global_map, 'resize');
+        try {
+            google.maps.event.trigger(global_map, 'resize');
+        } catch(err) {
+            console.log("Error on map refresh");
+        }
     }
 }
 /* Rafraichissement de la gallerie */

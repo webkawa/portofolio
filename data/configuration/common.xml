@@ -45,6 +45,7 @@
         </content>
         <media>
             <switch>
+                <multi>2</multi>
                 <in>
                     <duration>500</duration>
                     <easing>easeInQuart</easing>
