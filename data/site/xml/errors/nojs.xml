@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- errors/nojs.xml              -->
+<!-- Navigateur non-compatible JS -->
+<root>
+    <id>nojs</id>
+    <core>
+        <![CDATA[
+            <h1>Oups !...</h1>
+            <p>
+                Il semble que votre navigateur ne supporte pas
+                le javascript ou l'une des librairies utilisées par ce
+                site ... Mais rassurez-vous, vous pouvez toujours en
+                consulter la <a href="static.php" alt="Version accessible">
+                version accessible</a> ou utiliser l'un des navigateurs
+                listés ci-dessous :
+            </p>
+            <p class="legend">
+                <img src="data/site/img/browsers/chrome.png" alt="Chrome" />
+                <span class="title">Chrome</span>
+                <span class="text">Version 10 et supérieures</span>
+                <span class="link">
+                    <a href="https://www.google.com/chrome?hl=fr" title="Chrome - Site officiel">Site officiel</a>
+                </span>
+            </p>
+            <p class="legend">
+                <img src="data/site/img/browsers/firefox.png" alt="Firefox" />
+                <span class="title">Firefox</span>
+                <span class="text">Version 3.6 et supérieures</span>
+                <span class="link">
+                    <a href="http://www.mozilla.org/fr/firefox/new/" title="Firefox - Site officiel">Site officiel</a>
+                </span>
+            </p>
+            <p class="legend">
+                <img src="data/site/img/browsers/ie.png" alt="Internet Explorer" />
+                <span class="title">Internet Explorer</span>
+                <span class="text">Version 8 et supérieures</span>
+                <span class="link">
+                    <a href="http://windows.microsoft.com/fr-FR/internet-explorer/products/ie/home" title="Internet Explorer - Site officiel">Site officiel</a>
+                </span>
+            </p>
+            <p class="legend">
+                <img src="data/site/img/browsers/safari.png" alt="Safari" />
+                <span class="title">Safari</span>
+                <span class="text">Version 4 et supérieures</span>
+                <span class="link">
+                    <a href="http://www.apple.com/fr/safari/" title="Safari - Site officiel">Site officiel</a>
+                </span>
+            </p>
+            <p class="legend">
+                <img src="data/site/img/browsers/opera.png" alt="Safari" />
+                <span class="title">Opera</span>
+                <span class="text">Version 4 et supérieures</span>
+                <span class="link">
+                    <a href="http://www.opera.com/" title="Opera - Site officiel">Site officiel</a>
+                </span>
+            </p>
+        ]]>
+    </core>
+    <exit>false</exit>
+</root>

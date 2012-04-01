@@ -6,6 +6,7 @@
 
 /* En-tête */
 div#header {
+    min-height: 120px;
     height: 120px;
     padding: 10px;
     overflow: hidden;
@@ -13,12 +14,14 @@ div#header {
 
 /* Coeur de page */
 div#page {
+    min-height: 240px;
     height: auto;                       /* Hauteur redéfinie */
-    max-height: 580px;
+    max-height: 640px;
 }
 
 /* Pied de page */
 div#footer {
+    min-height: 40px;
     height: 40px;
 }
 

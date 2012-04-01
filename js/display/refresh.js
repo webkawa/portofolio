@@ -147,6 +147,23 @@ function refreshMedia() {
     refreshGallery();
 }
 
+/* Rafraichissement du message d'erreur */
+function refreshError() {
+    /* Variables utiles */
+    var pwidth = $(window).width();
+    var pheight = $(window).height();
+    var error = $("div#error");
+    var cage = $("div#error > div.cage");
+    var cwidth = $(cage).outerWidth();
+    var cheight = $(cage).outerHeight();
+    
+    /* Taille de la cage */
+    $(cage).css({
+        "margin-left" : Math.max(((pwidth - cwidth) / 2), 0) + "px",
+        "margin-top" : Math.max(((pheight - cheight) / 2), 0) + "px"
+    });
+}
+
 /* Rafraichissement général */
 function refresh() {
     /* Dépendances */
@@ -155,6 +172,7 @@ function refresh() {
     refreshCore();
     refreshMedia();
     refreshContent();
+    refreshError();
     
     /* Variables utiles */
     var header = $("div#header");
@@ -167,6 +185,6 @@ function refresh() {
     
     /* Taille de l'en-tête */
     if(wheight > hheight + pheight + fheight) {
-        $(header).css("margin-top", ((wheight - hheight - pheight - fheight) / 2) + "px");
+        $(header).css("padding-top", ((wheight - hheight - pheight - fheight) / 2) + "px");
     }
 }

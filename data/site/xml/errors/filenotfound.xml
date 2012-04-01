@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- errors/filenotfound.js          -->
+<!-- Fichier de données introuvables -->
+<root>
+    <id>filenotfound</id>
+    <core>
+        <![CDATA[
+            <h1>Oups !...</h1>
+            <p>
+                La page ou le média demandé n'existe visiblement pas ... nous 
+                allons nous pencher au plus vite sur ce problème. Dans 
+                l'intervalle, vous pouvez poursuivre votre visite en cliquant 
+                sur "Ignorer ce message".
+            </p>
+        ]]>
+    </core>
+    <exit>true</exit>
+</root>

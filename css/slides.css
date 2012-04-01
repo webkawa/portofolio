@@ -6,7 +6,7 @@
 
 /* Propriétés communes */
 div#page div.slide {
-    height: 0%;                             /* Destiné à ré-écriture */
+    height: 0px;                            /* Destiné à ré-écriture */
     min-width: 0px;
     overflow: hidden;
     padding: 0px !important;                /* Important pour l'animation */

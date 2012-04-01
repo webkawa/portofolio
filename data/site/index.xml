@@ -19,5 +19,10 @@
     <page id="infos" repertory="data/site/xml/e_infos/">
         <data>data.xml</data>
     </page>
+    <errors repertory="data/site/xml/errors/">
+        <error id="nojs">nojs.xml</error>
+        <error id="badresolution">badresolution.xml</error>
+        <error id="filenotfound">filenotfound.xml</error>
+    </errors>
 </root>
  

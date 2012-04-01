@@ -35,6 +35,11 @@ function cleanupCore() {
     global_map = null;
 }
 
+/* Nettoyage de l'erreur */
+function cleanupError() {
+    $("div#error > div.cage").remove();
+}
+
 /* Nettoyage de la page */
 function cleanupPage() {
     /* Nettoyage */

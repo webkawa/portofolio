@@ -273,6 +273,41 @@ function injectPage(target) {
     realHeight($("div#page div.slide > div.spacer"), $("div#page").height());
 }
 
+/* Création d'une erreur */
+function injectError(xml) {
+    if($("div#error > div.cage").size() == 0) {
+        /* Variables utiles */
+        var core = $(xml).find("core").text();
+        var exit = $(xml).find("exit").text();
+        var pwidth = $(window).width();
+        var pheight = $(window).height();
+
+        var exitlk = '';
+        if(exit === "true") {
+            exitlk = '<p class="exit"><a onclick="hideError(); cleanupError();" alt="Ignorer">Ignorer ce message</a></p>';
+        }
+
+        /* Création de l'erreur */
+        var data =
+            '<div class="cage">' +
+                core +
+                exitlk +
+            '</div>';
+
+        /* Insertion */
+        $("div#error").append(data);
+
+        /* Taille de la cage */
+        var cage = $("div#error > div.cage");
+        var cwidth = $(cage).outerWidth(false);
+        var cheight = $(cage).outerHeight(false);
+        $(cage).css({
+            "margin-left" : Math.max(((pwidth - cwidth) / 2), 0) + "px",
+            "margin-top" : Math.max(((pheight - cheight) / 2), 0) + "px"
+        });
+    }
+}
+
 /* Initialise la page */
 function injectDom() {
     /* Sélection de l'identifiant */

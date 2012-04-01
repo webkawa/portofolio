@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- errors/badresolution.xml  -->
+<!-- Résolution incorrecte     -->
+<root>
+    <id>badresolution</id>
+    <core>
+        <![CDATA[
+            <h1>Oups !...</h1>
+            <p>
+                La résolution de votre écran semble insuffisante et risque de
+                nuire à votre expérience de navigation. Vous pouvez tenter
+                d'agrandir la fenêtre de votre navigateur et cliquer sur
+                "Ignorer ce message", ou consulter la <a href="static.php" 
+                alt="Version accessible">version accessible</a> du site.
+            </p>
+        ]]>
+    </core>
+    <exit>true</exit>
+</root>
