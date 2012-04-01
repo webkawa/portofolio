@@ -150,16 +150,12 @@ function refreshMedia() {
 /* Rafraichissement du message d'erreur */
 function refreshError() {
     /* Variables utiles */
-    var pwidth = $(window).width();
     var pheight = $(window).height();
-    var error = $("div#error");
     var cage = $("div#error > div.cage");
-    var cwidth = $(cage).outerWidth();
     var cheight = $(cage).outerHeight();
     
     /* Taille de la cage */
     $(cage).css({
-        "margin-left" : Math.max(((pwidth - cwidth) / 2), 0) + "px",
         "margin-top" : Math.max(((pheight - cheight) / 2), 0) + "px"
     });
 }

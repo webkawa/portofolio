@@ -299,10 +299,8 @@ function injectError(xml) {
 
         /* Taille de la cage */
         var cage = $("div#error > div.cage");
-        var cwidth = $(cage).outerWidth(false);
         var cheight = $(cage).outerHeight(false);
         $(cage).css({
-            "margin-left" : Math.max(((pwidth - cwidth) / 2), 0) + "px",
             "margin-top" : Math.max(((pheight - cheight) / 2), 0) + "px"
         });
     }
