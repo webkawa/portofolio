@@ -8,7 +8,7 @@
 function cleanupTitle() {
     /* Sélection */
     var ltitle = $("div#header div.title.leaving");             /* Titre sortant */
-    var ititle = $("div#header div.title.incoming");            /* Titre entrant */
+    var ititle = $("div#header div.title.incoming");                    /* Titre entrant */
     
     /* Suppression du titre sortant */
     $(ltitle).remove();

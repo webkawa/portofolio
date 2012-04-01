@@ -19,10 +19,10 @@ function injectTitle(title, subtitle) {
             '<h1>' + title + '</h1>' +
             opt +
         '</div>';
-    $("div#header").append(data);
+    $("div#header > div.border").append(data);                           /* Prend en compte la bordure */
     
     /* Rafraichissement du titre entrant */
-    refreshTitleSize($("div#header div.title.incoming"));
+    refreshTitleSize($("div#header > div.border div.title.incoming"));   /* Prend en compte la bordure */
 }
 
 /* Création d'un coeur de page */
@@ -331,6 +331,7 @@ function injectDom() {
     });
     
     /* Injecte le titre */
+    addDecoration($("div#header"), "border", "bc", "small");
     injectTitle($(pge).find("title").text(), $(pge).find("subtitle").text());
     
     /* Hauteur de la page */
