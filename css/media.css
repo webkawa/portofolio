@@ -15,7 +15,6 @@ div#media {
 div#media div.loader {
     min-width: 25px;                                    /* Doit rester en pixels */
     width: 10%;                                         /* Destiné à ré-écriture */
-    max-width: 100%;
     height: 100%;
     float: left;
     background-image: url('img/blank.png');

@@ -16,24 +16,20 @@ function switchMedia() {
     var easingout = $(co).find("navigation media switch out easing").text();
     var multi = parseInt($(co).find("navigation media switch multi").text());
     var medwidth = $(media).width();
-    var pxwidth = parseInt($(loader).css("min-width"));
-    var minwidth = (pxwidth / medwidth) * 100;
-    var maxwidth = parseInt($(loader).css("max-width"));
+    var minwidth = parseInt($(loader).css("min-width"));
+    var maxwidth = medwidth;
     var backmargin = parseInt($(mediacomponents).css("margin-left"));
     
     /* Animation */
     $(loader).animate({
-        "width" : maxwidth + "%"
+        "width" : maxwidth + "px"
     },{
         "duration" : parseInt(durationin),
         "easing" : easingin,
         "step" : function(now) {
-            $(mediacomponents).css("margin-left", ((multi * (now - minwidth)) + backmargin) + "%");
+            $(mediacomponents).css("margin-left", ((multi * (now - minwidth)) + backmargin)  + "px");
         }, 
         "complete" : function() {
-            /* Sélection des variables utiles */
-            var backwidth = $(loader).css("max-width");
-            
             /* Nettoyage et injection */
             cleanupMedia();
             injectMedia($("div#content").parent(), med);
@@ -45,19 +41,19 @@ function switchMedia() {
             
             /* Mise à jour des styles */
             $(media).css("opacity", "inherit");
-            $(loader).css("width", backwidth);
+            $(loader).css("width", maxwidth + "px");
             
             /* Animation de retour */
             $(loader).animate({
-                "width" : minwidth + "%"
+                "width" : minwidth + "px"
             },{
                 "duration" : parseInt(durationout),
                 "easing" : easingout,
                 "step" : function(now) {
-                    $(mediacomponents).css("margin-left", ((multi * (now - minwidth)) + backmargin) + "%");
+                    $(mediacomponents).css("margin-left", (multi * (now - minwidth)) + backmargin + "px");
                 }, "complete" : function() {
                     /* Rétablissement de la taille en pixels */
-                    $(loader).css("width", pxwidth + "px");
+                    $(loader).css("width", minwidth + "px");
                     
                     /* Réinscription des évènements */
                     doMediaEvents();
