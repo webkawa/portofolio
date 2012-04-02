@@ -343,6 +343,10 @@ function injectDom() {
             }
         }
     });
+    
+    /* Informations sur les slides */
+    var prop = slideProperties($("div.slide.open"));
+    
     /* Hauteur de la page */
     realHeight(page, $(window).height() - $("div#header").outerHeight() - $("div#footer").outerHeight());
     realHeight($("div#page div.slide"), $(page).height());
@@ -350,6 +354,10 @@ function injectDom() {
     /* Injecte le titre */
     addDecoration($("div#header"), "border", "bc", "smallshadow");
     realHeight($("div#header div.spacer"), $("div#header").height());
+    $("div#header div.spacer").css({
+        "padding-left" : prop.lmargin + "px",
+        "padding-right" : prop.rmargin + "px"
+    });
     injectTitle();
     
     /* Injecte le coeur de page */
