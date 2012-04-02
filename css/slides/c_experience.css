@@ -49,3 +49,11 @@ div#page div.slide#experience div.corner.medium.br {
 div#page div.slide#experience div.corner.medium.bl {
     background-image: url('../img/experience/corner_bl_medium.png');
 }
+
+/* Scrollbar */
+div#page div.slide#experience div#content div.cage div.scrollbar div.corner.tc {
+    background-image: url('../img/experience/scrollbar_top.png');
+}
+div#page div.slide#experience div#content div.cage div.scrollbar div.corner.bc {
+    background-image: url('../img/experience/scrollbar_bottom.png');
+}

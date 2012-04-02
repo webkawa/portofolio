@@ -7,7 +7,31 @@
     <subtitle>Parcours scolaire et universitaire</subtitle>
     <core>
         <![CDATA[
-            Etudes
+            <h2>Lorem ipsum !</h2>
+            <p>Dolor sit amet</p>
+            <ul>
+                <li>Test <a href="#about">à propos</a></li>
+                <li>Test <a href="#help">aide à la navigation</a></li>
+            </ul>
+            <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non ipsum elit. Phasellus egestas arcu ut enim vehicula imperdiet. Aenean placerat tellus a enim aliquet mattis. Integer ultricies aliquam molestie. Praesent quis risus metus. Mauris nibh metus, volutpat eu vulputate id, venenatis vel dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent suscipit facilisis lectus eget posuere. Maecenas mi dolor, eleifend tempor suscipit sed, malesuada quis tellus. Morbi magna purus, venenatis et pellentesque vitae, varius ut felis. Nulla tempus faucibus orci, vitae ornare enim vehicula at. Mauris fringilla consectetur leo, sed pharetra neque ultricies vitae. Pellentesque tortor metus, tempus quis dignissim feugiat, dictum sit amet urna. Nulla iaculis elit sed arcu rutrum lobortis. Aliquam elementum justo in lacus rhoncus egestas.
+</p><p>
+Quisque id ipsum massa, nec sodales sem. Cras congue, arcu non convallis convallis, diam nunc venenatis orci, vel ornare elit quam sed orci. Sed accumsan luctus diam ac convallis. Nam convallis gravida risus, sit amet lacinia neque consequat eget. Vestibulum sed nibh enim. Proin scelerisque est non ipsum posuere lobortis. Suspendisse viverra, odio eu vestibulum tincidunt, lacus lectus dictum magna, sit amet ultricies est mauris in ligula. Nulla magna urna, laoreet ac lobortis at, consequat ac sem. Vivamus tortor lectus, feugiat eget placerat eu, pretium vitae mauris. Morbi ac aliquet metus. Cras euismod nibh iaculis velit iaculis suscipit.
+
+</p>
+<h2>Dolor sit amet</h2>
+<p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non ipsum elit. Phasellus egestas arcu ut enim vehicula imperdiet. Aenean placerat tellus a enim aliquet mattis. Integer ultricies aliquam molestie. Praesent quis risus metus. Mauris nibh metus, volutpat eu vulputate id, venenatis vel dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent suscipit facilisis lectus eget posuere. Maecenas mi dolor, eleifend tempor suscipit sed, malesuada quis tellus. Morbi magna purus, venenatis et pellentesque vitae, varius ut felis. Nulla tempus faucibus orci, vitae ornare enim vehicula at. Mauris fringilla consectetur leo, sed pharetra neque ultricies vitae. Pellentesque tortor metus, tempus quis dignissim feugiat, dictum sit amet urna. Nulla iaculis elit sed arcu rutrum lobortis. Aliquam elementum justo in lacus rhoncus egestas.
+</p><p>
+Quisque id ipsum massa, nec sodales sem. Cras congue, arcu non convallis convallis, diam nunc venenatis orci, vel ornare elit quam sed orci. Sed accumsan luctus diam ac convallis. Nam convallis gravida risus, sit amet lacinia neque consequat eget. Vestibulum sed nibh enim. Proin scelerisque est non ipsum posuere lobortis. Suspendisse viverra, odio eu vestibulum tincidunt, lacus lectus dictum magna, sit amet ultricies est mauris in ligula. Nulla magna urna, laoreet ac lobortis at, consequat ac sem. Vivamus tortor lectus, feugiat eget placerat eu, pretium vitae mauris. Morbi ac aliquet metus. Cras euismod nibh iaculis velit iaculis suscipit.
+
+</p>
+<p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non ipsum elit. Phasellus egestas arcu ut enim vehicula imperdiet. Aenean placerat tellus a enim aliquet mattis. Integer ultricies aliquam molestie. Praesent quis risus metus. Mauris nibh metus, volutpat eu vulputate id, venenatis vel dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent suscipit facilisis lectus eget posuere. Maecenas mi dolor, eleifend tempor suscipit sed, malesuada quis tellus. Morbi magna purus, venenatis et pellentesque vitae, varius ut felis. Nulla tempus faucibus orci, vitae ornare enim vehicula at. Mauris fringilla consectetur leo, sed pharetra neque ultricies vitae. Pellentesque tortor metus, tempus quis dignissim feugiat, dictum sit amet urna. Nulla iaculis elit sed arcu rutrum lobortis. Aliquam elementum justo in lacus rhoncus egestas.
+</p><p>
+Quisque id ipsum massa, nec sodales sem. Cras congue, arcu non convallis convallis, diam nunc venenatis orci, vel ornare elit quam sed orci. Sed accumsan luctus diam ac convallis. Nam convallis gravida risus, sit amet lacinia neque consequat eget. Vestibulum sed nibh enim. Proin scelerisque est non ipsum posuere lobortis. Suspendisse viverra, odio eu vestibulum tincidunt, lacus lectus dictum magna, sit amet ultricies est mauris in ligula. Nulla magna urna, laoreet ac lobortis at, consequat ac sem. Vivamus tortor lectus, feugiat eget placerat eu, pretium vitae mauris. Morbi ac aliquet metus. Cras euismod nibh iaculis velit iaculis suscipit.
+
+</p>
         ]]>
     </core>
 </root>

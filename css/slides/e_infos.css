@@ -49,3 +49,11 @@ div#page div.slide#infos div.corner.medium.br {
 div#page div.slide#infos div.corner.medium.bl {
     background-image: url('../img/infos/corner_bl_medium.png');
 }
+
+/* Scrollbar */
+div#page div.slide#infos div#content div.cage div.scrollbar div.corner.tc {
+    background-image: url('../img/infos/scrollbar_top.png');
+}
+div#page div.slide#infos div#content div.cage div.scrollbar div.corner.bc {
+    background-image: url('../img/infos/scrollbar_bottom.png');
+}

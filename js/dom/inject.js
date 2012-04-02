@@ -293,7 +293,6 @@ function injectError(xml) {
         /* Variables utiles */
         var core = $(xml).find("core").text();
         var exit = $(xml).find("exit").text();
-        var pwidth = $(window).width();
         var pheight = $(window).height();
 
         var exitlk = '';

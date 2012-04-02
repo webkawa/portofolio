@@ -35,14 +35,14 @@ div#content div.cage div.scroller p {
 }
 div#content div.cage div.scrollbar {
     min-height: 40px;
-    width: 20px;
+    width: 10px;
     height: 100%;
     float: left;
     margin: 0px;
     padding: 0px;
 }
 div#content div.cage div.scrollbar div.scrollzone {
-    margin: 25px 5px 25px 5px;
+    margin: 20px 0px;
     float: left;
     background-color: #ddd;
 }
