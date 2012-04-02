@@ -16,12 +16,10 @@ function switchSlide(origin, destination) {
     var direction = $(slides).index(destination) > $(slides).index(origin);     /* Sens de navigation : true pour droite, false pour gauche */
     var space = $(origin).outerWidth(true) + $(destination).outerWidth(true);   /* Espace total occupé */
     var duration, easing;                                                       /* Informations sur le mouvement */
-    var lspacer = $(origin).children("div.spacer");                             /* Espacement du contenu fermant */
     var lcore = $(origin).find("div.spacer div.core");                          /* Coeur fermant */
     var lcoremaxw = $(lcore).width();                                           /* Largeur maximale du coeur fermant */
     var icore = $(destination).find("div.spacer div.core");                     /* Coeur ouvrant */
     var icoremaxw = dprop.width;                                                /* Largeur maximale du coeur ouvrant */
-    var margin;                                                                 /* Marge ajoutée pour la transition */
     var waiter = $(co).find("transitions core duration").text();                /* Temps de transition du cœur */
 
     /* Taggage du slide entrant */

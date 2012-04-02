@@ -8,7 +8,7 @@
 function cleanupTitle() {
     /* Sélection */
     var ltitle = $("div#header div.title.leaving");             /* Titre sortant */
-    var ititle = $("div#header div.title.incoming");            /* Titre entrant */
+    var ititle = $("div#header div.title.incoming");                    /* Titre entrant */
     
     /* Suppression du titre sortant */
     $(ltitle).remove();
@@ -33,6 +33,11 @@ function cleanupCore() {
     /* Nettoyage */
     $("div#content, div#media").remove();
     global_map = null;
+}
+
+/* Nettoyage de l'erreur */
+function cleanupError() {
+    $("div#error > div.cage").remove();
 }
 
 /* Nettoyage de la page */

@@ -10,6 +10,8 @@ function refreshTitleSize(target) {
     var ih1 = $(target).children("h1");                     /* Titre */
     var ip = $(target).children("p");                       /* Sous-titre */
     
+    console.log(target);
+    
     /* Dimensionnement de la police */
     if($(ip).size() != 0) {
         fontHeight(ih1, $("div#header").height() - $(ip).outerHeight(true));
@@ -89,12 +91,23 @@ function refreshContent() {
         "height" : (markerSize(cage, scroller, scrollzone)) + "px",
         "top" : markerMargin(parseInt($(scroller).css("margin-top")), diffscroll, diffmarker)
     });
+    
+    /* Affichage du scroller */
+    if($(cage).height() / $(scroller).height() > 1) {
+        $(scrollbar).css("display", "none");
+    } else {
+        $(scrollbar).css("display", "block");
+    }
 }
 
 /* Rafraichissement de la carte */
 function refreshMap() {
     if(global_map != null) {
-        google.maps.event.trigger(global_map, 'resize');
+        try {
+            google.maps.event.trigger(global_map, 'resize');
+        } catch(err) {
+            console.log("Error on map refresh");
+        }
     }
 }
 /* Rafraichissement de la gallerie */
@@ -136,6 +149,19 @@ function refreshMedia() {
     refreshGallery();
 }
 
+/* Rafraichissement du message d'erreur */
+function refreshError() {
+    /* Variables utiles */
+    var pheight = $(window).height();
+    var cage = $("div#error > div.cage");
+    var cheight = $(cage).outerHeight();
+    
+    /* Taille de la cage */
+    $(cage).css({
+        "margin-top" : Math.max(((pheight - cheight) / 2), 0) + "px"
+    });
+}
+
 /* Rafraichissement général */
 function refresh() {
     /* Dépendances */
@@ -144,6 +170,7 @@ function refresh() {
     refreshCore();
     refreshMedia();
     refreshContent();
+    refreshError();
     
     /* Variables utiles */
     var header = $("div#header");
@@ -156,6 +183,6 @@ function refresh() {
     
     /* Taille de l'en-tête */
     if(wheight > hheight + pheight + fheight) {
-        $(header).css("margin-top", ((wheight - hheight - pheight - fheight) / 2) + "px");
+        $(header).css("padding-top", ((wheight - hheight - pheight - fheight) / 2) + "px");
     }
 }

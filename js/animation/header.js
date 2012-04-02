@@ -15,16 +15,6 @@ function switchTitle(data, target) {
     var space;                                                      /* Espace disponible */
     var duration = $(co).find("transitions title duration").text(); /* Vitesse */
     var easing = $(co).find("transitions title easing").text();     /* Courbe */
-    var iprop = slideProperties(target);                            /* Propriétés du slide arrivant */
-    
-    /* Animation des marges */
-    $("div#header").animate({
-        "padding-left" : iprop.lmargin + "px",
-        "padding-right" : iprop.rmargin + "px"
-    },{
-        "duration" : parseInt(duration),
-        "easing" : easing
-    });
     
     /* Animation du titre */
     $(ltitle).animate({
