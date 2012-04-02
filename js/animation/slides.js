@@ -12,6 +12,7 @@ function switchSlide(origin, destination) {
     /* Variables utiles */
     var oprop = slideProperties(origin);                                        /* Propriétés du slide ouvert */
     var dprop = slideProperties(destination);                                   /* Propriétés du slide à ouvrir */
+    console.log(dprop);
     var slides = $("div#page div.slide");                                       /* Liste des slides */
     var direction = $(slides).index(destination) > $(slides).index(origin);     /* Sens de navigation : true pour droite, false pour gauche */
     var space = $(origin).outerWidth(true) + $(destination).outerWidth(true);   /* Espace total occupé */

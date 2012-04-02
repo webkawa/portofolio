@@ -181,7 +181,7 @@ function refresh() {
     var fheight = $(footer).outerHeight();
     var wheight = $(window).height();
 
-    console.log(hheight + " " + pheight + " " + fheight);
+    console.log(wheight + " " + hheight + " " + pheight + " " + fheight);
 
     /* Taille de l'en-tête */
     if(wheight > hheight + pheight + fheight) {

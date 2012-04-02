@@ -16,13 +16,13 @@ div#page div.slide {
 /* En partie gauche */
 div#page div.slide.left {
     float: left;
-    min-width: 10px;                        /* Décide de la taille des slides fermés */
+    min-width: 10px;                        /* Décide de la taille des slides fermés ([!] helpers.js) */
 }
 
 /* En partie droite */
 div#page div.slide.right {
     float: right;
-    min-width: 20px;                        /* Décide de la taille des slides fermés */
+    min-width: 20px;                        /* Décide de la taille des slides fermés ([!] helpers.js) */
 }
 
 /* Ouverts */

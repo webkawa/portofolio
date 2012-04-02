@@ -34,8 +34,10 @@ function slideProperties(target) {
     var lcount = 0;
     var rmargin = 0;
     var rcount = 0;
-    var lwidth = parseInt($("div#page div.slide.left:first").css("min-width"));
-    var rwidth = parseInt($("div#page div.slide.right:last").css("min-width"));
+    
+    /* [!] A optimiser ! Nombre magique */
+    var lwidth = 10;
+    var rwidth = 20;
     
     /* Calcul */
     var x = true;
