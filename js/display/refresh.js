@@ -162,6 +162,9 @@ function refreshError() {
 
 /* Rafraichissement général */
 function refresh() {
+    var header = $("div#header");
+    $(header).css("padding-top", "0px");
+    
     /* Dépendances */
     refreshTitle($("div#header div.title"));
     refreshPage();
@@ -171,14 +174,15 @@ function refresh() {
     refreshError();
     
     /* Variables utiles */
-    var header = $("div#header");
     var hheight = $(header).outerHeight(false);
     var page = $("div#page");
     var pheight = $(page).outerHeight();
     var footer = $("div#footer");
     var fheight = $(footer).outerHeight();
     var wheight = $(window).height();
-    
+
+    console.log(hheight + " " + pheight + " " + fheight);
+
     /* Taille de l'en-tête */
     if(wheight > hheight + pheight + fheight) {
         $(header).css("padding-top", ((wheight - hheight - pheight - fheight) / 2) + "px");

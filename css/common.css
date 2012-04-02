@@ -12,3 +12,8 @@ body {
     overflow: hidden;
 }
 
+/* Liens */
+a {
+    text-decoration: none;
+}
+

@@ -75,6 +75,10 @@ function injectContent(target, dom) {
     realWidth(scroller, $(cage).width() - $(scrollbar).outerWidth());
     realHeight(marker, markerSize(cage, scroller, scrollzone));
     
+    /* Déploiement du cùfon */
+    Cufon.replace('div#content div.cage div.scroller h2');
+    Cufon.now();
+    
     /* Affichage du scroller */
     if($(cage).height() / $(scroller).height() > 1) {
         $(scrollbar).css("display", "none");
@@ -277,6 +281,10 @@ function injectPage(target) {
     
     /* Affectation de la taille */
     realHeight($("div#page div.slide > div.spacer"), $("div#page").height());
+    
+    /* Mise à jour du pied de page */
+    $("div#footer").removeAttr("class");
+    $("div#footer").addClass($(pge).find("id").text());
 }
 
 /* Création d'une erreur */

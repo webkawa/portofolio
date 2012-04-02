@@ -4,15 +4,48 @@
     Feuille de style de la page "Expérience".
 */
 
-div#header div.title.experience {
+/* Coloration des textes */
+div#header div.title.experience,
+div#page div.slide#experience div#media div.title,
+div#page div.slide#experience a,
+div#page div.slide#experience h1,
+div#page div.slide#experience h2,
+div#page div.slide#experience h3,
+div#page div.slide#experience h4 {
     color: #6ba71c;
 }
-div#page div.slide#experience {
+
+/* Coloration des arrière-plan */
+div#page div.slide#experience,
+div#page div.slide#experience div.spacer div#media div.loader,
+div#page div.slide#experience div#content div.scrollbar div.scrollzone div.marker:hover,
+div#page div.slide#experience div#content div.scrollbar div.scrollzone div.marker.used {
     background-color: #6ba71c;
 }
-div#page div.slide#experience div.spacer div.loader {
-    background-color: #6ba71c;
-}
-div#page div.slide#experience div#media div.data {
+
+/* Coloration des bordures */
+div#page div.slide#experience div.spacer div#media div.data {
     border-color: #6ba71c;
+}
+
+/* Coloration des liens au survol */
+div#page div.slide#experience a:hover {
+    color: #bf7500;
+}
+div#footer.experience a:hover {
+    color: #6ba71c;
+}
+
+/* Coins */
+div#page div.slide#experience div.corner.medium.tl {
+    background-image: url('../img/experience/corner_tl_medium.png');
+}
+div#page div.slide#experience div.corner.medium.tr {
+    background-image: url('../img/experience/corner_tr_medium.png');
+}
+div#page div.slide#experience div.corner.medium.br {
+    background-image: url('../img/experience/corner_br_medium.png');
+}
+div#page div.slide#experience div.corner.medium.bl {
+    background-image: url('../img/experience/corner_bl_medium.png');
 }

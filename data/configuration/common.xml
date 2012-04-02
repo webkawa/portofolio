@@ -23,7 +23,7 @@
             </prev>
         </slides>
         <core>
-            <duration>200</duration>
+            <duration>100</duration>
             <easing>easeOutExpo</easing>
         </core>
     </transitions>

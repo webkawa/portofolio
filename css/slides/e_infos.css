@@ -4,15 +4,48 @@
     Feuille de style de la page "Informations".
 */
 
-div#header div.title.infos {
+/* Coloration des textes */
+div#header div.title.infos,
+div#page div.slide#infos div#media div.title,
+div#page div.slide#infos a,
+div#page div.slide#infos h1,
+div#page div.slide#infos h2,
+div#page div.slide#infos h3,
+div#page div.slide#infos h4 {
     color: #616161;
 }
-div#page div.slide#infos {
+
+/* Coloration des arrière-plan */
+div#page div.slide#infos,
+div#page div.slide#infos div.spacer div#media div.loader,
+div#page div.slide#infos div#content div.scrollbar div.scrollzone div.marker:hover,
+div#page div.slide#infos div#content div.scrollbar div.scrollzone div.marker.used {
     background-color: #616161;
 }
-div#page div.slide#infos div.spacer div.loader {
-    background-color: #616161;
-}
-div#page div.slide#infos div#media div.data {
+
+/* Coloration des bordures */
+div#page div.slide#infos div.spacer div#media div.data {
     border-color: #616161;
+}
+
+/* Coloration des liens au survol */
+div#page div.slide#infos a:hover {
+    color: #bf7500;
+}
+div#footer.infos a:hover {
+    color: #616161;
+}
+
+/* Coins */
+div#page div.slide#infos div.corner.medium.tl {
+    background-image: url('../img/infos/corner_tl_medium.png');
+}
+div#page div.slide#infos div.corner.medium.tr {
+    background-image: url('../img/infos/corner_tr_medium.png');
+}
+div#page div.slide#infos div.corner.medium.br {
+    background-image: url('../img/infos/corner_br_medium.png');
+}
+div#page div.slide#infos div.corner.medium.bl {
+    background-image: url('../img/infos/corner_bl_medium.png');
 }

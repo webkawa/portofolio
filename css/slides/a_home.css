@@ -6,7 +6,9 @@
 
 /* Coloration des textes */
 div#header div.title.home,
+div#page div.slide#home div#media div.title,
 div#page div.slide#home a,
+div#page div.slide#home h1,
 div#page div.slide#home h2,
 div#page div.slide#home h3,
 div#page div.slide#home h4 {
@@ -15,11 +17,35 @@ div#page div.slide#home h4 {
 
 /* Coloration des arrière-plan */
 div#page div.slide#home,
-div#page div.slide#home div.spacer div#media div.loader {
+div#page div.slide#home div.spacer div#media div.loader,
+div#page div.slide#home div#content div.scrollbar div.scrollzone div.marker:hover,
+div#page div.slide#home div#content div.scrollbar div.scrollzone div.marker.used {
     background-color: #f59600;
 }
 
 /* Coloration des bordures */
 div#page div.slide#home div.spacer div#media div.data {
     border-color: #f59600;
+}
+
+/* Coloration des liens au survol */
+div#page div.slide#home a:hover {
+    color: #bf7500;
+}
+div#footer.home a:hover {
+    color: #f59600;
+}
+
+/* Coins */
+div#page div.slide#home div.corner.medium.tl {
+    background-image: url('../img/home/corner_tl_medium.png');
+}
+div#page div.slide#home div.corner.medium.tr {
+    background-image: url('../img/home/corner_tr_medium.png');
+}
+div#page div.slide#home div.corner.medium.br {
+    background-image: url('../img/home/corner_br_medium.png');
+}
+div#page div.slide#home div.corner.medium.bl {
+    background-image: url('../img/home/corner_bl_medium.png');
 }

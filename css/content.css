@@ -22,6 +22,17 @@ div#content div.cage div.scroller {
     overflow: hidden;
     padding: 0px 30px 0px 0px !important;               /* Doit rester nul sur la hauteur */
 }
+div#content div.cage div.scroller h2 {
+    font-size: 32px;
+    padding: 20px 0px 10px 0px;
+    margin: 0px;
+}
+div#content div.cage div.scroller p {
+    font-size: 16px;
+    line-height: 32px;
+    padding: 5px 0px;
+    margin: 0px;
+}
 div#content div.cage div.scrollbar {
     min-height: 40px;
     width: 20px;
@@ -40,10 +51,4 @@ div#content div.cage div.scrollbar div.scrollzone div.marker {
     float: left;
     padding: 0px !important;                            /* Doit rester nul sur la hauteur */
     background-color: #aaa;
-}
-div#content div.cage div.scrollbar div.scrollzone div.marker:hover {
-    background-color: #777;
-}
-div#content div.cage div.scrollbar div.scrollzone div.marker.used {
-    background-color: #777;
 }
