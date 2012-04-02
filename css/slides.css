@@ -39,7 +39,7 @@ div#page div.slide.close {
 
 /* Gestionnaire d'espacement */
 div#page div.slide div.spacer {
-    padding: 10px;
+    padding: 10px 20px;
     overflow-x: hidden;
 }
 
