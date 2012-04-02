@@ -1,12 +1,18 @@
 /* 
-    home.css
-    --------
-    Feuille de style de la page expérience.
+    c_experience.css
+    ----------------
+    Feuille de style de la page "Expérience".
 */
 
-div.slide#experience {
-    background-color: #d32600;
+div#header div.title.experience {
+    color: #6ba71c;
 }
-div.slide#experience div.spacer div.loader {
-    background-color: #d32600;
+div#page div.slide#experience {
+    background-color: #6ba71c;
+}
+div#page div.slide#experience div.spacer div.loader {
+    background-color: #6ba71c;
+}
+div#page div.slide#experience div#media div.data {
+    border-color: #6ba71c;
 }

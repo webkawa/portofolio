@@ -1,12 +1,18 @@
 /* 
-    home.css
-    --------
-    Feuille de style de la page services.
+    d_services.css
+    --------------
+    Feuille de style de la page "Services".
 */
 
-div.slide#services {
+div#header div.title.services {
+    color: #3a73ad;
+}
+div#page div.slide#services {
     background-color: #3a73ad;
 }
-div.slide#services div.spacer div.loader {
+div#page div.slide#services div.spacer div.loader {
     background-color: #3a73ad;
+}
+div#page div.slide#services div#media div.data {
+    border-color: #3a73ad;
 }

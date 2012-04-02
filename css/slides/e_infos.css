@@ -1,12 +1,18 @@
 /* 
-    home.css
-    --------
-    Feuille de style de la page d'information.
+    e_infos.css
+    -----------
+    Feuille de style de la page "Informations".
 */
 
-div.slide#infos {
+div#header div.title.infos {
+    color: #616161;
+}
+div#page div.slide#infos {
     background-color: #616161;
 }
-div.slide#infos div.spacer div.loader {
+div#page div.slide#infos div.spacer div.loader {
     background-color: #616161;
+}
+div#page div.slide#infos div#media div.data {
+    border-color: #616161;
 }

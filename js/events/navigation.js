@@ -19,11 +19,7 @@ function doNavigationEvents() {
             med = $("head");
             
             /* Modification du titre */
-            switchTitle({
-                "title" : $(pge).find("title").text(),
-                "subtitle" : $(pge).find("subtitle").text()
-            }, $(this));
-            
+            switchTitle($(this));
             switchSlide(open, $(this));
         }
     });

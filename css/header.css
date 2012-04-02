@@ -4,8 +4,14 @@
     Styles associés à l'en-tête de la fenêtre.
 */
 
+/* Espacement */
+div#header div.spacer {
+    padding-top: 0px;
+    padding-bottom: 10px;
+}
+
 /* Titre */
-div#header div.title {
+div#header div.spacer div.title {
     width: 100%;
     overflow: hidden;
     white-space: nowrap;
@@ -14,31 +20,30 @@ div#header div.title {
 }
 
 /* Titre entrant */
-div#header div.title.incoming {
+div#header div.spacer div.title.incoming {
     float: right;
     max-width: 0px;                     /* Largeur maximum redéfinie */
 }
 
 /* Titre sortant */
-div#header div.title.leaving {
+div#header div.spacer div.title.leaving {
     float: left;
     max-width: 100%;                    /* Largeur maximum redéfinie */
 }
 
 /* Titre principal */
-div#header div.title h1 {
-    margin: 15px 0px 0px 0px;
+div#header div.spacer div.title h1 {
+    margin: 0px;
     padding: 0px;
     padding-left: 20px;
     font-size: 0px;                     /* Hauteur de police redéfinie */
 }
 /* Sous-titre */
-div#header div.title p {
+div#header div.spacer div.title p {
     margin: 0px;
-    padding: 0px 0px 5px 0px;
+    padding: 0px;
     padding-left: 20px;
-    text-transform: uppercase;
     letter-spacing: 2px;
     word-spacing: 8px;
-    font-size: 30px;
+    font-size: 20px;
 }

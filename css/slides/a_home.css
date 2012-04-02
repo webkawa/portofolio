@@ -1,12 +1,18 @@
 /* 
-    home.css
-    --------
-    Feuille de style de la page d'accueil.
+    a_home.css
+    ----------
+    Feuille de style de la page "Accueil".
 */
 
-div.slide#home {
-    background-color: #f0d7aa;
+div#header div.title.home {
+    color: #f59600;
 }
-div.slide#home div.spacer div.loader {
-    background-color: #f0d7aa;
+div#page div.slide#home {
+    background-color: #f59600;
+}
+div#page div.slide#home div.spacer div.loader {
+    background-color: #f59600;
+}
+div#page div.slide#home div#media div.data {
+    border-color: #f59600;
 }

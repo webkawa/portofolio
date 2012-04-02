@@ -5,16 +5,27 @@
  */
 
 /* Changement de titre */
-function switchTitle(data, target) {
+function switchTitle(target) {
     /* Injection */
-    injectTitle(data.title, data.subtitle);
+    injectTitle();
 
     /* Variables utiles */
-    var ltitle = $("div#header div.title.leaving");                 /* Titre sortant */
-    var ititle = $("div#header div.title.incoming");                /* Titre entrant */
+    var spacer = $("div#header div.spacer");                        /* Gestionnaire d'espacement */
+    var ltitle = $("div#header div.spacer div.title.leaving");      /* Titre sortant */
+    var ititle = $("div#header div.spacer div.title.incoming");     /* Titre entrant */
     var space;                                                      /* Espace disponible */
     var duration = $(co).find("transitions title duration").text(); /* Vitesse */
     var easing = $(co).find("transitions title easing").text();     /* Courbe */
+    var infos = slideProperties(target);
+    
+    /* Animation des marges */
+    $(spacer).animate({
+        "padding-left" : infos.lmargin + "px",
+        "padding-right" : infos.rmargin + "px"
+    }, {
+        "duration" : parseInt(duration),
+        "easing" : easing
+    });
     
     /* Animation du titre */
     $(ltitle).animate({
@@ -24,7 +35,7 @@ function switchTitle(data, target) {
         "easing"    : easing,
         "step"      : function(now) {
             /* Recherche de l'espace disponible */
-            space = $("div#header").width() - now; 
+            space = $(spacer).width() - now; 
             
             /* Mise à jour de l'opacité */
             $(ltitle).css("opacity", now / space);

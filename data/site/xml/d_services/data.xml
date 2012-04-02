@@ -2,7 +2,7 @@
 <!-- services/data.xml           -->
 <!-- Contenu de la page services -->
 <root>
-    <id>experience</id>
+    <id>services</id>
     <title>Services</title>
     <subtitle>Conseil et gestion de projet</subtitle>
     <core>

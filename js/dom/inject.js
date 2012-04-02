@@ -5,39 +5,45 @@
  */
 
 /* Création d'un titre */
-function injectTitle(title, subtitle) {
+function injectTitle() {
     /* Mise à jour du contenu sortant */
     $("div#header div.title").addClass("leaving");
     
     /* Création du contenu entrant */
+    var id = $(pge).find("id").text();
     var opt = '';
-    if(subtitle != null) {
-        opt = '<p>' + subtitle + '</p>';
+    if($(pge).find("subtitle").size() != 0) {
+        opt = '<p>' + $(pge).find("subtitle").text() + '</p>';
     }
     var data = 
-        '<div class="title incoming">' +
-            '<h1>' + title + '</h1>' +
+        '<div class="title incoming ' + id + '">' +
+            '<h1>' + $(pge).find("title").text() + '</h1>' +
             opt +
         '</div>';
-    $("div#header > div.border").append(data);                           /* Prend en compte la bordure */
+    $("div#header div.spacer").append(data);                             /* Prend en compte la bordure */
     
     /* Rafraichissement du titre entrant */
-    refreshTitleSize($("div#header > div.border div.title.incoming"));   /* Prend en compte la bordure */
+    refreshTitleSize($("div#header div.spacer div.title.incoming"));     /* Prend en compte la bordure */
+    
+    /* Mise en place de la police */
+    Cufon.replace('div#header div.spacer div.title.incoming h1');
+    Cufon.replace('div#header div.spacer div.title.incoming p');
+    Cufon.now();
 }
 
 /* Création d'un coeur de page */
 function injectContent(target, dom) {
     /* Création du contenu */
     var data =
-        $('<div id="content" style="opacity: 0">' +
-            '<div class="cage">' +
-                '<div class="scroller"></div>' +
-                '<div class="scrollbar">' +
-                    '<div class="scrollzone">' +
-                        '<div class="marker"></div>' +
-                    '</div>' +
-                '</div>' +
-            '</div>' +
+    $('<div id="content" style="opacity: 0">' +
+        '<div class="cage">' +
+        '<div class="scroller"></div>' +
+        '<div class="scrollbar">' +
+        '<div class="scrollzone">' +
+        '<div class="marker"></div>' +
+        '</div>' +
+        '</div>' +
+        '</div>' +
         '</div>');
     
     /* Ajout des informations chargées */
@@ -91,9 +97,9 @@ function injectMap(xml) {
     
     /* Chargement de la carte */
     var options = {
-          center: new google.maps.LatLng(latitude, longitude),
-          zoom: zoom,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
+        center: new google.maps.LatLng(latitude, longitude),
+        zoom: zoom,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
     };
     global_map = new google.maps.Map(document.getElementById("map"), options);
 }
@@ -105,19 +111,19 @@ function injectGallery(dom) {
     
     /* Création de la galerie */
     var data =
-        $('<div id="gallery">' +
-            '<div class="picture">' +
-                '<img />' +
-            '</div>' +
-            '<div class="infos">' +
-                '<h4>Lorem ipsum</h4>' +
-                '<p>Dolor sit amet</p>' +
-                '<ul>' +
-                    '<li id="fry" />' +
-                    '<li id="zoidberg" class="selected" />' +
-                    '<li id="bender" />' +
-                '</ul>' +
-            '</div>' +
+    $('<div id="gallery">' +
+        '<div class="picture">' +
+        '<img />' +
+        '</div>' +
+        '<div class="infos">' +
+        '<h4>Lorem ipsum</h4>' +
+        '<p>Dolor sit amet</p>' +
+        '<ul>' +
+        '<li id="fry" />' +
+        '<li id="zoidberg" class="selected" />' +
+        '<li id="bender" />' +
+        '</ul>' +
+        '</div>' +
         '</div>');
     
     /* Injection */
@@ -138,7 +144,7 @@ function injectGallery(dom) {
         $(this).css("background-image", "url('data/site/img/" + $(this).attr("id") +"_small.png')");
     });
     $(img).attr("src", "data/site/img/" + $(selection).attr("id") +".png");
-    /* Fin du post-traitement */
+/* Fin du post-traitement */
 }
 
 /* Création d'un texte */
@@ -148,10 +154,10 @@ function injectText(view) {
     
     /* Contenu */
     var data =
-        '<div id="text">' +
-            $(view).find("core").text() +
-            '<div class="fade"></div>' +
-        '</div>';
+    '<div id="text">' +
+    $(view).find("core").text() +
+    '<div class="fade"></div>' +
+    '</div>';
     
     /* Injection */
     $(target).append(data);
@@ -200,24 +206,24 @@ function injectMedia(target, xml) {
     
     /* Création du contenu */
     var data =
-        $('<div id="media" class="small" style="opacity: 0">' +
-            '<div class="loader"></div>' +
-            '<div class="title">' +
-                title +
-            '</div>' +
-            '<div class="data">' +
-                '<div class="cage">' +
-                    list +
-                    view +
-                '</div>' +
-            '</div>' +
-            '<div class="notes">' +
-                '<div class="spacer">' +
-                    '<p>' +
-                        notes +
-                    '</p>' +
-                '</div>' +
-            '</div>' +
+    $('<div id="media" class="small" style="opacity: 0">' +
+        '<div class="loader"></div>' +
+        '<div class="title">' +
+        title +
+        '</div>' +
+        '<div class="data">' +
+        '<div class="cage">' +
+        list +
+        view +
+        '</div>' +
+        '</div>' +
+        '<div class="notes">' +
+        '<div class="spacer">' +
+        '<p>' +
+        notes +
+        '</p>' +
+        '</div>' +
+        '</div>' +
         '</div>');
     
     /* Ajout du contenu */
@@ -259,8 +265,8 @@ function injectMedia(target, xml) {
 function injectPage(target) {
     /* Création du contenu entrant */
     var data = 
-        $('<div class="spacer">' +
-            '<div class="core" style="opacity: 0;"></div>' +
+    $('<div class="spacer">' +
+        '<div class="core" style="opacity: 0;"></div>' +
         '</div>');
     
     /* Création des coins */
@@ -289,10 +295,10 @@ function injectError(xml) {
 
         /* Création de l'erreur */
         var data =
-            '<div class="cage">' +
-                core +
-                exitlk +
-            '</div>';
+        '<div class="cage">' +
+        core +
+        exitlk +
+        '</div>';
 
         /* Insertion */
         $("div#error").append(data);
@@ -332,7 +338,8 @@ function injectDom() {
     
     /* Injecte le titre */
     addDecoration($("div#header"), "border", "bc", "small");
-    injectTitle($(pge).find("title").text(), $(pge).find("subtitle").text());
+    realHeight($("div#header div.spacer"), $("div#header").height());
+    injectTitle();
     
     /* Hauteur de la page */
     realHeight(page, $(window).height() - $("div#header").outerHeight() - $("div#footer").outerHeight());

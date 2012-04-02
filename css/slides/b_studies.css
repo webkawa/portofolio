@@ -1,12 +1,18 @@
 /* 
-    home.css
-    --------
-    Feuille de style de la page études.
+    b_studies.css
+    -------------
+    Feuille de style de la page "Etudes".
 */
 
-div.slide#studies {
-    background-color: #f59600;
+div#header div.title.studies {
+    color: #d32600;
 }
-div.slide#studies div.spacer div.loader {
-    background-color: #f59600;
+div#page div.slide#studies {
+    background-color: #d32600;
+}
+div#page div.slide#studies div.spacer div.loader {
+    background-color: #d32600;
+}
+div#page div.slide#studies div#media div.data {
+    border-color: #d32600;
 }

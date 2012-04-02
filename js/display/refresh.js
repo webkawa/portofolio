@@ -10,13 +10,11 @@ function refreshTitleSize(target) {
     var ih1 = $(target).children("h1");                     /* Titre */
     var ip = $(target).children("p");                       /* Sous-titre */
     
-    console.log(target);
-    
     /* Dimensionnement de la police */
     if($(ip).size() != 0) {
-        fontHeight(ih1, $("div#header").height() - $(ip).outerHeight(true));
+        fontHeight(ih1, $("div#header div.spacer").height() - $(ip).outerHeight(true));
     } else {
-        fontHeight(ih1, $("div#header").height());
+        fontHeight(ih1, $("div#header div.spacer").height());
     }
 }
 
