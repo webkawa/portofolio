@@ -7,4 +7,28 @@
 div#footer {
     background-color: white;
 }
-
+div#footer div.spacer {
+    width: 100%;
+    padding-top: 20px;
+    text-align: center;
+}
+div#footer div.spacer ul {
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+}
+div#footer div.spacer ul li {
+    display: inline-block;
+    margin: 0px;
+    padding: 0px 15px 0px 10px;
+    border-right: 1px solid #ccc;
+}
+div#footer div.spacer ul li.last {
+    border: none;
+}
+div#footer div.spacer ul li a {
+    color: #555;
+    font-style: italic;
+    font-size: 16px;
+    text-decoration: none;
+}

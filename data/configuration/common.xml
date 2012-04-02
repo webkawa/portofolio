@@ -19,7 +19,7 @@
             </next>
             <prev>
                 <duration>1000</duration>
-                <easing>easeInExpo</easing>
+                <easing>easeOutExpo</easing>
             </prev>
         </slides>
         <core>

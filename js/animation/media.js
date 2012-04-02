@@ -87,8 +87,9 @@ function switchZoom(direction) {
     if(direction) {
         objective = $(content).css("min-width");
     } else {
-        objective = Math.max(parseInt($(media).css("min-width")), corewidth - coreheight);
+        objective = $(core).width() - Math.max(parseInt($(media).css("min-width")), coreheight);
     }
+    console.log(objective);
     
     /* Animation */
     $(content).animate({

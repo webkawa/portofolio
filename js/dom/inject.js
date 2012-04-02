@@ -335,15 +335,14 @@ function injectDom() {
             }
         }
     });
-    
-    /* Injecte le titre */
-    addDecoration($("div#header"), "border", "bc", "small");
-    realHeight($("div#header div.spacer"), $("div#header").height());
-    injectTitle();
-    
     /* Hauteur de la page */
     realHeight(page, $(window).height() - $("div#header").outerHeight() - $("div#footer").outerHeight());
     realHeight($("div#page div.slide"), $(page).height());
+    
+    /* Injecte le titre */
+    addDecoration($("div#header"), "border", "bc", "smallshadow");
+    realHeight($("div#header div.spacer"), $("div#header").height());
+    injectTitle();
     
     /* Injecte le coeur de page */
     injectPage($("div#page div.slide.open"));
@@ -353,7 +352,10 @@ function injectDom() {
     injectMedia(target, med);
     injectContent(target, $(pge).find("core").text());
     
-    /* Mises à jours liées à la non-animation */
+    /* Décoration du pied de page */
+    addDecoration($("div#footer"), "border", "tc", "smallshadow")
+    
+    /* Mises à jours liées à la non-animation des contenus */
     $("div#header div.title").toggleClass("incoming");
     $("div#page div.slide.open > div.spacer div.core, div#content, div#media").css("opacity", "inherit");
 }

@@ -4,15 +4,22 @@
     Feuille de style de la page "Accueil".
 */
 
-div#header div.title.home {
+/* Coloration des textes */
+div#header div.title.home,
+div#page div.slide#home a,
+div#page div.slide#home h2,
+div#page div.slide#home h3,
+div#page div.slide#home h4 {
     color: #f59600;
 }
-div#page div.slide#home {
+
+/* Coloration des arrière-plan */
+div#page div.slide#home,
+div#page div.slide#home div.spacer div#media div.loader {
     background-color: #f59600;
 }
-div#page div.slide#home div.spacer div.loader {
-    background-color: #f59600;
-}
-div#page div.slide#home div#media div.data {
+
+/* Coloration des bordures */
+div#page div.slide#home div.spacer div#media div.data {
     border-color: #f59600;
 }
