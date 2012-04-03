@@ -12,8 +12,8 @@ function showCore(target) {
     injectContent(lastchild, $(pge).find("core").text());
     
     /* Variables utiles */
-    var duration = $(co).find("transitions core duration").text();
-    var easing = $(co).find ("transition core easing").text();
+    var duration = $(co).find("transitions core in duration").text();
+    var easing = $(co).find ("transition core in easing").text();
     
     /* Apparition du contenu */
     $("div#content, div#media").animate({
@@ -27,8 +27,8 @@ function showCore(target) {
 /* Dissimule un coeur de page */
 function hideCore() {
     /* Variables utiles */
-    var duration = $(co).find("transitions core duration").text();
-    var easing = $(co).find ("transition core easing").text();
+    var duration = $(co).find("transitions core out duration").text();
+    var easing = $(co).find ("transition core out easing").text();
     
     /* Apparition du contenu */
     $("div#content, div#media").animate({

@@ -101,7 +101,8 @@ div#text div.fade {
     width: 100%;
     height: 10px;
     bottom: 0px;
-    background-image: url('img/blank.png');
+    background-image: url('img/fade_bottom_s.png');
+    background-repeat: repeat-x;
 }
 div#text h4 {
     font-size: 16px;
@@ -114,7 +115,7 @@ div#text p {
 }
 
 /* Carte */
-div#map {
+div#gmap {
     width: 100%;
     height: 100%;
 }
@@ -131,6 +132,9 @@ div#gallery div.picture {
     width: 100%;
     height: 100%;
     text-align: center;
+    background-image: url('img/loader.gif');
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 div#gallery div.picture img {
     border: 1px solid white;
@@ -180,4 +184,12 @@ div#media div.notes {
 div#media div.notes div.spacer {
     padding: 5px 5px 20px 20px;
     text-align: right;
+}
+
+/* Icônes */
+div#media div.data div.cage div.links ul li#infos {
+    background-image: url('img/mask_infos.png');
+}
+div#media div.data div.cage div.links ul li#map {
+    background-image: url('img/mask_map.png');
 }

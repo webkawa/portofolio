@@ -87,9 +87,8 @@ function switchZoom(direction) {
     if(direction) {
         objective = $(content).css("min-width");
     } else {
-        objective = $(core).width() - Math.max(parseInt($(media).css("min-width")), coreheight);
+        objective = corewidth - Math.max(parseInt($(media).css("min-width")), coreheight);
     }
-    console.log(objective);
     
     /* Animation */
     $(content).animate({
@@ -143,9 +142,13 @@ function switchView(xml) {
     },{
         "duration" : induration,
         "easing" : ineasing,
-        "complete" : function() {
+        "step" : function() {
+            refreshGallery();
+        }, "complete" : function() {
             /* Modification du DOM */
             cleanupView();
+            
+            /* Injection de la vue */
             injectView(xml);
         }
     }).animate({
@@ -153,12 +156,17 @@ function switchView(xml) {
     },{
         "duration" : outduration,
         "easing" : outeasing,
-        "complete" : function() {
+        "step" : function() {
+            refreshGallery();
+        }, "complete" : function() {
             /* Désactivation du tweak */
             $(view).css("width", "auto");
             
             /* Rafraichissement de la carte */
             refreshMap();
+            
+            /* Mise en place des évènements */
+            doMediaEvents();
         }
     });
 }
@@ -173,6 +181,7 @@ function switchPicture(target) {
     var ineasing = $(co).find("media gallery in easing").text();
     var outduration = parseInt($(co).find("media gallery out duration").text());
     var outeasing = $(co).find("media gallery out easing").text();
+    var id = $(target).attr("id");
     
     /* Mémorisation de la taille maximale à l'ouverture */
     var initwidth = $(picture).css("max-width");
@@ -189,10 +198,8 @@ function switchPicture(target) {
         "duration" : induration,
         "easing" : ineasing,
         "complete" : function() {
-            /* Insérer le DOM ici */
-            
             /* Modification de l'image */
-            $(img).attr("src", "data/site/img/" + $(target).attr("id") + ".png");
+            $(img).attr("src", "data/site/img/" + id + ".png");
         }
     }).animate({
         "max-width" : initwidth,

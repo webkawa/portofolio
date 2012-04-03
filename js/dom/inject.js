@@ -97,7 +97,7 @@ function injectMap(xml) {
     var zoom = parseInt($(xml).find("zoom").text());
     
     /* Injection */
-    $(target).append('<div id="map"></div>');
+    $(target).append('<div id="gmap"></div>');
     
     /* Chargement de la carte */
     var options = {
@@ -105,27 +105,41 @@ function injectMap(xml) {
         zoom: zoom,
         mapTypeId: google.maps.MapTypeId.ROADMAP
     };
-    global_map = new google.maps.Map(document.getElementById("map"), options);
+    global_map = new google.maps.Map(document.getElementById("gmap"), options);
 }
 
 /* Création d'une galerie */
 function injectGallery(dom) {
     /* Variables utiles */
     var target = $("div#media div.data > div.cage div.view");
+    var id = $(dom).find("picture").attr("id");
+    
+    /* Création de l'image principale */
+    var img = '<img src="data/site/img/' + id + '.png" alt="' + $(dom).find("picture#" + id + " alt").text() + '" />' ;
+    var legend = $(dom).find("picture#" + id + " legend").text();
+    var text = $(dom).find("picture#" + id + " text").text();
+    
+    /* Création des liens */
+    var links = '';
+    $(dom).children("picture").each(function() {
+       links += '<li id="' + $(this).attr("id") + '" />'; 
+    });
     
     /* Création de la galerie */
     var data =
     $('<div id="gallery">' +
         '<div class="picture">' +
-        '<img />' +
+        img +
         '</div>' +
         '<div class="infos">' +
-        '<h4>Lorem ipsum</h4>' +
-        '<p>Dolor sit amet</p>' +
+        '<h4>' +
+        legend +
+        '</h4>' +
+        '<p>' +
+        text +
+        '</p>' +
         '<ul>' +
-        '<li id="fry" />' +
-        '<li id="zoidberg" class="selected" />' +
-        '<li id="bender" />' +
+        links +
         '</ul>' +
         '</div>' +
         '</div>');
@@ -139,16 +153,11 @@ function injectGallery(dom) {
     realMaxWidth($("div#gallery div.picture img"), $("div#gallery div.picture").width());
     $("div#gallery div.picture").css("line-height", $("div#gallery div.picture").height() + "px");
     
-    /* Post-traitement (temporaire) */
-    var img = $("div#gallery div.picture img");
-    var selection = $("div#gallery div.infos ul li.selected");
+    /* Post-traitement */
     var icons = $("div#gallery div.infos ul li");
-    
     $(icons).each(function() {
         $(this).css("background-image", "url('data/site/img/" + $(this).attr("id") +"_small.png')");
     });
-    $(img).attr("src", "data/site/img/" + $(selection).attr("id") +".png");
-/* Fin du post-traitement */
 }
 
 /* Création d'un texte */

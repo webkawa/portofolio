@@ -3,8 +3,8 @@
 <!-- Contenu de la page d'accueil -->
 <root>
     <id>home</id>
-    <title>Accueil</title>
-    <subtitle>Lorem ipsum dolor amet</subtitle>
+    <title>Lorem ipsum</title>
+    <subtitle>Dolor sit amet</subtitle>
     <core>
         <![CDATA[
             <h2>Lorem ipsum !</h2>
