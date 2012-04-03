@@ -24,7 +24,10 @@ div#page div.slide#home div#content div.scrollbar div.scrollzone div.marker.used
 }
 
 /* Coloration des bordures */
-div#page div.slide#home div.spacer div#media div.data {
+div#page div.slide#home div#media div.data,
+div#page div.slide#home div#media div.data div.view,
+div#page div.slide#home div#media div.data div.links ul li:hover,
+div#page div.slide#home div#media div.data div.links ul li.selected {
     border-color: #f59600;
 }
 

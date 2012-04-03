@@ -9,7 +9,7 @@
             <h3>A propos</h3>
         ]]>
     </title>
-    <view id="technology">
+    <view id="infos">
         <type>text</type>
         <core>
             <![CDATA[
@@ -21,7 +21,7 @@
             ]]>
         </core>
     </view>
-    <view id="compatibility">
+    <view id="map">
         <type>map</type>
         <latitude>47,900</latitude>
         <longitude>1,902</longitude>
@@ -32,4 +32,22 @@
             <p>Voir aussi</p>
         ]]>
     </notes>
+    <view id="references">
+        <type>gallery</type>
+        <picture id="fry">
+            <legend>Philip J. Fry</legend>
+            <text>Un esprit sain dans un corps sain</text>
+            <alt>Un djeunes</alt>
+        </picture>
+        <picture id="zoidberg">
+            <legend>Dr Zoiberg</legend>
+            <text>Un crustacé peut en cacher un autre</text>
+            <alt>Un crabe</alt>
+        </picture>
+        <picture id="bender">
+            <legend>Bender "Bending" Rodrigez</legend>
+            <text>Tordeur N°1</text>
+            <alt>Un robot tordeur</alt>
+        </picture>
+    </view>
 </root>

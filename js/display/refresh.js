@@ -72,11 +72,17 @@ function refreshContent() {
     var marker = $("div#content > div.cage div.scrollbar div.scrollzone div.marker");
     
     /* Calcul de la largeur */
-    realMaxWidth(content, $(core).width() - $(media).outerWidth());
+    var smallwidth = Math.max(parseInt($(media).css("min-width")), $(core).height());
+    if($(media).hasClass("small")) {
+        realMaxWidth(content, $(core).width() - smallwidth);
+    }
+    if($(media).hasClass("large")) {
+        realMaxWidth(content, parseInt($(content).css("min-width")));
+    }
     
     /* Taille de la cage */
     realHeight(cage, $(content).height());
-    realWidth(cage, $(content).width());
+    realWidth(cage, $(core).width() - smallwidth);
     
     /* Taille du scroller */
     realWidth(scroller, $(cage).width() - $(scrollbar).outerWidth());
@@ -104,7 +110,7 @@ function refreshMap() {
         try {
             google.maps.event.trigger(global_map, 'resize');
         } catch(err) {
-            console.log("Error on map refresh");
+            console.log("Error on map refresh : " + err);
         }
     }
 }
@@ -121,6 +127,7 @@ function refreshGallery() {
 function refreshMedia() {
     /* Variables utiles */
     var core = $("div#page div.slide.open > div.spacer div.core");
+    var content = $("div#content");
     var media = $("div#media");
     var mediatitle = $("div#media div.title");
     var mediah3 = $("div#media div.title h3");
@@ -132,6 +139,9 @@ function refreshMedia() {
     /* Hauteurs de la zone média */
     if($(media).hasClass("small")) {
         realWidth(media, $(core).height());
+    }
+    if($(media).hasClass("large")) {
+        realWidth(media, $(core).width() - parseInt($(content).css("min-width")));
     }
     realHeight(mediadata, $(media).height() - $(mediatitle).outerHeight(true) - $(medianotes).outerHeight(true));
     realHeight(mediacage, $(mediadata).height());
@@ -162,6 +172,7 @@ function refreshError() {
 
 /* Rafraichissement général */
 function refresh() {
+    /* Remise à 0 de la marge haute */
     var header = $("div#header");
     $(header).css("padding-top", "0px");
     
@@ -180,8 +191,6 @@ function refresh() {
     var footer = $("div#footer");
     var fheight = $(footer).outerHeight();
     var wheight = $(window).height();
-
-    console.log(wheight + " " + hheight + " " + pheight + " " + fheight);
 
     /* Taille de l'en-tête */
     if(wheight > hheight + pheight + fheight) {
