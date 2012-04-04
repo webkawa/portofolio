@@ -51,7 +51,8 @@ function switchMedia() {
                 "easing" : easingout,
                 "step" : function(now) {
                     $(mediacomponents).css("margin-left", (multi * (now - minwidth)) + backmargin + "px");
-                }, "complete" : function() {
+                }, 
+                "complete" : function() {
                     /* Rétablissement de la taille en pixels */
                     $(loader).css("width", minwidth + "px");
                     
@@ -144,7 +145,8 @@ function switchView(xml) {
         "easing" : ineasing,
         "step" : function() {
             refreshGallery();
-        }, "complete" : function() {
+        }, 
+        "complete" : function() {
             /* Modification du DOM */
             cleanupView();
             
@@ -158,7 +160,8 @@ function switchView(xml) {
         "easing" : outeasing,
         "step" : function() {
             refreshGallery();
-        }, "complete" : function() {
+        }, 
+        "complete" : function() {
             /* Désactivation du tweak */
             $(view).css("width", "auto");
             
@@ -172,16 +175,18 @@ function switchView(xml) {
 }
 
 /* Modifie l'image affichée dans la galerie */
-function switchPicture(target) {
+function switchPicture(dom, target) {
     /* Variables utiles */
     var gallery = $("div#gallery");
     var picture = $("div#gallery div.picture img");
     var img = $("div#gallery div.picture img");
+    var text = $("div#gallery div.infos h4, div#gallery div.infos p");
     var induration = parseInt($(co).find("media gallery in duration").text());
     var ineasing = $(co).find("media gallery in easing").text();
     var outduration = parseInt($(co).find("media gallery out duration").text());
     var outeasing = $(co).find("media gallery out easing").text();
     var id = $(target).attr("id");
+    var newpic = $(dom).find("picture#" + id);
     
     /* Mémorisation de la taille maximale à l'ouverture */
     var initwidth = $(picture).css("max-width");
@@ -191,6 +196,12 @@ function switchPicture(target) {
     $(target).addClass("selected");
     
     /* Animation */
+    $(text).animate({
+        "opacity" : "0"
+    },{
+        "duration" : induration,
+        "easing" : ineasing
+    });
     $(img).animate({
         "max-width" : "0px",
         "opacity" : "0"
@@ -199,17 +210,33 @@ function switchPicture(target) {
         "easing" : ineasing,
         "complete" : function() {
             /* Modification de l'image */
-            $(img).attr("src", "data/site/img/" + id + ".png");
-        }
-    }).animate({
-        "max-width" : initwidth,
-        "opacity" : "1"
-    },{
-        "duration" : outduration,
-        "easing" : outeasing,
-        "complete" : function() {
-            /* Rétablissement de la largeur */
-            $(img).css("width", "auto");
+            $(img).attr("src", "data/site/img/" + $(newpic).find("files image").text());
+            $(img).attr("alt", $(newpic).find("alt").text());
+            
+            /* Modification des textes */
+            $("div#media div.infos h4").text($(newpic).find("legend").text());
+            $("div#media div.infos p").text($(newpic).find("text").text());
+            
+            /* Attente du chargement complet */
+            $(img).load(function() {
+                $(text).animate({
+                    "opacity" : "1"
+                },{
+                    "duration" : outduration,
+                    "easing" : outeasing
+                });
+                $(img).animate({
+                    "max-width" : initwidth,
+                    "opacity" : "1"
+                },{
+                    "duration" : outduration,
+                    "easing" : outeasing,
+                    "complete" : function() {
+                        /* Rétablissement de la largeur */
+                        $(img).css("width", "auto");
+                    }
+                });
+            });
         }
     });
 }

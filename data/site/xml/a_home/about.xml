@@ -35,19 +35,40 @@
     <view id="references">
         <type>gallery</type>
         <picture id="fry">
+            <files>
+                <icon>fry_small.png</icon>
+                <image>fry.png</image>
+            </files>
             <legend>Philip J. Fry</legend>
             <text>Un esprit sain dans un corps sain</text>
             <alt>Un djeunes</alt>
         </picture>
         <picture id="zoidberg">
+            <files>
+                <icon>zoidberg_small.png</icon>
+                <image>zoidberg.png</image>
+            </files>
             <legend>Dr Zoiberg</legend>
             <text>Un crustacé peut en cacher un autre</text>
             <alt>Un crabe</alt>
         </picture>
         <picture id="bender">
+            <files>
+                <icon>bender_small.png</icon>
+                <image>bender.png</image>
+            </files>
             <legend>Bender "Bending" Rodrigez</legend>
             <text>Tordeur N°1</text>
             <alt>Un robot tordeur</alt>
+        </picture>
+        <picture id="frog">
+            <files>
+                <icon>bender_small.png</icon>
+                <image>grenouille.jpg</image>
+            </files>
+            <legend>La grenouille</legend>
+            <text>Maxi grenouille</text>
+            <alt>Une grenouille qui a du poids</alt>
         </picture>
     </view>
 </root>
