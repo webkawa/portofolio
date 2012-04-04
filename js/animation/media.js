@@ -177,7 +177,6 @@ function switchView(xml) {
 /* Modifie l'image affichée dans la galerie */
 function switchPicture(dom, target) {
     /* Variables utiles */
-    var gallery = $("div#gallery");
     var picture = $("div#gallery div.picture img");
     var img = $("div#gallery div.picture img");
     var text = $("div#gallery div.infos h4, div#gallery div.infos p");
@@ -219,6 +218,11 @@ function switchPicture(dom, target) {
             
             /* Attente du chargement complet */
             $(img).load(function() {
+                /* Modification du lien sélectionné */
+                $("div#media div.infos ul li").removeClass("selected");
+                $(target).addClass("selected");
+            
+                /* Ré-apparition du contenu */
                 $(text).animate({
                     "opacity" : "1"
                 },{

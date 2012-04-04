@@ -10,8 +10,7 @@ div#page div.slide#home div#media div.title,
 div#page div.slide#home a,
 div#page div.slide#home h1,
 div#page div.slide#home h2,
-div#page div.slide#home h3,
-div#page div.slide#home h4 {
+div#page div.slide#home h3 {
     color: #f59600;
 }
 
@@ -19,16 +18,25 @@ div#page div.slide#home h4 {
 div#page div.slide#home,
 div#page div.slide#home div.spacer div#media div.loader,
 div#page div.slide#home div#content div.scrollbar div.scrollzone div.marker:hover,
-div#page div.slide#home div#content div.scrollbar div.scrollzone div.marker.used {
+div#page div.slide#home div#content div.scrollbar div.scrollzone div.marker.used,
+div#page div.slide#home div#media div.data,
+div#page div.slide#home div#media div.data div.links ul li.selected {
     background-color: #f59600;
+}
+div#page div.slide#home div#media div.data div.infos h4,
+div#page div.slide#home div#media div.data div.infos p {
+    background: url('../img/home/opacity_80.png') repeat;
 }
 
 /* Coloration des bordures */
 div#page div.slide#home div#media div.data,
-div#page div.slide#home div#media div.data div.view,
-div#page div.slide#home div#media div.data div.links ul li:hover,
-div#page div.slide#home div#media div.data div.links ul li.selected {
+div#page div.slide#home div#media div#gallery div.infos ul li.selected,
+div#page div.slide#home div#media div.data div.infos h4,
+div#page div.slide#home div#media div.data div.infos p {
     border-color: #f59600;
+}
+div#page div.slide#home div#media div#gallery div.infos ul li:hover {
+    border-color: #bf7500;
 }
 
 /* Coloration des liens au survol */
