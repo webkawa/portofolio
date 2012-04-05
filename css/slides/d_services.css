@@ -10,8 +10,7 @@ div#page div.slide#services div#media div.title,
 div#page div.slide#services a,
 div#page div.slide#services h1,
 div#page div.slide#services h2,
-div#page div.slide#services h3,
-div#page div.slide#services h4 {
+div#page div.slide#services h3 {
     color: #3a73ad;
 }
 
@@ -19,13 +18,26 @@ div#page div.slide#services h4 {
 div#page div.slide#services,
 div#page div.slide#services div.spacer div#media div.loader,
 div#page div.slide#services div#content div.scrollbar div.scrollzone div.marker:hover,
-div#page div.slide#services div#content div.scrollbar div.scrollzone div.marker.used {
+div#page div.slide#services div#content div.scrollbar div.scrollzone div.marker.used,
+div#page div.slide#services div#media div.initial p img,
+div#page div.slide#services div#media div.data,
+div#page div.slide#services div#media div.data div.links ul li.selected {
     background-color: #3a73ad;
+}
+div#page div.slide#services div#media div.data div.infos h4,
+div#page div.slide#services div#media div.data div.infos p {
+    background-image: url('../img/services/opacity_80.png');
 }
 
 /* Coloration des bordures */
-div#page div.slide#services div.spacer div#media div.data {
+div#page div.slide#services div#media div.data,
+div#page div.slide#services div#media div#gallery div.infos ul li.selected,
+div#page div.slide#services div#media div.data div.infos h4,
+div#page div.slide#services div#media div.data div.infos p {
     border-color: #3a73ad;
+}
+div#page div.slide#services div#media div#gallery div.infos ul li:hover {
+    border-color: #bf7500;
 }
 
 /* Coloration des liens au survol */
@@ -48,6 +60,18 @@ div#page div.slide#services div.corner.medium.br {
 }
 div#page div.slide#services div.corner.medium.bl {
     background-image: url('../img/services/corner_bl_medium.png');
+}
+div#page div.slide#services div.corner.small.tl {
+    background-image: url('../img/services/corner_tl_small.png');
+}
+div#page div.slide#services div.corner.small.tr {
+    background-image: url('../img/services/corner_tr_small.png');
+}
+div#page div.slide#services div.corner.small.br {
+    background-image: url('../img/services/corner_br_small.png');
+}
+div#page div.slide#services div.corner.small.bl {
+    background-image: url('../img/services/corner_bl_small.png');
 }
 
 /* Scrollbar */

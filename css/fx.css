@@ -32,6 +32,27 @@ div.corner.bl {
     background-position: left bottom;
 }
 
+/* Coins en sur-impression pour les médias */
+div#media div.data div.cage div.view img.corner {
+    position: absolute;
+}
+div#media div.data div.cage div.view img.corner.tl {
+    top: 0px;
+    left: 0px;
+}
+div#media div.data div.cage div.view img.corner.tr {
+    top: 0px;
+    right: 0px;
+}
+div#media div.data div.cage div.view img.corner.bl {
+    bottom: 0px;
+    left: 0px;
+}
+div#media div.data div.cage div.view img.corner.br {
+    bottom: 0px;
+    right: 0px;
+}
+
 /* Gestion des bordures */
 div.border {
     width: 100%;

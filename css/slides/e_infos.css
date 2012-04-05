@@ -10,8 +10,7 @@ div#page div.slide#infos div#media div.title,
 div#page div.slide#infos a,
 div#page div.slide#infos h1,
 div#page div.slide#infos h2,
-div#page div.slide#infos h3,
-div#page div.slide#infos h4 {
+div#page div.slide#infos h3 {
     color: #616161;
 }
 
@@ -19,13 +18,26 @@ div#page div.slide#infos h4 {
 div#page div.slide#infos,
 div#page div.slide#infos div.spacer div#media div.loader,
 div#page div.slide#infos div#content div.scrollbar div.scrollzone div.marker:hover,
-div#page div.slide#infos div#content div.scrollbar div.scrollzone div.marker.used {
+div#page div.slide#infos div#content div.scrollbar div.scrollzone div.marker.used,
+div#page div.slide#infos div#media div.initial p img,
+div#page div.slide#infos div#media div.data,
+div#page div.slide#infos div#media div.data div.links ul li.selected {
     background-color: #616161;
+}
+div#page div.slide#infos div#media div.data div.infos h4,
+div#page div.slide#infos div#media div.data div.infos p {
+    background-image: url('../img/infos/opacity_80.png');
 }
 
 /* Coloration des bordures */
-div#page div.slide#infos div.spacer div#media div.data {
+div#page div.slide#infos div#media div.data,
+div#page div.slide#infos div#media div#gallery div.infos ul li.selected,
+div#page div.slide#infos div#media div.data div.infos h4,
+div#page div.slide#infos div#media div.data div.infos p {
     border-color: #616161;
+}
+div#page div.slide#infos div#media div#gallery div.infos ul li:hover {
+    border-color: #bf7500;
 }
 
 /* Coloration des liens au survol */
@@ -48,6 +60,18 @@ div#page div.slide#infos div.corner.medium.br {
 }
 div#page div.slide#infos div.corner.medium.bl {
     background-image: url('../img/infos/corner_bl_medium.png');
+}
+div#page div.slide#infos div.corner.small.tl {
+    background-image: url('../img/infos/corner_tl_small.png');
+}
+div#page div.slide#infos div.corner.small.tr {
+    background-image: url('../img/infos/corner_tr_small.png');
+}
+div#page div.slide#infos div.corner.small.br {
+    background-image: url('../img/infos/corner_br_small.png');
+}
+div#page div.slide#infos div.corner.small.bl {
+    background-image: url('../img/infos/corner_bl_small.png');
 }
 
 /* Scrollbar */

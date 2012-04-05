@@ -96,5 +96,6 @@
     <fields>
         <field id="no-media-alt">Aucun média affiché</field>
         <field id="no-media-error">Pour afficher un média, cliquez sur l'un des liens dans la partie gauche de l'écran</field>
+        <field id="decoration-img-alt">Elément de décoration</field>
     </fields>
 </root>

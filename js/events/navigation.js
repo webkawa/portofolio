@@ -54,18 +54,18 @@ function doNavigationEvents() {
         }
     });
     /* Gestion du scrolling au clic */
-    $("div#content > div.cage div.scrollbar div.scrollzone div.marker").draggable({
+    $("div#content div.cage div.scrollbar div.scrollzone div.marker").draggable({
         axis : "y",
-        containment : "div#content > div.cage div.scrollbar div.scrollzone",
+        containment : "div#content div.cage div.scrollbar div.scrollzone",
         start : function() {
             $(this).addClass("used");
         }, 
         drag : function() {
             /* Variables utiles */
-            var scrollzone = $("div#content > div.cage div.scrollbar div.scrollzone");
+            var scrollzone = $("div#content div.cage div.scrollbar div.scrollzone");
             var diffmarker = $(scrollzone).height() - $(this).height();
             var scroller = $("div#content div.scroller");
-            var diffscroller = Math.min($("div#content > div.cage").height() - $(scroller).height(), 0);
+            var diffscroller = Math.min($("div#content div.cage").height() - $(scroller).height(), 0);
             var margin = (parseInt($(this).css("top")) / diffmarker) *  diffscroller;
             
             /* Attribution */

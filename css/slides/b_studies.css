@@ -10,8 +10,7 @@ div#page div.slide#studies div#media div.title,
 div#page div.slide#studies a,
 div#page div.slide#studies h1,
 div#page div.slide#studies h2,
-div#page div.slide#studies h3,
-div#page div.slide#studies h4 {
+div#page div.slide#studies h3 {
     color: #d32600;
 }
 
@@ -19,13 +18,26 @@ div#page div.slide#studies h4 {
 div#page div.slide#studies,
 div#page div.slide#studies div.spacer div#media div.loader,
 div#page div.slide#studies div#content div.scrollbar div.scrollzone div.marker:hover,
-div#page div.slide#studies div#content div.scrollbar div.scrollzone div.marker.used {
+div#page div.slide#studies div#content div.scrollbar div.scrollzone div.marker.used,
+div#page div.slide#studies div#media div.initial p img,
+div#page div.slide#studies div#media div.data,
+div#page div.slide#studies div#media div.data div.links ul li.selected {
     background-color: #d32600;
+}
+div#page div.slide#studies div#media div.data div.infos h4,
+div#page div.slide#studies div#media div.data div.infos p {
+    background-image: url('../img/studies/opacity_80.png');
 }
 
 /* Coloration des bordures */
-div#page div.slide#studies div.spacer div#media div.data {
+div#page div.slide#studies div#media div.data,
+div#page div.slide#studies div#media div#gallery div.infos ul li.selected,
+div#page div.slide#studies div#media div.data div.infos h4,
+div#page div.slide#studies div#media div.data div.infos p {
     border-color: #d32600;
+}
+div#page div.slide#studies div#media div#gallery div.infos ul li:hover {
+    border-color: #bf7500;
 }
 
 /* Coloration des liens au survol */
@@ -48,6 +60,18 @@ div#page div.slide#studies div.corner.medium.br {
 }
 div#page div.slide#studies div.corner.medium.bl {
     background-image: url('../img/studies/corner_bl_medium.png');
+}
+div#page div.slide#studies div.corner.small.tl {
+    background-image: url('../img/studies/corner_tl_small.png');
+}
+div#page div.slide#studies div.corner.small.tr {
+    background-image: url('../img/studies/corner_tr_small.png');
+}
+div#page div.slide#studies div.corner.small.br {
+    background-image: url('../img/studies/corner_br_small.png');
+}
+div#page div.slide#studies div.corner.small.bl {
+    background-image: url('../img/studies/corner_bl_small.png');
 }
 
 /* Scrollbar */

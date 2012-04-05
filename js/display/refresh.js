@@ -65,11 +65,11 @@ function refreshContent() {
     var core = $("div#page div.slide.open > div.spacer div.core");
     var content = $("div#content");
     var media = $("div#media");
-    var cage = $("div#content > div.cage");
-    var scroller = $("div#content > div.cage div.scroller");
-    var scrollbar = $("div#content > div.cage div.scrollbar");
-    var scrollzone = $("div#content > div.cage div.scrollbar div.scrollzone");
-    var marker = $("div#content > div.cage div.scrollbar div.scrollzone div.marker");
+    var cage = $("div#content div.cage");
+    var scroller = $("div#content div.cage div.scroller");
+    var scrollbar = $("div#content div.cage div.scrollbar");
+    var scrollzone = $("div#content div.cage div.scrollbar div.scrollzone");
+    var marker = $("div#content div.cage div.scrollbar div.scrollzone div.marker");
     
     /* Calcul de la largeur */
     var smallwidth = Math.max(parseInt($(media).css("min-width")), $(core).height());
@@ -129,6 +129,9 @@ function refreshMedia() {
     var core = $("div#page div.slide.open > div.spacer div.core");
     var content = $("div#content");
     var media = $("div#media");
+    var loader = $("div#media div.loader");
+    var initiallayer = $("div#media div.layer");
+    var initial = $("div#media div.initial");
     var mediatitle = $("div#media div.title");
     var mediah3 = $("div#media div.title h3");
     var mediadata = $("div#media div.data");
@@ -146,6 +149,14 @@ function refreshMedia() {
     realHeight(mediadata, $(media).height() - $(mediatitle).outerHeight(true) - $(medianotes).outerHeight(true));
     realHeight(mediacage, $(mediadata).height());
     realHeight(mediaview, $(mediadata).height());
+    realHeight(initiallayer, $(media).height());
+    realWidth(initiallayer, $(media).width() - $(loader).width());
+    
+    /* Alignement de la zone vide */
+    $(initial).css({
+        "padding-top" : (($(media).height() - $(initial).height())/ 2) + "px",
+        "padding-left" : (($(media).width() - $(initial).width())/ 2) + "px"
+    });
     
     /* Taille du titre */ 
     if($(mediah3).size() > 0) {

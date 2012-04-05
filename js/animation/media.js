@@ -8,6 +8,7 @@
 function switchMedia() {
     /* Variables utiles */
     var media = $("div#media");
+    var initiallayer = $("div#media div.layer");
     var loader = $("div#media div.loader");
     var mediacomponents = $("div#media div.data > div.cage, div#media div.title h3, div#media div.title p, div#media div.notes div.spacer p");
     var durationin = $(co).find("navigation media switch in duration").text();
@@ -18,7 +19,9 @@ function switchMedia() {
     var medwidth = $(media).width();
     var minwidth = parseInt($(loader).css("min-width"));
     var maxwidth = medwidth;
+    var loaderwidth = $(loader).outerWidth();
     var backmargin = parseInt($(mediacomponents).css("margin-left"));
+    var ibackmargin = parseInt($(initiallayer).css("margin-left"));
     
     /* Animation */
     $(loader).animate({
@@ -28,6 +31,7 @@ function switchMedia() {
         "easing" : easingin,
         "step" : function(now) {
             $(mediacomponents).css("margin-left", ((multi * (now - minwidth)) + backmargin)  + "px");
+            realWidth(initiallayer, medwidth - now);
         }, 
         "complete" : function() {
             /* Nettoyage et injection */
@@ -70,12 +74,15 @@ function switchZoom(direction) {
     var core = $("div#page div.slide.open > div.spacer div.core");
     var content = $("div#content");
     var media = $("div#media");
+    var initiallayer = $("div#media div.layer");
+    var loader = $("div#media div.loader");
     var picture = $("div#gallery div.picture");
     var img = $("div#gallery div.picture img");
     var duration = $(co).find("media zoom in duration").text();
     var easing = $(co).find("media zoom in easing").text();
     var corewidth = $(core).width();
     var coreheight = $(core).height();
+    var loaderwidth = $(loader).outerWidth();
     var objective;
     var isgal = false;
     
@@ -92,13 +99,16 @@ function switchZoom(direction) {
     }
     
     /* Animation */
+    var i = 0;
     $(content).animate({
         "max-width" : objective
     },{
         "duration" : parseInt(duration),
         "easing" : easing,
         "step" : function(now) {
-            $(media).css("width", corewidth - now + "px")
+            i = corewidth - now;
+            $(media).css("width", i + "px")
+            realWidth(initiallayer, i - loaderwidth);
             
             if(isgal) {
                 realMaxWidth(img, $(picture).width());

@@ -67,18 +67,20 @@ function slideProperties(target) {
 
 /* Permet l'ajout d'une décoration (bordure ou coin) à un bloc */
 function addDecoration(target, type, position, theme) {
-    /* Création de l'élément */
-    var data = $('<div class="' + type + ' ' + position + ' ' + theme + '"></div>');
+    $(target).each(function() {
+        /* Création de l'élément */
+        var data = $('<div class="' + type + ' ' + position + ' ' + theme + '"></div>');
     
-    /* Sauvegarde du contenu */
-    var childs = $(target).children();
+        /* Sauvegarde du contenu */
+        var childs = $(this).children();
     
-    /* Nettoyage */
-    $(childs).remove();
+        /* Nettoyage */
+        $(childs).remove();
     
-    /* Ré-insertion */
-    $(data).append($(childs));
-    $(target).append($(data));
+        /* Ré-insertion */
+        $(data).append($(childs));
+        $(this).append($(data));
+    })
 }
 
 /* Permet l'ajout de quatre coins à un bloc */

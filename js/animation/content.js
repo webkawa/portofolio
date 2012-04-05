@@ -8,14 +8,14 @@
 function scrollContent(destination) {
     /* Variables utiles */
     var content = $("div#content");
-    var cage = $("div#content > div.cage");
+    var cage = $("div#content div.cage");
     var hcage = $(cage).height();
-    var scroller = $("div#content > div.cage div.scroller");
+    var scroller = $("div#content div.cage div.scroller");
     var hscroller = $(scroller).height();
     var diffscroll = Math.max(hscroller - hcage, 0);
-    var scrollzone = $("div#content > div.cage div.scrollbar div.scrollzone");
+    var scrollzone = $("div#content div.cage div.scrollbar div.scrollzone");
     var hscrollzone = $(scrollzone).height();
-    var marker = $("div#content > div.cage div.scrollbar div.scrollzone div.marker");
+    var marker = $("div#content div.cage div.scrollbar div.scrollzone div.marker");
     var hmarker = $(marker).height();
     var diffmarker = hscrollzone - hmarker;
     var tolerance = parseInt($(co).find("navigation scroll tolerance").text());

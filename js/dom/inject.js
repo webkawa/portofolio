@@ -60,11 +60,11 @@ function injectContent(target, dom) {
     var core = $("div#page div.slide > div.spacer div.core");
     var content = $("div#content");
     var media = $("div#media");
-    var cage = $("div#content > div.cage");
-    var scroller = $("div#content > div.cage div.scroller");
-    var scrollbar = $("div#content > div.cage div.scrollbar");
-    var scrollzone = $("div#content > div.cage div.scrollbar div.scrollzone");
-    var marker = $("div#content > div.cage div.scrollbar div.scrollzone div.marker");
+    var cage = $("div#content div.cage");
+    var scroller = $("div#content div.cage div.scroller");
+    var scrollbar = $("div#content div.cage div.scrollbar");
+    var scrollzone = $("div#content div.cage div.scrollbar div.scrollzone");
+    var marker = $("div#content div.cage div.scrollbar div.scrollzone div.marker");
     
     /* Affectation des tailles */
     realHeight(content, $(core).height());
@@ -74,6 +74,10 @@ function injectContent(target, dom) {
     realHeight(scrollzone, $(scrollbar).height());
     realWidth(scroller, $(cage).width() - $(scrollbar).outerWidth());
     realHeight(marker, markerSize(cage, scroller, scrollzone));
+    
+    /* Décoration */
+    addDecoration(content, "corner", "tr", "small");
+    addDecoration(content, "corner", "br", "small");
     
     /* Déploiement du cùfon */
     Cufon.replace('div#content div.cage div.scroller h2');
@@ -95,9 +99,18 @@ function injectMap(xml) {
     var longitude = parseInt($(xml).find("longitude").text());
     var latitude = parseInt($(xml).find("latitude").text());
     var zoom = parseInt($(xml).find("zoom").text());
+    var id = $(pge).find("id").text();
+    var alt = $(co).find("fields field#decoration-img-alt").text();
+    
+    /* Création du contenu */
+    var data = '<div id="gmap"></div>' +
+        '<img src="css/img/' + id + '/corner_bl_small.png" alt="' + alt + '" class="corner bl" />' +
+        '<img src="css/img/' + id + '/corner_br_small.png" alt="' + alt + '" class="corner br" />' +
+        '<img src="css/img/' + id + '/corner_tr_small.png" alt="' + alt + '" class="corner tr" />' +
+        '<img src="css/img/' + id + '/corner_tl_small.png" alt="' + alt + '" class="corner tl" />';
     
     /* Injection */
-    $(target).append('<div id="gmap"></div>');
+    $(target).append(data);
     
     /* Chargement de la carte */
     var options = {
@@ -150,6 +163,9 @@ function injectGallery(dom) {
     /* Injection */
     $(target).append(data);
     
+    /* Décoration */
+    addCorners(target, "small");
+    
     /* Chargement de l'image */
     var image = $(target).find("div#gallery div.picture img");
     $(image).load(function() {
@@ -185,11 +201,14 @@ function injectText(view) {
     var data =
         '<div id="text">' +
         $(view).find("core").text() +
-        '<div class="fade"></div>' +
+        //'<div class="fade"></div>' +          [!] Solution à déterminer
         '</div>';
     
     /* Injection */
     $(target).append(data);
+    
+    /* Décoration */
+    addCorners(target, "small");
 }
 
 /* Injection d'une vue */
@@ -263,11 +282,13 @@ function injectMedia(target, xml) {
         data =
             $('<div id="media" class="small">' +
             '<div class="loader"></div>' +
+            '<div class="layer">' +
             '<div class="initial">' +
             '<p>' +
             '<img src="data/site/img/media_empty.png" alt="' + nomediaalt + '" />' +
             '<span>' + nomediaerror + '</span>' +
             '</p>' +
+            '</div>' +
             '</div>' +
             '</div>');
     }
@@ -284,22 +305,46 @@ function injectMedia(target, xml) {
     /* Variables utiles */
     var core = $("div#page div.slide.open > div.spacer div.core");
     var media = $("div#media");
+    var initiallayer = $("div#media div.layer");
+    var initial = $("div#media div.layer div.initial");
     var loader = $("div#media div.loader");
     var mediatitle = $("div#media div.title");
     var mediadata = $("div#media div.data");
     var mediacage = $("div#media div.data > div.cage");
     var mediaview = $("div#media div.data > div.cage div.view");
+    var medialinks = $("div#media div.data > div.cage div.links ul li");
     var medianotes = $("div#media div.notes");
     
     /* Ajout des décorations */
+    addDecoration($(mediatitle), "corner", "br", "small");
+    addDecoration($(mediatitle), "corner", "bl", "small");
+    addDecoration($(mediatitle), "corner", "tl", "small");
     addDecoration($(mediatitle), "border", "bc", "small");
+    addDecoration($(medianotes), "corner", "tr", "small");
+    addDecoration($(medianotes), "corner", "bl", "small");
+    addDecoration($(medianotes), "corner", "tl", "small");
     addDecoration($(medianotes), "border", "tc", "small");
+    addCorners($(medialinks), "small");
+    if($(initial).size() == 1) {
+        addDecoration($(initiallayer), "corner", "bl", "small");
+        addDecoration($(initiallayer), "corner", "tl", "small");
+    }
     
     /* Largeur de la zone média */
     realWidth(media, $(core).height());
     
+    /* Alignement du contenu vide */
+    $(initial).css({
+        "padding-top" : (($(media).height() - $(initial).height())/ 2) + "px",
+        "padding-left" : (($(media).width() - $(initial).width())/ 2) + "px"
+    });
+    
     /* Largeur de la zone loader */
     $(loader).css("width", $(loader).css("min-width"));
+    
+    /* Dimensions de la zone initiale */
+    realWidth(initiallayer, $(media).width() - $(loader).outerWidth());
+    realHeight(initiallayer, $(media).height());
     
     /* Hauteur de la zone média */
     realHeight(mediadata, $(media).height() - $(mediatitle).outerHeight(true) - $(medianotes).outerHeight(true));

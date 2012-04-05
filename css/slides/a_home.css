@@ -61,6 +61,18 @@ div#page div.slide#home div.corner.medium.br {
 div#page div.slide#home div.corner.medium.bl {
     background-image: url('../img/home/corner_bl_medium.png');
 }
+div#page div.slide#home div.corner.small.tl {
+    background-image: url('../img/home/corner_tl_small.png');
+}
+div#page div.slide#home div.corner.small.tr {
+    background-image: url('../img/home/corner_tr_small.png');
+}
+div#page div.slide#home div.corner.small.br {
+    background-image: url('../img/home/corner_br_small.png');
+}
+div#page div.slide#home div.corner.small.bl {
+    background-image: url('../img/home/corner_bl_small.png');
+}
 
 /* Scrollbar */
 div#page div.slide#home div#content div.cage div.scrollbar div.corner.tc {
