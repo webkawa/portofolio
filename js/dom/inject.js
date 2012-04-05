@@ -17,8 +17,8 @@ function injectTitle() {
     }
     var data = 
         '<div class="title incoming ' + id + '">' +
-            '<h1>' + $(pge).find("title").text() + '</h1>' +
-            opt +
+        '<h1>' + $(pge).find("title").text() + '</h1>' +
+        opt +
         '</div>';
     $("div#header div.spacer").append(data);                             /* Prend en compte la bordure */
     
@@ -35,7 +35,7 @@ function injectTitle() {
 function injectContent(target, dom) {
     /* Création du contenu */
     var data =
-    $('<div id="content" style="opacity: 0">' +
+        $('<div id="content" style="opacity: 0">' +
         '<div class="cage">' +
         '<div class="scroller"></div>' +
         '<div class="scrollbar">' +
@@ -112,22 +112,25 @@ function injectMap(xml) {
 function injectGallery(dom) {
     /* Variables utiles */
     var target = $("div#media div.data > div.cage div.view");
-    var id = $(dom).find("picture").attr("id");
+    var picture = $(dom).find("picture:first");
+    var id = $(picture).attr("id");
+    var induration = parseInt($(co).find("media gallery in duration").text());
+    var ineasing = $(co).find("media gallery in easing").text();
     
     /* Création de l'image principale */
-    var img = '<img src="data/site/img/' + id + '.png" alt="' + $(dom).find("picture#" + id + " alt").text() + '" />' ;
-    var legend = $(dom).find("picture#" + id + " legend").text();
-    var text = $(dom).find("picture#" + id + " text").text();
+    var img = '<img style="opacity: 0;" src="data/site/img/' + $(picture).find("files image").text() + '" alt="' + $(picture).find("alt").text() + '" />' ;
+    var legend = $(picture).find("legend").text();
+    var text = $(picture).find("text").text();
     
     /* Création des liens */
     var links = '';
     $(dom).children("picture").each(function() {
-       links += '<li id="' + $(this).attr("id") + '" />'; 
+        links += '<li id="' + $(this).attr("id") + '" />'; 
     });
     
     /* Création de la galerie */
     var data =
-    $('<div id="gallery">' +
+        $('<div id="gallery">' +
         '<div class="picture">' +
         img +
         '</div>' +
@@ -147,6 +150,18 @@ function injectGallery(dom) {
     /* Injection */
     $(target).append(data);
     
+    /* Chargement de l'image */
+    var image = $(target).find("div#gallery div.picture img");
+    $(image).load(function() {
+        /* Affichage */ 
+        $(image).animate({
+            "opacity" : "1"
+        },{
+            "duration" : induration,
+            "easing" : ineasing
+        });
+    });
+    
     /* Taille de la ligne */
     realHeight($("div#gallery div.picture"), $("div#gallery").height());
     realMaxHeight($("div#gallery div.picture img"), $("div#gallery div.picture").height());
@@ -156,8 +171,9 @@ function injectGallery(dom) {
     /* Post-traitement */
     var icons = $("div#gallery div.infos ul li");
     $(icons).each(function() {
-        $(this).css("background-image", "url('data/site/img/" + $(this).attr("id") +"_small.png')");
+        $(this).css("background-image", "url('data/site/img/" + $(dom).find("picture#" + $(this).attr("id") + " files icon").text() + "')");
     });
+    $("div#gallery div.infos ul li:first").addClass("selected");
 }
 
 /* Création d'un texte */
@@ -167,10 +183,10 @@ function injectText(view) {
     
     /* Contenu */
     var data =
-    '<div id="text">' +
-    $(view).find("core").text() +
-    '<div class="fade"></div>' +
-    '</div>';
+        '<div id="text">' +
+        $(view).find("core").text() +
+        '<div class="fade"></div>' +
+        '</div>';
     
     /* Injection */
     $(target).append(data);
@@ -199,6 +215,7 @@ function injectMedia(target, xml) {
     var title = '';
     var view = '';
     var notes = $(co).find("fields field#no-media").text();
+    var data = '';
     if($(views).size() != 0) {
         /* Titre */
         title = $(xml).find("title").text();
@@ -215,29 +232,35 @@ function injectMedia(target, xml) {
         
         /* Notes */
         notes = $(xml).find("notes").text();
+        
+        /* Création du contenu */
+        data =
+            $('<div id="media" class="small" style="opacity: 0">' +
+            '<div class="loader"></div>' +
+            '<div class="title">' +
+            title +
+            '</div>' +
+            '<div class="data">' +
+            '<div class="cage">' +
+            list +
+            view +
+            '</div>' +
+            '</div>' +
+            '<div class="notes">' +
+            '<div class="spacer">' +
+            '<p>' +
+            notes +
+            '</p>' +
+            '</div>' +
+            '</div>' +
+            '</div>');
+    } else {
+        /* Création de la zone vide */
+        data =
+            $('<div id="media" class="small">' +
+            '<div class="loader"></div>' +
+            '</div>');
     }
-    
-    /* Création du contenu */
-    var data =
-    $('<div id="media" class="small" style="opacity: 0">' +
-        '<div class="loader"></div>' +
-        '<div class="title">' +
-        title +
-        '</div>' +
-        '<div class="data">' +
-        '<div class="cage">' +
-        list +
-        view +
-        '</div>' +
-        '</div>' +
-        '<div class="notes">' +
-        '<div class="spacer">' +
-        '<p>' +
-        notes +
-        '</p>' +
-        '</div>' +
-        '</div>' +
-        '</div>');
     
     /* Ajout du contenu */
     $(target).append($(data));
@@ -278,7 +301,7 @@ function injectMedia(target, xml) {
 function injectPage(target) {
     /* Création du contenu entrant */
     var data = 
-    $('<div class="spacer">' +
+        $('<div class="spacer">' +
         '<div class="core" style="opacity: 0;"></div>' +
         '</div>');
     
@@ -311,10 +334,10 @@ function injectError(xml) {
 
         /* Création de l'erreur */
         var data =
-        '<div class="cage">' +
-        core +
-        exitlk +
-        '</div>';
+            '<div class="cage">' +
+            core +
+            exitlk +
+            '</div>';
 
         /* Insertion */
         $("div#error").append(data);

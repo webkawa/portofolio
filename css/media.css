@@ -51,16 +51,13 @@ div#media div.data {
     border-bottom: 10px solid #aaa;
     border-top: 10px solid #aaa;
     overflow: hidden;
-    background-position: right center;
-    background-repeat: repeat;
-    background-image: url('img/blank.png');
 }
 div#media div.data div.cage {
     width: 100%;
     float: left;
 }
 div#media div.data div.cage div.links {
-    width: 45px;
+    width: 43px;
     float: left;
 }
 div#media div.data div.cage div.links ul {
@@ -68,22 +65,20 @@ div#media div.data div.cage div.links ul {
     margin: 0px;
 }
 div#media div.data div.cage div.links ul li {
-    height: 40px;
-    margin: 5px 0px 5px 5px;
+    height: 38px;
+    margin: 5px 0px 5px 0px;
     list-style-type: none;
-    border: 1px solid #aaa;
     background-color: #999;
 }
 div#media div.data div.cage div.links ul li:hover {
     background-color: #555;
 }
 div#media div.data div.cage div.links ul li.selected {
-    border-color: red;
+    background-color: #555;
 }
 div#media div.data div.cage div.view {
     min-height: 2px;
     margin: 5px 5px 5px 50px;
-    border: 1px solid #aaa;
     background-color: white;
 }
 
@@ -141,23 +136,24 @@ div#gallery div.picture img {
     width: auto;
     max-width: 100%;                                        /* Destiné à ré-écriture */
     height: auto;
-    margin: 10px;
+    margin: 10px 10px 40px 10px;
     vertical-align: middle;
 }
 div#gallery div.infos {
     position: absolute;
     width: 100%;
     bottom: 0px;
-    background-image: url('img/blank.png');
     color: white;
 }
 div#gallery div.infos h4 {
     margin: 0px;
     padding: 5px 10px 0px 10px;
+    border-top: 2px solid;
 }
 div#gallery div.infos p {
     margin: 0px;
-    padding: 0px 10px 0px 10px;
+    padding: 0px 10px 5px 10px;
+    border-bottom: 2px solid;
 }
 div#gallery div.infos ul {
     padding: 5px 0px 0px 0px;

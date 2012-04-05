@@ -33,7 +33,7 @@ function doViewEvents() {
 function doGalleryEvents() {
     /* Changement d'image */
     $("div#gallery div.infos ul li").click(function() {
-        switchPicture($(this));
+        switchPicture($(med).find("view#" + $("div#media div.data div.cage div.links ul li.selected").attr("id")), $(this));
     });
 }
 
