@@ -255,10 +255,20 @@ function injectMedia(target, xml) {
             '</div>' +
             '</div>');
     } else {
+        /* Variables utiles */
+        var nomediaalt = $(co).find("fields field#no-media-alt").text();
+        var nomediaerror = $(co).find("fields field#no-media-error").text();
+        
         /* Création de la zone vide */
         data =
             $('<div id="media" class="small">' +
             '<div class="loader"></div>' +
+            '<div class="initial">' +
+            '<p>' +
+            '<img src="data/site/img/media_empty.png" alt="' + nomediaalt + '" />' +
+            '<span>' + nomediaerror + '</span>' +
+            '</p>' +
+            '</div>' +
             '</div>');
     }
     

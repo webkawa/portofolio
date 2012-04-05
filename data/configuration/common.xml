@@ -51,14 +51,14 @@
         </content>
         <media>
             <switch>
-                <multi>2</multi>
+                <multi>1.5</multi>
                 <in>
                     <duration>500</duration>
-                    <easing>easeInQuart</easing>
+                    <easing>easeOutCubic</easing>
                 </in>
                 <out>
                     <duration>500</duration>
-                    <easing>easeOutQuart</easing>
+                    <easing>easeInCubic</easing>
                 </out>
             </switch>
             <zoom>
@@ -94,6 +94,7 @@
         </media>
     </navigation>
     <fields>
-        <field id="no-media">Aucun média affiché</field>
+        <field id="no-media-alt">Aucun média affiché</field>
+        <field id="no-media-error">Pour afficher un média, cliquez sur l'un des liens dans la partie gauche de l'écran</field>
     </fields>
 </root>

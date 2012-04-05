@@ -19,13 +19,14 @@ div#page div.slide#home,
 div#page div.slide#home div.spacer div#media div.loader,
 div#page div.slide#home div#content div.scrollbar div.scrollzone div.marker:hover,
 div#page div.slide#home div#content div.scrollbar div.scrollzone div.marker.used,
+div#page div.slide#home div#media div.initial p img,
 div#page div.slide#home div#media div.data,
 div#page div.slide#home div#media div.data div.links ul li.selected {
     background-color: #f59600;
 }
 div#page div.slide#home div#media div.data div.infos h4,
 div#page div.slide#home div#media div.data div.infos p {
-    background: url('../img/home/opacity_80.png') repeat;
+    background-image: url('../img/home/opacity_80.png');
 }
 
 /* Coloration des bordures */

@@ -6,23 +6,31 @@
 
 /* Zone média */
 div#media {
-    min-width: 360px;
+    min-width: 480px;
     height: 100%;
     float: right;
 }
 
 /* Gestionnaire de chargement */
 div#media div.loader {
-    min-width: 25px;                                    /* Doit rester en pixels */
+    min-width: 30px;                                    /* Doit rester en pixels */
     width: 10%;                                         /* Destiné à ré-écriture */
     height: 100%;
     float: left;
-    background-image: url('img/blank.png');
-    background-position: center;
+    background-position: center center;
     background-repeat: no-repeat;
 }
-div#media div.loader:hover {
-    background-image: none;
+div#media.small div.loader {
+    background-image: url('img/media_zoom_off.png');
+}
+div#media.small div.loader:hover {
+    background-image: url('img/media_zoom_on.png');
+}
+div#media.large div.loader {
+    background-image: url('img/media_unzoom_off.png');
+}
+div#media.large div.loader:hover {
+    background-image: url('img/media_unzoom_on.png');
 }
 
 /* Titre */
@@ -44,6 +52,22 @@ div#media div.title h3 {
     font-size: 0px;                                     /* Largeur de police redéfinie */
 }
 
+/* Contenu initial */
+div#media div.initial {
+    width: 240px;
+    margin: 10px auto;
+    color: #aaa;
+    font-style: italic;
+    font-size: 85%;
+    text-align: justify;
+}
+div#media div.initial p img {
+    float: left;
+}
+div#media div.initial p span {
+    
+}
+
 /* Coeur */
 div#media div.data {
     min-height: 80px;
@@ -57,16 +81,16 @@ div#media div.data div.cage {
     float: left;
 }
 div#media div.data div.cage div.links {
-    width: 43px;
-    float: left;
+    width: 40px;
+    float: right;
 }
 div#media div.data div.cage div.links ul {
     padding: 0px;
     margin: 0px;
 }
 div#media div.data div.cage div.links ul li {
-    height: 38px;
-    margin: 5px 0px 5px 0px;
+    height: 40px;
+    margin: 5px 0px;
     list-style-type: none;
     background-color: #999;
 }
@@ -78,7 +102,7 @@ div#media div.data div.cage div.links ul li.selected {
 }
 div#media div.data div.cage div.view {
     min-height: 2px;
-    margin: 5px 5px 5px 50px;
+    margin: 5px 50px 5px 0px;
     background-color: white;
 }
 
@@ -120,7 +144,6 @@ div#gallery {
     position: relative;
     width: 100%;
     height: 100%;
-    background-color: black;
     overflow: hidden;
 }
 div#gallery div.picture {
@@ -132,7 +155,7 @@ div#gallery div.picture {
     background-repeat: no-repeat;
 }
 div#gallery div.picture img {
-    border: 1px solid white;
+    border: 1px solid #ccc;
     width: auto;
     max-width: 100%;                                        /* Destiné à ré-écriture */
     height: auto;
@@ -149,11 +172,13 @@ div#gallery div.infos h4 {
     margin: 0px;
     padding: 5px 10px 0px 10px;
     border-top: 2px solid;
+    background-repeat: repeat;
 }
 div#gallery div.infos p {
     margin: 0px;
     padding: 0px 10px 5px 10px;
     border-bottom: 2px solid;
+    background-repeat: repeat;
 }
 div#gallery div.infos ul {
     padding: 5px 0px 0px 0px;
@@ -188,4 +213,13 @@ div#media div.data div.cage div.links ul li#infos {
 }
 div#media div.data div.cage div.links ul li#map {
     background-image: url('img/mask_map.png');
+}
+div#media div.data div.cage div.links ul li#help {
+    background-image: url('img/mask_help.png');
+}
+div#media div.data div.cage div.links ul li#zoom {
+    background-image: url('img/mask_zoom.png');
+}
+div#media div.data div.cage div.links ul li#file {
+    background-image: url('img/mask_file.png');
 }

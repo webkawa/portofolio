@@ -4,7 +4,7 @@
     Evènements liés à l'utilisation des médias.
  */
 
-/* Inscription des évènements de zoom */
+///* Inscription des évènements de zoom */
 function doZoomingEvents() {
     /* Effacement des fonctions précédentes */
     $("div#media div.loader").off();
