@@ -154,8 +154,8 @@ function refreshMedia() {
     
     /* Alignement de la zone vide */
     $(initial).css({
-        "padding-top" : (($(media).height() - $(initial).height())/ 2) + "px",
-        "padding-left" : (($(media).width() - $(initial).width())/ 2) + "px"
+        "padding-top" : (($(initiallayer).height() - $(initial).height()) / 2) + "px",
+        "padding-left" : (($(initiallayer).width() - $(initial).width()) / 2) + "px"
     });
     
     /* Taille du titre */ 

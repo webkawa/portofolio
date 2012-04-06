@@ -19,9 +19,7 @@ function switchMedia() {
     var medwidth = $(media).width();
     var minwidth = parseInt($(loader).css("min-width"));
     var maxwidth = medwidth;
-    var loaderwidth = $(loader).outerWidth();
     var backmargin = parseInt($(mediacomponents).css("margin-left"));
-    var ibackmargin = parseInt($(initiallayer).css("margin-left"));
     
     /* Animation */
     $(loader).animate({
@@ -75,6 +73,7 @@ function switchZoom(direction) {
     var content = $("div#content");
     var media = $("div#media");
     var initiallayer = $("div#media div.layer");
+    var initial = $("div#media div.layer div.initial");
     var loader = $("div#media div.loader");
     var picture = $("div#gallery div.picture");
     var img = $("div#gallery div.picture img");
@@ -83,8 +82,14 @@ function switchZoom(direction) {
     var corewidth = $(core).width();
     var coreheight = $(core).height();
     var loaderwidth = $(loader).outerWidth();
+    var initialwidth = $(initial).width();
     var objective;
-    var isgal = false;
+    var isgal = false, isempty = false;
+    
+    /* Cas du média vide */
+    if($(initial).size() == 1){
+        isempty = true;
+    }
     
     /* Cas des galeries */
     if($(img).size() > 0) {
@@ -99,17 +104,32 @@ function switchZoom(direction) {
     }
     
     /* Animation */
-    var i = 0;
+    var i = 0, j = 0;
     $(content).animate({
         "max-width" : objective
     },{
         "duration" : parseInt(duration),
         "easing" : easing,
         "step" : function(now) {
+            /* Calcul de la largeur de la zone média */
             i = corewidth - now;
-            $(media).css("width", i + "px")
-            realWidth(initiallayer, i - loaderwidth);
             
+            /* Redimentionnement de la zone média */
+            $(media).css("width", i + "px");
+            
+            /* Centrage du média vide */
+            if(isempty) {
+                /* Calcul de la largeur du cadre de la zone vide */
+                j = i - loaderwidth;
+                
+                /* Redimensionnement du cadre de la zone vide */
+                realWidth(initiallayer, j);
+                
+                /* Centrage de la zone texte */
+                $(initial).css("padding-left", ((j - initialwidth) / 2) + "px");
+            }
+            
+            /* Centrage de la galerie */
             if(isgal) {
                 realMaxWidth(img, $(picture).width());
             }
@@ -231,7 +251,7 @@ function switchPicture(dom, target) {
                 /* Modification du lien sélectionné */
                 $("div#media div.infos ul li").removeClass("selected");
                 $(target).addClass("selected");
-            
+                
                 /* Ré-apparition du contenu */
                 $(text).animate({
                     "opacity" : "1"

@@ -58,11 +58,14 @@ div#media div.layer {
 }
 div#media div.layer div.initial {
     width: 240px;
-    padding: 10px;
+    padding: 0px;
     color: #aaa;
     font-style: italic;
     font-size: 85%;
     text-align: justify;
+}
+div#media div.layer div.initial p {
+    margin: 0px;
 }
 div#media div.layer div.initial p img {
     float: left;

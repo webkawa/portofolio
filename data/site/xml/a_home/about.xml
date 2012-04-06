@@ -26,6 +26,13 @@
         <latitude>47,900</latitude>
         <longitude>1,902</longitude>
         <zoom>8</zoom>
+        <markers>
+            <marker>
+                <title>Titre</title>
+                <latitude>47,989</latitude>
+                <longitude>1,900</longitude>
+            </marker>
+        </markers>
     </view>
     <notes>
         <![CDATA[

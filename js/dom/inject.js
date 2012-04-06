@@ -16,10 +16,10 @@ function injectTitle() {
         opt = '<p>' + $(pge).find("subtitle").text() + '</p>';
     }
     var data = 
-        '<div class="title incoming ' + id + '">' +
-        '<h1>' + $(pge).find("title").text() + '</h1>' +
-        opt +
-        '</div>';
+    '<div class="title incoming ' + id + '">' +
+    '<h1>' + $(pge).find("title").text() + '</h1>' +
+    opt +
+    '</div>';
     $("div#header div.spacer").append(data);                             /* Prend en compte la bordure */
     
     /* Rafraichissement du titre entrant */
@@ -35,7 +35,7 @@ function injectTitle() {
 function injectContent(target, dom) {
     /* Création du contenu */
     var data =
-        $('<div id="content" style="opacity: 0">' +
+    $('<div id="content" style="opacity: 0">' +
         '<div class="cage">' +
         '<div class="scroller"></div>' +
         '<div class="scrollbar">' +
@@ -103,7 +103,8 @@ function injectMap(xml) {
     var alt = $(co).find("fields field#decoration-img-alt").text();
     
     /* Création du contenu */
-    var data = '<div id="gmap"></div>' +
+    var data = 
+        '<div id="gmap"></div>' +
         '<img src="css/img/' + id + '/corner_bl_small.png" alt="' + alt + '" class="corner bl" />' +
         '<img src="css/img/' + id + '/corner_br_small.png" alt="' + alt + '" class="corner br" />' +
         '<img src="css/img/' + id + '/corner_tr_small.png" alt="' + alt + '" class="corner tr" />' +
@@ -119,6 +120,15 @@ function injectMap(xml) {
         mapTypeId: google.maps.MapTypeId.ROADMAP
     };
     global_map = new google.maps.Map(document.getElementById("gmap"), options);
+    
+    /* Ajout des points */
+    $("markers marker").each(function() {
+        new google.maps.Marker({
+            position: new google.maps.LatLng(parseInt($(this).find("latitude").text()), parseInt($(this).find("longitude").text())),
+            map: map,
+            title: $(this).find("title")
+        }); 
+    });
 }
 
 /* Création d'une galerie */
@@ -143,7 +153,7 @@ function injectGallery(dom) {
     
     /* Création de la galerie */
     var data =
-        $('<div id="gallery">' +
+    $('<div id="gallery">' +
         '<div class="picture">' +
         img +
         '</div>' +
@@ -199,10 +209,10 @@ function injectText(view) {
     
     /* Contenu */
     var data =
-        '<div id="text">' +
-        $(view).find("core").text() +
-        //'<div class="fade"></div>' +          [!] Solution à déterminer
-        '</div>';
+    '<div id="text">' +
+    $(view).find("core").text() +
+    //'<div class="fade"></div>' +          [!] Solution à déterminer
+    '</div>';
     
     /* Injection */
     $(target).append(data);
@@ -254,7 +264,7 @@ function injectMedia(target, xml) {
         
         /* Création du contenu */
         data =
-            $('<div id="media" class="small" style="opacity: 0">' +
+        $('<div id="media" class="small" style="opacity: 0">' +
             '<div class="loader"></div>' +
             '<div class="title">' +
             title +
@@ -280,7 +290,7 @@ function injectMedia(target, xml) {
         
         /* Création de la zone vide */
         data =
-            $('<div id="media" class="small">' +
+        $('<div id="media" class="small">' +
             '<div class="loader"></div>' +
             '<div class="layer">' +
             '<div class="initial">' +
@@ -330,14 +340,8 @@ function injectMedia(target, xml) {
         addDecoration($(initiallayer), "corner", "tl", "small");
     }
     
-    /* Largeur de la zone média */
+    /* Largeur de la zone média */ 
     realWidth(media, $(core).height());
-    
-    /* Alignement du contenu vide */
-    $(initial).css({
-        "padding-top" : (($(media).height() - $(initial).height())/ 2) + "px",
-        "padding-left" : (($(media).width() - $(initial).width())/ 2) + "px"
-    });
     
     /* Largeur de la zone loader */
     $(loader).css("width", $(loader).css("min-width"));
@@ -345,6 +349,12 @@ function injectMedia(target, xml) {
     /* Dimensions de la zone initiale */
     realWidth(initiallayer, $(media).width() - $(loader).outerWidth());
     realHeight(initiallayer, $(media).height());
+    
+    /* Alignement du contenu vide */
+    $(initial).css({
+        "padding-top" : (($(initiallayer).height() - $(initial).height())/ 2) + "px",
+        "padding-left" : (($(initiallayer).width() - $(initial).width())/ 2) + "px"
+    });
     
     /* Hauteur de la zone média */
     realHeight(mediadata, $(media).height() - $(mediatitle).outerHeight(true) - $(medianotes).outerHeight(true));
@@ -356,7 +366,7 @@ function injectMedia(target, xml) {
 function injectPage(target) {
     /* Création du contenu entrant */
     var data = 
-        $('<div class="spacer">' +
+    $('<div class="spacer">' +
         '<div class="core" style="opacity: 0;"></div>' +
         '</div>');
     
@@ -389,10 +399,10 @@ function injectError(xml) {
 
         /* Création de l'erreur */
         var data =
-            '<div class="cage">' +
-            core +
-            exitlk +
-            '</div>';
+        '<div class="cage">' +
+        core +
+        exitlk +
+        '</div>';
 
         /* Insertion */
         $("div#error").append(data);
@@ -432,6 +442,9 @@ function injectDom() {
     
     /* Informations sur les slides */
     var prop = slideProperties($("div.slide.open"));
+    
+    /* Définition de la largeur maximale */
+    realMaxWidth($("div#page div.slide.open"), $("div#page").width() - prop.lmargin - prop.rmargin);
     
     /* Hauteur de la page */
     realHeight(page, $(window).height() - $("div#header").outerHeight() - $("div#footer").outerHeight());
