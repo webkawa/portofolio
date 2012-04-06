@@ -247,7 +247,7 @@ function injectMedia(target, xml) {
     var data = '';
     if($(views).size() != 0) {
         /* Titre */
-        title = $(xml).find("title").text();
+        title = $(xml).find("root > title").text();
         
         /* Liens */
         list += '<div class="links"><ul>';
@@ -260,7 +260,7 @@ function injectMedia(target, xml) {
         view = '<div class="view"></div>';
         
         /* Notes */
-        notes = $(xml).find("notes").text();
+        notes = $(xml).find("root > notes").text();
         
         /* Création du contenu */
         data =

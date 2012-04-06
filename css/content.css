@@ -52,3 +52,6 @@ div#content div.cage div.scrollbar div.scrollzone div.marker {
     padding: 0px !important;                            /* Doit rester nul sur la hauteur */
     background-color: #aaa;
 }
+div#content div.cage div.scrollbar div.scrollzone div.marker:hover {
+    cursor: pointer;
+}

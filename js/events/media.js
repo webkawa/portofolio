@@ -33,7 +33,9 @@ function doViewEvents() {
 function doGalleryEvents() {
     /* Changement d'image */
     $("div#gallery div.infos ul li").click(function() {
-        switchPicture($(med).find("view#" + $("div#media div.data div.cage div.links ul li.selected").attr("id")), $(this));
+        if(!$(this).hasClass("selected")) {
+            switchPicture($(med).find("view#" + $("div#media div.data div.cage div.links ul li.selected").attr("id")), $(this));
+        }
     });
 }
 

@@ -247,6 +247,7 @@ function switchPicture(dom, target) {
             $("div#media div.infos p").text($(newpic).find("text").text());
             
             /* Attente du chargement complet */
+            $(img).off('load');
             $(img).load(function() {
                 /* Modification du lien sélectionné */
                 $("div#media div.infos ul li").removeClass("selected");

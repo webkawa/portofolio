@@ -20,6 +20,9 @@ div#media div.loader {
     background-position: center center;
     background-repeat: no-repeat;
 }
+div#media div.loader:hover {
+    cursor: pointer;
+}
 div#media.small div.loader {
     background-image: url('img/media_zoom_off.png');
 }
@@ -102,6 +105,7 @@ div#media div.data div.cage div.links ul li {
 }
 div#media div.data div.cage div.links ul li:hover {
     background-color: #555;
+    cursor: pointer;
 }
 div#media div.data div.cage div.links ul li.selected {
     background-color: #555;
@@ -199,8 +203,11 @@ div#gallery div.infos ul li {
     height: 40px;
     margin-right: 2px;
     margin-left: 2px;
-    border: 1px solid grey;
+    border: 2px solid grey;
     opacity: 1;
+}
+div#gallery div.infos ul li:hover {
+    cursor: pointer;
 }
 
 /* Pied */
