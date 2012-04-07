@@ -12,8 +12,9 @@ function doNavigationEvents() {
         var x1 = $("div#page div.slide:last").is($(this));
         var x2 = $(open).prev().is($(this));
         var x3 = $(this).is(":not(:animated)");
+        var x4 = $(open).find("div.core").is(":not(:animated)");
         /* Changement */
-        if($(open).size() == 1 && (x1 || x2) && x3) {
+        if($(open).size() == 1 && (x1 || x2) && x3 && x4) {
             /* Mise à jour des variables de navigation */
             pge = loadPage($(this).attr("id"));
             med = $("head");

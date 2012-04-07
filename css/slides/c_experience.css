@@ -6,11 +6,12 @@
 
 /* Coloration des textes */
 div#header div.title.experience,
-div#page div.slide#experience div#media div.title,
 div#page div.slide#experience a,
 div#page div.slide#experience h1,
 div#page div.slide#experience h2,
-div#page div.slide#experience h3 {
+div#page div.slide#experience h3,
+div#page div.slide#experience div#media div#text h4,
+div#page div.slide#experience div#media div#gmap h4 {
     color: #6ba71c;
 }
 
@@ -32,12 +33,14 @@ div#page div.slide#experience div#media div.data div.infos p {
 /* Coloration des bordures */
 div#page div.slide#experience div#media div.data,
 div#page div.slide#experience div#media div#gallery div.infos ul li.selected,
-div#page div.slide#experience div#media div.data div.infos h4,
-div#page div.slide#experience div#media div.data div.infos p {
+div#page div.slide#experience div#media div#gallery div.infos h4,
+div#page div.slide#experience div#media div#gallery div.infos p,
+div#page div.slide#experience div#media div#gmap h4 {
     border-color: #6ba71c;
 }
-div#page div.slide#experience div#media div#gallery div.infos ul li:hover {
-    border-color: #bf7500;
+div#page div.slide#experience div#media div#gallery div.infos ul li:hover,
+div#page div.slide#experience div#media div.notes div.spacer ul li:hover {
+    border-color: #416511;
 }
 
 /* Coloration des liens au survol */
@@ -80,4 +83,12 @@ div#page div.slide#experience div#content div.cage div.scrollbar div.corner.tc {
 }
 div#page div.slide#experience div#content div.cage div.scrollbar div.corner.bc {
     background-image: url('../img/experience/scrollbar_bottom.png');
+}
+
+/* Médias divers */
+div#page div.slide#experience div#media div.notes div.spacer ul li {
+    background: url('../img/experience/check_off.png') transparent left top no-repeat;
+}
+div#page div.slide#experience div#media div.notes div.spacer ul li:hover {
+    background: url('../img/experience/check_on.png') transparent left top no-repeat;
 }

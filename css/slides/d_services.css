@@ -6,11 +6,12 @@
 
 /* Coloration des textes */
 div#header div.title.services,
-div#page div.slide#services div#media div.title,
 div#page div.slide#services a,
 div#page div.slide#services h1,
 div#page div.slide#services h2,
-div#page div.slide#services h3 {
+div#page div.slide#services h3,
+div#page div.slide#services div#media div#text h4,
+div#page div.slide#services div#media div#gmap h4 {
     color: #3a73ad;
 }
 
@@ -32,17 +33,19 @@ div#page div.slide#services div#media div.data div.infos p {
 /* Coloration des bordures */
 div#page div.slide#services div#media div.data,
 div#page div.slide#services div#media div#gallery div.infos ul li.selected,
-div#page div.slide#services div#media div.data div.infos h4,
-div#page div.slide#services div#media div.data div.infos p {
+div#page div.slide#services div#media div#gallery div.infos h4,
+div#page div.slide#services div#media div#gallery div.infos p,
+div#page div.slide#services div#media div#gmap h4 {
     border-color: #3a73ad;
 }
-div#page div.slide#services div#media div#gallery div.infos ul li:hover {
-    border-color: #bf7500;
+div#page div.slide#services div#media div#gallery div.infos ul li:hover,
+div#page div.slide#services div#media div.notes div.spacer ul li:hover {
+    border-color: #274e75;
 }
 
 /* Coloration des liens au survol */
 div#page div.slide#services a:hover {
-    color: #234669;
+    color: #274e75;
 }
 div#footer.services a:hover {
     color: #3a73ad;
@@ -80,4 +83,12 @@ div#page div.slide#services div#content div.cage div.scrollbar div.corner.tc {
 }
 div#page div.slide#services div#content div.cage div.scrollbar div.corner.bc {
     background-image: url('../img/services/scrollbar_bottom.png');
+}
+
+/* Médias divers */
+div#page div.slide#services div#media div.notes div.spacer ul li {
+    background: url('../img/services/check_off.png') transparent left top no-repeat;
+}
+div#page div.slide#services div#media div.notes div.spacer ul li:hover {
+    background: url('../img/services/check_on.png') transparent left top no-repeat;
 }

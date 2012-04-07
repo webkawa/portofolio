@@ -9,6 +9,19 @@
             <h3>A propos</h3>
         ]]>
     </title>
+    <notes>
+        <![CDATA[
+            <p>Pour aller plus loin ...</p>
+            <ul>
+                <li><a href="www.google.com">Google est ton ami</a></li>
+                <li><a href="www.google.com">Là aussi</a></li>
+                <li><a href="www.google.com">Google est ton ami</a></li>
+                <li><a href="www.google.com">Là aussi</a></li>
+                <li><a href="www.google.com">Google est ton ami</a></li>
+                <li><a href="www.google.com">Là aussi</a></li>
+            </ul>
+        ]]>
+    </notes>
     <view id="infos">
         <type>text</type>
         <core>
@@ -28,17 +41,17 @@
         <zoom>8</zoom>
         <markers>
             <marker>
-                <title>Titre</title>
+                <info>
+                    <![CDATA[
+                        <h4>Info-bulle</h4>
+                        <p>Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do. That's also clear. But for some reason, you and I react the exact same way to water. We swallow it too fast, we choke. We get some in our lungs, we drown. However unreal it may seem, we are connected, you and I. We're on the same curve, just on opposite ends. </p>
+                    ]]>
+                </info>
                 <latitude>47,989</latitude>
                 <longitude>1,900</longitude>
             </marker>
         </markers>
     </view>
-    <notes>
-        <![CDATA[
-            <p>Voir aussi</p>
-        ]]>
-    </notes>
     <view id="zoom">
         <type>gallery</type>
         <picture id="fry">

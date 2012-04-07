@@ -104,11 +104,11 @@ function injectMap(xml) {
     
     /* Création du contenu */
     var data = 
-        '<div id="gmap"></div>' +
-        '<img src="css/img/' + id + '/corner_bl_small.png" alt="' + alt + '" class="corner bl" />' +
-        '<img src="css/img/' + id + '/corner_br_small.png" alt="' + alt + '" class="corner br" />' +
-        '<img src="css/img/' + id + '/corner_tr_small.png" alt="' + alt + '" class="corner tr" />' +
-        '<img src="css/img/' + id + '/corner_tl_small.png" alt="' + alt + '" class="corner tl" />';
+    '<div id="gmap"></div>' +
+    '<img src="css/img/' + id + '/corner_bl_small.png" alt="' + alt + '" class="corner bl" />' +
+    '<img src="css/img/' + id + '/corner_br_small.png" alt="' + alt + '" class="corner br" />' +
+    '<img src="css/img/' + id + '/corner_tr_small.png" alt="' + alt + '" class="corner tr" />' +
+    '<img src="css/img/' + id + '/corner_tl_small.png" alt="' + alt + '" class="corner tl" />';
     
     /* Injection */
     $(target).append(data);
@@ -121,13 +121,29 @@ function injectMap(xml) {
     };
     global_map = new google.maps.Map(document.getElementById("gmap"), options);
     
-    /* Ajout des points */
-    $("markers marker").each(function() {
-        new google.maps.Marker({
-            position: new google.maps.LatLng(parseInt($(this).find("latitude").text()), parseInt($(this).find("longitude").text())),
-            map: map,
-            title: $(this).find("title")
-        }); 
+    /* Ajout des marqueurs */
+    var lat, lng, marker, info;
+    $(xml).find("markers > marker").each(function() {
+        /* Recherche des variables utiles */
+        lat = parseInt($(this).find("latitude").text());
+        lng = parseInt($(this).find("longitude").text());
+        data = $(this).find("info").text();
+        
+        /* Création du marqueur */
+        marker = new google.maps.Marker({
+            position : new google.maps.LatLng(lat, lng),
+            map : global_map,
+            title : $(this).find("title").text()
+        });
+            
+        /* Création de l'info-bulle */
+        info = new google.maps.InfoWindow({
+            content : data,
+            maxWidth : 320
+        })
+        google.maps.event.addListener(marker, 'click', function() {
+            info.open(global_map, marker);
+        });
     });
 }
 
@@ -277,9 +293,7 @@ function injectMedia(target, xml) {
             '</div>' +
             '<div class="notes">' +
             '<div class="spacer">' +
-            '<p>' +
             notes +
-            '</p>' +
             '</div>' +
             '</div>' +
             '</div>');
@@ -324,16 +338,17 @@ function injectMedia(target, xml) {
     var mediaview = $("div#media div.data > div.cage div.view");
     var medialinks = $("div#media div.data > div.cage div.links ul li");
     var medianotes = $("div#media div.notes");
+    var medianotesspacer = $("div#media div.notes div.spacer");
     
     /* Ajout des décorations */
     addDecoration($(mediatitle), "corner", "br", "small");
     addDecoration($(mediatitle), "corner", "bl", "small");
     addDecoration($(mediatitle), "corner", "tl", "small");
-    addDecoration($(mediatitle), "border", "bc", "small");
+    addDecoration($(mediatitle), "border", "bc", "media");
     addDecoration($(medianotes), "corner", "tr", "small");
     addDecoration($(medianotes), "corner", "bl", "small");
     addDecoration($(medianotes), "corner", "tl", "small");
-    addDecoration($(medianotes), "border", "tc", "small");
+    addDecoration($(medianotes), "border", "tc", "media");
     addCorners($(medialinks), "small");
     if($(initial).size() == 1) {
         addDecoration($(initiallayer), "corner", "bl", "small");
@@ -360,6 +375,13 @@ function injectMedia(target, xml) {
     realHeight(mediadata, $(media).height() - $(mediatitle).outerHeight(true) - $(medianotes).outerHeight(true));
     realHeight(mediacage, $(mediadata).height());
     realHeight(mediaview, $(mediacage).height());
+    
+    /* Verrouillage de la zone notes */
+    realWidth(medianotesspacer, $(medianotes).width());
+    
+    /* Déploiement du cùfon */
+    Cufon.replace('div#media div.title h3');
+    Cufon.now();
 }
 
 /* Création d'une page */
@@ -473,4 +495,14 @@ function injectDom() {
     /* Mises à jours liées à la non-animation des contenus */
     $("div#header div.title").toggleClass("incoming");
     $("div#page div.slide.open > div.spacer div.core, div#content, div#media").css("opacity", "inherit");
+    
+    /* Taille de l'en-tête */
+    var hheight = $("div#header").outerHeight(false);
+    var pheight = $(page).outerHeight();
+    var footer = $("div#footer");
+    var fheight = $(footer).outerHeight();
+    var wheight = $(window).height();
+    if(wheight > hheight + pheight + fheight) {
+        $("div#header").css("padding-top", ((wheight - hheight - pheight - fheight) / 2) + "px");
+    }
 }

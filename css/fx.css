@@ -75,3 +75,9 @@ div.border.bc {
 div.border.bc.smallshadow {
     background-image: url('img/shadow_bottom_s.png');
 }
+div.border.bc.media {
+    background-image: url('img/border_media_top.png');
+}
+div.border.tc.media {
+    background-image: url('img/border_media_bottom.png');
+}

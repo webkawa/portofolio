@@ -32,17 +32,19 @@ div#page div.slide#infos div#media div.data div.infos p {
 /* Coloration des bordures */
 div#page div.slide#infos div#media div.data,
 div#page div.slide#infos div#media div#gallery div.infos ul li.selected,
-div#page div.slide#infos div#media div.data div.infos h4,
-div#page div.slide#infos div#media div.data div.infos p {
+div#page div.slide#infos div#media div#gallery div.infos h4,
+div#page div.slide#infos div#media div#gallery div.infos p,
+div#page div.slide#infos div#media div#gmap h4 {
     border-color: #616161;
 }
-div#page div.slide#infos div#media div#gallery div.infos ul li:hover {
-    border-color: #bf7500;
+div#page div.slide#infos div#media div#gallery div.infos ul li:hover,
+div#page div.slide#infos div#media div.notes div.spacer ul li:hover {
+    border-color: #3d3d3d;
 }
 
 /* Coloration des liens au survol */
 div#page div.slide#infos a:hover {
-    color: #3a3a3a;
+    color: #3d3d3d;
 }
 div#footer.infos a:hover {
     color: #616161;
@@ -80,4 +82,12 @@ div#page div.slide#infos div#content div.cage div.scrollbar div.corner.tc {
 }
 div#page div.slide#infos div#content div.cage div.scrollbar div.corner.bc {
     background-image: url('../img/infos/scrollbar_bottom.png');
+}
+
+/* Médias divers */
+div#page div.slide#infos div#media div.notes div.spacer ul li {
+    background: url('../img/infos/check_off.png') transparent left top no-repeat;
+}
+div#page div.slide#infos div#media div.notes div.spacer ul li:hover {
+    background: url('../img/infos/check_on.png') transparent left top no-repeat;
 }
