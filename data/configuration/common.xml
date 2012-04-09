@@ -54,11 +54,11 @@
                 <multi>1.5</multi>
                 <in>
                     <duration>500</duration>
-                    <easing>easeOutCubic</easing>
+                    <easing>easeInOutCubic</easing>
                 </in>
                 <out>
                     <duration>500</duration>
-                    <easing>easeInCubic</easing>
+                    <easing>easeInOutCubic</easing>
                 </out>
             </switch>
             <zoom>

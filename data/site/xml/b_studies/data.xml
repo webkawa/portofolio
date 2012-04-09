@@ -4,7 +4,7 @@
 <root>
     <id>studies</id>
     <title>Compétences</title>
-    <subtitle>Parcours scolaire et universitaire, formations et centres d'intérêt</subtitle>
+    <subtitle>Formation et centres d'intérêt</subtitle>
     <core>
         <![CDATA[
             <h2>Etudes secondaires</h2>
@@ -27,7 +27,8 @@
             et présente au baccalauréat, que j'obtiens en 2006, une <a href="#artplastiques" title="Travaux présentés">
             série de travaux</a> basés sur l'outil numérique.</p>
             <h2>DUT Informatique</h2>
-            <p>Je suis admis la même année à <a href="#iut" title="Plus d'informations">
+            <p><img src="data/medias/img/dut.gif" alt="Logo de Créteil Université" />
+            Je suis admis la même année à <a href="#iut" title="Plus d'informations">
             l'IUT Informatique</a> de Sénart-Fontainebleau, et j'y fait mes premiers pas
             en programmation algorithmique locale avec plusieurs langages tels que le C,
             le C++, le JAVA, le shell ou encore l'assembleur. Je suis par ailleurs amené,
@@ -54,7 +55,23 @@
             concluant le DUT, que je passerai au Québec (plus d'informations à la page
             suivante).</p>
             <h2>MIAGE</h2>
-            <p>J'obtiens le DUT en 
+            <p><img src="data/medias/img/nanterre.png" alt="Logo de Nanterre Université" />
+            J'obtiens le DUT en 2008 et m'oriente vers une licence <a href="#miage"
+            title="Plus d'informations">MIAGE</a> à l'université de Nanterre, que je prolonge
+            dès l'année suivantes par le master proposé au sein du même cursus. J'ai durant
+            cette période l'occasion d'étendre mes compétences en J2EE, PL*SQL, Oracle ou encore,
+            dans le domaine de la conception, MERISE et UML. J'effectue par ailleurs deux stages
+            à l'étranger, en Chine (2009) et en Belgique (2010), et intègre dès le stage de fin d'étude l'entreprise
+            à laquelle dans laquelle je suis aujourd'hui encore en poste (voir page suivante).</p>
+            <p>Je participe lors de la seconde année de master à un <a href="#stam" title="Plus d'informations">
+            projet</a> mutualisé entre les étudiants de ma promotion à l'occasion duquel j'ai l'occasion
+            de me familiariser avec le paradigme MVC et sa mise en application ; j'écris par ailleurs
+            à la même époque un <a href="#memoire" title="Plus d'informations">mémoire</a> sur la gestion de projet
+            au moyen d'outils d'analyse et de suivi spécifiques au domaine informatique.</p>
+            <h2>Centres d'intêrets</h2>
+            <p>Amateur de programmation à mes heures perdues, j'ai mené en parallèle de mes études
+            différentes <a href="#informatique" title="Plus de détails à ce sujet">activités</a>
+            liées au domaine informatique.</p>
         ]]>
     </core>
 </root>

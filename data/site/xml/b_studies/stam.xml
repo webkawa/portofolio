@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <id>catacombes</id>
+    <title>
+        <![CDATA[
+            <p>Réalisation</p>
+            <h3>Stam</h3>
+        ]]>
+    </title>
+    <view id="infos">
+        <type>text</type>
+        <core>
+            <![CDATA[
+                <h4>A propos ...</h4>
+                <p>Le projet <strong>STAM</strong>, étalé sur plusieurs années consécutives
+                par le personnel enseignant du <strong>MIAGE</strong>, vise à moderniser le système d'information
+                interne à la formation, par la déploiement d'une application J2EE s'étendant
+                sur les domaines métier suivants :</p>
+                <ul>
+                    <li>Gestion des étudiants, professeurs et intervenants ;</li>
+                    <li>Gestion des emplois du temps ;</li>
+                    <li>Gestion des stages proposés par l'intermédiaire du <strong>MIAGE</strong> ;</li>
+                    <li>Gestion des examens et notes ...</li>
+                </ul>
+                <p>Le travail par groupe d'une vingtaine de personnes offre l'avantage
+                considérable de permettre une simulation en conditions quasi-réelles des problématiques
+                d'un service informatique. Les étudiants sont poussés à organiser leur travail
+                dans une logique de groupe, en procédant à une lotification des tâches prévues
+                au périmètre du projet.</p>
+                <h4>Rôle</h4>
+                <p>J'ai été affecté dans le cadre du projet à la conception et l'implémentation
+                de plusieurs classes métiers en forte connivence avec des problématiques système 
+                dont, entre autres, un utilitaire permettant l'administration de fichiers
+                mis en ligne par l'utilisateur répondant à diverses contraintes de poids, de taille,
+                et de stockage. J'ai par ailleurs réalisé une IHM en HTML/CSS dédié à l'implémentation
+                au sein de fichiers JSP.</p>
+            ]]>
+        </core>
+    </view>
+</root>

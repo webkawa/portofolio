@@ -29,13 +29,6 @@
                 stabiliser l'application à 1Go), de performances brutes (environ
                 cinq minutes par coup ...), ou encore de modélisation arithmétique
                 (et tout particulièrement d'arbres de probabilités).</p>
-            ]]>
-        </core>
-    </view>
-    <view id="file">
-        <type>text</type>
-        <core>
-            <![CDATA[
                 <h4>Télécharger</h4>
                 <p>Source en un fichier au format texte : <a href="data/medias/files/chess.zip"
                 title="Source JAVA en un fichier">cliquez ici</a>

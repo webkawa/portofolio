@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <id>miage</id>
+    <title>
+        <![CDATA[
+            <p>Formation</p>
+            <h3>MIAGE de Nanterre Paris X</h3>
+        ]]>
+    </title>
+    <notes>
+        <![CDATA[
+            <p>Pour aller plus loin ...</p>
+            <ul>
+                <li><a href="http://www.u-paris10.fr/" title="Site de l'université">Site de l'université</a></li>
+                <li><a href="https://miage.u-paris10.fr/" title="Site du MIAGE">Site du MIAGE</a></li>
+                <li><a href="https://www.miage.org/" title="Site de la formation">Site de la formation</a></li>
+            </ul>
+        ]]>
+    </notes>
+    <view id="infos">
+        <type>text</type>
+        <core>
+            <![CDATA[
+                <h4>Programme</h4>
+                <p>La formation <strong>MIAGE</strong>, pour "Méthodes informatiques appliquées à la gestion
+                des entreprises", délivre à Nanterre deux diplômes, l'un à niveau BAC+3 (licence)
+                et le second à niveau BAC+5 (master). Légèrement plus chargé que dans une filière 
+                générale, son programme alterne cours magistraux et TD sur une proportion 
+                d'environ 1/3 - 2/3. Les matières enseignées permettent le développement d'une double compétence :</p>
+                <ul>
+                    <li>La première, à dominante technique, s'axe autour de l'étude des méthodes
+                    de conception et de déploiement d'applications réparties ;</li>
+                    <li>La seconde, orientée vers la gestion, s'appuie sur des cours de gestion,
+                    de marketing ou encore de management, délivrés pour la plupart en commun
+                    avec des étudiants en économie et gestion.</li>
+                </ul>
+                <p>Les débouchés à la sortie de la formation sont nombreux : développement et intégration,
+                gestion de projet, conseil, administration de base de données, analyse, etc. La poursuite
+                d'étude n'est d'ailleurs qu'assez rarement choisie par les diplômés.</p>
+                <h4>Acquis</h4>
+                <p>Le cursus <strong>MIAGE</strong> se veut résolument tourné vers le monde de l'entreprise
+                et inclut à ce titre trois stages obligatoires, l'un en licence et les autres en master, dotant
+                l'étudiant d'une expérience minimale de 12 mois en entreprise. Nanterre offre part ailleurs
+                une formation aux méthodes agiles, délivrées sur six mois et mise en application lors d'un
+                projet de fin d'études réalisé en commun par les étudiants d'une même promotion.</p>
+            ]]>
+        </core>
+    </view>
+    <view id="map">
+        <type>map</type>
+        <latitude>48.90420</latitude>
+        <longitude>2.21384</longitude>
+        <zoom>15</zoom>
+        <markers>
+            <marker>
+                <info>
+                    <![CDATA[
+                        <h4>Nanterre Université</h4>
+                        <p>200, avenue de la République</p>
+                        <p>92001 Nanterre CEDEX</p>
+                    ]]>
+                </info>
+                <latitude>48.90173</latitude>
+                <longitude>2.21516</longitude>
+            </marker>
+        </markers>
+        <markers>
+            <marker>
+                <info>
+                    <![CDATA[
+                        <h4>MIAGE de Nanterre Université</h4>
+                        <p>Bâtiment J</p>
+                        <p>200, avenue de la République</p>
+                        <p>92001 Nanterre CEDEX</p>
+                    ]]>
+                </info>
+                <latitude>48.90320</latitude>
+                <longitude>2.21547</longitude>
+            </marker>
+        </markers>
+    </view>
+</root>

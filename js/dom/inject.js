@@ -130,7 +130,7 @@ function injectMap(xml) {
     global_map = new google.maps.Map(document.getElementById("gmap"), options);
     
     /* Ajout des marqueurs */
-    var lat, lng, marker, info;
+    var lat, lng;
     $(xml).find("markers > marker").each(function() {
         /* Recherche des variables utiles */
         lat = parseFloat($(this).find("latitude").text());
@@ -138,14 +138,14 @@ function injectMap(xml) {
         data = $(this).find("info").text();
         
         /* Création du marqueur */
-        marker = new google.maps.Marker({
+        var marker = new google.maps.Marker({
             position : new google.maps.LatLng(lat, lng),
             map : global_map,
             title : $(this).find("title").text()
         });
             
         /* Création de l'info-bulle */
-        info = new google.maps.InfoWindow({
+        var info = new google.maps.InfoWindow({
             content : data,
             maxWidth : 320
         })

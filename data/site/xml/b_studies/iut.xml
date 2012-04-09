@@ -3,7 +3,7 @@
     <id>iut</id>
     <title>
         <![CDATA[
-            <p>Lieu</p>
+            <p>Formation</p>
             <h3>IUT Informatique de Sénart-Fontainebleau</h3>
         ]]>
     </title>
@@ -20,7 +20,7 @@
         <core>
             <![CDATA[
                 <h4>Programme</h4>
-                <p>Les institus universitaires de technologie ou IUT délivrent une
+                <p>Les institus universitaires de technologie ou <strong>IUT</strong> délivrent une
                 formation en deux ans équivalant, dans le cas de l'informatique,
                 à un diplôme de technicien supérieur. Largement axée sur la technique,
                 cette formation se base sur un taux horaire plus dense qu'en faculté,
@@ -31,14 +31,14 @@
                 école d'ingénieur (le diplôme équivalant à une prépa dans de nombreux
                 établissements) ou en licence.</p>
                 <h4>Méthode</h4>
-                <p>Une des caractéristiques fondamentales de l'enseignement en IUT informatique
+                <p>Une des caractéristiques fondamentales de l'enseignement en <strong>IUT</strong> informatique
                 tient dans la pression exercée sur les étudiants pour qu'ils soient capable
                 d'acquérir d'eux-même les compétences nécessaires à leur travail. A titre
                 d'exemple, les premiers projets en C débutent à peine un mois après les
                 premiers cours et TD, les sujets des examens de système sont à récupérer,
                 au début des épreuves, sur un serveur distant et par le biais d'une connexion
                 SSH, et les cours de PHP n'incluent aucune formation
-                en HTML/CSS, pourtant indispensable à l'utilisation du langage.
+                en HTML/CSS, pourtant indispensable à l'utilisation du langage.</p>
             ]]>
         </core>
     </view>

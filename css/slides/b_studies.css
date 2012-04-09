@@ -95,8 +95,8 @@ div#page div.slide#studies div#content div.cage div.scroller ul li {
     background: url('../img/studies/arrow.png') transparent left 8px no-repeat;
 }
 div#page div.slide#studies div#content div.cage div.scroller span.selected {
-    background: url('../img/studies/selected_left.png') #d32600 left top no-repeat;
+    background: url('../img/studies/selected_left.png') transparent left top no-repeat;
 }
 div#page div.slide#studies div#content div.cage div.scroller span.selected span {
-    background: url('../img/studies/selected_right.png') right top no-repeat;
+    background: url('../img/studies/selected_right.png') transparent right top no-repeat;
 }

@@ -16,6 +16,9 @@
         <media id="dreamweaver">dreamweaver.xml</media>
         <media id="iut">iut.xml</media>
         <media id="chess">chess.xml</media>
+        <media id="miage">miage.xml</media>
+        <media id="stam">stam.xml</media>
+        <media id="memoire">memoire.xml</media>
     </page>
     <page id="experience" repertory="data/site/xml/c_experience/">
         <data>data.xml</data>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <id>memoire</id>
+    <title>
+        <![CDATA[
+            <p>Réalisation</p>
+            <h3>Mémoire</h3>
+        ]]>
+    </title>
+    <view id="infos">
+        <type>text</type>
+        <core>
+            <![CDATA[
+                <h4>Présentation</h4>
+                <p>J'ai rédigé à la fin de ma seconde année de master un mémoire, intitulé
+                <strong>"La gestion de projets trois-tiers : tickets, versions et intégration
+                continue"</strong> visant à démontrer l'utilité et les contraintes induites
+                par ces trois techniques dans le cadre d'un projet informatique. Il 
+                s'appuie sur le travail effectué durant le troisième et dernier stage inclu
+                dans le cursus, ainsi que sur une analyse sourcée des principales études
+                réalisées sur le sujet.</p>
+                <h4>Télécharger</h4>
+                <p>Document intégral au format PDF : <a href="data/medias/files/memoire-m2.pdf"
+                title="Mémoire au format PDF">cliquez ici</a>
+            ]]>
+        </core>
+    </view>
+</root>
