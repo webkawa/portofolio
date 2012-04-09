@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <id>f1</id>
+    <title>
+        <![CDATA[
+            <p>Lieu</p>
+            <h3>Lycée François Ier</h3>
+        ]]>
+    </title>
+    <notes>
+        <![CDATA[
+            <p>Pour aller plus loin ...</p>
+            <ul>
+                <li><a href="http://www.lyceefrancois1.net/" title="Site du lycée">Site du lycée</a></li>
+            </ul>
+        ]]>
+    </notes>
+    <view id="map">
+        <type>map</type>
+        <latitude>48.408</latitude>
+        <longitude>2.705</longitude>
+        <zoom>13</zoom>
+        <markers>
+            <marker>
+                <info>
+                    <![CDATA[
+                        <h4>Lycée François Ier</h4>
+                        <p>11, rue Victor Hugo</p>
+                        <p>77300 Fontainebleau</p>
+                    ]]>
+                </info>
+                <latitude>48.409149</latitude>
+                <longitude>2.695448</longitude>
+            </marker>
+        </markers>
+    </view>
+</root>

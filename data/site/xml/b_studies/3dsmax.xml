@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <id>3dsmax</id>
+    <title>
+        <![CDATA[
+            <p>Logiciel</p>
+            <h3>3D Studio Max</h3>
+        ]]>
+    </title>
+    <notes>
+        <![CDATA[
+            <p>Pour aller plus loin ...</p>
+            <ul>
+                <li><a href="http://www.autodesk.fr/adsk/servlet/pc/index?siteID=458335&id=14642301" title="Site de l'éditeur">Site de l'éditeur</a></li>
+            </ul>
+        ]]>
+    </notes>
+    <view id="infos">
+        <type>text</type>
+        <core>
+            <![CDATA[
+                <h4>A propos ...</h4>
+                <p><strong>3D Studio Max</strong> est un logiciel de modélisation
+                3D développé et commercialisé par la société <strong>Autodesk</strong>.
+                Principalement utilisé dans les domaines du jeu vidéo, de la publicité,
+                ou encore de l'architecture, il siège au rang des référents dans le
+                domaine de l'infographie, avec <strong>Maya</strong>, <strong>Blender</strong>
+                ou encore <strong>Houdini</strong>.</p>
+                <p>Malgré une interface plutôt hostile pour le néophyte, <strong>
+                3DS Studio Max</strong> s'avère plutôt intuitif en matière d'animation,
+                permettant la réalisation de petits courts-métrages dès les bases
+                du logiciel acquises. La faible puissance des configurations
+                "grand public" de l'époque bridaient néanmoins considérablement
+                les possibilités de rendu, dont la durée pouvait rapidement atteindre
+                des chiffres astronomiques.</p>
+            ]]>
+        </core>
+    </view>
+    <view id="pictures">
+        <type>gallery</type>
+        <picture id="soleil">
+            <files>
+                <icon>3dsmax/soleil_small.jpg</icon>
+                <image>3dsmax/soleil.jpg</image>
+            </files>
+            <legend>Extrait d'animation N°1</legend>
+            <text>2002 / Travail para-scolaire</text>
+            <alt>Soleil sous 3D Studio Max</alt>
+        </picture>
+        <picture id="escalier">
+            <files>
+                <icon>3dsmax/escalier_small.jpg</icon>
+                <image>3dsmax/escalier.jpg</image>
+            </files>
+            <legend>Extrait d'animation N°2</legend>
+            <text>2001 / Travail para-scolaire</text>
+            <alt>Escalier sous 3D Studio Max</alt>
+        </picture>
+        <picture id="filaire">
+            <files>
+                <icon>3dsmax/filaire_small.jpg</icon>
+                <image>3dsmax/filaire.jpg</image>
+            </files>
+            <legend>Extrait d'animation N°3</legend>
+            <text>2003 / Travail para-scolaire</text>
+            <alt>Vue filaire sous 3D Studio Max</alt>
+        </picture>
+        <picture id="piece">
+            <files>
+                <icon>3dsmax/piece_small.jpg</icon>
+                <image>3dsmax/piece.jpg</image>
+            </files>
+            <legend>Modélisation statique</legend>
+            <text>2000 / Travail para-scolaire</text>
+            <alt>Pièce sous 3D Studio Max</alt>
+        </picture>
+        <picture id="capture">
+            <files>
+                <icon>3dsmax/screenshoot_small.jpg</icon>
+                <image>3dsmax/screenshoot.jpg</image>
+            </files>
+            <legend>Capture d'écran</legend>
+            <text>Non-daté / Travail en situation</text>
+            <alt>Capture d'écran de 3D Studio Max</alt>
+        </picture>
+    </view>
+</root>

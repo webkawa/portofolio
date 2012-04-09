@@ -3,35 +3,58 @@
 <!-- Contenu de la page études -->
 <root>
     <id>studies</id>
-    <title>Etudes</title>
-    <subtitle>Parcours scolaire et universitaire</subtitle>
+    <title>Compétences</title>
+    <subtitle>Parcours scolaire et universitaire, formations et centres d'intérêt</subtitle>
     <core>
         <![CDATA[
-            <h2>Lorem ipsum !</h2>
-            <p>Dolor sit amet</p>
+            <h2>Etudes secondaires</h2>
+            <p>J'ai effectué l'intégralité de mes études pré-universitaires
+            à <a href="#fontainebleau" title="Plus d'informations sur Fontainebleau">
+            Fontainebleau</a>, en Seine-Et-Marne, d'où je suis originaire. Passionné
+            dès mon plus jeune âge par l'imaginerie de synthèse, je fais mes premiers
+            pas dans le domaine informatique par le biais de logiciels tels que
+            <a href="#3dsmax" title="Détails et réalisations">3D Studio Max</a>.
+            Je complète cette approche durant mes années de collège par la réalisation,
+            en cours, d'applications multimédias, dont deux <a href="#catacombes" title="Plus d'informations sur ces jeux">
+            jeux en "point-and-click"</a>.</p>
+            <p>En 2003, j'intègre le lycée <a href="#f1" title="Plus d'informations">
+            François Ier</a> et m'oriente l'année suivante vers la filière scientifique.
+            Je découvre à cette époque la programmation empirique par le biais de
+            prestations réalisées pour le compte de particuliers (voir la page suivante) ;
+            travaillant alors exclusivement sur le web, je m'initie progressivement et de façon autonome
+            aux langages HTML, CSS, PHP et SQL, notamment au moyen du logiciel <a href="#dreamweaver"
+            title="Plus d'informations">Dreamweaver</a>. En parallèle, je m'inscrit en arts plastiques
+            et présente au baccalauréat, que j'obtiens en 2006, une <a href="#artplastiques" title="Travaux présentés">
+            série de travaux</a> basés sur l'outil numérique.</p>
+            <h2>DUT Informatique</h2>
+            <p>Je suis admis la même année à <a href="#iut" title="Plus d'informations">
+            l'IUT Informatique</a> de Sénart-Fontainebleau, et j'y fait mes premiers pas
+            en programmation algorithmique locale avec plusieurs langages tels que le C,
+            le C++, le JAVA, le shell ou encore l'assembleur. Je suis par ailleurs amené,
+            dans le cadre de la formation, à participer à trois micro-projets :</p>
             <ul>
-                <li>Test <a href="#about">à propos</a></li>
-                <li>Test <a href="#help">aide à la navigation</a></li>
+                <li>
+                    Le premier, étalé sur une durée d'environ deux mois, consistera en la réalisation d'un
+                    mini-jeu de réflexion en C par équipes de deux personnes.
+                </li>
+                <li>
+                    Le second, d'une durée de quatre mois, visera la conception et le 
+                    développement d'un <a href="#chess" title="Plus d'informations sur ce projet">
+                    jeu d'échec</a>, et notamment de son intelligence artificielle
+                    en langage JAVA, au sein d'un groupe de quatre personnes.
+                </li>
+                <li>
+                    Enfin, le troisième s'inscrira en initiation à la programmation web, par le biais
+                    de la réalisation, en binôme, d'un forum classique en PHP/SQL
+                    dans un délai avoisinnant les trois semaines.
+                </li>
             </ul>
-            <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non ipsum elit. Phasellus egestas arcu ut enim vehicula imperdiet. Aenean placerat tellus a enim aliquet mattis. Integer ultricies aliquam molestie. Praesent quis risus metus. Mauris nibh metus, volutpat eu vulputate id, venenatis vel dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent suscipit facilisis lectus eget posuere. Maecenas mi dolor, eleifend tempor suscipit sed, malesuada quis tellus. Morbi magna purus, venenatis et pellentesque vitae, varius ut felis. Nulla tempus faucibus orci, vitae ornare enim vehicula at. Mauris fringilla consectetur leo, sed pharetra neque ultricies vitae. Pellentesque tortor metus, tempus quis dignissim feugiat, dictum sit amet urna. Nulla iaculis elit sed arcu rutrum lobortis. Aliquam elementum justo in lacus rhoncus egestas.
-</p><p>
-Quisque id ipsum massa, nec sodales sem. Cras congue, arcu non convallis convallis, diam nunc venenatis orci, vel ornare elit quam sed orci. Sed accumsan luctus diam ac convallis. Nam convallis gravida risus, sit amet lacinia neque consequat eget. Vestibulum sed nibh enim. Proin scelerisque est non ipsum posuere lobortis. Suspendisse viverra, odio eu vestibulum tincidunt, lacus lectus dictum magna, sit amet ultricies est mauris in ligula. Nulla magna urna, laoreet ac lobortis at, consequat ac sem. Vivamus tortor lectus, feugiat eget placerat eu, pretium vitae mauris. Morbi ac aliquet metus. Cras euismod nibh iaculis velit iaculis suscipit.
-
-</p>
-<h2>Dolor sit amet</h2>
-<p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non ipsum elit. Phasellus egestas arcu ut enim vehicula imperdiet. Aenean placerat tellus a enim aliquet mattis. Integer ultricies aliquam molestie. Praesent quis risus metus. Mauris nibh metus, volutpat eu vulputate id, venenatis vel dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent suscipit facilisis lectus eget posuere. Maecenas mi dolor, eleifend tempor suscipit sed, malesuada quis tellus. Morbi magna purus, venenatis et pellentesque vitae, varius ut felis. Nulla tempus faucibus orci, vitae ornare enim vehicula at. Mauris fringilla consectetur leo, sed pharetra neque ultricies vitae. Pellentesque tortor metus, tempus quis dignissim feugiat, dictum sit amet urna. Nulla iaculis elit sed arcu rutrum lobortis. Aliquam elementum justo in lacus rhoncus egestas.
-</p><p>
-Quisque id ipsum massa, nec sodales sem. Cras congue, arcu non convallis convallis, diam nunc venenatis orci, vel ornare elit quam sed orci. Sed accumsan luctus diam ac convallis. Nam convallis gravida risus, sit amet lacinia neque consequat eget. Vestibulum sed nibh enim. Proin scelerisque est non ipsum posuere lobortis. Suspendisse viverra, odio eu vestibulum tincidunt, lacus lectus dictum magna, sit amet ultricies est mauris in ligula. Nulla magna urna, laoreet ac lobortis at, consequat ac sem. Vivamus tortor lectus, feugiat eget placerat eu, pretium vitae mauris. Morbi ac aliquet metus. Cras euismod nibh iaculis velit iaculis suscipit.
-
-</p>
-<p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non ipsum elit. Phasellus egestas arcu ut enim vehicula imperdiet. Aenean placerat tellus a enim aliquet mattis. Integer ultricies aliquam molestie. Praesent quis risus metus. Mauris nibh metus, volutpat eu vulputate id, venenatis vel dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent suscipit facilisis lectus eget posuere. Maecenas mi dolor, eleifend tempor suscipit sed, malesuada quis tellus. Morbi magna purus, venenatis et pellentesque vitae, varius ut felis. Nulla tempus faucibus orci, vitae ornare enim vehicula at. Mauris fringilla consectetur leo, sed pharetra neque ultricies vitae. Pellentesque tortor metus, tempus quis dignissim feugiat, dictum sit amet urna. Nulla iaculis elit sed arcu rutrum lobortis. Aliquam elementum justo in lacus rhoncus egestas.
-</p><p>
-Quisque id ipsum massa, nec sodales sem. Cras congue, arcu non convallis convallis, diam nunc venenatis orci, vel ornare elit quam sed orci. Sed accumsan luctus diam ac convallis. Nam convallis gravida risus, sit amet lacinia neque consequat eget. Vestibulum sed nibh enim. Proin scelerisque est non ipsum posuere lobortis. Suspendisse viverra, odio eu vestibulum tincidunt, lacus lectus dictum magna, sit amet ultricies est mauris in ligula. Nulla magna urna, laoreet ac lobortis at, consequat ac sem. Vivamus tortor lectus, feugiat eget placerat eu, pretium vitae mauris. Morbi ac aliquet metus. Cras euismod nibh iaculis velit iaculis suscipit.
-
-</p>
+            <p>L'IUT m'offre d'autre part l'opportunité de partir deux fois à l'étranger :
+            la première, en échange linguistique à Londres ; la seconde, lors du stage
+            concluant le DUT, que je passerai au Québec (plus d'informations à la page
+            suivante).</p>
+            <h2>MIAGE</h2>
+            <p>J'obtiens le DUT en 
         ]]>
     </core>
 </root>

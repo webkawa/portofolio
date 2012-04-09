@@ -24,17 +24,16 @@ div#page div.slide#infos div#media div.data,
 div#page div.slide#infos div#media div.data div.links ul li.selected {
     background-color: #616161;
 }
-div#page div.slide#infos div#media div.data div.infos h4,
-div#page div.slide#infos div#media div.data div.infos p {
+div#page div.slide#infos div#media div.data div.infos {
     background-image: url('../img/infos/opacity_80.png');
 }
 
 /* Coloration des bordures */
 div#page div.slide#infos div#media div.data,
-div#page div.slide#infos div#media div#gallery div.infos ul li.selected,
-div#page div.slide#infos div#media div#gallery div.infos h4,
-div#page div.slide#infos div#media div#gallery div.infos p,
-div#page div.slide#infos div#media div#gmap h4 {
+div#page div.slide#infos div#media div.notes,
+div#page div.slide#infos div#media div#gallery div.infos,
+div#page div.slide#infos div#media div#gmap h4,
+div#page div.slide#infos div#media div.data div.cage div.view div.more  {
     border-color: #616161;
 }
 div#page div.slide#infos div#media div#gallery div.infos ul li:hover,
@@ -90,4 +89,13 @@ div#page div.slide#infos div#media div.notes div.spacer ul li {
 }
 div#page div.slide#infos div#media div.notes div.spacer ul li:hover {
     background: url('../img/infos/check_on.png') transparent left top no-repeat;
+}
+div#page div.slide#infos div#content div.cage div.scroller ul li {
+    background: url('../img/infos/arrow.png') transparent left 8px no-repeat;
+}
+div#page div.slide#infos div#content div.cage div.scroller span.selected {
+    background: url('../img/infos/selected_left.png') #616161 left top no-repeat;
+}
+div#page div.slide#infos div#content div.cage div.scroller span.selected span {
+    background: url('../img/infos/selected_right.png') right top no-repeat;
 }

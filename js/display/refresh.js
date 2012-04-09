@@ -107,8 +107,14 @@ function refreshContent() {
 /* Rafraichissement de la carte */
 function refreshMap() {
     if(global_map != null) {
+        var id = $("div#media div.data div.cage ul li.selected").attr("id");
+        var lat = parseFloat($(med).find("view#" + id + " latitude").text());
+        var lng = parseFloat($(med).find("view#" + id + " longitude").text());
+        var zoom = parseFloat($(med).find("view#" + id + " zoom").text());
+        
         try {
             google.maps.event.trigger(global_map, 'resize');
+            global_map.setCenter(new google.maps.LatLng(lat, lng), zoom);
         } catch(err) {
             console.log("Error on map refresh : " + err);
         }
@@ -123,6 +129,28 @@ function refreshGallery() {
         $("div#gallery div.picture").css("line-height", $("div#gallery div.picture").height() + "px");
     }
 }
+/* Rafraichissement du texte */
+function refreshText() {
+    /* Variables utiles */
+    var media = $("div#media");
+    var mediamore = $("div#media div.data div.cage div.view div.more");
+    var showmore = $(co).find("media zoom in duration").text();
+    var mediaview = $("div#media div.data div.cage div.view");
+    
+    /* Lien "voir plus" de la zone texte */
+    if($(media).hasClass("small")) {
+        if($("div#text").outerHeight() > $(mediaview).height()) {
+            if($(mediamore).css("display") === "none") {
+                $(mediamore).show(showmore);
+            }
+        } else {
+            if($(mediamore).css("display") != "none") {
+                $(mediamore).hide(showmore);
+            }
+        }
+    }
+    
+}
 /* Rafraichissement des médias */
 function refreshMedia() {
     /* Variables utiles */
@@ -131,7 +159,7 @@ function refreshMedia() {
     var media = $("div#media");
     var loader = $("div#media div.loader");
     var initiallayer = $("div#media div.layer");
-    var initial = $("div#media div.initial");
+    var initial = $("div#media div.layer div.initial");
     var mediatitle = $("div#media div.title");
     var mediah3 = $("div#media div.title h3");
     var mediadata = $("div#media div.data");
@@ -142,6 +170,7 @@ function refreshMedia() {
     /* Hauteurs de la zone média */
     if($(media).hasClass("small")) {
         realWidth(media, $(core).height());
+        realWidth($("div#media.small div.notes div.spacer"), $(medianotes).width());                /* Problème à l'agrandissement */
     }
     if($(media).hasClass("large")) {
         realWidth(media, $(core).width() - parseInt($(content).css("min-width")));
@@ -166,6 +195,7 @@ function refreshMedia() {
     /* Dépendances */
     refreshMap();
     refreshGallery();
+    refreshText();
 }
 
 /* Rafraichissement du message d'erreur */

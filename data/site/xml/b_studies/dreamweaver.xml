@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <id>dreamweaver</id>
+    <title>
+        <![CDATA[
+            <p>Logiciel</p>
+            <h3>Dreamweaver</h3>
+        ]]>
+    </title>
+    <notes>
+        <![CDATA[
+            <p>Pour aller plus loin ...</p>
+            <ul>
+                <li><a href="http://www.adobe.com/fr/products/dreamweaver.html" title="Site de l'éditeur">Site de l'éditeur</a></li>
+            </ul>
+        ]]>
+    </notes>
+    <view id="infos">
+        <type>text</type>
+        <core>
+            <![CDATA[
+                <h4>A propos ...</h4>
+                <p><strong>Dreamweaver</strong>, édité par <strong>Adobe</strong>
+                est un logiciel de composition et d'administrations de contenus au format 
+                HTML/CSS/JS. Il offre la possibilité à l'utilisateur le plus néophyte
+                de créer des pages statiques, sans pour autant couper l'accès au
+                code source à proprement parler. Il inclut par ailleurs diverses fonctionnalités 
+                de pré-visualisation, d'optimisation ou d'épurage du code qui, à défaut
+                de s'avérer intuitives, suffisent à en faire un IDE à part entière.</p>
+                <p>On peut le comparer à <strong>Front Page</strong> édité par <strong>Microsoft</strong>.</p>
+            ]]>
+        </core>
+    </view>
+</root>

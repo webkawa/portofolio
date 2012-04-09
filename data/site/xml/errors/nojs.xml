@@ -15,7 +15,7 @@
                 listés ci-dessous :
             </p>
             <p class="legend">
-                <img src="data/site/img/browsers/chrome.png" alt="Chrome" />
+                <img src="data/medias/img/browsers/chrome.png" alt="Chrome" />
                 <span class="title">Chrome</span>
                 <span class="text">Version 10 et supérieures</span>
                 <span class="link">
@@ -23,7 +23,7 @@
                 </span>
             </p>
             <p class="legend">
-                <img src="data/site/img/browsers/firefox.png" alt="Firefox" />
+                <img src="data/medias/img/browsers/firefox.png" alt="Firefox" />
                 <span class="title">Firefox</span>
                 <span class="text">Version 3.6 et supérieures</span>
                 <span class="link">
@@ -31,7 +31,7 @@
                 </span>
             </p>
             <p class="legend">
-                <img src="data/site/img/browsers/ie.png" alt="Internet Explorer" />
+                <img src="data/medias/img/browsers/ie.png" alt="Internet Explorer" />
                 <span class="title">Internet Explorer</span>
                 <span class="text">Version 8 et supérieures</span>
                 <span class="link">
@@ -39,7 +39,7 @@
                 </span>
             </p>
             <p class="legend">
-                <img src="data/site/img/browsers/safari.png" alt="Safari" />
+                <img src="data/medias/img/browsers/safari.png" alt="Safari" />
                 <span class="title">Safari</span>
                 <span class="text">Version 4 et supérieures</span>
                 <span class="link">
@@ -47,7 +47,7 @@
                 </span>
             </p>
             <p class="legend">
-                <img src="data/site/img/browsers/opera.png" alt="Safari" />
+                <img src="data/medias/img/browsers/opera.png" alt="Safari" />
                 <span class="title">Opera</span>
                 <span class="text">Version 4 et supérieures</span>
                 <span class="link">

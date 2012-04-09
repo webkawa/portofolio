@@ -53,6 +53,7 @@ function switchMedia() {
                 "easing" : easingout,
                 "step" : function(now) {
                     $(mediacomponents).css("margin-left", (multi * (now - minwidth)) + backmargin + "px");
+                    refreshGallery();
                 }, 
                 "complete" : function() {
                     /* Rétablissement de la taille en pixels */
@@ -60,6 +61,10 @@ function switchMedia() {
                     
                     /* Réinscription des évènements */
                     doMediaEvents();
+                    
+                    /* Rafraichissement des sous-composants */
+                    refreshMap();
+                    refreshText();
                 }
             });
         }
@@ -72,6 +77,7 @@ function switchZoom(direction) {
     var core = $("div#page div.slide.open > div.spacer div.core");
     var content = $("div#content");
     var media = $("div#media");
+    var mediaview = $("div#media div.data > div.cage div.view");
     var initiallayer = $("div#media div.layer");
     var initial = $("div#media div.layer div.initial");
     var loader = $("div#media div.loader");
@@ -99,6 +105,7 @@ function switchZoom(direction) {
     /* Calcul de l'objectif */
     if(direction) {
         objective = $(content).css("min-width");
+        $(mediaview).find("div.more").hide(duration);
     } else {
         objective = corewidth - Math.max(parseInt($(media).css("min-width")), coreheight);
     }
@@ -197,6 +204,7 @@ function switchView(xml) {
             
             /* Rafraichissement de la carte */
             refreshMap();
+            refreshText();
             
             /* Mise en place des évènements */
             doMediaEvents();
@@ -239,7 +247,7 @@ function switchPicture(dom, target) {
         "easing" : ineasing,
         "complete" : function() {
             /* Modification de l'image */
-            $(img).attr("src", "data/site/img/" + $(newpic).find("files image").text());
+            $(img).attr("src", "data/medias/img/" + $(newpic).find("files image").text());
             $(img).attr("alt", $(newpic).find("alt").text());
             
             /* Modification des textes */

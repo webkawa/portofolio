@@ -75,6 +75,14 @@ function injectContent(target, dom) {
     realWidth(scroller, $(cage).width() - $(scrollbar).outerWidth());
     realHeight(marker, markerSize(cage, scroller, scrollzone));
     
+    /* Mise en place des liens décorés */
+    var b1, b2;
+    $(scroller).find("a").each(function() {
+        b1 = $(this).text();
+        $(this).text("");
+        $(this).append('<span class="medialk"><span>' + b1 + '</span></span>');
+    });
+    
     /* Décoration */
     addDecoration(content, "corner", "tr", "small");
     addDecoration(content, "corner", "br", "small");
@@ -96,9 +104,9 @@ var global_map;
 function injectMap(xml) {
     /* Variables utiles */
     var target = $("div#media div.data > div.cage div.view");
-    var longitude = parseInt($(xml).find("longitude").text());
-    var latitude = parseInt($(xml).find("latitude").text());
-    var zoom = parseInt($(xml).find("zoom").text());
+    var longitude = parseFloat($(xml).find("longitude").text());
+    var latitude = parseFloat($(xml).find("latitude").text());
+    var zoom = parseFloat($(xml).find("zoom").text());
     var id = $(pge).find("id").text();
     var alt = $(co).find("fields field#decoration-img-alt").text();
     
@@ -125,8 +133,8 @@ function injectMap(xml) {
     var lat, lng, marker, info;
     $(xml).find("markers > marker").each(function() {
         /* Recherche des variables utiles */
-        lat = parseInt($(this).find("latitude").text());
-        lng = parseInt($(this).find("longitude").text());
+        lat = parseFloat($(this).find("latitude").text());
+        lng = parseFloat($(this).find("longitude").text());
         data = $(this).find("info").text();
         
         /* Création du marqueur */
@@ -153,11 +161,13 @@ function injectGallery(dom) {
     var target = $("div#media div.data > div.cage div.view");
     var picture = $(dom).find("picture:first");
     var id = $(picture).attr("id");
+    var idpage = $(pge).find("id").text();
     var induration = parseInt($(co).find("media gallery in duration").text());
     var ineasing = $(co).find("media gallery in easing").text();
+    var alt = $(co).find("fields field#decoration-img-alt").text();
     
     /* Création de l'image principale */
-    var img = '<img style="opacity: 0;" src="data/site/img/' + $(picture).find("files image").text() + '" alt="' + $(picture).find("alt").text() + '" />' ;
+    var img = '<img style="opacity: 0;" src="data/medias/img/' + $(picture).find("files image").text() + '" alt="' + $(picture).find("alt").text() + '" />' ;
     var legend = $(picture).find("legend").text();
     var text = $(picture).find("text").text();
     
@@ -174,23 +184,26 @@ function injectGallery(dom) {
         img +
         '</div>' +
         '<div class="infos">' +
+        '<ul>' +
+        links +
+        '</ul>' + 
+        '<div class="legend">' +
         '<h4>' +
         legend +
         '</h4>' +
         '<p>' +
         text +
         '</p>' +
-        '<ul>' +
-        links +
-        '</ul>' +
         '</div>' +
+        '</div>' +
+        '<img src="css/img/' + idpage + '/corner_bl_small.png" alt="' + alt + '" class="corner bl" />' +
+        '<img src="css/img/' + idpage + '/corner_br_small.png" alt="' + alt + '" class="corner br" />' +
+        '<img src="css/img/' + idpage + '/corner_tr_small.png" alt="' + alt + '" class="corner tr" />' +
+        '<img src="css/img/' + idpage + '/corner_tl_small.png" alt="' + alt + '" class="corner tl" />' +
         '</div>');
     
     /* Injection */
     $(target).append(data);
-    
-    /* Décoration */
-    addCorners(target, "small");
     
     /* Chargement de l'image */
     var image = $(target).find("div#gallery div.picture img");
@@ -213,7 +226,7 @@ function injectGallery(dom) {
     /* Post-traitement */
     var icons = $("div#gallery div.infos ul li");
     $(icons).each(function() {
-        $(this).css("background-image", "url('data/site/img/" + $(dom).find("picture#" + $(this).attr("id") + " files icon").text() + "')");
+        $(this).css("background-image", "url('data/medias/img/" + $(dom).find("picture#" + $(this).attr("id") + " files icon").text() + "')");
     });
     $("div#gallery div.infos ul li:first").addClass("selected");
 }
@@ -222,12 +235,17 @@ function injectGallery(dom) {
 function injectText(view) {
     /* Variables utiles */
     var target = $("div#media div.data > div.cage div.view");
+    var more = $(co).find("fields field#hidden-text").text();
     
     /* Contenu */
     var data =
     '<div id="text">' +
     $(view).find("core").text() +
-    //'<div class="fade"></div>' +          [!] Solution à déterminer
+    '</div>' +
+    '<div class="more" style="display: none;">' +
+    '<a alt="' + more + '">' +
+    more +
+    '</a>' +
     '</div>';
     
     /* Injection */
@@ -259,7 +277,7 @@ function injectMedia(target, xml) {
     var list = '';
     var title = '';
     var view = '';
-    var notes = $(co).find("fields field#no-media").text();
+    var notes = '';
     var data = '';
     if($(views).size() != 0) {
         /* Titre */
@@ -276,7 +294,14 @@ function injectMedia(target, xml) {
         view = '<div class="view"></div>';
         
         /* Notes */
-        notes = $(xml).find("root > notes").text();
+        if($(xml).find("root > notes").size() > 0) {
+            notes = 
+                '<div class="notes">' +
+                '<div class="spacer">' +
+                $(xml).find("root > notes").text() +
+                '</div>' +
+                '</div>';
+        }
         
         /* Création du contenu */
         data =
@@ -291,11 +316,7 @@ function injectMedia(target, xml) {
             view +
             '</div>' +
             '</div>' +
-            '<div class="notes">' +
-            '<div class="spacer">' +
             notes +
-            '</div>' +
-            '</div>' +
             '</div>');
     } else {
         /* Variables utiles */
@@ -309,7 +330,7 @@ function injectMedia(target, xml) {
             '<div class="layer">' +
             '<div class="initial">' +
             '<p>' +
-            '<img src="data/site/img/media_empty.png" alt="' + nomediaalt + '" />' +
+            '<img src="data/medias/img/media_empty.png" alt="' + nomediaalt + '" />' +
             '<span>' + nomediaerror + '</span>' +
             '</p>' +
             '</div>' +
@@ -480,6 +501,7 @@ function injectDom() {
         "padding-right" : prop.rmargin + "px"
     });
     injectTitle();
+    realMaxWidth($("div#header div.spacer div.title"), prop.width);
     
     /* Injecte le coeur de page */
     injectPage($("div#page div.slide.open"));

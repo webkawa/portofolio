@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <id>artplastiques</id>
+    <title>
+        <![CDATA[
+            <p>Réalisations</p>
+            <h3>Travaux plastiques</h3>
+        ]]>
+    </title>
+    <view id="infos">
+        <type>text</type>
+        <core>
+            <![CDATA[
+                <h4>Contexte</h4>
+                <p>J'ai suivi durant mes deux années en filière scientifique une
+                option en art-plastiques dans le but d'affiner mes connaissances
+                en matière de graphisme et de manipulation des outils associés. Mon
+                travail s'axait sur la notions d'identité et sur sa persistance à
+                travers le temps.</p>
+                <p>Le choix de l'outil informatique, dont j'ai dû soutenir la valeur
+                face à des méthodes plus classiques, m'a valu la première note
+                de ma promotion, et m'a surtout laissé une certaine habitude des
+                logiciels utilisés dans ce domaine, dont <strong>Adobe Photoshop</strong>
+                et son cousin lointain <strong>Paint Shop Pro</strong>.</p>
+            ]]>
+        </core>
+    </view>
+    <view id="pictures">
+        <type>gallery</type>
+        <picture id="musique">
+            <files>
+                <icon>artplastiques/musique_small.jpg</icon>
+                <image>artplastiques/musique.jpg</image>
+            </files>
+            <legend>Travail N°1</legend>
+            <text>Montage et retouche</text>
+            <alt>Musique</alt>
+        </picture>
+        <picture id="nb">
+            <files>
+                <icon>artplastiques/nb_small.jpg</icon>
+                <image>artplastiques/nb.jpg</image>
+            </files>
+            <legend>Travail N°2</legend>
+            <text>Photographie et retouche</text>
+            <alt>Fantômes</alt>
+        </picture>
+        <picture id="horloge">
+            <files>
+                <icon>artplastiques/horloge_small.jpg</icon>
+                <image>artplastiques/horloge.jpg</image>
+            </files>
+            <legend>Travail N°3</legend>
+            <text>Modélisation 3D</text>
+            <alt>Horloge</alt>
+        </picture>
+        <picture id="bob">
+            <files>
+                <icon>artplastiques/bob_small.jpg</icon>
+                <image>artplastiques/bob.jpg</image>
+            </files>
+            <legend>Travail N°4</legend>
+            <text>Retouche</text>
+            <alt>Bob</alt>
+        </picture>
+        <picture id="fantome">
+            <files>
+                <icon>artplastiques/fantome_small.jpg</icon>
+                <image>artplastiques/fantome.jpg</image>
+            </files>
+            <legend>Travail N°5</legend>
+            <text>Photographie, montage et retouche</text>
+            <alt>Fantôme</alt>
+        </picture>
+    </view>
+</root>

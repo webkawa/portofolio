@@ -80,6 +80,7 @@ function doNavigationEvents() {
     $("div#content div.scroller a").click(function() {
         if($("div#media div.loader:animated").size() == 0) {
             med = loadMedia($(this).attr("href"));
+            switchSelected($(this));
             switchMedia($(this).attr("href"));
         }
     });

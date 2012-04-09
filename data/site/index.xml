@@ -5,10 +5,17 @@
     <page id="home" repertory="data/site/xml/a_home/">
         <data>data.xml</data>
         <media id="about">about.xml</media>
-        <media id="help">help.xml</media>
     </page>
     <page id="studies" repertory="data/site/xml/b_studies/">
         <data>data.xml</data>
+        <media id="fontainebleau">fontainebleau.xml</media>
+        <media id="3dsmax">3dsmax.xml</media>
+        <media id="catacombes">catacombes.xml</media>
+        <media id="f1">f1.xml</media>
+        <media id="artplastiques">artplastiques.xml</media>
+        <media id="dreamweaver">dreamweaver.xml</media>
+        <media id="iut">iut.xml</media>
+        <media id="chess">chess.xml</media>
     </page>
     <page id="experience" repertory="data/site/xml/c_experience/">
         <data>data.xml</data>

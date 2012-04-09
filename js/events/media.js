@@ -7,10 +7,10 @@
 ///* Inscription des évènements de zoom */
 function doZoomingEvents() {
     /* Effacement des fonctions précédentes */
-    $("div#media div.loader").off();
+    $("div#media div.loader, div#media div.data > div.cage div.view div.more").off();
     
     /* Zoom sur un média */
-    $("div#media.small div.loader").click(function() {
+    $("div#media.small div.loader, div#media.small div.data > div.cage div.view div.more").click(function() {
         switchZoom(true);
     });
     /* Dézoomage d'un média */

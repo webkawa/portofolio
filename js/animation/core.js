@@ -38,3 +38,9 @@ function hideCore() {
         "easing" : easing
     });
 }
+
+/* Modifie le média couramment sélectionné */
+function switchSelected(target) {
+    $("div#content div.cage div.scroller a span.selected").removeClass("selected");
+    $(target).find("span").addClass("selected");
+}

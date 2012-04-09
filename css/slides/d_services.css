@@ -25,17 +25,16 @@ div#page div.slide#services div#media div.data,
 div#page div.slide#services div#media div.data div.links ul li.selected {
     background-color: #3a73ad;
 }
-div#page div.slide#services div#media div.data div.infos h4,
-div#page div.slide#services div#media div.data div.infos p {
+div#page div.slide#services div#media div.data div.infos {
     background-image: url('../img/services/opacity_80.png');
 }
 
 /* Coloration des bordures */
 div#page div.slide#services div#media div.data,
-div#page div.slide#services div#media div#gallery div.infos ul li.selected,
-div#page div.slide#services div#media div#gallery div.infos h4,
-div#page div.slide#services div#media div#gallery div.infos p,
-div#page div.slide#services div#media div#gmap h4 {
+div#page div.slide#services div#media div.notes,
+div#page div.slide#services div#media div#gallery div.infos,
+div#page div.slide#services div#media div#gmap h4,
+div#page div.slide#services div#media div.data div.cage div.view div.more  {
     border-color: #3a73ad;
 }
 div#page div.slide#services div#media div#gallery div.infos ul li:hover,
@@ -78,7 +77,8 @@ div#page div.slide#services div.corner.small.bl {
 }
 
 /* Scrollbar */
-div#page div.slide#services div#content div.cage div.scrollbar div.corner.tc {
+div#page div.slide#services div#content div.cage div.scrollbar div.corner.tc,
+div#page div.slide#services div#content div.cage div.scroller ul li {
     background-image: url('../img/services/scrollbar_top.png');
 }
 div#page div.slide#services div#content div.cage div.scrollbar div.corner.bc {
@@ -91,4 +91,13 @@ div#page div.slide#services div#media div.notes div.spacer ul li {
 }
 div#page div.slide#services div#media div.notes div.spacer ul li:hover {
     background: url('../img/services/check_on.png') transparent left top no-repeat;
+}
+div#page div.slide#services div#content div.cage div.scroller ul li {
+    background: url('../img/services/arrow.png') transparent left 8px no-repeat;
+}
+div#page div.slide#services div#content div.cage div.scroller span.selected {
+    background: url('../img/services/selected_left.png') #3a73ad left top no-repeat;
+}
+div#page div.slide#services div#content div.cage div.scroller span.selected span {
+    background: url('../img/services/selected_right.png') right top no-repeat;
 }

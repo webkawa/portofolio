@@ -51,7 +51,7 @@ div#media div.title p {
     color: #555;
 }
 div#media div.title h3 {
-    padding: 0px 5px 15px 20px;
+    padding: 0px 5px 15px 10px;
     margin: 0px;
     font-size: 0px;                                     /* Largeur de police redéfinie */
 }
@@ -79,7 +79,6 @@ div#media div.layer div.initial p img {
 div#media div.data {
     min-height: 80px;
     height: auto;                                       /* Hauteur redéfinie */
-    border-bottom: 10px solid #aaa;
     border-top: 10px solid #aaa;
     overflow: hidden;
 }
@@ -97,7 +96,7 @@ div#media div.data div.cage div.links ul {
 }
 div#media div.data div.cage div.links ul li {
     height: 40px;
-    margin: 5px 0px;
+    margin: 0px 0px 10px 0px;
     list-style-type: none;
     background-color: #999;
 }
@@ -111,14 +110,31 @@ div#media div.data div.cage div.links ul li.selected {
 div#media div.data div.cage div.view {
     position: relative;
     min-height: 2px;
-    margin: 5px 50px 5px 0px;
+    margin: 0px 50px 0px 0px;
     background-color: white;
 }
+div#media div.data div.cage div.view div.more {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    padding: 4px;
+    border-top: 1px solid;
+    border-left: 1px solid;
+    font-size: 14px;
+    font-weight: bolder;
+    color: white;
+    background-color: #555;
+}
+div#media div.data div.cage div.view div.more:hover {
+    cursor: pointer;
+}
+
 
 /* Pied */
 div#media div.notes {
     padding: 0px !important;                            /* Padding haut doit rester nul */
     overflow: hidden;
+    border-top: 10px solid #aaa;
 }
 div#media div.notes div.spacer {
     padding: 20px 20px 5px 20px;
@@ -154,7 +170,6 @@ div#media div.notes div.spacer ul li a {
 div#text {
     position: relative;
     width: 100%;
-    height: 100%;
     padding: 0px;                                       /* Doit rester nul */
     margin: 0px;                                        /* Doit rester nul */
     overflow: hidden;
@@ -174,7 +189,7 @@ div#text h4 {
 }
 div#text p {
     font-size: 12px;
-    margin: 2px 5px 2px 5px;
+    margin: 2px 5px 2px 10px;
 }
 
 /* Carte */
@@ -200,43 +215,46 @@ div#gallery {
     width: 100%;
     height: 100%;
     overflow: hidden;
+    background-color: black;
 }
 div#gallery div.picture {
     width: 100%;
     height: 100%;
     text-align: center;
-    background-image: url('img/loader.gif');
-    background-position: center center;
-    background-repeat: no-repeat;
+    background: url('img/loader.gif') black center center no-repeat;
 }
 div#gallery div.picture img {
-    border: 1px solid #ccc;
     width: auto;
-    max-width: 100%;                                        /* Destiné à ré-écriture */
-    height: auto;
-    margin: 10px 10px 40px 10px;
+    max-width: 100%;
+    height: auto;                                                       /* Destiné à ré-écriture */
+    margin: 10px 10px 10px 10px;
     vertical-align: middle;
+    border: 1px solid #ccc;
 }
 div#gallery div.infos {
     position: absolute;
     width: 100%;
     bottom: 0px;
     color: white;
+    border-top: 2px solid;
 }
-div#gallery div.infos h4 {
+div#gallery div.infos div.legend {
+    float: left;
+}
+div#gallery div.infos div.legend h4 {
+    font-size: 18px;
     margin: 0px;
     padding: 5px 10px 0px 10px;
-    border-top: 2px solid;
     background-repeat: repeat;
 }
-div#gallery div.infos p {
+div#gallery div.infos div.legend p {
     margin: 0px;
     padding: 0px 10px 5px 10px;
-    border-bottom: 2px solid;
     background-repeat: repeat;
 }
 div#gallery div.infos ul {
-    padding: 5px 0px 0px 0px;
+    float: left;
+    padding: 5px 0px 5px 5px;
     margin: 0px;
     list-style-type: none;
     text-align: center;
@@ -252,6 +270,9 @@ div#gallery div.infos ul li {
 }
 div#gallery div.infos ul li:hover {
     cursor: pointer;
+}
+div#gallery div.infos ul li.selected {
+    border-color: white;
 }
 
 /* Icônes */
@@ -269,4 +290,7 @@ div#media div.data div.cage div.links ul li#zoom {
 }
 div#media div.data div.cage div.links ul li#file {
     background-image: url('img/mask_file.png');
+}
+div#media div.data div.cage div.links ul li#pictures {
+    background-image: url('img/mask_pictures.png');
 }

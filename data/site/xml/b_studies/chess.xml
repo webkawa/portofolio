@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <id>chess</id>
+    <title>
+        <![CDATA[
+            <p>Réalisation</p>
+            <h3>Jeu d'échecs</h3>
+        ]]>
+    </title>
+    <view id="infos">
+        <type>text</type>
+        <core>
+            <![CDATA[
+                <h4>Présentation</h4>
+                <p>J'ai participé dans le courant de ma seconde année à l'IUT à un
+                projet tutoré par équipes de quatre personnes, de sujet libre mais
+                soumis à validation. Nous avons choisi le - somme-toute - très classique
+                sujet du jeu d'échecs dans l'idée de monter en compétence sur le langage
+                JAVA, dont nous n'avions encore qu'une vision très fragmentaire. Ce choix
+                pourra être critiqué au vu de la lenteur du langage ; toutefois, la
+                parfaite adéquation de notre objectif avec les concepts fondamentaux
+                de la programmation orienté objet nous a permis de mener le projet de bout
+                en bout malgré notre manque de pratique sur la technologie utilisée.</p>
+                <h4>Rôle</h4>
+                <p>Mon travail au sein de l'équipe consistait à monter une intelligence
+                artificielle suffisemment solide pour résister à un adversaire humain.
+                Malgré sa difficulté, l'exercice m'a offert une initiation par l'expériences
+                à des problématiques de gestion de la mémoire (nous avons fini par
+                stabiliser l'application à 1Go), de performances brutes (environ
+                cinq minutes par coup ...), ou encore de modélisation arithmétique
+                (et tout particulièrement d'arbres de probabilités).</p>
+            ]]>
+        </core>
+    </view>
+    <view id="file">
+        <type>text</type>
+        <core>
+            <![CDATA[
+                <h4>Télécharger</h4>
+                <p>Source en un fichier au format texte : <a href="data/medias/files/chess.zip"
+                title="Source JAVA en un fichier">cliquez ici</a>
+            ]]>
+        </core>
+    </view>
+</root>
