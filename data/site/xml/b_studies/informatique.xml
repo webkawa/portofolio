@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <id>catacombes</id>
+    <title>
+        <![CDATA[
+            <p>Réalisation</p>
+            <h3>Activités informatiques</h3>
+        ]]>
+    </title>
+    <view id="infos">
+        <type>text</type>
+        <core>
+            <![CDATA[
+                <h4>Exemples</h4>
+                <p>J'ai eu l'occasion, au fil de mes années d'études, de participer
+                à plusieurs projets amateur liés de près ou de loin au domaine informatique.
+                La liste suivante en résume quelques exemples.</p>
+                <ul>
+                    <li>J'anime de <strong>2003 à 2004</strong> un forum sportif associatif, essentiellement
+                    dédié à un rôle d'information et de partage ;</li>
+                    <li>Puis, en <strong>2007 et 2008</strong>, un second forum étudiant à but pédagogique
+                    et ludique.</li>
+                    <li>En <strong>2006</strong>, je crée un petit site utilitaire dédié à l'indexation 
+                    et au partage sur des revendeurs de matériel sportif. Il restera en ligne 
+                    approximativement trois ans.</li>
+                    <li>En <strong>2007</strong>, je participe au développement d'un site amateur de petites annonces
+                    en temps que développeur back-office. Le projet finit par être abandonné
+                    suite à différents problèmes pratiques.</li>
+                    <li>Plus anectodique, j'organise en <strong>2007</strong> un tournoi de jeux
+                    en réseau d'une trentaine de participants en collaboration avec un cyber-café
+                    de ma ville d'origine.</li>
+                </ul>
+            ]]>
+        </core>
+    </view>
+    <view id="file">
+        <type>gallery</type>
+        <picture id="ss">
+            <files>
+                <icon>informatique/softshops_small.gif</icon>
+                <image>informatique/softshops.gif</image>
+            </files>
+            <legend>Projet "Softshops"</legend>
+            <text>2006 - Logo</text>
+            <alt>Logo</alt>
+        </picture>
+        <picture id="ro">
+            <files>
+                <icon>informatique/rsoft-occaz_small.jpg</icon>
+                <image>informatique/rsoft-occaz.jpg</image>
+            </files>
+            <legend>Projet "R-Soft Occaz"</legend>
+            <text>2007 - Logo</text>
+            <alt>Logo</alt>
+        </picture>
+    </view>
+</root>

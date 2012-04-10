@@ -19,6 +19,7 @@
         <media id="miage">miage.xml</media>
         <media id="stam">stam.xml</media>
         <media id="memoire">memoire.xml</media>
+        <media id="informatique">informatique.xml</media>
     </page>
     <page id="experience" repertory="data/site/xml/c_experience/">
         <data>data.xml</data>
