@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root>
-    <id>catacombes</id>
+    <id>jdr</id>
     <title>
         <![CDATA[
             <p>Activité</p>
@@ -49,11 +49,14 @@
         <type>text</type>
         <core>
             <![CDATA[
-                <h4>Note</h4>
+                <h4>Notes</h4>
                 <p>Les scénarios distribués ci-dessous s'inscrivent dans une démarche strictement
                 ludique et ne peuvent être interprêtés autrement. Les lieux, personnages et
                 situations décrites s'appuient ponctuellement sur des éléments réels, mais le
                 propos tenu et l'usage en étant fait reste purement et simplement fictif.</p>
+                <p>J'ai eu l'occasion de jouer ces scénarios trois années consécutives au <strong>
+                Rencontres des rôlistes de l'X</strong>, organisées par l'association de jeu de rôle
+                de l'école Polytechnique de Massy-Palaiseau.</p>
                 <h4>Scénarios</h4>
                 <p><strong>Les absents ont toujours tort ... mais le crime se paiera</strong> est un
                 scénario pour </strong>Nephilim</strong> organisé en deux tables de sept joueurs.
