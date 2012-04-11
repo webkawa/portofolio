@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <id>jdr</id>
+    <title>
+        <![CDATA[
+            <p>Réalisation</p>
+            <h3>Jeux de rôle sur table</h3>
+        ]]>
+    </title>
+    <view id="infos">
+        <type>text</type>
+        <core>
+            <![CDATA[
+                <h4>A propos ...</h4>
+                <p>Le <strong>jeu de rôle</strong> sur table </p>
+            ]]>
+        </core>
+    </view>
+</root>
