@@ -173,7 +173,6 @@ div#text {
     padding: 0px;                                       /* Doit rester nul */
     margin: 0px;                                        /* Doit rester nul */
     overflow: hidden;
-    text-align: justify;
 }
 div#text h4 {
     font-size: 16px;

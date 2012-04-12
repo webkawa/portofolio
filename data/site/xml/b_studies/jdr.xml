@@ -3,8 +3,8 @@
     <id>jdr</id>
     <title>
         <![CDATA[
-            <p>Réalisation</p>
-            <h3>Jeux de rôle sur table</h3>
+            <p>Activité</p>
+            <h3>Jeu de rôle</h3>
         ]]>
     </title>
     <view id="infos">
@@ -12,7 +12,61 @@
         <core>
             <![CDATA[
                 <h4>A propos ...</h4>
-                <p>Le <strong>jeu de rôle</strong> sur table </p>
+                <p>Lointain cousin de ses équivalents vidéo-ludiques, le <strong>jeu de rôle</strong> 
+                sur table constitue un loisir à mi-chemin entre le théatre d'improvisation et la
+                simulation par l'abstrait.</p>
+                <p>Il s'agit d'une activité de groupe, basée sur le récit
+                délivré par un des joueurs (ou <strong>conteur</strong>) à l'intention des autres
+                participants ; ceux-ci sont en mesure d'intéragir au sein du récit par l'intermédiaire
+                d'avatars prédéfinis, disposant d'une identité et de capacités différenciées de leurs
+                pairs. En fonction du contexte choisi par le conteur, auquel s'additionne généralement
+                un support de jeu (ou <strong>module</strong>) décidant des grandes lignes du récit
+                et des modalités permettant d'arbitrer les situations à caractère probabilistes,
+                les joueurs peuvent être amenés à l'entraide tout comme à l'opposition ; mis à part
+                leur imagination, la seule limite entravant leur liberté d'action tient dans les
+                contraintes logiques voulues par ce même contexte.</p>
+                <p>Le jeu de rôle sur table se distingue de la plupart des jeux traditionnels par
+                l'absence totale de vainqueur ou de perdant. L'intérêt du participant ne tient pas
+                tant dans la domination de ses adversaires, que dans la satisfaction de pouvoir
+                se pencher, par le jeu de la simulation et de l'improvisation, sur des situations
+                aussi hétéroclytes que passionnantes. A la manière des échecs, deux parties ne peuvent
+                en aucun cas se ressembler ; si hasard possède généralement une influence sur le cours
+                de la partie (la plupart des modules s'appuient d'ailleurs sur l'usage de <strong>dés</strong>),
+                il ne décide jamais de son issue.</p>
+                <h4>Parcours</h4>
+                <p>J'ai découvert le jeu de rôle sur table jeune ; je l'ai pratiqué assiduement jusqu'au
+                lycée et de façon plus raisonnée par la suite. Souvent dans le rôle de conteur, je me suis
+                essayé à plusieurs modules, du classique <strong>Dungeon & Dragons</strong> (<strong>Wizards of the
+                Coast</strong>) au plus discret <strong>Nephilim</strong> (des français de <strong>Multisim</strong>).
+                J'ai écrit au fil des années plusieurs scénario, dont j'ai conservé les plus récents (accessibles
+                dans l'onglet "Fichiers"). Je pense avoir développé par cette occupation plusieurs atouts,
+                dont l'habitude à orienter un groupe en tenant compte des spécificités de chacun, ou encore
+                une certaine aisance pour parler en public.</p>
+            ]]>
+        </core>
+    </view>
+    <view id="file">
+        <type>text</type>
+        <core>
+            <![CDATA[
+                <h4>Notes</h4>
+                <p>Les scénarios distribués ci-dessous s'inscrivent dans une démarche strictement
+                ludique et ne peuvent être interprêtés autrement. Les lieux, personnages et
+                situations décrites s'appuient ponctuellement sur des éléments réels, mais le
+                propos tenu et l'usage en étant fait reste purement et simplement fictif.</p>
+                <p>J'ai eu l'occasion de jouer ces scénarios trois années consécutives au <strong>
+                Rencontres des rôlistes de l'X</strong>, organisées par l'association de jeu de rôle
+                de l'école Polytechnique de Massy-Palaiseau.</p>
+                <h4>Scénarios</h4>
+                <p><strong>Les absents ont toujours tort ... mais le crime se paiera</strong> est un
+                scénario pour </strong>Nephilim</strong> organisé en deux tables de sept joueurs.
+                Il raconte le dénouement du fait d'un seul homme (?) ayant entrainé dans son sillon
+                de nombreux et influants acteurs occultes. Cliquez <a href="data/medias/files/laoptmlcsp.zip"
+                title "Scénarion complet">ici</a> pour le scénario intégral (un rôle modulable).</p>
+                <p><strong>Assaut sur One Penn Plaza</strong> est un scénario, également pour <strong>
+                Nephilim</strong>, à destination d'une table de six joueurs. Il décrit un huis-clos
+                entre membres d'un même groupe assiégés par un aggresseur inconnu. Cliquez <a
+                href="data/medias/files/asopp.pdf" title="Scénario intégral">ici</a> pour le scénario intégral.</p>
             ]]>
         </core>
     </view>
