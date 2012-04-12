@@ -7,6 +7,14 @@
             <h3>Jeu de rôle</h3>
         ]]>
     </title>
+    <notes>
+        <![CDATA[
+            <p>Pour aller plus loin ...</p>
+            <ul>
+                <li><a href="http://www.ffjdr.org/" title="Site de la FFJDR">Site de la FFJDR</a></li>
+            </ul>
+        ]]>
+    </notes>
     <view id="infos">
         <type>text</type>
         <core>
@@ -55,7 +63,7 @@
                 situations décrites s'appuient ponctuellement sur des éléments réels, mais le
                 propos tenu et l'usage en étant fait reste purement et simplement fictif.</p>
                 <p>J'ai eu l'occasion de jouer ces scénarios trois années consécutives au <strong>
-                Rencontres des rôlistes de l'X</strong>, organisées par l'association de jeu de rôle
+                Rencontres des Rôlistes de l'X</strong>, organisées par l'association de jeu de rôle
                 de l'école Polytechnique de Massy-Palaiseau.</p>
                 <h4>Scénarios</h4>
                 <p><strong>Les absents ont toujours tort ... mais le crime se paiera</strong> est un

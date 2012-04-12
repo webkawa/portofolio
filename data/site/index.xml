@@ -24,6 +24,10 @@
     </page>
     <page id="experience" repertory="data/site/xml/c_experience/">
         <data>data.xml</data>
+        <media id="fullsix">fullsix.xml</media>
+        <media id="ekino">ekino.xml</media>
+        <media id="lcl">lcl.xml</media>
+        <media id="malakoff">malakoff.xml</media>
     </page>
     <page id="services" repertory="data/site/xml/d_services/">
         <data>data.xml</data>

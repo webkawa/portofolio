@@ -1,77 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root>
-    <id>catacombes</id>
+    <id>fullsix</id>
     <title>
         <![CDATA[
-            <p>Réalisation</p>
-            <h3>Catacombes I & II</h3>
+            <p>Entreprise</p>
+            <h3>Fullsix Group</h3>
         ]]>
     </title>
+    <notes>
+        <![CDATA[
+            <p>Pour aller plus loin ...</p>
+            <ul>
+                <li><a href="http://www.group.fullsix.fr/" title="Site du groupe Fullsix">Site du groupe</a></li>
+            </ul>
+        ]]>
+    </notes>
     <view id="infos">
         <type>text</type>
         <core>
             <![CDATA[
                 <h4>A propos ...</h4>
-                <p>J'ai réalisé deux versions du jeu "Catacombes" entre 2000 et
-                2003 dans le cadre d'une option informatique. Se présentant sous
-                les traits de jeux en <em>point-and-click</em> épurés et d'une durée
-                avoisinnant les deux heures, cesdeux applications m'ont permis de découvrir, 
-                dans un environnement simplifié, les notions de la programmation évènementielle. 
-                Les images, réalisées au moyen d'un logiciel dédié au jeu vidéo (voir ci-dessous),
-                ont représentées environ la moitié du temps consacré au projet.</p>
-                <h4>Mediator</h4>
-                <p>La quasi-totalité de l'aspect interactif des deux jeux se base
-                sur l'utilisation du logiciel <strong>Mediator</strong>, édité par <strong>Matchware</strong>. Ce
-                logiciel offre la possibilité, sur le principe d'écrans successifs,
-                de simplifier par le biais de calques, arborescences et évènements
-                pré-programmés, de réaliser des programmes de taille conséquente.
-                <h4>UnrealEd</h4>
-                <p>Les images du jeu (visibles dans la galerie) proviennent du logiciel
-                de modélisation <strong>UnrealEd 1.0</strong>, basé sur le moteur graphique
-                <strong>Unreal</strong> édité par <strong>Epic Games</strong>. Cette
-                application, initialement dédiée à la création de contenus pour les
-                jeux vidéo compatibles, se prétait également parfaitement à la création
-                rapide d'images de bonne qualité ... pour l'époque.</p>
+                <p>Le groupe <strong>Fullsix</strong> compte environ 1000 collaborateurs
+                répartis dans 17 agences ; son chiffre d'affaire pour l'exercice 2011
+                s'élève à 55 millions d'euros. Il se divise en cinq principales entités.</p>
+                <p class="gallery">
+                    <img src="data/medias/img/fullsix/fullsix.png" title="Logo de Fullsix" />
+                    <img src="data/medias/img/fullsix/ekino.png" title="Logo de Ekino" />
+                    <img src="data/medias/img/fullsix/sixam.png" title="Logo de Six A.M." />
+                    <img src="data/medias/img/fullsix/otoresearch.png" title="Logo de OTO Research" />
+                    <img src="data/medias/img/fullsix/grandunion.png" title="Logo de Grand Union"/>
+                </p>
+                <p>L'agence <strong>Fullsix</strong> à proprement parler, base historique du
+                groupe, dont l'activité se concentre sur la communication digitale.</p>
+                <p>Le pôle technique, <strong>Ekino</strong>, qui travaille en étroite relation
+                avec les autres entités du groupe mais possède également son propre portefeuille
+                de clients.</p>
+                <p><strong>OTO Research</strong> se spécialise dans les études de marché liées au
+                domaine du web et propose à ce titre un pannel de prestations allant de l'analyse de
+                référencement à la surveillance d'audience.</p>
+                <p><strong>Six A.M.</strong> propose une alternative à l'agence historique <strong>Fullsix</strong>
+                par un positionnement et des équipes différentes. Son cœur d'activité reste toutefois
+                le domaine de la communication.</p>
+                <p><strong>Grand Union</strong>, anciennement <strong>Six and Co</strong>,
+                renommé suite au rachat du britannique <strong>The Grand Union</strong>.</p>
             ]]>
         </core>
     </view>
-    <view id="pictures">
-        <type>gallery</type>
-        <picture id="piece">
-            <files>
-                <icon>catacombes/piece_small.jpg</icon>
-                <image>catacombes/piece.jpg</image>
-            </files>
-            <legend>Capture d'écran</legend>
-            <text>2001 - Premier épisode</text>
-            <alt>Pièce</alt>
-        </picture>
-        <picture id="pont">
-            <files>
-                <icon>catacombes/pont_small.jpg</icon>
-                <image>catacombes/pont.jpg</image>
-            </files>
-            <legend>Capture d'écran</legend>
-            <text>2001 - Premier épisode</text>
-            <alt>Pont</alt>
-        </picture>
-        <picture id="tresor">
-            <files>
-                <icon>catacombes/tresor_small.jpg</icon>
-                <image>catacombes/tresor.jpg</image>
-            </files>
-            <legend>Capture d'écran</legend>
-            <text>2003 - Second épisode</text>
-            <alt>Trésor</alt>
-        </picture>
-        <picture id="editeur">
-            <files>
-                <icon>catacombes/editeur_small.jpg</icon>
-                <image>catacombes/editeur.jpg</image>
-            </files>
-            <legend>UnrealEd</legend>
-            <text>2001 - Travail en situation</text>
-            <alt>UnrealEd</alt>
-        </picture>
+    <view id="map">
+        <type>map</type>
+        <latitude>48.8577</latitude>
+        <longitude>2.342</longitude>
+        <zoom>11</zoom>
+        <markers>
+            <marker>
+                <info>
+                    <![CDATA[
+                        <h4>Fullsix France</h4>
+                        <p>157 rue Anatole France</p>
+                        <p>92300 Levallois-Perret</p>
+                    ]]>
+                </info>
+                <latitude>48.89785</latitude>
+                <longitude>2.27895</longitude>
+            </marker>
+        </markers>
     </view>
 </root>
