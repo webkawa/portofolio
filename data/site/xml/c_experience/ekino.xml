@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <id>ekino</id>
+    <title>
+        <![CDATA[
+            <p>Entreprise</p>
+            <h3>Ekino</h3>
+        ]]>
+    </title>
+    <notes>
+        <![CDATA[
+            <p>Pour aller plus loin ...</p>
+            <ul>
+                <li><a href="http://www.ekino.com/" title="Site d'Ekino">Site officiel</a> en construction</li>
+            </ul>
+        ]]>
+    </notes>
+    <view id="infos">
+        <type>text</type>
+        <core>
+            <![CDATA[
+                <h4>A propos ...</h4>
+                <p><strong>Ekino</strong> provient de la séparation, courant 2010, des départements
+                marketing et informatique du groupe. Désormais doté d'un statut juridique et d'un
+                portefeuille de clients propre, le pôle technique travail encore en étroite
+                relation avec les différentes agences du groupe, dans le cadre de prestations
+                allant du conseil au développement à proprement parler.</p>
+                <h4>Travail du consultant</h4>
+                <p>Les affectation du consultant technique couvrent, au sein d'<strong>Ekino</strong>, un spectre
+                de responsabilités large, ne s'arrêtant pas au seul conseil, mais également à :</p>
+                <ul>
+                    <li>La conception et le déploiement des évolutions : reconnaissance technique,
+                    rédaction des spécifications, validation et formation du client ;</li>
+                    <li>La gestion de production : suivi des plannings, chiffrage, répartition des équipes et
+                    contrôle de qualité ;</li>
+                    <li>Le suivi de communication : auprès du client, d'une part, mais également
+                    des équipes techniques et marketing ;</li>
+                    <li>La documentation et l'organisation : mise en place des procédures de déploiement,
+                    recette, suivi et traitement des anomalies.</li>
+                </ul>
+                <p>Le rôle du consultant technique s'avère donc fortement axé sur la communication ;
+                des qualités en la matières sont d'ailleurs indispensables à son exercice.</p>
+            ]]>
+        </core>
+    </view>
+    <view id="map">
+        <type>map</type>
+        <latitude>48.8577</latitude>
+        <longitude>2.342</longitude>
+        <zoom>11</zoom>
+        <markers>
+            <marker>
+                <info>
+                    <![CDATA[
+                        <h4>Ekino</h4>
+                        <p>Fullsix Group</p>
+                        <p>157 rue Anatole France</p>
+                        <p>92300 Levallois-Perret</p>
+                    ]]>
+                </info>
+                <latitude>48.89785</latitude>
+                <longitude>2.27895</longitude>
+            </marker>
+        </markers>
+    </view>
+</root>

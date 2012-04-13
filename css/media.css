@@ -158,11 +158,13 @@ div#media div.notes div.spacer ul li {
     display: inline;
     padding: 0px 0px 0px 20px;
     margin: 0px 0px 0px 4px;
+    color: #999;
     list-style-type: none;
+    font-size: 85%;
+    font-style: italic;
+    vertical-align: top;
 }
 div#media div.notes div.spacer ul li a {
-    vertical-align: top;
-    font-size: 85%;
     font-style: normal;
 }
 
