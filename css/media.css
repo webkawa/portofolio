@@ -162,7 +162,7 @@ div#media div.notes div.spacer ul li {
     list-style-type: none;
     font-size: 85%;
     font-style: italic;
-    vertical-align: top;
+    vertical-align: middle;
 }
 div#media div.notes div.spacer ul li a {
     font-style: normal;

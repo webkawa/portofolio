@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <id>bruxelles</id>
+    <title>
+        <![CDATA[
+            <p>Stage</p>
+            <h3>General Agents</h3>
+        ]]>
+    </title>
+    <notes>
+        <![CDATA[
+            <p>Pour aller plus loin ...</p>
+            <ul>
+                <li><a href="http://www.generalagents.eu/" title="Site d'entreprise (HS)">Site d'entreprise</a> fermé courant 2012</li>
+            </ul>
+        ]]>
+    </notes>
+    <view id="infos">
+        <type>text</type>
+        <core>
+            <![CDATA[
+                <h4>Stage</h4>
+                <p>J'intègre en avril 2010 l'agence de communication Bruxelloise <strong>General Agents</strong>
+                où je réalise, au sein d'une équipe de quatre personnes la conception et le développement de la
+                partie métier d'une application J2EE à usage interne. Répondant à une problématique d'organisation
+                de prestataires de service employés pour des missions de prospection téléphonique, l'application
+                permettait nottament :</p>
+                <ul>
+                    <li>L'organisation et la répartition du travail entre les intervenants via un mécanisme
+                    de plannings distribués au moyen d'un espace connecté ;</li>
+                    <li>La collecte des informations, contacts et rendez-vous issus de ce travail et la
+                    mémorisation des informations utiles au suivi des clients potentiels ;</li>
+                    <li>La transparence auprès du client final, capable dès lors de suivre les évolutions
+                    des campagnes en cours pour son compte.</li>
+                </ul>
+                <h4>Rapport</h4>
+                <p>Le rapport de stage complet peut être consulté à cette <a href="data/medias/files/memoire-m1.pdf"
+                title="Rapport de stage complet">adresse</a>.
+            ]]>
+        </core>
+    </view>
+    <view id="map">
+        <type>map</type>
+        <latitude>50.84662</latitude>
+        <longitude>4.3525</longitude>
+        <zoom>5</zoom>
+        <markers>
+            <marker>
+                <info>
+                    <![CDATA[
+                        <h4>General Agents</h4>
+                        <p>500 Avenue Louise Bte. 7</p>
+                        <p>1050 Bruxelles</p>
+                    ]]>
+                </info>
+                <latitude>50.81644</latitude>
+                <longitude>4.37225</longitude>
+            </marker>
+        </markers>
+    </view>
+</root>

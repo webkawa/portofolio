@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <id>drummondville</id>
+    <title>
+        <![CDATA[
+            <p>Stage</p>
+            <h3>Mondial des cultures de Drummondville</h3>
+        ]]>
+    </title>
+    <notes>
+        <![CDATA[
+            <p>Pour aller plus loin ...</p>
+            <ul>
+                <li><a href="http://www.mondialdescultures.com" title="Site du mondial des cultures">Mondial des cultures</a></li>
+            </ul>
+        ]]>
+    </notes>
+    <view id="infos">
+        <type>text</type>
+        <core>
+            <![CDATA[
+                <h4>Stage</h4>
+                <p>J'effectue d'avril à juin 2008 un stage au sein du comité d'organisation
+                du <strong>Mondial des Cultures de Drummondville</strong> en compagnie d'un
+                camarade de promotion et dans le cadre d'un programme d'échange avec le Québec.
+                Festival de musique et danse folklorique, la manifestation accueille annuellement
+                deux à trois cent mille personnes originaires du Québec et des Etats-Unis voisins,
+                sur une durée totale d'une dizaine de jours.</p>
+                <p>Missionné dans le cadre d'un projet de modernisation de l'infrastructure
+                logicielle utilisée pour la gestion du personnel, je profite de ce séjour
+                pour perfectionner mon anglais, ponctuellement utilisé dans les relations de
+                travail.</p>
+                <h4>Projet</h4>
+                <p>Le projet <strong>Allegro</strong> naît d'une reconnaissance, auprès des équipes
+                en place, d'un besoin de renouvellement des moyens logiciels à la disposition
+                des ressources humaines dans le cadre du recensement des bénévoles participant
+                à l'organisation du festival (environ 3000 personnes).</p>
+                <p>Développé en PHP/SQL, ce logiciel open-source rend possible :</p>
+                <ul>
+                    <li>L'administration d'un annuaire complet incluant la possibilité de gérer
+                    groupes et niveaux d'accréditation ;</li>
+                    <li>La communication directe et le partage entre les intervenants et par le
+                    biais de modérateurs désignés pour chaque groupe ;</li>
+                    <li>L'envoi de mails et notifications destinées à fluidifier la transmition
+                    des documents et des informations entre les organisateurs et les bénévoles.</li>
+                </ul>
+            ]]>
+        </core>
+    </view>
+    <view id="file">
+        <type>text</type>
+        <core>
+            <![CDATA[
+                <h4>Livrables</h4>
+                <p>Nous avons réalisé suite au projets deux livrables remis à notre tuteur de
+                stage à notre départ de l'entreprise :</p>
+                <ul>
+                    <li>Une version installable du projet sur tout environnement compatible
+                    PHP et SQL (cliquez <a href="data/medias/files/allegro.zip" title="Allegro">
+                    ici</a> pour la source complète);</li>
+                    <li>Une documentation complète des sources et du protocole d'installation
+                    du programme, un guide utilisateur et un procédurier pour le déploiement
+                    de l'application (cliquez <a href="data/medias/files/allegro-doc.zip" title="Documentation">
+                    ici</a> pour ces différents documents).
+                </ul>
+                <h4>Rapport de stage</h4>
+                <p>Une copie de mon rapport de stage peut également être téléchargée <a href="data/medias/files/allegro-doc.zip"
+                title="Rapport de stage complet">ici</a>.</p>
+            ]]>
+        </core>
+    </view>
+    <view id="pictures">
+        <type>gallery</type>
+        <picture id="allegro">
+            <files>
+                <icon>allegro/allegro_small.png</icon>
+                <image>allegro/allegro.png</image>
+            </files>
+            <legend>Capture d'écran</legend>
+            <text>Page d'accueil non-connecté</text>
+            <alt>Capture d'écran de Allegro</alt>
+        </picture>
+    </view>
+    <view id="map">
+        <type>map</type>
+        <latitude>45.880</latitude>
+        <longitude>-72.487</longitude>
+        <zoom>5</zoom>
+        <markers>
+            <marker>
+                <info>
+                    <![CDATA[
+                        <h4>Mondial des Cultures de Drummondville</h4>
+                        <p>226 Rue Saint-Marcel, Drummondville</p>
+                        <p>QC J2B 2E4, Canada</p>
+                    ]]>
+                </info>
+                <latitude>45.874328</latitude>
+                <longitude>-72.486945</longitude>
+            </marker>
+        </markers>
+    </view>
+</root>

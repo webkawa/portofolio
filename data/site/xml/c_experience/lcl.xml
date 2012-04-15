@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <id>lcl</id>
+    <title>
+        <![CDATA[
+            <p>Projet</p>
+            <h3>LCL</h3>
+        ]]>
+    </title>
+    <notes>
+        <![CDATA[
+            <p>Pour aller plus loin ...</p>
+            <ul>
+                <li><a href="http://www.lcl.com/" title="Site institionnel de LCL">Site institutionnel</a></li>
+            </ul>
+        ]]>
+    </notes>
+    <view id="infos">
+        <type>text</type>
+        <core>
+            <![CDATA[
+                <h4>Affectations</h4>
+                <p>Mon travail sur le compte <strong>LCL</strong> consiste principalement dans du conseil et
+                du suivi de production sur la partie technique du projet. J'assure la réalisation
+                et le déploiement des évolutions sur plusieurs sites institutionnels (non-métier)
+                ainsi que la communication auprès des équipes marketing et du client. J'interviens
+                notamment sur :</p>
+                <ul>
+                    <li>Le site <a href="http://www.lcl.com/" title="Site institutionnel de LCL">LCL.com</a>, dont
+                    la récente refonte de la page d'accueil et de la webTV ;</li>
+                    <li>Le site des la <a href="http://www.bfc-ag.com/" title="Site de la BFC">BFC</a>, filliale de
+                    LCL aux caraïbes ;</li>
+                    <li>Le site <a href="http://mortgages-in-france.lcl.com/" title="Site LCL international">
+                    international</a> ;
+                    <li>La filliale <a href="https://www.angle-neuf.fr/" title="Site Angle Neuf">Angle Neuf</a>,
+                    spécialisée dans l'immobilier ;</li>
+                    <li>Et plusieurs autres sites de moindre envergure.</li>
+                </ul>
+            ]]>
+        </core>
+    </view>
+</root>

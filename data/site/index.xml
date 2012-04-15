@@ -28,6 +28,9 @@
         <media id="ekino">ekino.xml</media>
         <media id="lcl">lcl.xml</media>
         <media id="malakoff">malakoff.xml</media>
+        <media id="drummondville">drummondville.xml</media>
+        <media id="kunming">kunming.xml</media>
+        <media id="bruxelles">bruxelles.xml</media>
     </page>
     <page id="services" repertory="data/site/xml/d_services/">
         <data>data.xml</data>

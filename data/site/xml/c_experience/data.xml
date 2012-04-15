@@ -8,7 +8,8 @@
     <core>
         <![CDATA[
             <h2>Emploi</h2>
-            <p>J'occupe depuis février 2011 un poste de consultant technique au sein de l'agence
+            <p><img src="data/medias/img/ekino.png" title="Logo d'Ekino" />
+            J'occupe depuis février 2011 un poste de consultant technique au sein de l'agence
             de communication digitale <a href="#fullsix" title="Plus de détails à ce
             sujet">Fullsix</a> ou, plus spécifiquement, son pôle technique, <a href="#ekino"
             title="Plus de détails à ce sujet">Ekino</a>. Mon travail se situe à mi-chemin
@@ -17,9 +18,30 @@
             domaine du web (rendu, qualité, portabilité) mais également sur des questions
             d'intégration (conception et mise en production d'évolutions) ou d'administration
             des contenus (utilisation d'un CMS propriétaire).</p>
-            <p>Je partage mon temps entre deux projets (et deux clients) distincts : <a href="#lcl"
+            <p>Je partage mon temps entre deux projets (et deux clients) distincts, <a href="#lcl"
             title="Plus d'informations">LCL</a> et <a href="#malakoff" title="Plus d'informations">
-            Malakoff Médéric</a>.</p>
+            Malakoff Médéric</a>, pour lesquels j'assure le rôle de chef de projet sous l'encadrement
+            d'un sénior.</p>
+            <h2>Stages</h2>
+            <p>J'effectue au cours de mes études quatre stages en entreprise. Souhaitant mettre à
+            parti le choix d'une formation en fillière classique, j'en réalise trois à l'étranger,
+            m'offrant ainsi l'opportunité d'autant de séjours prolongés au sein d'environnements
+            et de cultures très différentes :</p>
+            <ul>
+                <li>En 2008, je pars durant trois mois au Québec, à <a href="#drummondville"
+                title="Plus d'informations sur ce stage">Drummondville</a>, où je développe pour
+                le compte d'un organisme à but non-lucratif une application relative à la gestion des ressources
+                humaines ;</li>
+                <li>En 2009, je me déplace quatre mois en Chine, à <a href="#kunming"
+                title="Plus d'informations sur ce stage">Kunming</a>, une seconde fois en temps
+                que développeur, pour le compte d'une SSII locale ;</li>
+                <li>En 2010, j'intègre une agence de communication Belge, à <a href="#bruxelles"
+                title="Plus d'informations sur ce stage">Bruxelles</a>, où je conçois et développe
+                une application web en coordination avec plusieurs intervenants ;</li>
+                <li>Enfin, en 2011, j'effectue le dernier stage de mes études à Paris, au sein
+                d'Ekino, à l'issue duquel je suis à admis au poste de consultant technique 
+                que j'occupe encore aujourd'hui.</li>
+            </ul>
         ]]>
     </core>
 </root>

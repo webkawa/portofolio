@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <id>drummondville</id>
+    <title>
+        <![CDATA[
+            <p>Stage</p>
+            <h3>Star Dragon Science & Technology Ldt</h3>
+        ]]>
+    </title>
+    <notes>
+        <![CDATA[
+            <p>Pour aller plus loin ...</p>
+            <ul>
+                <li><a href="http://www.star-dragon.com/" title="Site de la Star Dragon">Site d'entreprise</a> en Chinois</li>
+            </ul>
+        ]]>
+    </notes>
+    <view id="infos">
+        <type>text</type>
+        <core>
+            <![CDATA[
+                <h4>Stage</h4>
+                <p>Je passe avril à juin 2009 à <strong>Kunming</strong>, en Chine, au sein
+                d'une petite SSII spécialisée dans le développement d'applications dédiées au
+                domaine de la sécurité. Je développe dans ce cadre un utilitaire réseau en C répondant
+                à une problématique de contrôle d'accès aux machines d'une université locale.
+                Destinée à fonctionner de manière automatique et transparente pour les utilisateurs,
+                cette application me permet d'affiner mes connaissances, plutôt concentrées sur le
+                domaine du web, en matière de programmation système.</p>
+                <h4>Rapport</h4>
+                <p>Le rapport de stage complet peut être consulté à cette <a href="data/medias/files/rapport-l3.pdf"
+                title="Rapport de stage complet">adresse</a>.
+            ]]>
+        </core>
+    </view>
+    <view id="map">
+        <type>map</type>
+        <latitude>25.8788</latitude>
+        <longitude>108.8498</longitude>
+        <zoom>4</zoom>
+        <markers>
+            <marker>
+                <info>
+                    <![CDATA[
+                        <h4>Kunming</h4>
+                        <p>Province du Yunnan, RPC</p>
+                    ]]>
+                </info>
+                <latitude>25.053</latitude>
+                <longitude>102.720</longitude>
+            </marker>
+        </markers>
+    </view>
+</root>

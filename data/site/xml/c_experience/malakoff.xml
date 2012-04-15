@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <id>malakoff</id>
+    <title>
+        <![CDATA[
+            <p>Projet</p>
+            <h3>Malakoff Médéric</h3>
+        ]]>
+    </title>
+    <notes>
+        <![CDATA[
+            <p>Pour aller plus loin ...</p>
+            <ul>
+                <li><a href="http://www.malakoffmederic.com/" title="Site institionnel de Malakoff Médéric">Site institutionnel</a></li>
+            </ul>
+        ]]>
+    </notes>
+    <view id="infos">
+        <type>text</type>
+        <core>
+            <![CDATA[
+                <h4>Affectations</h4>
+                <p>Mon rôle auprès de <strong>Malakoff Médéric</strong> consiste dans le suivi quotidien de
+                la partie technique du projet, à savoir :</p>
+                <ul>
+                    <li>Chiffrage et planification des évolutions ;</li>
+                    <li>Cadrage et rédaction des spécifications ;</li>
+                    <li>Suivi de production et gestion des équipes ;</li>
+                    <li>Intégration, recette et mises en production ;</li>
+                    <li>Veille et suivi d'anomalies.</li>
+                </ul>
+                <p>A ce titre, j'interviens sur les portails "Particulier" et "Entreprise" du
+                groupe ainsi que sur les différents espaces connectés associés.</p>
+            ]]>
+        </core>
+    </view>
+</root>
