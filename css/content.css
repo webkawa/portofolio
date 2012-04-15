@@ -12,16 +12,15 @@ div#content {
     overflow: hidden;
 }
 div#content div.cage {
-    padding-left: 40px;
-    padding-right: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding: 10px 10px 10px 40px;
 }
 div#content div.cage div.scroller {
     float: left;
     overflow: hidden;
     padding: 0px 30px 0px 0px !important;               /* Doit rester nul sur la hauteur */
     text-align: justify;
+}
+div#content div.cage div.scroller a span.medialk {
 }
 div#content div.cage div.scroller a span.medialk.selected {
     padding: 3px 0px 3px 24px;

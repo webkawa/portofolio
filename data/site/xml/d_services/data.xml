@@ -4,34 +4,31 @@
 <root>
     <id>services</id>
     <title>Services</title>
-    <subtitle>Conseil et gestion de projet</subtitle>
+    <subtitle>Profil et atouts</subtitle>
     <core>
         <![CDATA[
-            <h2>Lorem ipsum !</h2>
-            <p>Dolor sit amet</p>
+            <h2>Profil</h2>
+            <p>Doté d'un profil résolument technique, je souhaite poursuivre mon parcours
+            dans la gestion de projet et le conseil en matière informatique et digitale. Je
+            dispose d'une solide culture du web mais n'exclue pas de travailler dans le
+            futur sur des problématiques à forte orientation métier ; mes capacités, acquises
+            par la pratique, s'étendent sur les domaines suivants :</p>
             <ul>
-                <li>Test <a href="#about">à propos</a></li>
-                <li>Test <a href="#help">aide à la navigation</a></li>
+                <li><a href="#conception" title="Plus de détails">Conception</a> et
+                <a href="#developpement" title="Plus de détails">développement</a> 
+                d'applications en réponse à un cahier des charges donné ;</li>
+                <li><a href="#planification" title="Plus de détails">Planification</a> et
+                <a href="#documentation" title="Plus de détails">documentation</a> de
+                projets en coordination avec des intervenants hétérogènes ;</li>
+                <li>Analyse de problématique client et force de proposition pour des solutions
+                adaptées ;</li>
+                <li><a href="#suivi" title="Plus de détails">Suivi</a> de production et
+                de budget, gestion de qualité.</li>
             </ul>
-            <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non ipsum elit. Phasellus egestas arcu ut enim vehicula imperdiet. Aenean placerat tellus a enim aliquet mattis. Integer ultricies aliquam molestie. Praesent quis risus metus. Mauris nibh metus, volutpat eu vulputate id, venenatis vel dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent suscipit facilisis lectus eget posuere. Maecenas mi dolor, eleifend tempor suscipit sed, malesuada quis tellus. Morbi magna purus, venenatis et pellentesque vitae, varius ut felis. Nulla tempus faucibus orci, vitae ornare enim vehicula at. Mauris fringilla consectetur leo, sed pharetra neque ultricies vitae. Pellentesque tortor metus, tempus quis dignissim feugiat, dictum sit amet urna. Nulla iaculis elit sed arcu rutrum lobortis. Aliquam elementum justo in lacus rhoncus egestas.
-</p><p>
-Quisque id ipsum massa, nec sodales sem. Cras congue, arcu non convallis convallis, diam nunc venenatis orci, vel ornare elit quam sed orci. Sed accumsan luctus diam ac convallis. Nam convallis gravida risus, sit amet lacinia neque consequat eget. Vestibulum sed nibh enim. Proin scelerisque est non ipsum posuere lobortis. Suspendisse viverra, odio eu vestibulum tincidunt, lacus lectus dictum magna, sit amet ultricies est mauris in ligula. Nulla magna urna, laoreet ac lobortis at, consequat ac sem. Vivamus tortor lectus, feugiat eget placerat eu, pretium vitae mauris. Morbi ac aliquet metus. Cras euismod nibh iaculis velit iaculis suscipit.
-
-</p>
-<h2>Dolor sit amet</h2>
-<p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non ipsum elit. Phasellus egestas arcu ut enim vehicula imperdiet. Aenean placerat tellus a enim aliquet mattis. Integer ultricies aliquam molestie. Praesent quis risus metus. Mauris nibh metus, volutpat eu vulputate id, venenatis vel dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent suscipit facilisis lectus eget posuere. Maecenas mi dolor, eleifend tempor suscipit sed, malesuada quis tellus. Morbi magna purus, venenatis et pellentesque vitae, varius ut felis. Nulla tempus faucibus orci, vitae ornare enim vehicula at. Mauris fringilla consectetur leo, sed pharetra neque ultricies vitae. Pellentesque tortor metus, tempus quis dignissim feugiat, dictum sit amet urna. Nulla iaculis elit sed arcu rutrum lobortis. Aliquam elementum justo in lacus rhoncus egestas.
-</p><p>
-Quisque id ipsum massa, nec sodales sem. Cras congue, arcu non convallis convallis, diam nunc venenatis orci, vel ornare elit quam sed orci. Sed accumsan luctus diam ac convallis. Nam convallis gravida risus, sit amet lacinia neque consequat eget. Vestibulum sed nibh enim. Proin scelerisque est non ipsum posuere lobortis. Suspendisse viverra, odio eu vestibulum tincidunt, lacus lectus dictum magna, sit amet ultricies est mauris in ligula. Nulla magna urna, laoreet ac lobortis at, consequat ac sem. Vivamus tortor lectus, feugiat eget placerat eu, pretium vitae mauris. Morbi ac aliquet metus. Cras euismod nibh iaculis velit iaculis suscipit.
-
-</p>
-<p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non ipsum elit. Phasellus egestas arcu ut enim vehicula imperdiet. Aenean placerat tellus a enim aliquet mattis. Integer ultricies aliquam molestie. Praesent quis risus metus. Mauris nibh metus, volutpat eu vulputate id, venenatis vel dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent suscipit facilisis lectus eget posuere. Maecenas mi dolor, eleifend tempor suscipit sed, malesuada quis tellus. Morbi magna purus, venenatis et pellentesque vitae, varius ut felis. Nulla tempus faucibus orci, vitae ornare enim vehicula at. Mauris fringilla consectetur leo, sed pharetra neque ultricies vitae. Pellentesque tortor metus, tempus quis dignissim feugiat, dictum sit amet urna. Nulla iaculis elit sed arcu rutrum lobortis. Aliquam elementum justo in lacus rhoncus egestas.
-</p><p>
-Quisque id ipsum massa, nec sodales sem. Cras congue, arcu non convallis convallis, diam nunc venenatis orci, vel ornare elit quam sed orci. Sed accumsan luctus diam ac convallis. Nam convallis gravida risus, sit amet lacinia neque consequat eget. Vestibulum sed nibh enim. Proin scelerisque est non ipsum posuere lobortis. Suspendisse viverra, odio eu vestibulum tincidunt, lacus lectus dictum magna, sit amet ultricies est mauris in ligula. Nulla magna urna, laoreet ac lobortis at, consequat ac sem. Vivamus tortor lectus, feugiat eget placerat eu, pretium vitae mauris. Morbi ac aliquet metus. Cras euismod nibh iaculis velit iaculis suscipit.
-
-</p>
+            <p>Malgré une expérience professionnelle encore restreinte, je pense posséder les acquis
+            indispensables à la conduite d'un projet informatique, et désire continuer à perfectionner
+            un pannel de compétences que je crois indispensable à l'exercice efficace
+            de cette profession.</p>
         ]]>
     </core>
 </root>

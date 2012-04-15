@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <id>planification</id>
+    <title>
+        <![CDATA[
+            <p>Compétences</p>
+            <h3>Planification</h3>
+        ]]>
+    </title>
+    <view id="infos">
+        <type>text</type>
+        <core>
+            <![CDATA[
+                <h4>En détails ...</h4>
+                <p>Mon expérience en matière de planification et gestion des ressources
+                provient partiellement de ma formation mais surtout de mon travail en temps
+                que consultant technique. Accoutumé à gérer des problématiques liés au délais
+                de livraison et aux risques inhérents, je sais choisir et expliquer les
+                principaux palliers pour des projets impliquant de trois à cinq personnes.
+                Je peux d'autre part assurer auprès d'un client une communication adaptée
+                sur ces mêmes échéances et trouver le compromis entre contrainte et risque.</p>
+                <p>Je suis par ailleurs familier avec l'utilisation de tickets au moyens d'outils
+                tels que <strong>JIRA</strong> ou <strong>Bugzilla</strong>, au sujet desquels j'ai
+                d'ailleurs consacré une partie de mon mémoire de fin d'études (voir page précédente).</p>
+            ]]>
+        </core>
+    </view>
+</root>

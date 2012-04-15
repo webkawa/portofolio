@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <id>conception</id>
+    <title>
+        <![CDATA[
+            <p>Compétences</p>
+            <h3>Conception applicative</h3>
+        ]]>
+    </title>
+    <view id="infos">
+        <type>text</type>
+        <core>
+            <![CDATA[
+                <h4>En détails ...</h4>
+                <p>Mes connaissances en matière de conception applicative tiennent sur
+                l'apprentissage et la mise en application de deux techniques distinctes :</p>
+                <ul>
+                    <li>La conception via le formalisme <strong>UML</strong>, que je privilégie
+                    généralement pour sa rapidité de déploiement et son efficacité générale ;</li>
+                    <li>La méthode <strong>MERISE</strong>, dont je connais les principaux palliers
+                    mais à laquelle je reproche la lourdeur de mise en application malgré un
+                    résultat final largement plus fin que lors d'une étude via UML.
+                </ul>
+                <p>J'ai par ailleurs suivi une formation en <strong>conception d'applications
+                réparties</strong> délivrée dans le cadre de mon MIAGE sur une durée de trois
+                semestres.</p>
+            ]]>
+        </core>
+    </view>
+</root>

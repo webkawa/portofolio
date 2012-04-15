@@ -93,7 +93,7 @@ div#page div.slide#services div#media div.notes div.spacer ul li:hover {
     background: url('../img/services/check_on.png') transparent left top no-repeat;
 }
 div#page div.slide#services div#content div.cage div.scroller ul li {
-    background: url('../img/services/arrow.png') transparent left 8px no-repeat;
+    background: url('../img/services/arrow.png') transparent left 7px no-repeat;
 }
 div#page div.slide#services div#content div.cage div.scroller span.selected {
     background: url('../img/services/selected_left.png') #3a73ad left top no-repeat;

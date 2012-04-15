@@ -8,7 +8,7 @@
     <core>
         <![CDATA[
             <h2>Emploi</h2>
-            <p><img src="data/medias/img/ekino.png" title="Logo d'Ekino" />
+            <p><img src="data/medias/img/fullsix.png" title="Logo de Fullsix" />
             J'occupe depuis février 2011 un poste de consultant technique au sein de l'agence
             de communication digitale <a href="#fullsix" title="Plus de détails à ce
             sujet">Fullsix</a> ou, plus spécifiquement, son pôle technique, <a href="#ekino"
@@ -42,6 +42,12 @@
                 d'Ekino, à l'issue duquel je suis à admis au poste de consultant technique 
                 que j'occupe encore aujourd'hui.</li>
             </ul>
+            <h2>Réalisations antérieures</h2>
+            <p>Je réalise entre 2005 et 2008 plusieurs <a href="#sites" title="Plus de détails">
+            sites</a> pour le compte de particuliers en région Parisienne. A défaut de constituer
+            une réelle expérience en entreprise en raison du caractère autonome de mon travail,
+            je découvre durant ces différents projets toute l'importance de l'écoute, du cadrage
+            et du suivi dans les rapports entre MOA et MOE.</p>
         ]]>
     </core>
 </root>

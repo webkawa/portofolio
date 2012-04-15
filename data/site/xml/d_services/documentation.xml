@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <id>documentation</id>
+    <title>
+        <![CDATA[
+            <p>Compétences</p>
+            <h3>Documentation</h3>
+        ]]>
+    </title>
+    <view id="infos">
+        <type>text</type>
+        <core>
+            <![CDATA[
+                <h4>En détails ...</h4>
+                <p>Formé à la rédaction de documents techniques et fonctionnels à destination
+                des principaux acteurs du domaine informatique, je suis en mesure de définir
+                par l'écrit un périmètre pour un projet donné en me basant sur des éléments
+                existants ou à partir de zéro. Je dispose pour ce faire d'un niveau solide
+                en Français et essentiellement technique en Anglais.</p>
+                <p>Je connais par ailleurs l'usage d'extensions telles que <strong>Javadoc</strong>
+                et <strong>PHPDoc</strong>, et suis famillier des wiki d'entreprises tels que <strong>
+                Confluence</strong>.</p>
+            ]]>
+        </core>
+    </view>
+</root>

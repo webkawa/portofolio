@@ -31,9 +31,15 @@
         <media id="drummondville">drummondville.xml</media>
         <media id="kunming">kunming.xml</media>
         <media id="bruxelles">bruxelles.xml</media>
+        <media id="sites">sites.xml</media>
     </page>
     <page id="services" repertory="data/site/xml/d_services/">
         <data>data.xml</data>
+        <media id="conception">conception.xml</media>
+        <media id="developpement">developpement.xml</media>
+        <media id="planification">planification.xml</media>
+        <media id="documentation">documentation.xml</media>
+        <media id="suivi">suivi.xml</media>
     </page>
     <page id="infos" repertory="data/site/xml/e_infos/">
         <data>data.xml</data>

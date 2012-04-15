@@ -91,7 +91,7 @@ div#page div.slide#infos div#media div.notes div.spacer ul li:hover {
     background: url('../img/infos/check_on.png') transparent left top no-repeat;
 }
 div#page div.slide#infos div#content div.cage div.scroller ul li {
-    background: url('../img/infos/arrow.png') transparent left 8px no-repeat;
+    background: url('../img/infos/arrow.png') transparent left 7px no-repeat;
 }
 div#page div.slide#infos div#content div.cage div.scroller span.selected {
     background: url('../img/infos/selected_left.png') #616161 left top no-repeat;

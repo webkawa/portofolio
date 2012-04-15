@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <id>sites</id>
+    <title>
+        <![CDATA[
+            <p>Activité</p>
+            <h3>Sites internet</h3>
+        ]]>
+    </title>
+    <view id="infos">
+        <type>text</type>
+        <core>
+            <![CDATA[
+                <h4>A propos ...</h4>
+                <p>Je réalise entre 2005 et 2008 plusieurs sites internets pour le compte
+                de particuliers travaillant dans le domaine de l'art et en recherche de
+                visibilité sur la toile. Codés en PHP/SQL sans support préalable, ils
+                incluent chacun un CMS dédié permettant à leurs propriétaires respectifs
+                d'en administrer les contenus.</p>
+                <ul>
+                    <li>En 2005, je réalise le site <a href="http://www.sophieledain.com"
+                    title="Site de Sophie Le Dain">www.sophieledain.com</a> pour le compte
+                    de Mme Le Dain, artiste-peintre à Paris, ainsi que sa refonte trois ans
+                    plus tard ;</li>
+                    <li>En 2006, j'assure le développement de <a href="http://www.be-art-website.com"
+                    title="Site be.Art">www.be-art-website.com</a> pour le compte de Mme Chassepot,
+                    agent d'artistes à Paris, et plusieurs évolutions sur son CMS ;</li>
+                    <li>En 2007, je met en ligne <a href="http://www.valeriebcartier.com"
+                    title="Site de Valérie Bélanger Cartier">www.valeriebcartier.com</a> pour
+                    Mme Valérie Bélanger-Cartier, artiste-plasticienne à Paris.</li>
+                </ul>
+                <p>J'interviens encore ponctuellement dans des opérations de maintenance sur ces
+                différents sites.</p>
+            ]]>
+        </core>
+    </view>
+</root>

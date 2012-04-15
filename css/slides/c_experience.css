@@ -92,7 +92,7 @@ div#page div.slide#experience div#media div.notes div.spacer ul li:hover {
     background: url('../img/experience/check_on.png') transparent left top no-repeat;
 }
 div#page div.slide#experience div#content div.cage div.scroller ul li {
-    background: url('../img/experience/arrow.png') transparent left 8px no-repeat;
+    background: url('../img/experience/arrow.png') transparent left 7px no-repeat;
 }
 div#page div.slide#experience div#content div.cage div.scroller span.selected {
     background: url('../img/experience/selected_left.png') #6ba71c left top no-repeat;

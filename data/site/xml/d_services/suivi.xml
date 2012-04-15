@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <id>suivi</id>
+    <title>
+        <![CDATA[
+            <p>Compétences</p>
+            <h3>Suivi de production</h3>
+        ]]>
+    </title>
+    <view id="infos">
+        <type>text</type>
+        <core>
+            <![CDATA[
+                <h4>En détails ...</h4>
+                <p>Amené à effectuer, de façon ponctuelle, du suivi de production sur les
+                livrables dont j'assure la responsabilité, je connais les difficultés de
+                communication pouvant survenir au sein d'une équipe de projet. A ce titre,
+                je suis capable d'effectuer différentes tâches de cadrage et de recette en
+                tenant compte des compétences de chaque intervenant. J'adopte dans la
+                relation que j'entretiens avec mes équipes une attitude aussi ouverte
+                que possible, afin de comprendre et de désamorcer au plus tôt les conflits,
+                humains et organisationnels, susceptibles de retarder le projet.</p>
+                <p>Familier avec les tâches de chiffrage et de rédaction des devis, je possède
+                l'expérience nécessaire pour surveiller l'évolution budgétaire d'un projet
+                et lever les alertes appropriées en cas de nécessité.</p>
+            ]]>
+        </core>
+    </view>
+</root>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <id>developpement</id>
+    <title>
+        <![CDATA[
+            <p>Compétences</p>
+            <h3>Développement</h3>
+        ]]>
+    </title>
+    <view id="infos">
+        <type>text</type>
+        <core>
+            <![CDATA[
+                <h4>En détails ...</h4>
+                <p>Si le développement ne constitue pas le coeur de mon métier, il en reste la
+                base. Partant de ce principe, je continue à me former ponctuellement à des
+                techniques et des langages hétéroclytes. Mes connaissances s'étendent, à ce
+                jour, aux domaines suivant :</p>
+                <ul>
+                    <li><strong>JAVA :</strong> niveau confirmé (J2EE, JSP, OJDBC, Hibernate,
+                    Beans ...) ;</li>
+                    <li><strong>PHP :</strong> niveau confirmé ;</li>
+                    <li><strong>C :</strong> niveau intermédiaire (SOCKS, multithreading, signaux) ;</li>
+                    <li><strong>C++/C# :</strong> niveau débutant ;</li>
+                    <li><strong>SQL :</strong> niveau intermédiaire (PL*SQL) ;</li>
+                    <li><strong>HTML :</strong> niveau confirmé (normes W3C) ;</li>
+                    <li><strong>CSS :</strong> niveau confirmé ;</li>
+                    <li><strong>JS :</strong> niveau confirmé (AJAX, JQuery) ;</li>
+                    <li><strong>Assembleur :</strong> niveau débutant.</li>
+                </ul>
+            ]]>
+        </core>
+    </view>
+</root>
