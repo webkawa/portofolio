@@ -22,7 +22,9 @@ div#page div.slide#services div#content div.scrollbar div.scrollzone div.marker:
 div#page div.slide#services div#content div.scrollbar div.scrollzone div.marker.used,
 div#page div.slide#services div#media div.initial p img,
 div#page div.slide#services div#media div.data,
-div#page div.slide#services div#media div.data div.links ul li.selected {
+div#page div.slide#services div#media div.data div.links ul li.selected,
+div#page div.slide#services div#media div.data div.cage div.view div.up,
+div#page div.slide#services div#media div.data div.cage div.view div.down {
     background-color: #3a73ad;
 }
 div#page div.slide#services div#media div.data div.infos {
@@ -34,7 +36,8 @@ div#page div.slide#services div#media div.data,
 div#page div.slide#services div#media div.notes,
 div#page div.slide#services div#media div#gallery div.infos,
 div#page div.slide#services div#media div#gmap h4,
-div#page div.slide#services div#media div.data div.cage div.view div.more  {
+div#page div.slide#services div#media div.data div.cage div.view div.up,
+div#page div.slide#services div#media div.data div.cage div.view div.down  {
     border-color: #3a73ad;
 }
 div#page div.slide#services div#media div#gallery div.infos ul li:hover,

@@ -235,18 +235,14 @@ function injectGallery(dom) {
 function injectText(view) {
     /* Variables utiles */
     var target = $("div#media div.data > div.cage div.view");
-    var more = $(co).find("fields field#hidden-text").text();
     
     /* Contenu */
     var data =
     '<div id="text">' +
     $(view).find("core").text() +
     '</div>' +
-    '<div class="more" style="display: none;">' +
-    '<a alt="' + more + '">' +
-    more +
-    '</a>' +
-    '</div>';
+    '<div class="down" style="display: none;"></div>' +
+    '<div class="up" style="display: none;"></div>';
     
     /* Injection */
     $(target).append(data);

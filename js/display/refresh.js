@@ -132,24 +132,36 @@ function refreshGallery() {
 /* Rafraichissement du texte */
 function refreshText() {
     /* Variables utiles */
-    var media = $("div#media");
-    var mediamore = $("div#media div.data div.cage div.view div.more");
+    var mediadown = $("div#media div.data div.cage div.view div.down");
+    var mediaup = $("div#media div.data div.cage div.view div.up");
     var showmore = $(co).find("media zoom in duration").text();
-    var mediaview = $("div#media div.data div.cage div.view");
+    var mediacage = $("div#media div.data div.cage");
     
-    /* Lien "voir plus" de la zone texte */
-    if($(media).hasClass("small")) {
-        if($("div#text").outerHeight() > $(mediaview).height()) {
-            if($(mediamore).css("display") === "none") {
-                $(mediamore).show(showmore);
-            }
-        } else {
-            if($(mediamore).css("display") != "none") {
-                $(mediamore).hide(showmore);
-            }
+    /* Lien "bas" de la zone texte */
+    var b1 = $("div#text").outerHeight() > $(mediacage).height();
+    var b2 = true;
+    if($("div#text").css("top") != "auto") {
+        b2 = $("div#text").outerHeight() + parseInt($("div#text").css("top")) >= $(mediacage).height();
+    }
+    if(b1 && b2) {
+        if($(mediadown).css("display") === "none") {
+            $(mediadown).show(showmore);
+        }
+    } else {
+        if($(mediadown).css("display") != "none") {
+            $(mediadown).hide(showmore);
         }
     }
-    
+    /* Lien "haut" de la zone texte */
+    if($("div#text").css("top") != "auto" && parseInt($("div#text").css("top")) != 0) {
+        if($(mediaup).css("display") === "none") {
+            $(mediaup).show(showmore);
+        }
+    } else {
+        if($(mediaup).css("display") != "none") {
+            $(mediaup).hide(showmore);
+        }
+    }
 }
 /* Rafraichissement des médias */
 function refreshMedia() {

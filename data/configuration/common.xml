@@ -71,6 +71,10 @@
                     <easing>easeOutExpo</easing>
                 </out>
             </zoom>
+            <scroll>
+                <duration>500</duration>
+                <easing>easeOutExpo</easing>
+            </scroll>
             <view>
                 <in>
                     <duration>500</duration>

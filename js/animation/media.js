@@ -105,7 +105,6 @@ function switchZoom(direction) {
     /* Calcul de l'objectif */
     if(direction) {
         objective = $(content).css("min-width");
-        $(mediaview).find("div.more").hide(duration);
     } else {
         objective = corewidth - Math.max(parseInt($(media).css("min-width")), coreheight);
     }
@@ -208,6 +207,50 @@ function switchView(xml) {
             
             /* Mise en place des évènements */
             doMediaEvents();
+        }
+    });
+}
+
+/* Défilement du contenu média */
+function switchScroll(direction, target) {
+    var mediacage = $("div#media div.data div.cage");
+    var cageheight = $(mediacage).height();
+    var targetheight = $(target).height();
+    var duration = parseInt($(co).find("media scroll duration").text());
+    var easing = $(co).find("media scroll easing").text();
+    var objective = 0;
+    
+    var top = 0;
+    if($(target).css("top") != "auto") {
+        top = Math.abs(parseInt($(target).css("top")));
+    }
+    
+    /* Définition de l'objectif */
+    if(direction) {
+        /* Dépassement */
+        if(top + (cageheight * 2) > targetheight) {
+            objective = targetheight - cageheight;
+        } else {
+            objective = top + cageheight;
+        }
+    } else {
+        /* Dépassement */
+        if(top - cageheight < 0) {
+            objective = 0;
+        } else {
+            objective = top - cageheight;
+        }
+    }
+    
+    /* Défilement */
+    $(target).animate({
+        "top" : (-objective) + "px"
+    },{
+        "duration" : duration,
+        "easing" : easing,
+        "complete" : function() {
+            doMediaScrollingEvents();
+            refreshText();
         }
     });
 }

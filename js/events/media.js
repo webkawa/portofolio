@@ -6,11 +6,11 @@
 
 ///* Inscription des évènements de zoom */
 function doZoomingEvents() {
-    /* Effacement des fonctions précédentes */
-    $("div#media div.loader, div#media div.data > div.cage div.view div.more").off();
+    /* Annulation des évènements */
+    $("div#media div.loader").off();
     
     /* Zoom sur un média */
-    $("div#media.small div.loader, div#media.small div.data > div.cage div.view div.more").click(function() {
+    $("div#media.small div.loader").click(function() {
         switchZoom(true);
     });
     /* Dézoomage d'un média */
@@ -29,6 +29,28 @@ function doViewEvents() {
         }
     });
 }
+/* Evènements de scrolling */
+function doMediaScrollingEvents() {
+    /* Effacement des fonctions précédentes */
+    $("div#media div.data > div.cage div.view div.up").off();
+    $("div#media div.data > div.cage div.view div.down").off();
+    
+    /* Liste des cibles possibles */
+    var targets = $("div#text");
+    
+    /* Scroll vers le bas */
+    $("div#media div.data > div.cage div.view div.down").click(function() {
+        if($("div#media div.data > div.cage div.view:not(:animated)").size() == 1) {
+            switchScroll(true, targets);
+        }
+    });
+    /* Scroll vers le haut */
+    $("div#media div.data > div.cage div.view div.up").click(function() {
+        if($("div#media div.data > div.cage div.view:not(:animated)").size() == 1) {
+            switchScroll(false, targets);
+        }
+    });
+}
 /* Evènements des galeries */
 function doGalleryEvents() {
     /* Changement d'image */
@@ -43,6 +65,7 @@ function doGalleryEvents() {
 function doMediaEvents() {
     doZoomingEvents();
     doViewEvents();
+    doMediaScrollingEvents();
     
     /* Dépendances */
     if($("div#gallery").size() > 0) {

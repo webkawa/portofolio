@@ -113,19 +113,30 @@ div#media div.data div.cage div.view {
     margin: 0px 50px 0px 0px;
     background-color: white;
 }
-div#media div.data div.cage div.view div.more {
+div#media div.data div.cage div.view div.up {
     position: absolute;
+    height: 24px;
+    width: 24px;
+    top: 0px;
+    right: 0px;
+    border-bottom: 1px solid;
+    border-left: 1px solid;
+    background-image: url('img/mask_up.png');
+}
+div#media div.data div.cage div.view div.up:hover {
+    cursor: pointer;
+}
+div#media div.data div.cage div.view div.down {
+    position: absolute;
+    height: 24px;
+    width: 24px;
     bottom: 0px;
     right: 0px;
-    padding: 4px;
     border-top: 1px solid;
     border-left: 1px solid;
-    font-size: 14px;
-    font-weight: bolder;
-    color: white;
-    background-color: white;
+    background-image: url('img/mask_down.png');
 }
-div#media div.data div.cage div.view div.more:hover {
+div#media div.data div.cage div.view div.down:hover {
     cursor: pointer;
 }
 
