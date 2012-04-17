@@ -104,6 +104,47 @@ function refreshContent() {
     }
 }
 
+/* Rafraichissement des outils de scroll média */
+function refreshMediaScroll() {
+    /* Variables utiles */
+    var mediadown = $("div#media div.data div.cage div.view div.down");
+    var mediaup = $("div#media div.data div.cage div.view div.up");
+    var udtargets = $("div#text");                                              /* Ajouter la liste des contenus médias concernés */
+    var udtop = $(udtargets).css("top");
+    var showmore = $(co).find("media zoom in duration").text();
+    var mediacage = $("div#media div.data div.cage");
+    
+    /* Conditions d'affichage ou de dissimulation */
+    var b1 = $(udtargets).outerHeight() > $(mediacage).height();
+    var b2 = false;
+    if(udtop != "auto") {
+        b2 = $(udtargets).outerHeight() + parseInt(udtop) <= $(mediacage).height();
+    }
+    
+    /* Lien de défilement bas */
+    if(b1 && !b2) {
+        if($(mediadown).css("display") === "none") {
+            $(mediadown).show(showmore);
+        }
+    }
+    if(b2) {
+        if($(mediadown).css("display") != "none") {
+            $(mediadown).hide(showmore);
+        }
+    }
+    
+    /* Lien de défilement haut */
+    if(udtop != "auto" && parseInt(udtop) != 0) {
+        if($(mediaup).css("display") === "none") {
+            $(mediaup).show(showmore);
+        }
+    } else {
+        if($(mediaup).css("display") != "none") {
+            $(mediaup).hide(showmore);
+        }
+    }
+}
+
 /* Rafraichissement de la carte */
 function refreshMap() {
     if(global_map != null) {
@@ -131,38 +172,9 @@ function refreshGallery() {
 }
 /* Rafraichissement du texte */
 function refreshText() {
-    /* Variables utiles */
-    var mediadown = $("div#media div.data div.cage div.view div.down");
-    var mediaup = $("div#media div.data div.cage div.view div.up");
-    var showmore = $(co).find("media zoom in duration").text();
-    var mediacage = $("div#media div.data div.cage");
-    
-    /* Lien "bas" de la zone texte */
-    var b1 = $("div#text").outerHeight() > $(mediacage).height();
-    var b2 = true;
-    if($("div#text").css("top") != "auto") {
-        b2 = $("div#text").outerHeight() + parseInt($("div#text").css("top")) >= $(mediacage).height();
-    }
-    if(b1 && b2) {
-        if($(mediadown).css("display") === "none") {
-            $(mediadown).show(showmore);
-        }
-    } else {
-        if($(mediadown).css("display") != "none") {
-            $(mediadown).hide(showmore);
-        }
-    }
-    /* Lien "haut" de la zone texte */
-    if($("div#text").css("top") != "auto" && parseInt($("div#text").css("top")) != 0) {
-        if($(mediaup).css("display") === "none") {
-            $(mediaup).show(showmore);
-        }
-    } else {
-        if($(mediaup).css("display") != "none") {
-            $(mediaup).hide(showmore);
-        }
-    }
+    refreshMediaScroll();
 }
+
 /* Rafraichissement des médias */
 function refreshMedia() {
     /* Variables utiles */
