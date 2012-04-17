@@ -27,6 +27,10 @@ div#page div.slide#services div#media div.data div.cage div.view div.up,
 div#page div.slide#services div#media div.data div.cage div.view div.down {
     background-color: #3a73ad;
 }
+div#page div.slide#services div#media div.data div.cage div.view div.up:hover,
+div#page div.slide#services div#media div.data div.cage div.view div.down:hover {
+    background-color: #274e75;
+}
 div#page div.slide#services div#media div.data div.infos {
     background-image: url('../img/services/opacity_80.png');
 }

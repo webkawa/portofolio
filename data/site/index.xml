@@ -43,6 +43,8 @@
     </page>
     <page id="infos" repertory="data/site/xml/e_infos/">
         <data>data.xml</data>
+        <media id="tel">tel.xml</media>
+        <media id="mail">mail.xml</media>
     </page>
     <errors repertory="data/site/xml/errors/">
         <error id="nojs">nojs.xml</error>

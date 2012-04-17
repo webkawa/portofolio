@@ -26,6 +26,10 @@ div#page div.slide#infos div#media div.data div.cage div.view div.up,
 div#page div.slide#infos div#media div.data div.cage div.view div.down {
     background-color: #616161;
 }
+div#page div.slide#infos div#media div.data div.cage div.view div.up:hover,
+div#page div.slide#infos div#media div.data div.cage div.view div.down:hover {
+    background-color: #3d3d3d;
+}
 div#page div.slide#infos div#media div.data div.infos {
     background-image: url('../img/infos/opacity_80.png');
 }

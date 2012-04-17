@@ -4,14 +4,17 @@
 <root>
     <id>infos</id>
     <title>Contactons-nous</title>
-    <subtitle>Informations pratiques</subtitle>
     <core>
         <![CDATA[
             <h2>Me joindre</h2>
             <p>Mon profil vous intéresse ? Vous souhaitez en connaitre d'avantage sur mes
             compétences et mon activité ? Ou, plus simplement, vous avez égaré mes coordonnées
-            et souhaitez reprendre contact ? Pas de panique, voici trois méthodes simples :</p>
-            
+            et souhaitez reprendre contact ?</p>
+            <p>Deux méthodes simples :</p>
+            <ul>
+                <li>Par téléphone : <a href=#tel" title="Me joindre par téléphone">cliquez ici</a> ;</li>
+                <li>Par mail : <a href=#mail" title="Me joindre par mail">cliquez ici</a>.
+            </ul>
         ]]>
     </core>
 </root>

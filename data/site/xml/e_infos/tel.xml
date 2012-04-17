@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <id>tel</id>
+    <title>
+        <![CDATA[
+            <p>Contact</p>
+            <h3>Par téléphone</h3>
+        ]]>
+    </title>
+    <view id="infos">
+        <type>text</type>
+        <core>
+            <![CDATA[
+                <h4>Détails</h4>
+                <p>Vous pouvez me joindre les jours ouvrés entre 10h et 19h au :</p>
+                <p class="gallery"><img src="data/medias/img/tel.png" alt="Internautes en mode accessible, favorisez le mail !" /></p>
+                <p>En cas d'absence, n'hésitez pas à me laisser un message, je ne manquerai pas de vous recontacter.</p>
+            ]]>
+        </core>
+    </view>
+</root>

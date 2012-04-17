@@ -122,6 +122,7 @@ div#media div.data div.cage div.view div.up {
     border-bottom: 1px solid;
     border-left: 1px solid;
     background-image: url('img/mask_up.png');
+    cursor: pointer;
 }
 div#media div.data div.cage div.view div.up:hover {
     cursor: pointer;
@@ -135,6 +136,7 @@ div#media div.data div.cage div.view div.down {
     border-top: 1px solid;
     border-left: 1px solid;
     background-image: url('img/mask_down.png');
+    cursor: pointer;
 }
 div#media div.data div.cage div.view div.down:hover {
     cursor: pointer;
