@@ -10,7 +10,9 @@ div#page div.slide#infos div#media div.title,
 div#page div.slide#infos a,
 div#page div.slide#infos h1,
 div#page div.slide#infos h2,
-div#page div.slide#infos h3 {
+div#page div.slide#infos h3,
+div#page div.slide#infos div#media div#text h4,
+div#page div.slide#infos div#media div#gmap h4 {
     color: #616161;
 }
 

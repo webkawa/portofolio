@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <id>tel</id>
+    <title>
+        <![CDATA[
+            <p>Contact</p>
+            <h3>Par courriel</h3>
+        ]]>
+    </title>
+    <view id="infos">
+        <type>text</type>
+        <core>
+            <![CDATA[
+                <h4>Détails</h4>
+                <p>Le formulaire ci-dessous vous permet de m'envoyer un message par courriel.
+                N'oubliez pas de laisser une adresse de retour valide ; je ne manquerai pas
+                de vous recontacter.</p>
+                <form>
+                    <p class="label">Votre adresse mail :</p>
+                    <input type="text" id="mail" name="mail" />
+                    <p class="label">Le sujet de votre message :</p>
+                    <input type="text" id="subject" name="subject" />
+                    <p class="label">Votre message :</p>
+                    <textarea id="message" name="message">lalala</textarea>
+                </form>
+            ]]>
+        </core>
+    </view>
+</root>
