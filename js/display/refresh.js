@@ -72,7 +72,7 @@ function refreshContent() {
     var marker = $("div#content div.cage div.scrollbar div.scrollzone div.marker");
     
     /* Calcul de la largeur */
-    var smallwidth = Math.max(parseInt($(media).css("min-width")), $(core).height());
+    var smallwidth = Math.max(parseInt($(media).css("min-width")), Math.min($(core).height(), ($(core).width() / 2)));
     if($(media).hasClass("small")) {
         realMaxWidth(content, $(core).width() - smallwidth);
     }
@@ -193,7 +193,7 @@ function refreshMedia() {
     
     /* Hauteurs de la zone média */
     if($(media).hasClass("small")) {
-        realWidth(media, $(core).height());
+        realWidth(media, Math.min($(core).height(), ($(core).width() / 2)));
         realWidth($("div#media.small div.notes div.spacer"), $(medianotes).width());                /* Problème à l'agrandissement */
     }
     if($(media).hasClass("large")) {

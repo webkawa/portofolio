@@ -15,14 +15,16 @@
                 <p>Le formulaire ci-dessous vous permet de m'envoyer un message par courriel.
                 N'oubliez pas de laisser une adresse de retour valide ; je ne manquerai pas
                 de vous recontacter.</p>
-                <form>
-                    <p class="label">Votre adresse mail :</p>
-                    <input type="text" id="mail" name="mail" />
-                    <p class="label">Le sujet de votre message :</p>
-                    <input type="text" id="subject" name="subject" />
-                    <p class="label">Votre message :</p>
-                    <textarea id="message" name="message">lalala</textarea>
-                </form>
+                <div class="contact">
+                    <form>
+                        <p>Votre adresse mail :</p>
+                        <input type="text" id="mail" name="mail" />
+                        <p>Le sujet de votre message :</p>
+                        <input type="text" id="subject" name="subject" class="subject" />
+                        <p>Votre message :</p>
+                        <textarea id="message" name="message">lalala</textarea>
+                    </form>
+                </div>
             ]]>
         </core>
     </view>

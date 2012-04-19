@@ -373,7 +373,7 @@ function injectMedia(target, xml) {
     }
     
     /* Largeur de la zone média */ 
-    realWidth(media, $(core).height());
+    realWidth(media, Math.min($(core).height(), ($(core).width() / 2)));
     
     /* Largeur de la zone loader */
     $(loader).css("width", $(loader).css("min-width"));
@@ -478,6 +478,8 @@ function injectDom() {
             }
         }
     });
+    $("div#page div.slide.right.close:last").addClass("next");
+    $("div#page div.slide.left.close:last").addClass("back");
     
     /* Informations sur les slides */
     var prop = slideProperties($("div.slide.open"));

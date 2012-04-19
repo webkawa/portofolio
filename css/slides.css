@@ -37,6 +37,14 @@ div#page div.slide.close {
     max-width: 0% !important;                /* Ne doit pas être ré-écrit */
 }
 
+/* Précédent et suivant */
+div#page div.slide.close.next {
+    background: url('img/next.png') white no-repeat center center;
+}
+div#page div.slide.close.back {
+    background: url('img/back.png') white no-repeat center center;
+}
+
 /* Gestionnaire d'espacement */
 div#page div.slide div.spacer {
     padding: 12px 16px;

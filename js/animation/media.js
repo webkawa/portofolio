@@ -61,6 +61,7 @@ function switchMedia() {
                     
                     /* Réinscription des évènements */
                     doMediaEvents();
+                    doFormEvents();
                     
                     /* Rafraichissement des sous-composants */
                     refreshMap();
@@ -106,7 +107,7 @@ function switchZoom(direction) {
     if(direction) {
         objective = $(content).css("min-width");
     } else {
-        objective = corewidth - Math.max(parseInt($(media).css("min-width")), coreheight);
+        objective = corewidth - Math.max(parseInt($(media).css("min-width")), Math.min(coreheight, (corewidth / 2)));
     }
     
     /* Animation */
@@ -207,6 +208,7 @@ function switchView(xml) {
             
             /* Mise en place des évènements */
             doMediaEvents();
+            doFormEvents();
         }
     });
 }

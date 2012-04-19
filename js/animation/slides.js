@@ -26,6 +26,10 @@ function switchSlide(origin, destination) {
     $(destination).toggleClass("close");
     $(destination).addClass("open");
     
+    /* Suppression des aides à la navigation */
+    $("div#page div.slide.next").removeClass("next");
+    $("div#page div.slide.back").removeClass("back");
+    
     /* Mise à jour de l'arrière-plan (tweak) */
     $("div#page").css("background-color", $(destination).css("background-color"));
     
@@ -100,6 +104,10 @@ function switchSlide(origin, destination) {
             
             /* Nettoyage */
             cleanupPage();
+            
+            /* Mise en place des indicateurs */
+            $("div#page div.slide.close.left:last").addClass("back");
+            $("div#page div.slide.close.right:last").addClass("next");
             
             /* Affichage du contenu */
             showCore($(icore));

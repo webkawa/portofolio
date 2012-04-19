@@ -209,6 +209,26 @@ div#text ul {
     padding-right: 10px;
     font-size: 12px;
 }
+div#text div.contact {
+    width: 300px;
+    margin: 20px;
+}
+div#text div.contact p {
+    margin: 5px 0px 0px 0px;
+    padding: 0px;
+}
+div#text div.contact input {
+    width: 100%;
+    height: 20px;
+    outline: none;
+}
+div#text div.contact input.ready {
+    background: url('img/check.png') white no-repeat right center;
+}
+div#text div.contact textarea {
+    width: 100%;
+    height: 160px;
+}
 
 /* Carte */
 div#gmap {
