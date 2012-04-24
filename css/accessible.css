@@ -1,0 +1,10 @@
+/* 
+    accessible.css
+    --------------
+    Feuille de style des contenus accessibles.
+*/
+
+root { 
+    display: block;
+}
+
