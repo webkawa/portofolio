@@ -222,12 +222,19 @@ div#text div.contact input {
     height: 20px;
     outline: none;
 }
+div#text div.contact input.submit {
+    padding: 2px 5px;
+    margin: 10px 0px 0px 0px;
+}
 div#text div.contact input.ready {
     background: url('img/check.png') white no-repeat right center;
 }
 div#text div.contact textarea {
     width: 100%;
     height: 160px;
+}
+div#text div.contact textarea.ready {
+    background: url('img/check.png') white no-repeat right bottom;
 }
 
 /* Carte */

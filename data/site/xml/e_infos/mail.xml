@@ -18,11 +18,12 @@
                 <div class="contact">
                     <form>
                         <p>Votre adresse mail :</p>
-                        <input type="text" id="mail" name="mail" />
+                        <input type="text" id="mail" name="mail" class="mail" />
                         <p>Le sujet de votre message :</p>
                         <input type="text" id="subject" name="subject" class="subject" />
                         <p>Votre message :</p>
-                        <textarea id="message" name="message">lalala</textarea>
+                        <textarea id="message" name="message" class="message"></textarea>
+                        <input type="submit" value="Envoyer" class="submit" disabled="disabled">
                     </form>
                 </div>
             ]]>

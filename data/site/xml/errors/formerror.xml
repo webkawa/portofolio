@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- errors/filenotfound.js          -->
+<!-- Erreur à l'envoi du formulaire -->
+<root>
+    <id>formerror</id>
+    <core>
+        <![CDATA[
+            <h1>Oups !...</h1>
+            <p>
+                L'envoi du mail a échoué en raison d'un problème technique
+                inattendu ... peut-être pouvez-vous retenter plus tard ou me
+                contacter directement par téléphone ?
+            </p>
+        ]]>
+    </core>
+    <exit>true</exit>
+</root>
