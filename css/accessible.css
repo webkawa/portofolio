@@ -4,7 +4,15 @@
     Feuille de style des contenus accessibles.
 */
 
-root { 
-    display: block;
+div#title {
+    width: 100%;
+}
+div#content {
+    float: left;
+    width: 50%;
+}
+div#media {
+    float: left;
+    width: 50%;
 }
 

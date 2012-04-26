@@ -6,6 +6,7 @@
     <title>Contactons-nous</title>
     <core>
         <![CDATA[
+        <div>
             <h2>Me joindre</h2>
             <p>Mon profil vous intéresse ? Vous souhaitez en connaitre d'avantage sur mes
             compétences et mon activité ? Ou, plus simplement, vous avez égaré mes coordonnées
@@ -15,6 +16,7 @@
                 <li>Par <a href="#tel" title="Me joindre par téléphone">téléphone</a> ;</li>
                 <li>Par <a href="#mail" title="Me joindre par courriel">courriel</a>.
             </ul>
-        ]]>
+        </div> 
+       ]]>
     </core>
 </root>

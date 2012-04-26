@@ -7,6 +7,7 @@
     <subtitle>Parcours professionnel</subtitle>
     <core>
         <![CDATA[
+        <div>
             <h2>Emploi</h2>
             <p><img src="data/medias/img/fullsix.png" title="Logo de Fullsix" />
             J'occupe depuis février 2011 un poste de consultant technique au sein de l'agence
@@ -48,6 +49,7 @@
             une réelle expérience en entreprise en raison du caractère autonome de mon travail,
             je découvre durant ces différents projets toute l'importance de l'écoute, du cadrage
             et du suivi dans les rapports entre MOA et MOE.</p>
+        </div>
         ]]>
     </core>
 </root>

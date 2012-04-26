@@ -6,8 +6,10 @@
     <title>Accueil</title>
     <core>
         <![CDATA[
+        <div>
             <h2>A propos</h2>
             <p>Bienvenue sur mon portofolio !</p>
+        </div>
         ]]>
     </core>
 </root>

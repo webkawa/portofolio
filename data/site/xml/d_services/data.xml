@@ -7,6 +7,7 @@
     <subtitle>Profil et atouts</subtitle>
     <core>
         <![CDATA[
+        <div>
             <h2>Profil</h2>
             <p>Doté d'un profil résolument technique, je souhaite poursuivre mon parcours
             dans la gestion de projet et le conseil en matière informatique et digitale. Je
@@ -38,6 +39,7 @@
                 problématiques techniques ;</li>
                 <li>Un autonomie affirmée et une implication générale dans mon travail.</li>
             </ul>
+        </div>
         ]]>
     </core>
 </root>

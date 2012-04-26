@@ -7,6 +7,7 @@
     <subtitle>Formation et centres d'intérêt</subtitle>
     <core>
         <![CDATA[
+        <div>
             <h2>Etudes secondaires</h2>
             <p>J'ai effectué l'intégralité de mes études pré-universitaires
             à <a href="#fontainebleau" title="Plus d'informations sur Fontainebleau">
@@ -77,6 +78,7 @@
             <p>Par ailleurs, je participe régulièrement à des parties de <a href="#jdr" title="A propos du jeu de rôle">
             jeu de rôle</a> sur table, ponctuellement en temps qu'organisateur ou auteur. J'aime les échecs et le cinéma 
             en version originale ; je m'intéresse à la politique internationale et à l'histoire.</p>
+        </div>
         ]]>
     </core>
 </root>

@@ -26,17 +26,64 @@ function createTemplate($xppage, $xpmedia) {
     echo "<p>CREATE TEMPLATE [" . $folder . "index.html]</p>";
     echo "<blockquote>";
     echo "</blockquote>";
+    
+    /* Renvoi */
+    return $folder . "index.html";
 }
 
 /* Générateur pour un contenu */
 
-function createContent($page) {
+function createContent($path, $xppage, $hasmed) {
+    /* Console */
+    echo "<blockquote>";
     
+    /* Sélection du fichier */
+    $file = new DOMDocument();
+    $file->loadHTMLFile($path);
+    $xpfile = new DOMXPath($file);
+    
+    /* Remplissage du titre */
+    echo "<p>CREATE TITLE</p>";
+    $b1 = $file->createElement("h1");
+    $xpfile->query("//div[@id='title']")->item(0)->appendChild($b1);
+    $b1 = $file->createTextNode($xppage->query("/root/title")->item(0)->nodeValue);
+    $xpfile->query("//div[@id='title']/h1")->item(0)->appendChild($b1);
+    
+    if($xppage->query("/root/subtitle")->length == 1) {
+        echo "<p>CREATE SUBTITLE</p>";
+        $b1 = $file->createElement("p");
+        $xpfile->query("//div[@id='title']")->item(0)->appendChild($b1);
+        $b1 = $file->createTextNode($xppage->query("/root/subtitle")->item(0)->nodeValue);
+        $xpfile->query("//div[@id='title']/p")->item(0)->appendChild($b1);
+    }
+    
+    /* Remplissage du contenu */
+    echo "<p>CREATE CONTENT</p>";
+    $b1 = new DOMDocument();
+    $b1->loadXML($xppage->query("/root/core")->item(0)->nodeValue);
+    foreach ($b1->getElementsByTagName("img") as $img) {
+        $img->setAttribute("src", "/portofolio/" . $img->getAttribute("src"));      // [TEMP]
+    }
+    foreach ($b1->getElementsByTagName("a") as $a) {
+        if($hasmed) {
+            $a->setAttribute("href", "../" . substr($a->getAttribute("href"), 1, 200) . "/");
+        } else {
+            $a->setAttribute("href", substr($a->getAttribute("href"), 1, 200) . "/");
+        }
+    }
+    $b2 = $file->importNode($b1->getElementsByTagName("div")->item(0), true);
+    $xpfile->query("//div[@id='content']")->item(0)->appendChild($b2);
+    
+    /* Enregistrement */
+    $file->saveHTMLFile($path);
+    
+    /* Console */
+    echo "</blockquote>";
 }
 
 /* Générateur pour un média */
 
-function createMedia($media) {
+function createMedia($path, $xpmedia) {
     
 }
 
@@ -60,7 +107,15 @@ function createPage($folder, $pge, $med) {
     }
 
     /* Création du gabarit */
-    createTemplate($xppage, $xpmedia);
+    $file = createTemplate($xppage, $xpmedia);
+    
+    /* Remplissage */
+    echo "<p>CREATE CONTENT</p>";
+    createContent($file, $xppage, ($med != null));
+    if($med != null) {
+        echo "<p>CREATE MEDIA</p>";
+        createMedia($file, $xpmedia);
+    }
 
     /* Console */
     echo "</blockquote>";
