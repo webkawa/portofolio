@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root>
-    <id>tel</id>
+    <id>mail</id>
     <title>
         <![CDATA[
             <p>Contact</p>
@@ -18,12 +18,12 @@
                 <div class="contact">
                     <form>
                         <p>Votre adresse mail :</p>
-                        <input type="text" id="mail" name="mail" class="mail" />
+                        <input type="text" id="mail" name="mail" class="mail"></input>
                         <p>Le sujet de votre message :</p>
-                        <input type="text" id="subject" name="subject" class="subject" />
+                        <input type="text" id="subject" name="subject" class="subject"></input>
                         <p>Votre message :</p>
                         <textarea id="message" name="message" class="message"></textarea>
-                        <input type="submit" value="Envoyer" class="submit" disabled="disabled">
+                        <input type="submit" value="Envoyer" class="submit" disabled="disabled"></input>
                     </form>
                 </div>
             ]]>

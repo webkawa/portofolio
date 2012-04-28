@@ -4,7 +4,7 @@
     <title>
         <![CDATA[
             <p>Réalisation</p>
-            <h3>Catacombes I & II</h3>
+            <h3>Catacombes I &amp; II</h3>
         ]]>
     </title>
     <view id="infos">
@@ -24,7 +24,7 @@
                 sur l'utilisation du logiciel <strong>Mediator</strong>, édité par <strong>Matchware</strong>. Ce
                 logiciel offre la possibilité, sur le principe d'écrans successifs,
                 de simplifier par le biais de calques, arborescences et évènements
-                pré-programmés, de réaliser des programmes de taille conséquente.
+                pré-programmés, de réaliser des programmes de taille conséquente.</p>
                 <h4>UnrealEd</h4>
                 <p>Les images du jeu (visibles dans la galerie) proviennent du logiciel
                 de modélisation <strong>UnrealEd 1.0</strong>, basé sur le moteur graphique
