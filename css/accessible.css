@@ -4,15 +4,205 @@
     Feuille de style des contenus accessibles.
 */
 
+/* Variables générales */
+body {
+    margin: 0px;
+    padding: 10px 10px 10px 10px;
+    font-family: Arial;
+}
+body a {
+    text-decoration: none;
+}
+body a:hover {
+    text-decoration: underline;
+}
+
+/* Titre */
 div#title {
     width: 100%;
+    padding: 0px 0px 10px 0px;
+    border-bottom: 1px solid #555;
 }
+div#title h1 {
+    margin: 0px;
+    padding: 0px;
+    font-size: 48px;
+}
+div#title p {
+    margin: 0px;
+    padding: 0px;
+    font-size: 16px;
+}
+
+/* Navigation */
+div#navigation {
+    
+}
+div#navigation ul {
+    margin: 0px;
+    padding: 0px;
+}
+div#navigation ul li {
+    display: inline-block;
+    margin: 10px 10px 0px 0px;
+    padding: 5px;
+    border: 1px solid #555;
+    list-style-type: none;
+    font-weight: bolder;
+}
+div#navigation ul li.right {
+    float: right;
+}
+
+/* Contenu */
 div#content {
     float: left;
     width: 50%;
+    border-right: 1px solid #555;
 }
+div#content.large {
+    width: 100%;
+    border: none;
+}
+div#content h2 {
+    margin: 0px;
+    padding: 20px 10px 0px 10px;
+}
+div#content p {
+    margin: 0px;
+    padding: 10px 20px 0px 20px;
+    line-height: 150%;
+    text-align: justify;
+}
+div#content img {
+    float: left;
+    margin: 0px 10px 10px 0px;
+}
+div#content ul {
+    margin: 0px;
+    padding: 10px 20px 0px 40px;
+    line-height: 150%;
+}
+
+/* Médias */
 div#media {
     float: left;
     width: 50%;
 }
+div#media div.title {
+    padding: 0px 0px 10px 0px;
+    border-bottom: 1px solid #555;
+}
+div#media div.title h3 {
+    margin: 0px;
+    padding: 0px 10px 0px 10px;
+}
+div#media div.title p {
+    margin: 0px;
+    padding: 10px 10px 0px 10px;
+    font-style: italic;
+    font-size: 12px;
+}
+div#media h4 {
+    margin: 0px;
+    padding: 10px 20px 0px 20px;
+}
+div#media p {
+    margin: 0px;
+    padding: 10px 30px 0px 30px;
+}
+div#media div.gallery {
+    text-align: center;
+}
+div#media div.gallery img {
+    max-width: 80%;
+    margin: 20px 0px 0px 0px;
+    border: 1px solid #555;
+}
+div#media div.gallery h5 {
+    margin: 0px;
+    padding: 0px;
+    font-size: 16px;
+}
+div#media div.gallery p {
+    margin: 0px;
+    padding: 0px;
+    font-size: 12px;
+}
+div#media div.map {
+    text-align: center;
+}
+div#media div.map h4 {
+    text-align: left;
+}
+div#media div.map img {
+    max-width: 80%;
+    margin: 10px;
+    border: 1px solid #555;
+}
+div#media div.notes {
+    margin: 10px 0px 0px 0px;
+    border-top: 1px solid #555;
+    font-size: 16px;
+}
+div#media div.notes p {
+    font-style: italic;
+}
+div#media div.notes ul {
+    margin: 0px;
+    padding: 10px 30px 0px 50px;
+    list-style-type: none;
+}
+div#media div.notes li {
+    
+}
 
+/* Pied de page */
+div#footer {
+    float: left;
+    width: 100%;
+    margin: 10px 0px 0px 0px;
+    padding: 10px 0px 0px 0px;
+    border-top: 1px solid #555;
+}
+div#footer p {
+    margin: 0px;
+    padding: 0px;
+    font-size: 12px;
+}
+
+/* Univers */
+body.home a {
+    color: #bf7500;
+}
+body.home a:hover {
+    color: #f59600;
+}
+
+body.studies a {
+    color: #921a00;
+}
+body.studies a:hover {
+    color: #d32600;
+}
+
+body.experience a {
+    color: #416511;
+}
+body.experience a:hover {
+    color: #6ba71c;
+}
+
+body.services a {
+    color: #274e75;
+}
+body.services a:hover {
+    color: #3a73ad;
+}
+
+body.infos a {
+    color: #3d3d3d;
+}
+body.infos a:hover {
+    color: #616161;
+}

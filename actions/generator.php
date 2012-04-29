@@ -70,6 +70,14 @@ function createContent($path, $xppage, $hasmed) {
     $b2 = $file->importNode($b1->getElementsByTagName("div")->item(0), true);
     $xpfile->query("//div[@id='content']")->item(0)->appendChild($b2);
     
+    /* Extension */
+    if (!$hasmed) {
+        $xpfile->query("//div[@id='content']")->item(0)->setAttribute("class", "large");
+    }
+    
+    /* Identification de la page */
+    $xpfile->query("//body")->item(0)->setAttribute("class", $xppage->query("/root/id")->item(0)->nodeValue);
+    
     /* Enregistrement */
     $file->saveHTMLFile($path);
     
@@ -91,7 +99,7 @@ function createMedia($path, $xpmedia) {
     $views = $xpmedia->query("/root/view");
     $data = 
         "<div>" .
-            "<div>" .
+            '<div class="title">' .
                 $xpmedia->query("/root/title")->item(0)->nodeValue .
             "</div>";
     foreach ($views as $view) {
@@ -111,12 +119,16 @@ function createMedia($path, $xpmedia) {
             foreach ($pictures as $picture) {
                 $pid = $picture->getAttribute("id");
                 $data .=
-                    "<div>" .
-                        '<img src="../../../data/medias/img/' . 
+                    '<div class="gallery">' .
+                        '<a href="../../../data/medias/img/' . 
                             $xpmedia->query("/root/view[@id='" . $id . "']/picture[@id='" . $pid . "']/files/image")->item(0)->nodeValue . 
-                        '" alt="' .
-                            $xpmedia->query("/root/view[@id='" . $id . "']/picture[@id='" . $pid . "']/alt")->item(0)->nodeValue .
-                        '"></img>' .
+                        '" alt="Afficher en pleine largeur" target="_blank">' .
+                            '<img src="../../../data/medias/img/' . 
+                                $xpmedia->query("/root/view[@id='" . $id . "']/picture[@id='" . $pid . "']/files/image")->item(0)->nodeValue . 
+                            '" alt="' .
+                                $xpmedia->query("/root/view[@id='" . $id . "']/picture[@id='" . $pid . "']/alt")->item(0)->nodeValue .
+                            '"></img>' .
+                        '</a>' .
                         "<h5>" . 
                             $xpmedia->query("/root/view[@id='" . $id . "']/picture[@id='" . $pid . "']/legend")->item(0)->nodeValue .
                         "</h5>" .
@@ -129,7 +141,8 @@ function createMedia($path, $xpmedia) {
         if ($type == "map") {
             echo "<p>CREATE VIEW [" . $id . "] TYPE MAP</p>";
             $data .=
-                "<div>" .
+                '<div class="map">' .
+                    '<h4>Carte</h4>' .
                     '<img src="' .
                         'https://maps.googleapis.com/maps/api/staticmap?center=' .
                             $xpmedia->query("/root/view[@id='" . $id . "']/latitude")->item(0)->nodeValue .
@@ -138,16 +151,31 @@ function createMedia($path, $xpmedia) {
                             '&amp;zoom=' .
                             $xpmedia->query("/root/view[@id='" . $id . "']/zoom")->item(0)->nodeValue .
                             '&amp;size=400x400' .
-                            '&amp;sensor=false' .
+                            '&amp;sensor=false';
+            
+            $markers = $xpmedia->query("/root/view[@id='" . $id . "']/markers/marker");
+            $i = 1;
+            foreach ($markers as $marker) {
+                $lng = $xpmedia->query("/root/view[@id='" . $id . "']/markers/marker[" . $i . "]/longitude")->item(0)->nodeValue;
+                $lat = $xpmedia->query("/root/view[@id='" . $id . "']/markers/marker[" . $i . "]/latitude")->item(0)->nodeValue;
+                $i++;
+                
+                $data .=
+                    '&amp;markers=color:red%7C' . $lat . "," .$lng;
+            }
+            
+            $data .=
                     '" alt="Carte"></img>' .
                 "</div>" ;
         }
     }
-    $data .= 
-            "<div>" .
+    if ($xpmedia->query("/root/notes")->length != 0) {
+        $data .= 
+            '<div class="notes">' .
                 $xpmedia->query("/root/notes")->item(0)->nodeValue .
-            "</div>" .
-        "</div>";
+            "</div>";
+    }
+    $data .= "</div>";
     
     /* Injection */
     $b1 = new DOMDocument();
@@ -174,12 +202,15 @@ function createNavigation($path, $back, $next, $med) {
     }
     $data = "<root><ul>";
     if ($back != null) {
-        $data .= '<li><a href="' . $prefix . '../' . $back . '/" alt="Aller à la page précédente">Page précédente</a></li>';
+        $data .= '<li><a href="' . $prefix . '../' . $back . '/" title="Aller à la page précédente">Page précédente</a></li>';
     }
     if ($next != null) {
-        $data .= '<li><a href="' . $prefix . '../' . $next . '/" alt="Aller à la page suivante">Page suivante</a></li>';
+        $data .= '<li><a href="' . $prefix . '../' . $next . '/" title="Aller à la page suivante">Page suivante</a></li>';
     }
-    $data .= "</ul></root>";
+    $data .= 
+                '<li class="right"><a href="/" title="Retour à la version normale">Version standard</a></li>' .
+            "</ul>" .
+        "</root>";
     
     /* Sélection du fichier */
     $file = new DOMDocument();
