@@ -8,8 +8,6 @@
 
 /* Générateur de l'emplacement */
 function createTemplate($xppage, $xpmedia) {
-    /* Sélection de la page */
-
     /* Sélection du dossier et du fichier à créer */
     $folder = "../site/" . $xppage->query("/root/id")->item(0)->nodeValue . "/";
     if ($xpmedia != null) {
@@ -24,8 +22,6 @@ function createTemplate($xppage, $xpmedia) {
     
     /* Console */
     echo "<p>CREATE TEMPLATE [" . $folder . "index.html]</p>";
-    echo "<blockquote>";
-    echo "</blockquote>";
     
     /* Renvoi */
     return $folder . "index.html";
@@ -82,14 +78,135 @@ function createContent($path, $xppage, $hasmed) {
 }
 
 /* Générateur pour un média */
-
 function createMedia($path, $xpmedia) {
+    /* Console */
+    echo "<blockquote>";
     
+    /* Sélection du fichier */
+    $file = new DOMDocument();
+    $file->loadHTMLFile($path);
+    $xpfile = new DOMXPath($file);
+    
+    /* Parcours des médias */
+    $views = $xpmedia->query("/root/view");
+    $data = 
+        "<div>" .
+            "<div>" .
+                $xpmedia->query("/root/title")->item(0)->nodeValue .
+            "</div>";
+    foreach ($views as $view) {
+        $id = $view->getAttribute("id");
+        $type = $xpmedia->query("/root/view[@id='" . $id . "']/type")->item(0)->nodeValue;
+        
+        if ($type == "text") {
+            echo "<p>CREATE VIEW [" . $id . "] TYPE TEXT</p>";
+            $data .=
+                "<div>" .
+                    $xpmedia->query("/root/view[@id='" . $id . "']/core")->item(0)->nodeValue .
+                "</div>";
+        }
+        if ($type == "gallery") {
+            echo "<p>CREATE VIEW [" . $id . "] TYPE GALLERY</p>";
+            $pictures = $xpmedia->query("/root/view[@id='" . $id . "']/picture");
+            foreach ($pictures as $picture) {
+                $pid = $picture->getAttribute("id");
+                $data .=
+                    "<div>" .
+                        '<img src="../../../data/medias/img/' . 
+                            $xpmedia->query("/root/view[@id='" . $id . "']/picture[@id='" . $pid . "']/files/image")->item(0)->nodeValue . 
+                        '" alt="' .
+                            $xpmedia->query("/root/view[@id='" . $id . "']/picture[@id='" . $pid . "']/alt")->item(0)->nodeValue .
+                        '"></img>' .
+                        "<h5>" . 
+                            $xpmedia->query("/root/view[@id='" . $id . "']/picture[@id='" . $pid . "']/legend")->item(0)->nodeValue .
+                        "</h5>" .
+                        "<p>" .
+                            $xpmedia->query("/root/view[@id='" . $id . "']/picture[@id='" . $pid . "']/text")->item(0)->nodeValue .
+                        "</p>" .
+                    "</div>";
+            }
+        }
+        if ($type == "map") {
+            echo "<p>CREATE VIEW [" . $id . "] TYPE MAP</p>";
+            $data .=
+                "<div>" .
+                    '<img src="' .
+                        'https://maps.googleapis.com/maps/api/staticmap?center=' .
+                            $xpmedia->query("/root/view[@id='" . $id . "']/latitude")->item(0)->nodeValue .
+                            ',' .
+                            $xpmedia->query("/root/view[@id='" . $id . "']/longitude")->item(0)->nodeValue .
+                            '&amp;zoom=' .
+                            $xpmedia->query("/root/view[@id='" . $id . "']/zoom")->item(0)->nodeValue .
+                            '&amp;size=400x400' .
+                            '&amp;sensor=false' .
+                    '" alt="Carte"></img>' .
+                "</div>" ;
+        }
+    }
+    $data .= 
+            "<div>" .
+                $xpmedia->query("/root/notes")->item(0)->nodeValue .
+            "</div>" .
+        "</div>";
+    
+    /* Injection */
+    $b1 = new DOMDocument();
+    $b1->loadXML($data);
+    $b2 = $file->importNode($b1->getElementsByTagName("div")->item(0), true);
+    $xpfile->query("//div[@id='media']")->item(0)->appendChild($b2);
+    
+    /* Enregistrement */
+    $file->saveHTMLFile($path);
+    
+    /* Console */
+    echo "</blockquote>";
+}
+
+/* Générateur pour la navigation */
+function createNavigation($path, $back, $next, $med) {
+    /* Console */
+    echo "<p>CREATE NAVIGATION</p>";
+    
+    /* Création du HTML */
+    $prefix = "";
+    if ($med) {
+        $prefix = "../";
+    }
+    $data = "<root><ul>";
+    if ($back != null) {
+        $data .= '<li><a href="' . $prefix . '../' . $back . '/" alt="Aller à la page précédente">Page précédente</a></li>';
+    }
+    if ($next != null) {
+        $data .= '<li><a href="' . $prefix . '../' . $next . '/" alt="Aller à la page suivante">Page suivante</a></li>';
+    }
+    $data .= "</ul></root>";
+    
+    /* Sélection du fichier */
+    $file = new DOMDocument();
+    $file->loadHTMLFile($path);
+    $xpfile = new DOMXPath($file);
+    
+    /* Injection */
+    $b1 = new DOMDocument();
+    $b1->loadXML($data);
+    $b2 = $file->importNode($b1->getElementsByTagName("root")->item(0), true);
+    $xpfile->query("//div[@id='navigation']")->item(0)->appendChild($b2);
+    
+    /* Temporaire */
+    $css = $xpfile->query("//link[@type='text/css']")->item(0);
+    if ($med) {
+        $css->setAttribute("href", "../../.." . $css->getAttribute("href"));
+    } else {
+        $css->setAttribute("href", "../.." . $css->getAttribute("href"));
+    }
+    
+    /* Enregistrement */
+    $file->saveHTMLFile($path);
 }
 
 /* Générateur pour une page */
 
-function createPage($folder, $pge, $med) {
+function createPage($folder, $pge, $med, $pos, $nav) {
     /* Console */
     echo "<p>CREATE PAGE [" . $pge->nodeValue . "] MEDIA [" . $med->nodeValue . "]</p>";
     echo "<blockquote>";
@@ -109,13 +226,24 @@ function createPage($folder, $pge, $med) {
     /* Création du gabarit */
     $file = createTemplate($xppage, $xpmedia);
     
+    /* Définition des informations de navigation */
+    $backnav = null;
+    if ($pos > 0) {
+        $backnav = $nav[$pos -1];
+    }
+    $nextnav = null;
+    if ($pos < sizeof($nav)) {
+        $nextnav = $nav[$pos + 1];
+    }
+    
     /* Remplissage */
     echo "<p>CREATE CONTENT</p>";
     createContent($file, $xppage, ($med != null));
-    if($med != null) {
+    if ($med != null) {
         echo "<p>CREATE MEDIA</p>";
         createMedia($file, $xpmedia);
     }
+    createNavigation($file, $backnav, $nextnav, ($med != null));
 
     /* Console */
     echo "</blockquote>";
@@ -146,8 +274,17 @@ $index = new DOMDocument();
 $index->load("../data/site/index.xml");
 $xpindex = new DOMXPath($index);
 
+
 /* Parcours des pages */
 $pages = $xpindex->query("/root/page");
+$nav = null; 
+$pos = 0;
+foreach ($pages as $page) {
+    /* Mise en cache de la page */
+    $nav[$pos] = $page->getAttribute("id");
+    $pos++;
+}
+$pos = 0;
 foreach ($pages as $page) {
     /* Sélection des variables utiles */
     $id = $page->getAttribute("id");
@@ -155,11 +292,14 @@ foreach ($pages as $page) {
     $medias = $xpindex->query("/root/page[@id='" . $id . "']/media");
 
     /* Création de la page */
-    createPage($page->getAttribute("repertory"), $data, null);
+    createPage($page->getAttribute("repertory"), $data, null, $pos, $nav);
 
     /* Création des médias */
     foreach ($medias as $media) {
-        createPage($page->getAttribute("repertory"), $data, $media);
+        createPage($page->getAttribute("repertory"), $data, $media, $pos, $nav);
     }
+    
+    /* Mise à jour de la position */
+    $pos++;
 }
 ?>
