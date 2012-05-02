@@ -4,7 +4,9 @@
 <root>
     <page id="home" repertory="data/site/xml/a_home/">
         <data>data.xml</data>
-        <media id="about">about.xml</media>
+        <media id="help">help.xml</media>
+        <media id="readme">readme.xml</media>
+        <media id="compatibility">compatibility.xml</media>
     </page>
     <page id="studies" repertory="data/site/xml/b_studies/">
         <data>data.xml</data>
@@ -50,5 +52,6 @@
         <error id="nojs">nojs.xml</error>
         <error id="badresolution">badresolution.xml</error>
         <error id="filenotfound">filenotfound.xml</error>
+        <error id="messagefailed">messagefailed.xml</error>
     </errors>
 </root>

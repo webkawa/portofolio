@@ -102,5 +102,6 @@
         <field id="no-media-error">Pour afficher un média, cliquez sur l'un des liens dans la partie gauche de l'écran</field>
         <field id="decoration-img-alt">Elément de décoration</field>
         <field id="hidden-text">Lire la suite ...</field>
+        <field id="message-ok">Votre message a été correctement envoyé, merci !</field>
     </fields>
 </root>

@@ -10,6 +10,7 @@ div#page div.slide#experience a,
 div#page div.slide#experience h1,
 div#page div.slide#experience h2,
 div#page div.slide#experience h3,
+div#page div.slide#experience div#content strong,
 div#page div.slide#experience div#media div#text h4,
 div#page div.slide#experience div#media div#gmap h4 {
     color: #6ba71c;
@@ -54,7 +55,7 @@ div#page div.slide#experience a:hover {
     color: #416511;
 }
 div#footer.experience a:hover {
-    color: #6ba71c;
+    color: #6ba71c !important;
 }
 
 /* Coins */

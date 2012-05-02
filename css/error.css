@@ -35,11 +35,11 @@ div#error div.cage p img {
     margin: 0px 10px;
 }
 div#error div.cage p a {
-    color: grey;
+    color: #555;
     text-decoration: none;
 }
 div#error div.cage p a:hover {
-    color: darkblue;
+    color: #365D95;
 }
 div#error div.cage p.legend span {
     display: block;

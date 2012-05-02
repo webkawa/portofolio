@@ -10,6 +10,7 @@ div#page div.slide#home a,
 div#page div.slide#home h1,
 div#page div.slide#home h2,
 div#page div.slide#home h3,
+div#page div.slide#home div#content strong,
 div#page div.slide#home div#media div#text h4,
 div#page div.slide#home div#media div#gmap h4 {
     color: #f59600;
@@ -54,7 +55,7 @@ div#page div.slide#home a:hover {
     color: #bf7500;
 }
 div#footer.home a:hover {
-    color: #f59600;
+    color: #f59600 !important;
 }
 
 /* Coins */
@@ -105,5 +106,5 @@ div#page div.slide#home div#content div.cage div.scroller span.selected {
     background: url('../img/home/selected_left.png') #f59600 left top no-repeat;
 }
 div#page div.slide#home div#content div.cage div.scroller span.selected span {
-    background: url('../img/home/selected_right.png') left top no-repeat;
+    background: url('../img/home/selected_right.png') right top no-repeat;
 }

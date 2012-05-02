@@ -61,10 +61,12 @@ function createContent($path, $xppage, $hasmed) {
         $img->setAttribute("src", "/portofolio/" . $img->getAttribute("src"));      // [TEMP]
     }
     foreach ($b1->getElementsByTagName("a") as $a) {
-        if($hasmed) {
-            $a->setAttribute("href", "../" . substr($a->getAttribute("href"), 1, 200) . "/");
-        } else {
-            $a->setAttribute("href", substr($a->getAttribute("href"), 1, 200) . "/");
+        if (substr($a->getAttribute("href"), 0, 1) == "#") {
+            if($hasmed) {
+                $a->setAttribute("href", "../" . substr($a->getAttribute("href"), 1, 200) . "/");
+            } else {
+                $a->setAttribute("href", substr($a->getAttribute("href"), 1, 200) . "/");
+            }
         }
     }
     $b2 = $file->importNode($b1->getElementsByTagName("div")->item(0), true);
@@ -333,4 +335,19 @@ foreach ($pages as $page) {
     /* Mise à jour de la position */
     $pos++;
 }
+
+/* Création de la redirection principale */
+echo "<p>CREATING MAIN REDIRECTION</p>";
+copy("../data/site/templates/redirect.html", "../site/index.html");
+
+$redirection = new DOMDocument();
+$redirection->loadHTMLFile("../site/index.html");
+$xpredirection = new DOMXPath($redirection);
+
+$xpredirection->query("//body/div/p/a")->item(0)->setAttribute("href", $xpindex->query("/root/page[1]")->item(0)->getAttribute("id") . "/index.html");
+$xpredirection->query("//head/link[@rel='canonical']")->item(0)->setAttribute("href", "/site/" . $xpindex->query("/root/page[1]")->item(0)->getAttribute("id") . "/index.html");
+$xpredirection->query("//body")->item(0)->setAttribute("class", $xpindex->query("/root/page[1]")->item(0)->getAttribute("id"));
+
+$redirection->save("../site/index.html");
+
 ?>

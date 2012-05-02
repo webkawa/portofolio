@@ -5,13 +5,18 @@
  */
 
 /* Charge l'index */
-function loadIndex() {
+function loadMailer(mail, subject, message) {
     try {
         var request = jQuery.ajax({
             type: "POST",
             dataType: "xml",
-            url: "data/site/index.xml",
-            async: false
+            url: "actions/send.php",
+            async: false,
+            data: {
+                mail: mail,
+                subject: subject,
+                message: message
+            }
         });
         return jQuery.parseXML(request.responseText);
     } catch(error) {

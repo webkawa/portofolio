@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- errors/messagefailed.xml    -->
+<!-- Erreur à l'envoi du message -->
+<root>
+    <id>messagefailed</id>
+    <core>
+        <![CDATA[
+            <h1>Oups !...</h1>
+            <p>
+                Une erreur vient de se produire durant l'envoi du message ...
+                Désolé pour ce problème, peut-être devriez-vous réessayer ou
+                tenter le téléphone.
+            </p>
+        ]]>
+    </core>
+    <exit>true</exit>
+</root>

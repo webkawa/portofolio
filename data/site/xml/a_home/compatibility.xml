@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <id>compatibility</id>
+    <title>
+        <![CDATA[
+            <p>Informations</p>
+            <h3>Navigateurs supportés</h3>
+        ]]>
+    </title>
+    <view id="infos">
+        <type>text</type>
+        <core>
+            <![CDATA[
+                <h4>Chrome / Chromium</h4>
+                <p>Version 10 et supérieures.</p>
+                <h4>Firefox</h4>
+                <p>Version 4 et supérieures.</p>
+                <h4>Internet Explorer</h4>
+                <p>Version 8 et supérieures.</p>
+                <h4>Safari</h4>
+                <p>Version 4 et supérieures.</p>
+                <h4>Opéra</h4>
+                <p>Version 4 et supérieures.</p>
+            ]]>
+        </core>
+    </view>
+</root>

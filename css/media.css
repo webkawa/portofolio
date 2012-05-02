@@ -310,7 +310,7 @@ div#gallery div.infos ul li {
     height: 40px;
     margin-right: 2px;
     margin-left: 2px;
-    border: 2px solid grey;
+    border: 2px solid #555;
     opacity: 1;
 }
 div#gallery div.infos ul li:hover {

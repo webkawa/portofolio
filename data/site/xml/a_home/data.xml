@@ -7,8 +7,27 @@
     <core>
         <![CDATA[
         <div>
+            <h2>Bienvenue</h2>
+            <p>Bienvenue sur <strong>kawasphere</strong> !</p>
+            <p>Ce site résume, en quelques pages, les principales étapes de mon parcours dans les milieux
+            étudiant et professionnel, ainsi que les facettes majeures de mon profil.</p>
+            <ul>
+                <li>Si souhaitez acquérir un complément d'informations sur
+                mon CV ou souhaitez découvrir mon parcours, je vous invite à commencer votre
+                visite dès à présent en survolant la zone rouge située à droite de la page ;</li>
+                <li>Si vous avez déjà en votre possession les informations dont vous pourriez avoir besoin et cherchez
+                juste à rentrer en contact, rendez-vous directement sur l'onglet gris ;</li>
+                <li>Enfin, si vous êtes arrivé sur cette page par hasard ou à la recherche
+                d'une information plus générale, vous risquez de ne rien trouver de très utile
+                ici ... peut-être devriez-vous retourner à <a href="http://www.google.com"
+                title="Retour à Google">Google</a>.</li>
+            </ul>
+            <p>Désorienté ? Prenez le temps de jeter un œil à l'<a href="#help" title="Aide à la navigation">aide 
+            à la navigation</a> !</p>
             <h2>A propos</h2>
-            <p>Bienvenue sur mon portofolio !</p>
+            <p>Plus d'informations sur ce site dans les <a href="#readme" title="Notes techniques">
+            notes techniques</a>. En cas de problème lors de la navigation, consultez la liste des
+            <a href="#compatibility" title="Navigateurs supprortés">navigateurs supportés</a>.</p>
         </div>
         ]]>
     </core>

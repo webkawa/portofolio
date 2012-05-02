@@ -16,15 +16,13 @@
                 N'oubliez pas de laisser une adresse de retour valide ; je ne manquerai pas
                 de vous recontacter.</p>
                 <div class="contact">
-                    <form>
-                        <p>Votre adresse mail :</p>
-                        <input type="text" id="mail" name="mail" class="mail"></input>
-                        <p>Le sujet de votre message :</p>
-                        <input type="text" id="subject" name="subject" class="subject"></input>
-                        <p>Votre message :</p>
-                        <textarea id="message" name="message" class="message"></textarea>
-                        <input type="submit" value="Envoyer" class="submit" disabled="disabled"></input>
-                    </form>
+                    <p>Votre adresse mail :</p>
+                    <input type="text" id="mail" name="mail" class="mail"></input>
+                    <p>Le sujet de votre message :</p>
+                    <input type="text" id="subject" name="subject" class="subject"></input>
+                    <p>Votre message :</p>
+                    <textarea id="message" name="message" class="message"></textarea>
+                    <input type="submit" value="Envoyer" class="submit" disabled="disabled" onclick="javascript:doMessage();"></input>
                 </div>
             ]]>
         </core>

@@ -78,7 +78,9 @@ function doNavigationEvents() {
     });
     /* Affichage des médias */
     $("div#content div.scroller a").click(function() {
-        if($("div#media div.loader:animated").size() == 0) {
+        var b1 = ($("div#media div.loader:animated").size() == 0);
+        var b2 = (($(this).attr("href")).charAt(0) === "#");
+        if(b1 && b2) {
             med = loadMedia($(this).attr("href"));
             switchSelected($(this));
             switchMedia($(this).attr("href"));

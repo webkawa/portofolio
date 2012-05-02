@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <id>readme</id>
+    <title>
+        <![CDATA[
+            <p>Informations</p>
+            <h3>Notes techniques</h3>
+        ]]>
+    </title>
+    <notes>
+        <![CDATA[
+            <p>Pour aller plus loin ...</p>
+            <ul>
+                <li><a href="https://github.com/webkawa/portofolio" title="Sources complètes du projet">Dépôt gitHub</a></li>
+                <li><a href="http://jquery.com/" title="jQuery">jQuery</a></li>
+            </ul>
+        ]]>
+    </notes>
+    <view id="infos">
+        <type>text</type>
+        <core>
+            <![CDATA[
+                <h4>Notes</h4>
+                <p>Ce site propose une navigation entièrement dynamique grâce au framework
+                <strong>jQuery</strong>, basée sur des fichiers statiques et ne nécessitant
+                aucune charge coté serveur. Sa source complète peut être consultée sur le
+                dépôt <strong>gitHub</strong> du projet.</p>
+                <h4>Droits d'auteur</h4>
+                <p>L'ensemble des médias, documents et sources distribuées sur ce site
+                sont soumises au droit d'auteur et sont distribuées à fin d'usage strictement
+                personnel. Si vous souhaitez disposer d'un de ces éléments dans un but autre,
+                n'hésitez pas à me contacter.</p>
+            ]]>
+        </core>
+    </view>
+</root>

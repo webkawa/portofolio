@@ -57,7 +57,7 @@ div#navigation ul li.right {
 /* Contenu */
 div#content {
     float: left;
-    width: 50%;
+    width: 49%;
     border-right: 1px solid #555;
 }
 div#content.large {
@@ -86,7 +86,7 @@ div#content ul {
 
 /* Médias */
 div#media {
-    float: left;
+    float: right;
     width: 50%;
 }
 div#media div.title {

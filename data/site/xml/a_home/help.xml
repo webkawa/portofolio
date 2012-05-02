@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <id>help</id>
+    <title>
+        <![CDATA[
+            <p>Informations</p>
+            <h3>Aide à la navigation</h3>
+        ]]>
+    </title>
+    <notes>
+        <![CDATA[
+            <p>Voir aussi ...</p>
+            <ul>
+                <li><a href="site/" title="Version accessible">Version accessible</a></li>
+            </ul>
+        ]]>
+    </notes>
+    <view id="infos">
+        <type>text</type>
+        <core>
+            <![CDATA[
+                <h4>Aperçu</h4>
+                <p>Les pages s'organisent autour de deux principaux blocs, l'un dédié
+                au contenu (à gauche) et l'autre aux médias (à droite). Les onglets de
+                couleur situés sur les bords latéraux indiquent votre position dans les
+                différentes pages du site.</p>
+                <h4>Navigation</h4>
+                <p>Les principaux outils utiles à la navigation sont les suivants :</p>
+                <ul>
+                    <li>Pour changer de page, survollez simplement l'un des onglets situés
+                    à gauche (pour la page précédante) et à droite (pour la suivante) ;</li>
+                    <li>Pour accéder à un média, cliquez sur un lien situé dans le bloc de
+                    contenu (à gauche) ;</li>
+                    <li>Pour naviguer entre les différents onglets d'un média, faites usage
+                    des îcones situés à sa droite ;</li>
+                    <li>Pour agrandir un contenu, cliquez sur la zone centrale (une seconde
+                    fois pour le réduire).</li>
+                </ul>
+                <p>Si vous ne vous sentez pas à l'aise avec ce mode de navigation, préférez
+                la version accessible (lien ci-dessous).</p>
+            ]]>
+        </core>
+    </view>
+</root>

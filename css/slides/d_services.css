@@ -10,6 +10,7 @@ div#page div.slide#services a,
 div#page div.slide#services h1,
 div#page div.slide#services h2,
 div#page div.slide#services h3,
+div#page div.slide#services div#content strong,
 div#page div.slide#services div#media div#text h4,
 div#page div.slide#services div#media div#gmap h4 {
     color: #3a73ad;
@@ -54,7 +55,7 @@ div#page div.slide#services a:hover {
     color: #274e75;
 }
 div#footer.services a:hover {
-    color: #3a73ad;
+    color: #3a73ad !important;
 }
 
 /* Coins */
