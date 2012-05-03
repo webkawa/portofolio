@@ -13,7 +13,7 @@
             <![CDATA[
                 <h4>Détails</h4>
                 <p>Vous pouvez me joindre les jours ouvrés entre 10h et 19h au :</p>
-                <p class="gallery"><img src="data/medias/img/tel.png" alt="Internautes en mode accessible, favorisez le mail !"></img></p>
+                <p class="gallery"><img src="/data/medias/img/tel.png" alt="Internautes en mode accessible, favorisez le mail !"></img></p>
                 <p>En cas d'absence, n'hésitez pas à me laisser un message, je ne manquerai pas de vous recontacter.</p>
             ]]>
         </core>

@@ -22,12 +22,12 @@
                 ici ... peut-être devriez-vous retourner à <a href="http://www.google.com"
                 title="Retour à Google">Google</a>.</li>
             </ul>
-            <p>Désorienté ? Prenez le temps de jeter un œil à l'<a href="#help" title="Aide à la navigation">aide 
-            à la navigation</a> !</p>
+            <p>Désorienté ? Prenez le temps de jeter un œil à l'<a href="#help" title="Aide à la navigation">aide</a> à
+            la navigation !</p>
             <h2>A propos</h2>
-            <p>Plus d'informations sur ce site dans les <a href="#readme" title="Notes techniques">
-            notes techniques</a>. En cas de problème lors de la navigation, consultez la liste des
-            <a href="#compatibility" title="Navigateurs supprortés">navigateurs supportés</a>.</p>
+            <p>Vous souhaitez en apprendre plus sur ce site ? Consultez les <a href="#readme" title="Notes techniques">
+            notes techniques</a>. En cas de problème d'affichage ou de comportement, peut-être devriez-vous regarder
+            la liste des <a href="#compatibility" title="Navigateurs supprortés">navigateurs supportés</a>.</p>
         </div>
         ]]>
     </core>

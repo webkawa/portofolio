@@ -58,7 +58,7 @@ function createContent($path, $xppage, $hasmed) {
     $b1 = new DOMDocument();
     $b1->loadXML($xppage->query("/root/core")->item(0)->nodeValue);
     foreach ($b1->getElementsByTagName("img") as $img) {
-        $img->setAttribute("src", "/portofolio/" . $img->getAttribute("src"));      // [TEMP]
+        $img->setAttribute("src", "/" . $img->getAttribute("src"));
     }
     foreach ($b1->getElementsByTagName("a") as $a) {
         if (substr($a->getAttribute("href"), 0, 1) == "#") {

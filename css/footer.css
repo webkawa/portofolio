@@ -13,9 +13,8 @@ div#footer div.spacer {
     text-align: center;
 }
 div#footer div.spacer ul.links {
-    float: left;
     padding: 0px 0px 0px 10px;
-    margin: 0px;
+    margin: 0px auto 0px auto;
     list-style-type: none;
 }
 div#footer div.spacer ul.links li {
@@ -32,24 +31,4 @@ div#footer div.spacer ul.links li a {
     font-style: italic;
     font-size: 16px;
     text-decoration: none;
-}
-div#footer div.spacer ul.references {
-    float: right;
-    padding: 5px 10px 0px 0px;
-    margin: 0px;
-    list-style-type: none;
-}
-div#footer div.spacer ul.references li {
-    display: inline-block;
-    margin: 0px;
-    padding: 0px 5px;
-}
-div#footer div.spacer ul.references li.last {
-    border: none;
-}
-div#footer div.spacer ul.references li a {
-    opacity: 0.35;
-}
-div#footer div.spacer ul.references li a:hover {
-    opacity: 1;
 }
