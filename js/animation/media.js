@@ -119,7 +119,7 @@ function switchZoom(direction) {
         "easing" : easing,
         "step" : function(now) {
             /* Calcul de la largeur de la zone média */
-            i = corewidth - now;
+            i = corewidth - now - 0.1;
             
             /* Redimentionnement de la zone média */
             $(media).css("width", i + "px");

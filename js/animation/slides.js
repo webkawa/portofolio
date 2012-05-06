@@ -75,7 +75,7 @@ function switchSlide(origin, destination) {
             }
             
             /* Taille du slide ouvrant */
-            realMaxWidth($(destination), space - now - widthAdd(origin));
+            realMaxWidth($(destination), space - now - widthAdd(origin) - 0.1);
         },
         "complete" : function() {
             /* Taggage du slide sortant */
@@ -94,13 +94,13 @@ function switchSlide(origin, destination) {
                 /* Changement de coté */
                 $(destination).toggleClass("right");
                 $(destination).addClass("left");
-        
-                /* Calcul de la taille */
-                realMaxWidth($(destination), $("div#page").width() - dprop.lmargin - dprop.rmargin);
                 
                 /* Suppression de la marge */
                 $(destination).children("div.spacer").css("margin-right", "auto");
             }
+            
+            /* Calcul de la taille du slide ouvrant */
+            realMaxWidth($(destination), $("div#page").width() - dprop.lmargin - dprop.rmargin);
             
             /* Nettoyage */
             cleanupPage();

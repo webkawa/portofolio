@@ -21,6 +21,7 @@ div#content div.cage div.scroller {
     text-align: justify;
 }
 div#content div.cage div.scroller a span.medialk {
+    white-space: nowrap;
 }
 div#content div.cage div.scroller a span.medialk.selected {
     padding: 3px 0px 3px 24px;
@@ -28,7 +29,6 @@ div#content div.cage div.scroller a span.medialk.selected {
 div#content div.cage div.scroller a span.medialk.selected span {
     padding: 3px 12px 3px 0px;
     color: white;
-    white-space: nowrap;
 }
 div#content div.cage div.scroller h2 {
     font-size: 32px;

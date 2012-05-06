@@ -14,6 +14,7 @@ body {
 
 /* Liens */
 a {
-    text-decoration: none;
+    text-decoration: none; 
+    outline: none !important; 
 }
 

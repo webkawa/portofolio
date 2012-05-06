@@ -35,15 +35,18 @@ function switchTitle(target) {
         "easing"    : easing,
         "step"      : function(now) {
             /* Recherche de l'espace disponible */
-            space = $(spacer).width() - now; 
+            space = $(spacer).width() - now - 0.1;
             
             /* Mise à jour de l'opacité */
             $(ltitle).css("opacity", now / space);
             
             /* Mise à jour du titre entrant */
-            $(ititle).css("max-width", space)
+            $(ititle).css("max-width", space + "px")
         },
         "complete"  : function() {
+            /* Attribution de la valeur finale */
+            $(ititle).css("max-width", $(spacer).width() + "px")
+            
             /* Nettoyage */
             cleanupTitle();
         }
