@@ -21,7 +21,7 @@ function injectTitle() {
     opt +
     '</div>';
     $("div#header div.spacer").append(data);                             /* Prend en compte la bordure */
-    
+     
     /* Rafraichissement du titre entrant */
     refreshTitleSize($("div#header div.spacer div.title.incoming"));     /* Prend en compte la bordure */
     

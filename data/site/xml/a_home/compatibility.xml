@@ -11,16 +11,35 @@
         <type>text</type>
         <core>
             <![CDATA[
-                <h4>Chrome / Chromium</h4>
-                <p>Version 10 et supérieures.</p>
-                <h4>Firefox</h4>
-                <p>Version 4 et supérieures.</p>
-                <h4>Internet Explorer</h4>
-                <p>Version 8 et supérieures.</p>
-                <h4>Safari</h4>
-                <p>Version 4 et supérieures.</p>
-                <h4>Opéra</h4>
-                <p>Version 4 et supérieures.</p>
+                <h4>Liste</h4>
+                <p class="gallery">
+                    <img src="/data/medias/img/browsers/chrome.png"></img>
+                    <img src="/data/medias/img/browsers/firefox.png"></img>
+                    <img src="/data/medias/img/browsers/ie.png"></img>
+                    <img src="/data/medias/img/browsers/opera.png"></img>
+                    <img src="/data/medias/img/browsers/safari.png"></img>
+                </p>
+                <p><strong>Chrome / Chromium</strong> version 10 et supérieures (
+                <a href="https://www.google.com/chrome?hl=fr" title="Télécharger Google Chrome">
+                téléchargement</a>)</p>
+                <p><strong>Firefox</strong> version 4 et supérieures (<a href="http://www.mozilla.org/fr/firefox/"
+                title="Télécharger Firefox">téléchargement</a>)</p>
+                <p><strong>Internet Explorer</strong> version 8 et supérieures (<a
+                href="http://www.microsoft.com/france/windows/internet-explorer" title="Site officiel">
+                site officiel</a>)</p>
+                <p><strong>Safari</strong> version 4 et supérieures (<a href="http://www.apple.com/fr/safari/"
+                title="Télécharger Safari">téléchargement</a>)</p>
+                <p><strong>Opéra</strong> version 4 et supérieures (<a href="http://www.opera.com/"
+                title="Télécharger Opéra">téléchargement</a>)</p>
+                <h4>Certifications</h4>
+                <p class="gallery">
+                    <a href="http://validator.w3.org/check?uri=referer">
+                        <img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Strict" style="border: 0; height: 31px; width: 88px" />
+                    </a>
+                    <a href="http://jigsaw.w3.org/css-validator/check/referer">
+                        <img src="http://jigsaw.w3.org/css-validator/images/vcss" alt="CSS Valide !" />
+                    </a>
+                </p>
             ]]>
         </core>
     </view>
