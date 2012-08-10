@@ -4,7 +4,7 @@
 <root>
     <quality>
         <high>
-            <interval>15</interval>
+            <interval>20</interval>
         </high>
     </quality>
     <transitions>
