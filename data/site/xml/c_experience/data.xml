@@ -8,9 +8,13 @@
     <core>
         <![CDATA[
         <div>
-            <h2>Emploi</h2>
+			<h2>Emploi</h2>
+			<p><img src="data/medias/img/eudo.jpg" title="Logo d'Eudoweb" />
+			J'occupe depuis septembre 2012 le poste de consultant fonctionnel pour le compte de la
+			société Eudoweb à Courbevoie.</p>
+            <h2>Expérience antérieure</h2>
             <p><img src="data/medias/img/fullsix.png" title="Logo de Fullsix" />
-            J'occupe depuis février 2011 un poste de consultant technique au sein de l'agence
+            J'ai occupé de février 2011 à août 2012 le poste de consultant technique au sein de l'agence
             de communication digitale <a href="#fullsix" title="Plus de détails à ce sujet">
             Fullsix</a> ou, plus spécifiquement, son pôle technique, <a href="#ekino"
             title="Plus de détails à ce sujet">Ekino</a>. Mon travail se situe à mi-chemin
